@@ -1,11 +1,11 @@
 # 요기에듀
 > 우리동네 학원 강의 - 수강생 매칭 웹 사이트
 
-# 1. 제작 기간 & 참여 인원
+## 1. 제작 기간 & 참여 인원
 * 2021년 11월 29일 ~
 * 팀 프로젝트 : [견종빈](https://github.com/jbGyeon), [김인표](https://github.com/kiminpyo), [김인환](https://github.com/inhwanK), [이민기](https://github.com/lamalli)
 
-# 2. 사용 기술
+## 2. 사용 기술
 * Java 8
 * Spring Boot 2.6.1
 * Gradle 7.3.1
