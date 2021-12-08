@@ -1,7 +1,7 @@
 {
 	"folders": {},
 	"connections": {
-		"mysql5-17d92cacdd6-679c375cf5915085": {
+		"mysql5-17d939706c5-430e20fc6532a9fc": {
 			"provider": "mysql",
 			"driver": "mysql5",
 			"name": "localhost",
@@ -11,15 +11,9 @@
 				"host": "localhost",
 				"port": "3306",
 				"url": "jdbc:mysql://localhost:3306/",
-				"home": "mysql_client",
+				"home": "C:\\Program Files\\MariaDB 10.6",
 				"type": "dev",
-				"properties": {
-					"connectTimeout": "20000",
-					"rewriteBatchedStatements": "true",
-					"enabledTLSProtocols": "TLSv1,TLSv1.1,TLSv1.2"
-				},
-				"auth-model": "native",
-				"handlers": {}
+				"auth-model": "native"
 			}
 		}
 	},
