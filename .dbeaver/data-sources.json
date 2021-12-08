@@ -29,6 +29,12 @@
 				"url": "jdbc:mysql://localhost:3306/yogiedu",
 				"home": "C:\\Program Files\\MySQL\\MySQL Router 8.0",
 				"type": "dev",
+				"properties": {
+					"connectTimeout": "20000",
+					"rewriteBatchedStatements": "true",
+					"enabledTLSProtocols": "TLSv1,TLSv1.1,TLSv1.2",
+					"allowPublicKeyRetrieval": "TRUE"
+				},
 				"auth-model": "native",
 				"handlers": {}
 			}
