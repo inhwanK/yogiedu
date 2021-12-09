@@ -1,5 +1,5 @@
 
-# driver properties -> allowPublicKeyRetrieval=true 설정 추가 
+-- driver properties -> allowPublicKeyRetrieval=true 설정 추가 
 create user 'user_yogiedu'@'localhost' identified by 'rootroot';
 
 drop user 'user_yogiedu'@'localhost';

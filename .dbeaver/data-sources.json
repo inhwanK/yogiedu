@@ -1,40 +1,18 @@
 {
 	"folders": {},
 	"connections": {
-		"mysql8-17d98a948b5-5adfe02088d83d19": {
+		"mysql8-17d9eeb654b-1496275661f143fd": {
 			"provider": "mysql",
 			"driver": "mysql8",
-			"name": "localhost",
+			"name": "freelect-springboot2-webservice.ctme9rwmpvxq.ap-no",
 			"save-password": true,
 			"read-only": false,
 			"configuration": {
-				"host": "localhost",
+				"host": "freelect-springboot2-webservice.ctme9rwmpvxq.ap-northeast-2.rds.amazonaws.com",
 				"port": "3306",
-				"url": "jdbc:mysql://localhost:3306/",
+				"url": "jdbc:mysql://freelect-springboot2-webservice.ctme9rwmpvxq.ap-northeast-2.rds.amazonaws.com:3306/",
 				"home": "C:\\Program Files\\MySQL\\MySQL Router 8.0",
 				"type": "dev",
-				"auth-model": "native"
-			}
-		},
-		"mysql8-17d99f32918-219678b9879f4006": {
-			"provider": "mysql",
-			"driver": "mysql8",
-			"name": "yogiedu",
-			"save-password": true,
-			"read-only": false,
-			"configuration": {
-				"host": "localhost",
-				"port": "3306",
-				"database": "yogiedu",
-				"url": "jdbc:mysql://localhost:3306/yogiedu",
-				"home": "C:\\Program Files\\MySQL\\MySQL Router 8.0",
-				"type": "dev",
-				"properties": {
-					"connectTimeout": "20000",
-					"rewriteBatchedStatements": "true",
-					"enabledTLSProtocols": "TLSv1,TLSv1.1,TLSv1.2",
-					"allowPublicKeyRetrieval": "TRUE"
-				},
 				"auth-model": "native",
 				"handlers": {}
 			}
