@@ -11,24 +11,24 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="../resources/img/favicon.png" rel="icon">
-  <link href="../resources/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/static/img/Tlogo2_B.png" rel="icon">
+  <link href="/static/img/Tlogo2_b.png" rel="apple-touch-icon">
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="../resources/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="../resources/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="../resources/lib/animate/animate.min.css" rel="stylesheet">
-  <link href="../resources/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="../resources/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="../resources/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link href="/static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="/static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="/resources/dist/css/style3.css" type="text/css" rel="stylesheet">
+  <link href="/static/dist/css/style3.css" type="text/css" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: NewBiz
@@ -49,34 +49,27 @@
       <div class="logo float-left">
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
-        <a href="#intro" class="scrollto"><img src="../resources/img/logo.png" alt="" class="img-fluid"></a>
+        <a href="#intro" class="scrollto"><img src="/static/img/Tlogo2_B.png" alt="" class="img-fluid" style="width:100%;"></a>
       </div>
 
       <nav class="main-nav float-right d-none d-lg-block">
         <ul>
           <li class="active"><a href="#intro">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <li class="drop-down"><a href="">Drop Down</a>
+          <li><a href="#">예약하기</a></li>
+          <li><a href="#">학원찾기</a></li>
+          <li><a href="#">등록하기</a></li>
+          <li><a href="#">내시간표</a></li>
+          <li class="drop-down"><a href="">Quick Menu</a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Drop Down 2</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
+                  <li><a href="#about">About us</a></li>
+                  <li><a href="#services">Services</a></li>
+                  <li><a href="#portfolio">Portfolio</a></li>
+                  <li><a href="#team">Team</a></li>
+                  <li><a href="#contact">Contact Us</a></li>
                 </ul>
-              </li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
           </li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#">회원가입</a></li>
+          <li><a href="#">로그인</a></li>
         </ul>
       </nav><!-- .main-nav -->
       
@@ -90,7 +83,7 @@
     <div class="container">
 
       <div class="intro-img">
-        <img src="../resources/img/intro-img.svg" alt="" class="img-fluid">
+        <img src="/static/img/intro-img.svg" alt="" class="img-fluid">
       </div>
 
       <div class="intro-info">
@@ -145,13 +138,13 @@
           </div>
 
           <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
-            <img src="../resources/img/about-img.svg" class="img-fluid" alt="">
+            <img src="/static/img/about-img.svg" class="img-fluid" alt="">
           </div>
         </div>
 
         <div class="row about-extra">
           <div class="col-lg-6 wow fadeInUp">
-            <img src="../resources/img/about-extra-1.svg" class="img-fluid" alt="">
+            <img src="/static/img/about-extra-1.svg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
             <h4>동네에 아는 사람도 없고, <br>우리아이 학원을 아무데나 보낼수는 없고.</h4>
@@ -330,12 +323,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="../resources/img/portfolio/app1.jpg" class="img-fluid" alt="">
+              <img src="/static/img/portfolio/app1.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">App 1</a></h4>
                 <p>App</p>
                 <div>
-                  <a href="../resources/img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/static/img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -344,12 +337,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.1s">
             <div class="portfolio-wrap">
-              <img src="../resources/img/portfolio/web3.jpg" class="img-fluid" alt="">
+              <img src="/static/img/portfolio/web3.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">Web 3</a></h4>
                 <p>Web</p>
                 <div>
-                  <a href="../resources/img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/static/img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -358,12 +351,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app" data-wow-delay="0.2s">
             <div class="portfolio-wrap">
-              <img src="../resources/img/portfolio/app2.jpg" class="img-fluid" alt="">
+              <img src="/static/img/portfolio/app2.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">App 2</a></h4>
                 <p>App</p>
                 <div>
-                  <a href="../resources/img/portfolio/app2.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/static/img/portfolio/app2.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -372,12 +365,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="../resources/img/portfolio/card2.jpg" class="img-fluid" alt="">
+              <img src="/static/img/portfolio/card2.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">Card 2</a></h4>
                 <p>Card</p>
                 <div>
-                  <a href="../resources/img/portfolio/card2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/static/img/portfolio/card2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -386,12 +379,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.1s">
             <div class="portfolio-wrap">
-              <img src="../resources/img/portfolio/web2.jpg" class="img-fluid" alt="">
+              <img src="/static/img/portfolio/web2.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">Web 2</a></h4>
                 <p>Web</p>
                 <div>
-                  <a href="../resources/img/portfolio/web2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/static/img/portfolio/web2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -400,12 +393,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app" data-wow-delay="0.2s">
             <div class="portfolio-wrap">
-              <img src="../resources/img/portfolio/app3.jpg" class="img-fluid" alt="">
+              <img src="/static/img/portfolio/app3.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">App 3</a></h4>
                 <p>App</p>
                 <div>
-                  <a href="../resources/img/portfolio/app3.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/static/img/portfolio/app3.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -414,12 +407,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="../resources/img/portfolio/card1.jpg" class="img-fluid" alt="">
+              <img src="/static/img/portfolio/card1.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">Card 1</a></h4>
                 <p>Card</p>
                 <div>
-                  <a href="../resources/img/portfolio/card1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/static/img/portfolio/card1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -428,12 +421,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card" data-wow-delay="0.1s">
             <div class="portfolio-wrap">
-              <img src="../resources/img/portfolio/card3.jpg" class="img-fluid" alt="">
+              <img src="/static/img/portfolio/card3.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">Card 3</a></h4>
                 <p>Card</p>
                 <div>
-                  <a href="../resources/img/portfolio/card3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/static/img/portfolio/card3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -442,12 +435,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.2s">
             <div class="portfolio-wrap">
-              <img src="../resources/img/portfolio/web1.jpg" class="img-fluid" alt="">
+              <img src="/static/img/portfolio/web1.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">Web 1</a></h4>
                 <p>Web</p>
                 <div>
-                  <a href="../resources/img/portfolio/web1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/static/img/portfolio/web1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -475,7 +468,7 @@
             <div class="owl-carousel testimonials-carousel wow fadeInUp">
     
               <div class="testimonial-item">
-                <img src="../resources/img/testimonial-1.jpg" class="testimonial-img" alt="">
+                <img src="/static/img/testimonial-1.jpg" class="testimonial-img" alt="">
                 <h3>Saul Goodman</h3>
                 <h4>Ceo &amp; Founder</h4>
                 <p>
@@ -484,7 +477,7 @@
               </div>
     
               <div class="testimonial-item">
-                <img src="../resources/img/testimonial-2.jpg" class="testimonial-img" alt="">
+                <img src="/static/img/testimonial-2.jpg" class="testimonial-img" alt="">
                 <h3>Sara Wilsson</h3>
                 <h4>Designer</h4>
                 <p>
@@ -493,7 +486,7 @@
               </div>
     
               <div class="testimonial-item">
-                <img src="../resources/img/testimonial-3.jpg" class="testimonial-img" alt="">
+                <img src="/static/img/testimonial-3.jpg" class="testimonial-img" alt="">
                 <h3>Jena Karlis</h3>
                 <h4>Store Owner</h4>
                 <p>
@@ -502,7 +495,7 @@
               </div>
     
               <div class="testimonial-item">
-                <img src="../resources/img/testimonial-4.jpg" class="testimonial-img" alt="">
+                <img src="/static/img/testimonial-4.jpg" class="testimonial-img" alt="">
                 <h3>Matt Brandon</h3>
                 <h4>Freelancer</h4>
                 <p>
@@ -511,7 +504,7 @@
               </div>
     
               <div class="testimonial-item">
-                <img src="../resources/img/testimonial-5.jpg" class="testimonial-img" alt="">
+                <img src="/static/img/testimonial-5.jpg" class="testimonial-img" alt="">
                 <h3>John Larson</h3>
                 <h4>Entrepreneur</h4>
                 <p>
@@ -542,11 +535,11 @@
 
           <div class="col-lg-3 col-md-6 wow fadeInUp">
             <div class="member">
-              <img src="../resources/img/team-1.jpg" class="img-fluid" alt="">
+              <img src="/static/img/team-1.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>Walter White</h4>
-                  <span>Chief Executive Officer</span>
+                  <h4>견종빈</h4>
+                  <span>기획</span>
                   <div class="social">
                     <a href=""><i class="fa fa-twitter"></i></a>
                     <a href=""><i class="fa fa-facebook"></i></a>
@@ -560,11 +553,11 @@
 
           <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
             <div class="member">
-              <img src="../resources/img/team-2.jpg" class="img-fluid" alt="">
+              <img src="/static/img/team-2.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>Sarah Jhonson</h4>
-                  <span>Product Manager</span>
+                  <h4>김인표</h4>
+                  <span>프런트엔드</span>
                   <div class="social">
                     <a href=""><i class="fa fa-twitter"></i></a>
                     <a href=""><i class="fa fa-facebook"></i></a>
@@ -578,11 +571,11 @@
 
           <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
             <div class="member">
-              <img src="../resources/img/team-3.jpg" class="img-fluid" alt="">
+              <img src="/static/img/team-3.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>William Anderson</h4>
-                  <span>CTO</span>
+                  <h4>김인환</h4>
+                  <span>백엔드, DB</span>
                   <div class="social">
                     <a href=""><i class="fa fa-twitter"></i></a>
                     <a href=""><i class="fa fa-facebook"></i></a>
@@ -596,11 +589,11 @@
 
           <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
             <div class="member">
-              <img src="../resources/img/team-4.jpg" class="img-fluid" alt="">
+              <img src="/static/img/team-4.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>Amanda Jepson</h4>
-                  <span>Accountant</span>
+                  <h4>이민기</h4>
+                  <span>백엔드</span>
                   <div class="social">
                     <a href=""><i class="fa fa-twitter"></i></a>
                     <a href=""><i class="fa fa-facebook"></i></a>
@@ -633,49 +626,49 @@
 
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="../resources/img/clients/client-1.png" class="img-fluid" alt="">
+              <img src="/static/img/clients/client-1.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="../resources/img/clients/client-2.png" class="img-fluid" alt="">
+              <img src="/static/img/clients/client-2.png" class="img-fluid" alt="">
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="../resources/img/clients/client-3.png" class="img-fluid" alt="">
+              <img src="/static/img/clients/client-3.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="../resources/img/clients/client-4.png" class="img-fluid" alt="">
+              <img src="/static/img/clients/client-4.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="../resourcesimg/clients/client-5.png" class="img-fluid" alt="">
+              <img src="/static/img/clients/client-5.png" class="img-fluid" alt="">
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="../resourcesimg/clients/client-6.png" class="img-fluid" alt="">
+              <img src="/static/img/clients/client-6.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="../resourcesimg/clients/client-7.png" class="img-fluid" alt="">
+              <img src="/static/img/clients/client-7.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="../resourcesimg/clients/client-8.png" class="img-fluid" alt="">
+              <img src="/static/img/clients/client-8.png" class="img-fluid" alt="">
             </div>
           </div>
 
@@ -699,7 +692,7 @@
 
           <div class="col-lg-6">
             <div class="map mb-4 mb-lg-0">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 312px;" allowfullscreen></iframe>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.844479320568!2d128.73385481621958!3d35.87732788014897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35660b626ef7bf91%3A0xed9348a5a7daefae!2z7LKo64uo7KCV67O07Ya17Iug7Jy17ZWp7IKw7JeF6riw7Iig7JuQ!5e0!3m2!1sko!2skr!4v1638856209764!5m2!1sko!2skr" frameborder="0" style="border:0; width: 100%; height: 312px;" allowfullscreen="" aria-hidden="false"></iframe>
             </div>
           </div>
 
@@ -707,15 +700,15 @@
             <div class="row">
               <div class="col-md-5 info">
                 <i class="ion-ios-location-outline"></i>
-                <p>A108 Adam Street, NY 535022</p>
+                <p>동내로 70, 대구 동구</p>
               </div>
               <div class="col-md-4 info">
                 <i class="ion-ios-email-outline"></i>
-                <p>info@example.com</p>
+                <p>info@yogiedu.com</p>
               </div>
               <div class="col-md-3 info">
                 <i class="ion-ios-telephone-outline"></i>
-                <p>+1 5589 55488 55</p>
+                <p>+82 010 5128 3505</p>
               </div>
             </div>
 
@@ -762,29 +755,33 @@
         <div class="row">
 
           <div class="col-lg-4 col-md-6 footer-info">
-            <h3>NewBiz</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+            <h3>YOGIEdU</h3>
+            <p>최근 변화하는 입시 환경 및 나날이 복잡해지고<br>
+            전문화되고 있는 시대 변화와 맞물려 <br>
+            요기에듀 역시 쉼 없는 전진을 하겠습니다.<br><br> 
+			요기에듀에서 여러분들의 아름다운<br>
+			미래를 위한 꿈을 키우시길 바랍니다.</p>
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Quick Menu</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Terms of service</a></li>
-              <li><a href="#">Privacy policy</a></li>
+                  <li><a href="#about">About us</a></li>
+                  <li><a href="#services">Services</a></li>
+                  <li><a href="#portfolio">Portfolio</a></li>
+                  <li><a href="#team">Team</a></li>
+                  <li><a href="#contact">Contact Us</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              70 Dong-nae ro <br>
+              Dong-gu, Deagu<br>
+              Republic of Korea<br>
+              <strong>Phone:</strong> +82 5128 3505<br>
+              <strong>Email:</strong> info@yogiedu.com<br>
             </p>
 
             <div class="social-links">
@@ -798,8 +795,8 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
+            <h4>Yogiedu NEWs</h4>
+            <p>아래에 이메일을 입력해 주시면<br>최신교육정보를 받아보실 수 있습니다<br>최고의 정보를 드릴 수 있게 <br>노력하겠습니다.</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit"  value="Subscribe">
             </form>
@@ -811,7 +808,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong>NewBiz</strong>. All Rights Reserved
+        &copy; Copyright <strong>YOGIEDU</strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!--
@@ -830,22 +827,22 @@
   <!-- <div id="preloader"></div> -->
 
   <!-- JavaScript Libraries -->
-  <script src="../resources/lib/jquery/jquery.min.js"></script>
-  <script src="../resources/lib/jquery/jquery-migrate.min.js"></script>
-  <script src="../resources/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../resources/lib/easing/easing.min.js"></script>
-  <script src="../resources/lib/mobile-nav/mobile-nav.js"></script>
-  <script src="../resources/lib/wow/wow.min.js"></script>
-  <script src="../resources/lib/waypoints/waypoints.min.js"></script>
-  <script src="../resources/lib/counterup/counterup.min.js"></script>
-  <script src="../resources/lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="../resources/lib/isotope/isotope.pkgd.min.js"></script>
-  <script src="../resources/lib/lightbox/js/lightbox.min.js"></script>
+  <script src="/static/lib/jquery/jquery.min.js"></script>
+  <script src="/static/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="/static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/lib/easing/easing.min.js"></script>
+  <script src="/static/lib/mobile-nav/mobile-nav.js"></script>
+  <script src="/static/lib/wow/wow.min.js"></script>
+  <script src="/static/lib/waypoints/waypoints.min.js"></script>
+  <script src="/static/lib/counterup/counterup.min.js"></script>
+  <script src="/static/lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="/static/lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="/static/lib/lightbox/js/lightbox.min.js"></script>
   <!-- Contact Form JavaScript File -->
-  <script src="../resources/contactform/contactform.js"></script>
+  <script src="/static/contactform/contactform.js"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="../resources/js/main.js"></script>
+  <script src="/static/js/main.js"></script>
 
 </body>
 </html>
