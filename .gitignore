@@ -16,7 +16,8 @@ build/
 .sts4-cache
 bin/
 **/src/main/resources/application.properties
-**/.dbeaver
+**/.dbeaver/*.bak
+**/.dbeaver/*.json
 
 !**/src/main/**/bin/
 !**/src/test/**/bin/
