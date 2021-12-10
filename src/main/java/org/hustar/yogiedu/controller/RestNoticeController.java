@@ -16,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/api")
 public class RestNoticeController {
 
-	private NoticeService noticeService;
+	private final NoticeService noticeService;
 
 	@GetMapping("/noticeList")
 	public ResponseEntity<Object> getNoticeList() {

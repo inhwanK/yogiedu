@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Service
 public class NoticeService {
+	
 	private final NoticeRepository noticeRepository;
 	
 	@Transactional
