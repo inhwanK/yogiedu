@@ -15,11 +15,12 @@ build/
 .springBeans
 .sts4-cache
 bin/
+**/src/main/resources/application.properties
+/dbeaver
+
 !**/src/main/**/bin/
 !**/src/test/**/bin/
-!**/src/main/resources/application.properties
-!.dbeaver/*.bak
-!.dbeaver/*.json
+
 
 ### IntelliJ IDEA ###
 .idea
