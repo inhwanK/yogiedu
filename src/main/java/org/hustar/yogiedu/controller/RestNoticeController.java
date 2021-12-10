@@ -2,7 +2,6 @@ package org.hustar.yogiedu.controller;
 
 import java.util.Optional;
 
-import org.hustar.yogiedu.dao.NoticeDao;
 import org.hustar.yogiedu.domain.notice.Notice;
 import org.hustar.yogiedu.domain.notice.NoticeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 public class RestNoticeController {
-
-	@Autowired
-	private NoticeDao dao;
 
 	@Autowired
 	private NoticeRepository noticeRepository;

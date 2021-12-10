@@ -11,5 +11,4 @@ public class NoticeController {
 		return "notice"; // 페이지 파일 이름
 	}
 	
-
 }

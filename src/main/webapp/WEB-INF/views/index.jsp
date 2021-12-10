@@ -59,7 +59,7 @@
           <li><a href="#">예약하기</a></li>
           <li><a href="#">학원찾기</a></li>
           <li><a href="#">등록하기</a></li>
-          <li><a href="${contextPath}/WEB-INF/views/notice.jsp">내시간표</a></li>
+          <li><a href="${contextPath}/notice">내시간표</a></li>
           <li class="drop-down"><a href="">Quick Menu</a>
             <ul>
                   <li><a href="#about">About us</a></li>
