@@ -40,5 +40,10 @@ public class Notice {
 		this.writer = writer;
 	}
 	
+	public void update(String notTitle, String notContent) {
+		this.notTitle = notTitle;
+		this.notContent = notContent;
+	}
+	
 	
 }

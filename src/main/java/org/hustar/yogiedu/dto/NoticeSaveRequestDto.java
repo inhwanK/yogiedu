@@ -30,6 +30,7 @@ public class NoticeSaveRequestDto {
 		return Notice.builder()
 				.notTitle(notTitle)
 				.notContent(notContent)
+				.regDate(regDate)
 				.writer(writer)
 				.build();
 	}
