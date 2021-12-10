@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="<%=request.getContextPath() %>" />
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -18,17 +19,18 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="/static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="/static/lib/animate/animate.min.css" rel="stylesheet">
-  <link href="/static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="/static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/css/animate.min.css" rel="stylesheet">
+  <link href="/static/css/ionicons.min.css" rel="stylesheet">
+  <link href="/static/css/owl.carousel.min.css" rel="stylesheet">
+  <link href="/static/css/lightbox.min.css" rel="stylesheet">
+  <link href="https://bootstrapmade.com/demo/template/NewBiz/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="/static/dist/css/style3.css" type="text/css" rel="stylesheet">
+  <link href="/static/css/style3.css" type="text/css" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: NewBiz
@@ -58,7 +60,7 @@
           <li><a href="#">예약하기</a></li>
           <li><a href="#">학원찾기</a></li>
           <li><a href="#">등록하기</a></li>
-          <li><a href="#">내시간표</a></li>
+          <li><a href="${contextPath}/WEB-INF/views/notice.jsp">내시간표</a></li>
           <li class="drop-down"><a href="">Quick Menu</a>
             <ul>
                   <li><a href="#about">About us</a></li>
@@ -118,13 +120,13 @@
             </p>
 
             <div class="icon-box wow fadeInUp">
-              <div class="icon"><i class="fa fa-shopping-bag"></i></div>
+              <div class="icon"><i class="fa fa-calendar"></i></div>
               <h4 class="title"><a href="">장바구니 시간표</a></h4>
               <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
             </div>
 
             <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
-              <div class="icon"><i class="fa fa-photo"></i></div>
+              <div class="icon"><i class="fa fa-address-card"></i></div>
               <h4 class="title"><a href="">학원 소개</a></h4>
               <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
             </div>
@@ -323,12 +325,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="/static/img/portfolio/app1.jpg" class="img-fluid" alt="">
+              <img src="/static/img/app1.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">App 1</a></h4>
                 <p>App</p>
                 <div>
-                  <a href="/static/img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/static/img/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -337,12 +339,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.1s">
             <div class="portfolio-wrap">
-              <img src="/static/img/portfolio/web3.jpg" class="img-fluid" alt="">
+              <img src="/static/img/web3.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">Web 3</a></h4>
                 <p>Web</p>
                 <div>
-                  <a href="/static/img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/static/img/web3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -351,12 +353,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app" data-wow-delay="0.2s">
             <div class="portfolio-wrap">
-              <img src="/static/img/portfolio/app2.jpg" class="img-fluid" alt="">
+              <img src="/static/img/app2.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">App 2</a></h4>
                 <p>App</p>
                 <div>
-                  <a href="/static/img/portfolio/app2.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/static/img/app2.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -365,12 +367,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="/static/img/portfolio/card2.jpg" class="img-fluid" alt="">
+              <img src="/static/img/card2.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">Card 2</a></h4>
                 <p>Card</p>
                 <div>
-                  <a href="/static/img/portfolio/card2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/static/img/card2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -379,12 +381,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.1s">
             <div class="portfolio-wrap">
-              <img src="/static/img/portfolio/web2.jpg" class="img-fluid" alt="">
+              <img src="/static/img/web2.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">Web 2</a></h4>
                 <p>Web</p>
                 <div>
-                  <a href="/static/img/portfolio/web2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/static/img/web2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -393,12 +395,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app" data-wow-delay="0.2s">
             <div class="portfolio-wrap">
-              <img src="/static/img/portfolio/app3.jpg" class="img-fluid" alt="">
+              <img src="/static/img/app3.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">App 3</a></h4>
                 <p>App</p>
                 <div>
-                  <a href="/static/img/portfolio/app3.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/static/img/app3.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -407,12 +409,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
-              <img src="/static/img/portfolio/card1.jpg" class="img-fluid" alt="">
+              <img src="/static/img/card1.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">Card 1</a></h4>
                 <p>Card</p>
                 <div>
-                  <a href="/static/img/portfolio/card1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/static/img/card1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -421,12 +423,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card" data-wow-delay="0.1s">
             <div class="portfolio-wrap">
-              <img src="/static/img/portfolio/card3.jpg" class="img-fluid" alt="">
+              <img src="/static/img/card3.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">Card 3</a></h4>
                 <p>Card</p>
                 <div>
-                  <a href="/static/img/portfolio/card3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/static/img/card3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -435,12 +437,12 @@
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.2s">
             <div class="portfolio-wrap">
-              <img src="/static/img/portfolio/web1.jpg" class="img-fluid" alt="">
+              <img src="/static/img/web1.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4><a href="#">Web 1</a></h4>
                 <p>Web</p>
                 <div>
-                  <a href="/static/img/portfolio/web1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="/static/img/web1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
                   <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
                 </div>
               </div>
@@ -626,49 +628,49 @@
 
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="/static/img/clients/client-1.png" class="img-fluid" alt="">
+              <img src="/static/img/client-1.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="/static/img/clients/client-2.png" class="img-fluid" alt="">
+              <img src="/static/img/client-2.png" class="img-fluid" alt="">
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="/static/img/clients/client-3.png" class="img-fluid" alt="">
+              <img src="/static/img/client-3.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="/static/img/clients/client-4.png" class="img-fluid" alt="">
+              <img src="/static/img/client-4.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="/static/img/clients/client-5.png" class="img-fluid" alt="">
+              <img src="/static/img/client-5.png" class="img-fluid" alt="">
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="/static/img/clients/client-6.png" class="img-fluid" alt="">
+              <img src="/static/img/client-6.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="/static/img/clients/client-7.png" class="img-fluid" alt="">
+              <img src="/static/img/client-7.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="/static/img/clients/client-8.png" class="img-fluid" alt="">
+              <img src="/static/img/client-8.png" class="img-fluid" alt="">
             </div>
           </div>
 
@@ -827,19 +829,19 @@
   <!-- <div id="preloader"></div> -->
 
   <!-- JavaScript Libraries -->
-  <script src="/static/lib/jquery/jquery.min.js"></script>
-  <script src="/static/lib/jquery/jquery-migrate.min.js"></script>
-  <script src="/static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/static/lib/easing/easing.min.js"></script>
-  <script src="/static/lib/mobile-nav/mobile-nav.js"></script>
-  <script src="/static/lib/wow/wow.min.js"></script>
-  <script src="/static/lib/waypoints/waypoints.min.js"></script>
-  <script src="/static/lib/counterup/counterup.min.js"></script>
-  <script src="/static/lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="/static/lib/isotope/isotope.pkgd.min.js"></script>
-  <script src="/static/lib/lightbox/js/lightbox.min.js"></script>
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/jquery-migrate.min.js"></script>
+  <script src="/static/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/easing.min.js"></script>
+  <script src="/static/js/mobile-nav.js"></script>
+  <script src="/static/js/wow.min.js"></script>
+  <script src="/static/js/waypoints.min.js"></script>
+  <script src="/static/js/counterup.min.js"></script>
+  <script src="/static/js/owl.carousel.min.js"></script>
+  <script src="/static/js/isotope.pkgd.min.js"></script>
+  <script src="/static/js/lightbox.min.js"></script>
   <!-- Contact Form JavaScript File -->
-  <script src="/static/contactform/contactform.js"></script>
+  <script src="/static/js/contactform.js"></script>
 
   <!-- Template Main Javascript File -->
   <script src="/static/js/main.js"></script>

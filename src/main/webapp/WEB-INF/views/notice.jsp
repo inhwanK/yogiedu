@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="utf-8">
@@ -17,17 +17,20 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="/static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="/static/lib/animate/animate.min.css" rel="stylesheet">
-  <link href="/static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="/static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/css/animate.min.css" rel="stylesheet">
+  <link href="/static/css/ionicons.min.css" rel="stylesheet">
+  <link href="/static/css/owl.carousel.min.css" rel="stylesheet">
+  <link href="/static/css/lightbox.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="/static/dist/css/style3.css" rel="stylesheet">
+  <link href="/static/css/style3.css" rel="stylesheet">
+  <link href="/static/css/table.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
   <!-- =======================================================
     Theme Name: NewBiz
@@ -88,65 +91,151 @@
 			<div class="notice-img">
 				<img src="/static/img/qna.jpg" alt="" style="width:100%;">
 			</div>
-			<div class="notice-content">
-				<nav class="navbar-default navbar-side" role="navigation">
-					<div class="sidebar-collapse">
-						<ul class="nav" id="main-menu">
-							<li>
-								<a href="#none"><i class="fa fa-dashboard"></i>게시판</a>
-							</li>
-							<li>
-								<a href="#none"><i class="fa fa-sitemap"></i>이벤트<span class="fa arrow"></span></a>
-							</li>
-							<li style="margin-left:16px;">
-								<a href="#none"><i class="fa fa-table"></i>진행중인 이벤트</a>
-							</li>
-							<li style="margin-left:16px;">
-								<a href="#none"><i class="fa fa-edit"></i>당첨자 발표</a>
-							</li>
-						</ul>
-					</div>
-				</nav>
-			<!-- /. NAV SIDE  -->
-				
-				<div class="notice-bbs">
-					<div class="table-responsive-md">
-						<table class="table">
-							<caption>List of users</caption>
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">First</th>
-									<th scope="col">Last</th>
-									<th scope="col">Handle</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th scope="row">1</th>
-									<td>Mark</td>
-									<td>Otto</td>
-									<td>@mdo</td>
-								</tr>
-								<tr>
-									<th scope="row">2</th>
-									<td>Jacob</td>
-									<td>Thornton</td>
-									<td>@fat</td>
-								</tr>
-								<tr>
-									<th scope="row">3</th>
-									<td>Larry</td>
-									<td>the Bird</td>
-									<td>@twitter</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
+      
+        <div class="navbar navbar-default visible-xs">
+          <div class="container-fluid">
+            <button class="btn btn-default navbar-btn" data-toggle="collapse" data-target="#filter-sidebar">
+              <i class="fa fa-tasks"></i> Toggle Sidebar
+            </button>
+          </div>
+        </div>
+        
+        <div class="container-fluid">
+          <div class="row">
+            <!-- filter sidebar -->
+            <div id="filter-sidebar" class="col-xs-6 col-sm-2 visible-sm visible-md visible-lg collapse sliding-sidebar">
+              <div>
+                <h4 data-toggle="collapse" data-target="#group-1">
+                  공지사항
+                </h4>
+                <div id="group-1" class="list-group collapse in">
+                  <a class="list-group-item" href="#">
+                    <i class="fa fa-dashboard"></i>YOGIEDU 공지
+                  </a>
+                </div>
+              </div>
+              
+              <div>
+                <h4 data-toggle="collapse" data-target="#group-2">
+                  <i class="fa fa-sitemap"></i>이벤트
+                </h4>
+                <div id="group-2" class="list-group collapse in">
+                  <a class="list-group-item" href="#">
+                    <i class="fa fa-table"></i>진행중인 이벤트
+                  </a>
+                  <a class="list-group-item" href="#">
+                    <i class="fa fa-edit"></i>당첨자 발표
+                  </a>
+                </div>
+              </div>
+            </div>
+        
+            <!-- table container -->
+            <div class="col-sm-10" >
+              <table class="table table-striped table-hover table-responsive-sm" style="margin-top:10px;">
+                <thead>
+                  <tr>
+                    <th style="text-align:center;">Title</th>
+                    <th style="text-align:center;">Artist</th>
+                    <th class="align-right" style="text-align:center;">Price</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="valign-middle" data-label="Title">
+                      <a href="#">See You Again</a>
+                    </td>
+                    <td class="valign-middle" data-label="Artist">
+                      Wiz Khalifa
+                    </td>
+                    <td class="valign-middle align-right" data-label="Price">
+                      $1.99
+                    </td>
+                    <td class="valign-middle align-right">
+                      <a class="btn btn-default" href="#" data-toggle="tooltip" title="추천하기" data-placement="bottom" data-trigger="hover">
+                        <i class="fa fa-thumbs-up"></i>
+                        <span class="visible-xs">추천하기</span>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="valign-middle" data-label="Title">
+                      <a href="#">See You Again</a>
+                    </td>
+                    <td class="valign-middle" data-label="Artist">
+                      Wiz Khalifa
+                    </td>
+                    <td class="valign-middle align-right" data-label="Price">
+                      $1.99
+                    </td>
+                    <td class="valign-middle align-right">
+                      <a class="btn btn-default" href="#" data-toggle="tooltip" title="추천하기" data-placement="bottom" data-trigger="hover">
+                        <i class="fa fa-thumbs-up"></i>
+                        <span class="visible-xs">추천하기</span>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="valign-middle" data-label="Title">
+                      <a href="#">See You Again</a>
+                    </td>
+                    <td class="valign-middle" data-label="Artist">
+                      Wiz Khalifa
+                    </td>
+                    <td class="valign-middle align-right" data-label="Price">
+                      $1.99
+                    </td>
+                    <td class="valign-middle align-right">
+                      <a class="btn btn-default" href="#" data-toggle="tooltip" title="추천하기" data-placement="bottom" data-trigger="hover">
+                        <i class="fa fa-thumbs-up"></i>
+                        <span class="visible-xs">추천하기</span>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="valign-middle" data-label="Title">
+                      <a href="#">See You Again</a>
+                    </td>
+                    <td class="valign-middle" data-label="Artist">
+                      Wiz Khalifa
+                    </td>
+                    <td class="valign-middle align-right" data-label="Price">
+                      $1.99
+                    </td>
+                    <td class="valign-middle align-right">
+                      <a class="btn btn-default" href="#" data-toggle="tooltip" title="Add to Cart" data-placement="bottom" data-trigger="hover">
+                        <i class="fa fa-cart-plus"></i>
+                        <span class="visible-xs">Add to Cart</span>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="valign-middle" data-label="Title">
+                      <a href="#">See You Again</a>
+                    </td>
+                    <td class="valign-middle" data-label="Artist">
+                      Wiz Khalifa
+                    </td>
+                    <td class="valign-middle align-right" data-label="Price">
+                      $1.99
+                    </td>
+                    <td class="valign-middle align-right">
+                      <a class="btn btn-default" href="#" data-toggle="tooltip" title="Add to Cart" data-placement="bottom" data-trigger="hover">
+                        <i class="fa fa-cart-plus"></i>
+                        <span class="visible-xs">Add to Cart</span>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
 			</div>
     </div>
-  </section><!-- #intro -->
+  </section>
+  <!-- #intro -->
 
 
   <!--==========================
@@ -226,19 +315,21 @@
   <!-- <div id="preloader"></div> -->
 
   <!-- JavaScript Libraries -->
-  <script src="/static/lib/jquery/jquery.min.js"></script>
-  <script src="/static/lib/jquery/jquery-migrate.min.js"></script>
-  <script src="/static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/static/lib/easing/easing.min.js"></script>
-  <script src="/static/lib/mobile-nav/mobile-nav.js"></script>
-  <script src="/static/lib/wow/wow.min.js"></script>
-  <script src="/static/lib/waypoints/waypoints.min.js"></script>
-  <script src="/static/lib/counterup/counterup.min.js"></script>
-  <script src="/static/lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="/static/lib/isotope/isotope.pkgd.min.js"></script>
-  <script src="/static/lib/lightbox/js/lightbox.min.js"></script>
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/jquery-migrate.min.js"></script>
+  <script src="/static/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/easing.min.js"></script>
+  <script src="/static/js/mobile-nav.js"></script>
+  <script src="/static/js/wow.min.js"></script>
+  <script src="/static/js/waypoints.min.js"></script>
+  <script src="/static/js/counterup.min.js"></script>
+  <script src="/static/js/owl.carousel.min.js"></script>
+  <script src="/static/js/isotope.pkgd.min.js"></script>
+  <script src="/static/js/lightbox.min.js"></script>
+  
+
   <!-- Contact Form JavaScript File -->
-  <script src="/static/contactform/contactform.js"></script>
+  <script src="/static/js/contactform.js"></script>
 
   <!-- Template Main Javascript File -->
   <script src="/static/js/main.js"></script>
@@ -270,8 +361,17 @@
 	}(jQuery));
 	
 	</script>
+  <script>
+    if (!isTouchDevice()) {
+      $('[data-toggle*="tooltip"]').tooltip();
+    }
+    
+    // utility
+    
+    function isTouchDevice() {
+      return !!('ontouchstart' in window || navigator.msMaxTouchPoints);
+    }
+  </script>
 
 </body>
 </html>
-
-<!--http://code.jequery.com-->

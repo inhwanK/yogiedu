@@ -17,17 +17,17 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="/static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="/static/lib/animate/animate.min.css" rel="stylesheet">
-  <link href="/static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="/static/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/css/animate.min.css" rel="stylesheet">
+  <link href="/static/css/ionicons.min.css" rel="stylesheet">
+  <link href="/static/css/owl.carousel.min.css" rel="stylesheet">
+  <link href="/static/css/lightbox.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="/static/dist/css/style3.css" rel="stylesheet">
+  <link href="/static/css/style3.css" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: NewBiz
@@ -575,19 +575,19 @@
   <!-- <div id="preloader"></div> -->
 
   <!-- JavaScript Libraries -->
-  <script src="/static/lib/jquery/jquery.min.js"></script>
-  <script src="/static/lib/jquery/jquery-migrate.min.js"></script>
-  <script src="/static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/static/lib/easing/easing.min.js"></script>
-  <script src="/static/lib/mobile-nav/mobile-nav.js"></script>
-  <script src="/static/lib/wow/wow.min.js"></script>
-  <script src="/static/lib/waypoints/waypoints.min.js"></script>
-  <script src="/static/lib/counterup/counterup.min.js"></script>
-  <script src="/static/lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="/static/lib/isotope/isotope.pkgd.min.js"></script>
-  <script src="/static/lib/lightbox/js/lightbox.min.js"></script>
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/jquery-migrate.min.js"></script>
+  <script src="/static/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/easing.min.js"></script>
+  <script src="/static/js/mobile-nav.js"></script>
+  <script src="/static/js/wow.min.js"></script>
+  <script src="/static/js/waypoints.min.js"></script>
+  <script src="/static/js/counterup.min.js"></script>
+  <script src="/static/js/owl.carousel.min.js"></script>
+  <script src="/static/js/isotope.pkgd.min.js"></script>
+  <script src="/static/js/lightbox.min.js"></script>
   <!-- Contact Form JavaScript File -->
-  <script src="/static/contactform/contactform.js"></script>
+  <script src="/static/js/contactform.js"></script>
 
   <!-- Template Main Javascript File -->
   <script src="/static/js/main.js"></script>
