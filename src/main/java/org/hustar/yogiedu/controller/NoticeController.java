@@ -10,5 +10,6 @@ public class NoticeController {
 	public String notice() {
 		return "notice"; // 페이지 파일 이름
 	}
+
 	
 }
