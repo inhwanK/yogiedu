@@ -4,8 +4,7 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
-application.properties
-.dbeaver
+
 
 ### STS ###
 .apt_generated
@@ -18,6 +17,8 @@ application.properties
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
+!**/src/main/resource/application.properties
+!.dbeaver/
 
 ### IntelliJ IDEA ###
 .idea
