@@ -18,7 +18,8 @@ bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 !**/src/main/resources/application.properties
-!.dbeaver
+!.dbeaver/*.bak
+!.dbeaver/*.json
 
 ### IntelliJ IDEA ###
 .idea
