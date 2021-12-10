@@ -30,7 +30,7 @@ CREATE TABLE `yogiedu`.`notice` (
 	`not_idx`     INT(11)      NOT NULL COMMENT '공지번호', -- 공지번호
 	`not_title`   VARCHAR(50)  NOT NULL COMMENT '공지제목', -- 공지제목
 	`not_content` VARCHAR(300) NOT NULL COMMENT '글내용', -- 글내용
-	`reg_date`    DATETIME     NOT NULL COMMENT '작성일', -- 작성일
+	`reg_date`    DATETIME     NULL COMMENT '작성일', -- 작성일
 	`writer`      VARCHAR(20)  NOT NULL COMMENT '작성자' -- 작성자
 )
 COMMENT '공지사항';

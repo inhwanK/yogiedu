@@ -1,7 +1,7 @@
 package org.hustar.yogiedu.controller;
 
-import org.hustar.yogiedu.domain.notice.NoticeRepository;
-import org.hustar.yogiedu.dto.NoticeDto;
+import org.hustar.yogiedu.dto.NoticeSaveRequestDto;
+import org.hustar.yogiedu.service.NoticeService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,10 +16,10 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/api")
 public class RestNoticeController {
 
-	private NoticeRepository noticeRepository;
+	private NoticeService noticeService;
 
-	@GetMapping("/notice")
-	public ResponseEntity<Object> getNotice() {
+	@GetMapping("/noticeList")
+	public ResponseEntity<Object> getNoticeList() {
 
 //		Notice notice;
 //		Optional<Notice> result = noticeRepository.findById((long) 1);
@@ -31,7 +31,7 @@ public class RestNoticeController {
 	}
 	
 	@PostMapping("/notice")
-	public Long save(@RequestBody NoticeDto noticeDto) {
-		return 
+	public Long save(@RequestBody NoticeSaveRequestDto noticeDto) {
+		return noticeService.save(noticeDto);
 	}
 }
