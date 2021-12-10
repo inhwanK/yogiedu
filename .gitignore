@@ -5,6 +5,7 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+
 ### STS ###
 .apt_generated
 .classpath
@@ -14,8 +15,13 @@ build/
 .springBeans
 .sts4-cache
 bin/
+**/src/main/resources/application.properties
+**/.dbeaver/*.bak
+**/.dbeaver/*.json
+
 !**/src/main/**/bin/
 !**/src/test/**/bin/
+
 
 ### IntelliJ IDEA ###
 .idea

@@ -41,7 +41,6 @@
 </head>
 
 <body>
-
   <!--==========================
   Header
   ============================-->
@@ -845,6 +844,5 @@
 
   <!-- Template Main Javascript File -->
   <script src="/static/js/main.js"></script>
-
 </body>
 </html>
