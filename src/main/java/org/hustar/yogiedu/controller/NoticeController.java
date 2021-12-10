@@ -5,9 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class NoticeController {
-
-	@GetMapping("/")
-	public String index() {
-		return "index";
+	
+	@GetMapping("/notice") // 경로 이름
+	public String notice() {
+		return "notice"; // 페이지 파일 이름
 	}
+	
+
 }
