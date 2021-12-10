@@ -1,6 +1,8 @@
 package org.hustar.yogiedu.domain.notice;
 
-import java.sql.Date;
+
+
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,6 +38,11 @@ public class Notice {
 		this.notContent = notContent;
 		this.regDate = regDate;
 		this.writer = writer;
+	}
+	
+	public void update(String notTitle, String notContent) {
+		this.notTitle = notTitle;
+		this.notContent = notContent;
 	}
 	
 	
