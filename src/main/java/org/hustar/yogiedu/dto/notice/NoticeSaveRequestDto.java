@@ -1,4 +1,4 @@
-package org.hustar.yogiedu.dto;
+package org.hustar.yogiedu.dto.notice;
 
 import java.util.Date;
 

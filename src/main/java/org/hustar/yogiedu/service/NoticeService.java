@@ -7,9 +7,9 @@ import javax.transaction.Transactional;
 
 import org.hustar.yogiedu.domain.notice.Notice;
 import org.hustar.yogiedu.domain.notice.NoticeRepository;
-import org.hustar.yogiedu.dto.NoticeResponseDto;
-import org.hustar.yogiedu.dto.NoticeSaveRequestDto;
-import org.hustar.yogiedu.dto.NoticeUpdateRequestDto;
+import org.hustar.yogiedu.dto.notice.NoticeResponseDto;
+import org.hustar.yogiedu.dto.notice.NoticeSaveRequestDto;
+import org.hustar.yogiedu.dto.notice.NoticeUpdateRequestDto;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
@@ -53,5 +53,11 @@ public class NoticeService {
 				.orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id="+notIdx));
 		
 		return new NoticeResponseDto(entity);
+	}
+	
+	@Transactional
+	public Long deleteById(Long notIdx) {
+		noticeRepository.deleteById(notIdx);
+		return notIdx;
 	}
 }
