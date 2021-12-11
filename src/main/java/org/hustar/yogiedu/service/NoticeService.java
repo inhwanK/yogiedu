@@ -1,5 +1,6 @@
 package org.hustar.yogiedu.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -34,9 +35,15 @@ public class NoticeService {
 	}
 	
 	@Transactional
-	public List<Notice> findAll(){
+	public List<NoticeResponseDto> findAll(){
 		
-		List<Notice> noticeList = noticeRepository.findAll();
+		List<Notice> entityList = noticeRepository.findAll();
+		List<NoticeResponseDto> noticeList = new ArrayList<NoticeResponseDto>();
+		
+		for(int i = 0;i < entityList.size();i++) {
+			noticeList.add(new NoticeResponseDto(entityList.get(i)));
+		}
+		
 		return noticeList;
 	}
 	
