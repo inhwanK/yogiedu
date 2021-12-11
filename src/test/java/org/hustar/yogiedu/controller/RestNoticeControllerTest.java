@@ -7,8 +7,8 @@ import java.util.List;
 
 import org.hustar.yogiedu.domain.notice.Notice;
 import org.hustar.yogiedu.domain.notice.NoticeRepository;
-import org.hustar.yogiedu.dto.NoticeSaveRequestDto;
-import org.hustar.yogiedu.dto.NoticeUpdateRequestDto;
+import org.hustar.yogiedu.dto.notice.NoticeSaveRequestDto;
+import org.hustar.yogiedu.dto.notice.NoticeUpdateRequestDto;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;

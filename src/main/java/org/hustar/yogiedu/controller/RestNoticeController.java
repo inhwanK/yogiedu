@@ -2,12 +2,10 @@ package org.hustar.yogiedu.controller;
 
 import java.util.List;
 
-import org.hustar.yogiedu.domain.notice.Notice;
-import org.hustar.yogiedu.dto.NoticeResponseDto;
-import org.hustar.yogiedu.dto.NoticeSaveRequestDto;
-import org.hustar.yogiedu.dto.NoticeUpdateRequestDto;
+import org.hustar.yogiedu.dto.notice.NoticeResponseDto;
+import org.hustar.yogiedu.dto.notice.NoticeSaveRequestDto;
+import org.hustar.yogiedu.dto.notice.NoticeUpdateRequestDto;
 import org.hustar.yogiedu.service.NoticeService;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,13 +26,6 @@ public class RestNoticeController {
 
 	@GetMapping("/noticeList")
 	public List<NoticeResponseDto> getNoticeList() {
-
-//		Notice notice;
-//		Optional<Notice> result = noticeRepository.findById((long) 1);
-//		
-//		notice = result.get();
-//		System.out.println(notice);
-//		return ResponseEntity.status(HttpStatus.OK).body(notice);
 		return noticeService.findAll();
 	}
 	
@@ -54,7 +45,7 @@ public class RestNoticeController {
 	}
 	
 	@DeleteMapping("/notice/{notIdx}")
-	public Long deleteNotice(@PathVariable Long notidx) {
-		return null;
+	public Long deleteNotice(@PathVariable Long notIdx) {
+		return noticeService.deleteById(notIdx);
 	}
 }
