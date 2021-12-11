@@ -26,7 +26,6 @@ public class RestNoticeController {
 
 	@GetMapping("/noticeList")
 	public List<NoticeResponseDto> getNoticeList() {
-
 		return noticeService.findAll();
 	}
 	
