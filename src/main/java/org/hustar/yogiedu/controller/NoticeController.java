@@ -11,10 +11,5 @@ public class NoticeController {
 		return "notice/notice"; // 페이지 파일 이름
 	}
 	
-	@GetMapping("/board")
-	public String noticeList() {
-		return "boardlist/boardEX";
-	}
 
-	
 }

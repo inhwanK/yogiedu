@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/views/header.jsp"%>
+
     <section id="intro" class="clearfix">
         <div class="container">
 
@@ -49,7 +50,7 @@
                         </div>
 
                         <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
-                            <div class="icon"><i class="fa fa-bar-chart"></i></div>
+                            <div class="icon"><i class="fa fa-comments"></i></div>
                             <h4 class="title"><a href="">학부모들의 리뷰</a></h4>
                             <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
                         </div>
@@ -81,63 +82,63 @@
         </section>
 
         <section id="services" class="section-bg">
-            <div class="container">
-
-                <header class="section-header">
-                    <h3>제공하는 서비스</h3>
-                    <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
-                </header>
-
-                <div class="row">
-
-                    <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-duration="1.4s">
-                        <div class="box">
-                            <div class="icon"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
-                            <h4 class="title"><a href="">생생 리뷰</a></h4>
-                            <p class="description">어떤 학원인지 학부모님들의 리뷰를 통해 따져보고, 고민해보세요!</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-duration="1.4s">
-                        <div class="box">
-                            <div class="icon"><i class="ion-ios-bookmarks-outline" style="color: #e9bf06;"></i></div>
-                            <h4 class="title"><a href="">학원 리뷰하기</a></h4>
-                            <p class="description">아이를 학원에 보낸것을 토대로, 경험을 이야기 해주세요! <br> 다른 학부모님들에게 큰 도움이 됩니다</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-                        <div class="box">
-                            <div class="icon"><i class="ion-ios-paper-outline" style="color: #3fcdc7;"></i></div>
-                            <h4 class="title"><a href="">학원소개</a></h4>
-                            <p class="description">학부모님들의 리뷰 뿐만 아니라 각각의 학원에서도 자신들을 소개 하고 있습니다</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-                        <div class="box">
-                            <div class="icon"><i class="ion-ios-speedometer-outline" style="color:#41cf2e;"></i></div>
-                            <h4 class="title"><a href="">시간표 짜기</a></h4>
-                            <p class="description">여러 학원을 보낼 때 아이 동선도 고려하고 쉬는시간도 고려해서 좀 더 좋은 시간표를 짜실 수 있게 한눈에 알아볼 수 있는 시간표를 제공해 드립니다</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-5 offset-lg-1 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
-                        <div class="box">
-                            <div class="icon"><i class="ion-ios-world-outline" style="color: #d6ff22;"></i></div>
-                            <h4 class="title"><a href="">저렴한 사용료</a></h4>
-                            <p class="description">학원을 많이 보내신다고 해서 돈을 더 받지 않습니다.<br>넷플릭스나, 유투브처럼 구독료를 내시되 저렴하게 사용하세요</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-5 wow bounceInUp" data-wow-delay="0.2s" data-wow-duration="1.4s">
-                        <div class="box">
-                            <div class="icon"><i class="ion-ios-clock-outline" style="color: #4680ff;"></i></div>
-                            <h4 class="title"><a href="">고객센터</a></h4>
-                            <p class="description">불편한 점이 있으시다면 언제든지 저희 고객센터에 글을 남겨주세요!<br>최선을 다해 도와드리겠습니다</p>
-                        </div>
-                    </div>
-
+          <div class="container" data-aos="fade-up">
+    
+            <header class="section-header">
+      <h3>제공하는 서비스</h3>
+                       <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
+            </header>
+    
+            <div class="row justify-content-center">
+    
+              <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
+                <div class="box">
+                  <div class="icon"><i class="bi bi-briefcase" style="color: #ff689b;"></i></div>                            
+    <h4 class="title"><a href="">생생 리뷰</a></h4>
+                                <p class="description">어떤 학원인지 학부모님들의 리뷰를 통해 따져보고, 고민해보세요!</p>
                 </div>
-
+              </div>
+              <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="200">
+                <div class="box">
+                  <div class="icon"><i class="bi bi-card-checklist" style="color: #e9bf06;"></i></div>
+    <h4 class="title"><a href="">학원 리뷰하기</a></h4>
+                                <p class="description">아이를 학원에 보낸것을 토대로, 경험을 이야기 해주세요! <br> 다른 학부모님들에게 큰 도움이 됩니다</p>
+                </div>
+              </div>
+    
+              <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
+                <div class="box">
+                  <div class="icon"><i class="bi bi-bar-chart" style="color: #3fcdc7;"></i></div>
+    <h4 class="title"><a href="">학원소개</a></h4>
+                                <p class="description">학부모님들의 리뷰 뿐만 아니라 각각의 학원에서도 자신들을 소개 하고 있습니다</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="200">
+                <div class="box">
+                  <div class="icon"><i class="bi bi-binoculars" style="color:#41cf2e;"></i></div>
+    <h4 class="title"><a href="">시간표 짜기</a></h4>
+                                <p class="description">여러 학원을 보낼 때 아이 동선도 고려하고 쉬는시간도 고려해서 좀 더 좋은 시간표를 짜실 수 있게 한눈에 알아볼 수 있는 시간표를 제공해 드립니다</p>
+                </div>
+              </div>
+    
+              <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
+                <div class="box">
+                  <div class="icon"><i class="bi bi-brightness-high" style="color: #d6ff22;"></i></div>
+    <h4 class="title"><a href="">저렴한 사용료</a></h4>
+                                <p class="description">학원을 많이 보내신다고 해서 돈을 더 받지 않습니다.<br>넷플릭스나, 유투브처럼 구독료를 내시되 저렴하게 사용하세요</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="200">
+                <div class="box">
+                  <div class="icon"><i class="bi bi-calendar4-week" style="color: #4680ff;"></i></div>
+    <h4 class="title"><a href="">고객센터</a></h4>
+                                <p class="description">불편한 점이 있으시다면 언제든지 저희 고객센터에 글을 남겨주세요!<br>최선을 다해 도와드리겠습니다</p>
+                </div>
+              </div>
+    
             </div>
+    
+          </div>
         </section>
 
         <section id="why-us" class="wow fadeIn">
@@ -211,222 +212,233 @@
 
             </div>
         </section>
-
         <section id="portfolio" class="clearfix">
-            <div class="container">
-
-                <header class="section-header">
-                    <h3 class="section-title">최근에 등록 학원들</h3>
-                </header>
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <ul id="portfolio-flters">
-                            <li data-filter="*" class="filter-active">모두</li>
-                            <li data-filter=".filter-app">국어</li>
-                            <li data-filter=".filter-card">영어</li>
-                            <li data-filter=".filter-web">수학</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="row portfolio-container">
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap">
-                            <img src="/static/img/app1.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4><a href="#">App 1</a></h4>
-                                <p>App</p>
-                                <div>
-                                    <a href="/static/img/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.1s">
-                        <div class="portfolio-wrap">
-                            <img src="/static/img/web3.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4><a href="#">Web 3</a></h4>
-                                <p>Web</p>
-                                <div>
-                                    <a href="/static/img/web3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app" data-wow-delay="0.2s">
-                        <div class="portfolio-wrap">
-                            <img src="/static/img/app2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4><a href="#">App 2</a></h4>
-                                <p>App</p>
-                                <div>
-                                    <a href="/static/img/app2.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="/static/img/card2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4><a href="#">Card 2</a></h4>
-                                <p>Card</p>
-                                <div>
-                                    <a href="/static/img/card2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.1s">
-                        <div class="portfolio-wrap">
-                            <img src="/static/img/web2.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4><a href="#">Web 2</a></h4>
-                                <p>Web</p>
-                                <div>
-                                    <a href="/static/img/web2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-app" data-wow-delay="0.2s">
-                        <div class="portfolio-wrap">
-                            <img src="/static/img/app3.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4><a href="#">App 3</a></h4>
-                                <p>App</p>
-                                <div>
-                                    <a href="/static/img/app3.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                        <div class="portfolio-wrap">
-                            <img src="/static/img/card1.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4><a href="#">Card 1</a></h4>
-                                <p>Card</p>
-                                <div>
-                                    <a href="/static/img/card1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-card" data-wow-delay="0.1s">
-                        <div class="portfolio-wrap">
-                            <img src="/static/img/card3.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4><a href="#">Card 3</a></h4>
-                                <p>Card</p>
-                                <div>
-                                    <a href="/static/img/card3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-web" data-wow-delay="0.2s">
-                        <div class="portfolio-wrap">
-                            <img src="/static/img/web1.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4><a href="#">Web 1</a></h4>
-                                <p>Web</p>
-                                <div>
-                                    <a href="/static/img/web1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
-                                    <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
+          <div class="container" data-aos="fade-up">
+    
+            <header class="section-header">
+              <h3 class="section-title">최근에 개설된 강좌</h3>
+            </header>
+    
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+              <div class="col-lg-12">
+                <ul id="portfolio-flters">
+                  <li data-filter="*" class="filter-active">All</li>
+                  <li data-filter=".filter-app">App</li>
+                  <li data-filter=".filter-card">Card</li>
+                  <li data-filter=".filter-web">Web</li>
+                </ul>
+              </div>
             </div>
+    
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+    
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                  <img src="/static/img/app1.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4><a href="portfolio-details.html">App 1</a></h4>
+                    <p>App</p>
+                    <div>
+                      <a href="/static/img/app1.jpg" data-gallery="portfolioGallery" title="App 1" class="portfolio-lightbox link-preview"><i class="bi bi-plus"></i></a>
+                      <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-wrap">
+                  <img src="/static/img/web3.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4><a href="portfolio-details.html">Web 3</a></h4>
+                    <p>Web</p>
+                    <div>
+                      <a href="/static/img/web3.jpg" class="portfolio-lightbox link-preview" data-gallery="portfolioGallery" title="Web 3"><i class="bi bi-plus"></i></a>
+                      <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                  <img src="/static/img/app2.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4><a href="portfolio-details.html">App 2</a></h4>
+                    <p>App</p>
+                    <div>
+                      <a href="/static/img/app2.jpg" class="portfolio-lightbox link-preview" data-gallery="portfolioGallery" title="App 2"><i class="bi bi-plus"></i></a>
+                      <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-wrap">
+                  <img src="/static/img/card2.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4><a href="portfolio-details.html">Card 2</a></h4>
+                    <p>Card</p>
+                    <div>
+                      <a href="/static/img/card2.jpg" class="portfolio-lightbox link-preview" data-gallery="portfolioGallery" title="Card 2"><i class="bi bi-plus"></i></a>
+                      <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-wrap">
+                  <img src="/static/img/web2.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4><a href="portfolio-details.html">Web 2</a></h4>
+                    <p>Web</p>
+                    <div>
+                      <a href="/static/img/web2.jpg" class="portfolio-lightbox link-preview" data-gallery="portfolioGallery" title="Web 2"><i class="bi bi-plus"></i></a>
+                      <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                  <img src="/static/img/app3.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4><a href="portfolio-details.html">App 3</a></h4>
+                    <p>App</p>
+                    <div>
+                      <a href="/static/img/app3.jpg" class="portfolio-lightbox link-preview" data-gallery="portfolioGallery" title="App 3"><i class="bi bi-plus"></i></a>
+                      <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-wrap">
+                  <img src="/static/img/card1.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4><a href="portfolio-details.html">Card 1</a></h4>
+                    <p>Card</p>
+                    <div>
+                      <a href="/static/img/card1.jpg" class="portfolio-lightbox link-preview" data-gallery="portfolioGallery" title="Card 1"><i class="bi bi-plus"></i></a>
+                      <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-wrap">
+                  <img src="/static/img/card3.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4><a href="portfolio-details.html">Card 3</a></h4>
+                    <p>Card</p>
+                    <div>
+                      <a href="/static/img/card3.jpg" class="portfolio-lightbox link-preview" data-gallery="portfolioGallery" title="Card 3"><i class="bi bi-plus"></i></a>
+                      <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-wrap">
+                  <img src="/static/img/web1.jpg" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4><a href="portfolio-details.html">Web 1</a></h4>
+                    <p>Web</p>
+                    <div>
+                      <a href="/static/img/web1.jpg" class="portfolio-lightbox link-preview" data-gallery="portfolioGallery" title="Web 1"><i class="bi bi-plus"></i></a>
+                      <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bi bi-link"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+            </div>
+    
+          </div>
         </section>
 
         <section id="testimonials" class="section-bg">
-            <div class="container">
-
-                <header class="section-header">
-                    <h3>생생리뷰</h3>
-                </header>
-
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-
-                        <div class="owl-carousel testimonials-carousel wow fadeInUp">
-
-                            <div class="testimonial-item">
-                                <img src="/static/img/testimonial-1.jpg" class="testimonial-img" alt="">
-                                <h3>Saul Goodman</h3>
-                                <h4>Ceo &amp; Founder</h4>
-                                <p>
-                                    Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                                </p>
-                            </div>
-
-                            <div class="testimonial-item">
-                                <img src="/static/img/testimonial-2.jpg" class="testimonial-img" alt="">
-                                <h3>Sara Wilsson</h3>
-                                <h4>Designer</h4>
-                                <p>
-                                    Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                                </p>
-                            </div>
-
-                            <div class="testimonial-item">
-                                <img src="/static/img/testimonial-3.jpg" class="testimonial-img" alt="">
-                                <h3>Jena Karlis</h3>
-                                <h4>Store Owner</h4>
-                                <p>
-                                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                                </p>
-                            </div>
-
-                            <div class="testimonial-item">
-                                <img src="/static/img/testimonial-4.jpg" class="testimonial-img" alt="">
-                                <h3>Matt Brandon</h3>
-                                <h4>Freelancer</h4>
-                                <p>
-                                    Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                                </p>
-                            </div>
-
-                            <div class="testimonial-item">
-                                <img src="/static/img/testimonial-5.jpg" class="testimonial-img" alt="">
-                                <h3>John Larson</h3>
-                                <h4>Entrepreneur</h4>
-                                <p>
-                                    Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </div>
+          <div class="container" data-aso="zoom-in">
+    
+            <header class="section-header">
+              <h3>생생리뷰</h3>
+            </header>
+    
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+    
+                <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                  <div class="swiper-wrapper">
+    
+                    <div class="swiper-slide">
+                      <div class="testimonial-item">
+                        <img src="/static/img/testimonial-1.jpg" class="testimonial-img" alt="">
+                        <h3>Saul Goodman</h3>
+                        <h4>Ceo &amp; Founder</h4>
+                        <p>
+                          Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                        </p>
+                      </div>
+                    </div><!-- End testimonial item -->
+    
+                    <div class="swiper-slide">
+                      <div class="testimonial-item">
+                        <img src="/static/img/testimonial-2.jpg" class="testimonial-img" alt="">
+                        <h3>Sara Wilsson</h3>
+                        <h4>Designer</h4>
+                        <p>
+                          Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                        </p>
+                      </div>
+                    </div><!-- End testimonial item -->
+    
+                    <div class="swiper-slide">
+                      <div class="testimonial-item">
+                        <img src="/static/img/testimonial-3.jpg" class="testimonial-img" alt="">
+                        <h3>Jena Karlis</h3>
+                        <h4>Store Owner</h4>
+                        <p>
+                          Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                        </p>
+                      </div>
+                    </div><!-- End testimonial item -->
+    
+                    <div class="swiper-slide">
+                      <div class="testimonial-item">
+                        <img src="/static/img/testimonial-4.jpg" class="testimonial-img" alt="">
+                        <h3>Matt Brandon</h3>
+                        <h4>Freelancer</h4>
+                        <p>
+                          Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                        </p>
+                      </div>
+                    </div><!-- End testimonial item -->
+    
+                    <div class="swiper-slide">
+                      <div class="testimonial-item">
+                        <img src="/static/img/testimonial-5.jpg" class="testimonial-img" alt="">
+                        <h3>John Larson</h3>
+                        <h4>Entrepreneur</h4>
+                        <p>
+                          Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                        </p>
+                      </div>
+                    </div><!-- End testimonial item -->
+    
+                  </div>
+                  <div class="swiper-pagination"></div>
                 </div>
-
-
+    
+              </div>
             </div>
+    
+          </div>
         </section>
 
         <section id="team">
@@ -449,7 +461,7 @@
                                         <a href=""><i class="fa fa-phone"></i></a>
                                         <a href=""><i class="fa fa-github"></i></a>
                                         <a href=""><i class="fa fa-instagram"></i></a>
-                                        <a href=""><i class="fa fa-envelope-o"></i></a>
+                                        <a href=""><i class="fa fa-envelope"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -464,10 +476,10 @@
                                     <h4>김인표</h4>
                                     <span>프런트엔드</span>
                                     <div class="social">
-                                        <a href=""><i class="fa fa-phone"></i></a>
-                                        <a href=""><i class="fa fa-github"></i></a>
-                                        <a href=""><i class="fa fa-instagram"></i></a>
-                                        <a href=""><i class="fa fa-envelope-o"></i></a>
+                                      <a href=""><i class="fa fa-phone"></i></a>
+                                      <a href=""><i class="fa fa-github"></i></a>
+                                      <a href=""><i class="fa fa-instagram"></i></a>
+                                      <a href=""><i class="fa fa-envelope"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -482,10 +494,10 @@
                                     <h4>김인환</h4>
                                     <span>백엔드, DB</span>
                                     <div class="social">
-                                        <a href=""><i class="fa fa-phone"></i></a>
-                                        <a href=""><i class="fa fa-github"></i></a>
-                                        <a href=""><i class="fa fa-instagram"></i></a>
-                                        <a href=""><i class="fa fa-envelope-o"></i></a>
+                                      <a href=""><i class="fa fa-phone"></i></a>
+                                      <a href=""><i class="fa fa-github"></i></a>
+                                      <a href=""><i class="fa fa-instagram"></i></a>
+                                      <a href=""><i class="fa fa-envelope"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -500,10 +512,10 @@
                                     <h4>이민기</h4>
                                     <span>백엔드</span>
                                     <div class="social">
-                                        <a href=""><i class="fa fa-phone"></i></a>
-                                        <a href=""><i class="fa fa-github"></i></a>
-                                        <a href=""><i class="fa fa-instagram"></i></a>
-                                        <a href=""><i class="fa fa-envelope-o"></i></a>
+                                      <a href=""><i class="fa fa-phone"></i></a>
+                                      <a href=""><i class="fa fa-github"></i></a>
+                                      <a href=""><i class="fa fa-instagram"></i></a>
+                                      <a href=""><i class="fa fa-envelope"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -598,15 +610,15 @@
                     <div class="col-lg-6">
                         <div class="row">
                             <div class="col-md-5 info">
-                                <i class="ion-ios-location-outline"></i>
+                                <i class="fa fa-map-marker"></i>
                                 <p>동내로 70, 대구 동구</p>
                             </div>
                             <div class="col-md-4 info">
-                                <i class="ion-ios-email-outline"></i>
+                                <i class="fa fa-envelope"></i>
                                 <p>info@yogiedu.com</p>
                             </div>
                             <div class="col-md-3 info">
-                                <i class="ion-ios-telephone-outline"></i>
+                                <i class="fa fa-mobile"></i>
                                 <p>+82 010 5128 3505</p>
                             </div>
                         </div>

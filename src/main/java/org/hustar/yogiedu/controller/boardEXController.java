@@ -8,7 +8,12 @@ public class boardEXController {
 	
 	@GetMapping("/boardEX") // 경로 이름
 	public String boardEX() {
-		return "boardEX"; // 페이지 파일 이름
+		return "boardlist/boardEX"; // 페이지 파일 이름
+	}
+	@GetMapping("/board")
+	public String noticeList() {
+		return "boardlist";
 	}
 
+	
 }

@@ -16,42 +16,40 @@
     <meta content="" name="description">
 
     <!-- Favicons -->
-    <link rel="icon" href="/static/img/Tlogo2_B.png">
-    <link rel="apple-touch-icon" href="/static/img/Tlogo2_b.png">
+    <link href="/static/img/favicon.png" rel="icon">
+    <link href="/static/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
     <!-- Bootstrap CSS File -->
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    
 
     <!-- Libraries CSS Files -->
-    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/static/css/animate.min.css">
-    <link rel="stylesheet" href="/static/css/ionicons.min.css">
-    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/static/css/lightbox.min.css">
-    <link rel="stylesheet" href="https://bootstrapmade.com/demo/template/NewBiz/assets/vendor/bootstrap-icons/bootstrap-icons.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css" />
-  	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css" />
-  	<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.css" />
-  	<link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.css" />
-  	<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.dataTables.css" />
-  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" />
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 
-  
     <!-- Main Stylesheet File -->
-    <link rel="stylesheet" href="/static/css/style3.css" type="text/css">
-    <link rel="stylesheet" href="/static/css/table.css">
+    <link href="/static/css/style3.css" rel="stylesheet">
+    
 </head>
 
 <body>
+
+    <!--==========================
+  Header
+  ============================-->
     <header id="header" class="fixed-top">
         <div class="container">
 
             <div class="logo float-left">
-                <a href="#intro" class="scrollto"><img src="/static/img/Tlogo2_B.png" alt="" class="img-fluid" style="width:100%;"></a>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
+                <a href="#intro" class="scrollto"><img src="/static/img/Tlogo2_B.png" alt="" class="img-fluid"></a>
             </div>
 
             <nav class="main-nav float-right d-none d-lg-block">

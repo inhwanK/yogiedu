@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <footer id="footer">
+     <footer id="footer">
         <div class="footer-top">
             <div class="container">
                 <div class="row">
 
                     <div class="col-lg-4 col-md-6 footer-info">
-                        <h3>YOGIEdU</h3>
+                        <h3>YOGIEDU</h3>
                         <p>최근 변화하는 입시 환경 및 나날이 복잡해지고<br>
                             전문화되고 있는 시대 변화와 맞물려 <br>
                             요기에듀 역시 쉼 없는 전진을 하겠습니다.<br><br>
@@ -36,11 +36,10 @@
                         </p>
 
                         <div class="social-links">
-                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-                            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                          <a href=""><i class="fa fa-phone"></i></a>
+                          <a href=""><i class="fa fa-github"></i></a>
+                          <a href=""><i class="fa fa-instagram"></i></a>
+                          <a href=""><i class="fa fa-envelope"></i></a>
                         </div>
 
                     </div>
@@ -68,33 +67,25 @@
         </div>
     </footer>
 
-    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+    
+    
 
-    <!-- JavaScript Libraries -->
-	<script src="/static/js/altEditor.js" ></script>
-	<script src="/static/js/boardEX.js" ></script>
-    <script src="/static/js/bootstrap.bundle.min.js"></script>
-    <script src="/static/js/counterup.min.js"></script>
-    <script src="/static/js/contactform.js"></script>
-    <script src="/static/js/easing.min.js"></script>
-    <script src="/static/js/isotope.pkgd.min.js"></script>
-    <script src="/static/js/jquery.dataTables.js" ></script>    
-    <script src="/static/js/jquery.min.js"></script>
-    <script src="/static/js/jquery-migrate.min.js"></script>
-    <script src="/static/js/lightbox.min.js"></script>	
+    <!-- Contact Form JavaScript File -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="/static/js/main.js"></script>
-    <script src="/static/js/mobile-nav.js"></script>
-    <script src="/static/js/owl.carousel.min.js"></script>
-    <script src="/static/js/waypoints.min.js"></script>
-	<script src="/static/js/wow.min.js"></script>
-	<script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.js" ></script>
-	<script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.js" ></script>	
-	<script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.js" ></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js" ></script>
-	<script src="https://code.jquery.com/jquery-3.0.0.js" ></script>
-	<script src="https://code.jquery.com/jquery-migrate-3.3.0.js" ></script>
+    <!-- Template Main Javascript File -->
+
 
 </body>
 
 </html>
+
