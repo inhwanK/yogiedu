@@ -8,7 +8,12 @@ public class NoticeController {
 	
 	@GetMapping("/notice") // 경로 이름
 	public String notice() {
-		return "notice"; // 페이지 파일 이름
+		return "notice/notice"; // 페이지 파일 이름
+	}
+	
+	@GetMapping("/board")
+	public String noticeList() {
+		return "boardlist/boardEX";
 	}
 
 	

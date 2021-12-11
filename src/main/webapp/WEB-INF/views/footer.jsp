@@ -72,28 +72,28 @@
 
 
     <!-- JavaScript Libraries -->
-    <script src="/static/js/jquery.min.js"></script>
-    <script src="/static/js/jquery-migrate.min.js"></script>
-    <script src="/static/js/bootstrap.bundle.min.js"></script>
-    <script src="/static/js/easing.min.js"></script>
-    <script src="/static/js/mobile-nav.js"></script>
-    <script src="/static/js/wow.min.js"></script>
-    <script src="/static/js/waypoints.min.js"></script>
-    <script src="/static/js/counterup.min.js"></script>
-    <script src="/static/js/owl.carousel.min.js"></script>
-    <script src="/static/js/isotope.pkgd.min.js"></script>
-    <script src="/static/js/lightbox.min.js"></script>
-    <script src="/static/js/contactform.js"></script>
-    <script src="/static/js/main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.0.0.js" ></script>
-	<script src="https://code.jquery.com/jquery-migrate-3.3.0.js" ></script>
-	<script src="/static/js/jquery.dataTables.js" ></script>
-	<script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.js" ></script>
-	<script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.js" ></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js" ></script>
-	<script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.js" ></script>
 	<script src="/static/js/altEditor.js" ></script>
 	<script src="/static/js/boardEX.js" ></script>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/counterup.min.js"></script>
+    <script src="/static/js/contactform.js"></script>
+    <script src="/static/js/easing.min.js"></script>
+    <script src="/static/js/isotope.pkgd.min.js"></script>
+    <script src="/static/js/jquery.dataTables.js" ></script>    
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jquery-migrate.min.js"></script>
+    <script src="/static/js/lightbox.min.js"></script>	
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/mobile-nav.js"></script>
+    <script src="/static/js/owl.carousel.min.js"></script>
+    <script src="/static/js/waypoints.min.js"></script>
+	<script src="/static/js/wow.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.js" ></script>
+	<script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.js" ></script>	
+	<script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.js" ></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js" ></script>
+	<script src="https://code.jquery.com/jquery-3.0.0.js" ></script>
+	<script src="https://code.jquery.com/jquery-migrate-3.3.0.js" ></script>
 
 </body>
 
