@@ -65,7 +65,7 @@ public class Academy {
 	public Academy(Long acaIdx, String acaName, String atptCode, String atptName, String admstZoneName,
 			String estblDate, String regDate, String realmName, String leNum, String leListNum, String leName,
 			int addressCode, String address, String addressDetail) {
-		super();
+		
 		this.acaIdx = acaIdx;
 		this.acaName = acaName;
 		this.atptCode = atptCode;

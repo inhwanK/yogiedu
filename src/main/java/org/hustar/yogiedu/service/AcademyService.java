@@ -18,12 +18,18 @@ import lombok.RequiredArgsConstructor;
 public class AcademyService {
 
 	private final AcademyRepository academyRepository;
+	
+//	@Transactional
+//	public Long save(AcademySaveRepositoryDto requestDto) {
+//		return academyRepository.save(requestDto.toEntity()).getAcaIdx();
+//		return academyRepository.save();
+//	}
 
 	@Transactional
-	public Long save(AcademySaveRepositoryDto requestDto) {
-		return academyRepository.save(requestDto.toEntity()).getAcaIdx();
+	public Long save(Academy academy) {
+		return academyRepository.save(academy).getAcaIdx();
 	}
-
+	
 	@Transactional
 	public List<AcademyResponseDto> findAll() {
 		List<Academy> entityList = academyRepository.findAll();
