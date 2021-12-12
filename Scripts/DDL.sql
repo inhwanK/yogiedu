@@ -1,9 +1,3 @@
--- yogiedu
-DROP SCHEMA IF EXISTS `yogiedu`;
-
--- yogiedu
-CREATE SCHEMA `yogiedu`;
-
 -- 공지사항
 DROP TABLE IF EXISTS `yogiedu`.`notice` RESTRICT;
 
@@ -25,12 +19,18 @@ DROP TABLE IF EXISTS `yogiedu`.`class_timetable` RESTRICT;
 -- 수강생
 DROP TABLE IF EXISTS `yogiedu`.`student` RESTRICT;
 
+-- yogiedu
+DROP SCHEMA IF EXISTS `yogiedu`;
+
+-- yogiedu
+CREATE SCHEMA `yogiedu`;
+
 -- 공지사항
 CREATE TABLE `yogiedu`.`notice` (
 	`not_idx`     INT(11)      NOT NULL COMMENT '공지번호', -- 공지번호
 	`not_title`   VARCHAR(50)  NOT NULL COMMENT '공지제목', -- 공지제목
 	`not_content` VARCHAR(300) NOT NULL COMMENT '글내용', -- 글내용
-	`reg_date`    DATETIME     NULL COMMENT '작성일', -- 작성일
+	`reg_date`    DATETIME     NOT NULL COMMENT '작성일', -- 작성일
 	`writer`      VARCHAR(20)  NOT NULL COMMENT '작성자' -- 작성자
 )
 COMMENT '공지사항';
@@ -47,15 +47,20 @@ ALTER TABLE `yogiedu`.`notice`
 
 -- 학원
 CREATE TABLE `yogiedu`.`academy` (
-	`academy_idx`            INT(11)     NOT NULL COMMENT '학원번호', -- 학원번호
-	`academy_name`           VARCHAR(20) NOT NULL COMMENT '학원명', -- 학원명
-	`academy_open_date`      DATE        NULL     COMMENT '개설일자', -- 개설일자
-	`academy_reg_date`       DATE        NULL     COMMENT '등록일자', -- 등록일자
-	`academy_field_name`     VARCHAR(20) NULL     COMMENT '분야명', -- 분야명
-	`academy_class_name`     VARCHAR(20) NULL     COMMENT '주요교과', -- 주요교과
-	`academy_street_code`    INT         NULL     COMMENT '도로명우편번호', -- 도로명우편번호
-	`academy_address`        VARCHAR(50) NULL     COMMENT '도로명주소', -- 도로명주소
-	`academy_address_detail` VARCHAR(20) NULL     COMMENT '도로명상세주소' -- 도로명상세주소
+	`ACA_ASNUM`          INT(11)     NOT NULL COMMENT '학원번호', -- 학원번호
+	`ACA_NM`             VARCHAR(20) NOT NULL COMMENT '학원명', -- 학원명
+	`ATPT_OFCDC_SC_CODE` VARCHAR(5)  NOT NULL COMMENT '시도교육청코드', -- 시도교육청코드
+	`ATPT_OFCDC_SC_NM`   VARCHAR(20) NOT NULL COMMENT '시도교육청명', -- 시도교육청명
+	`ADMST_ZONE_NM`      VARCHAR(20) NOT NULL COMMENT '행정구역명', -- 행정구역명
+	`ESTBL_YMD`          CHAR(8)     NULL     COMMENT '개설일자', -- 개설일자
+	`REG_YMD`            CHAR(8)     NULL     COMMENT '등록일자', -- 등록일자
+	`REALM_SC_NM`        VARCHAR(10) NULL     COMMENT '분야명', -- 분야명
+	`LE_OFD_NM`          VARCHAR(10) NULL     COMMENT '교습계열명', -- 교습계열명
+	`LE_CRSE_LIST_NM`    VARCHAR(10) NULL     COMMENT '교습과정목록명', -- 교습과정목록명
+	`LE_CRSE_NM`         VARCHAR(10) NULL     COMMENT '교습과정명', -- 교습과정명
+	`FA_RDNZC`           int(5)      NULL     COMMENT '도로명우편번호', -- 도로명우편번호
+	`FA_RDNMA`           VARCHAR(60) NULL     COMMENT '도로명주소', -- 도로명주소
+	`FA_RDNDA`           VARCHAR(30) NULL     COMMENT '도로명상세주소' -- 도로명상세주소
 )
 COMMENT '학원';
 
@@ -63,16 +68,16 @@ COMMENT '학원';
 ALTER TABLE `yogiedu`.`academy`
 	ADD CONSTRAINT `PK_academy` -- 학원 기본키
 		PRIMARY KEY (
-			`academy_idx` -- 학원번호
+			`ACA_ASNUM` -- 학원번호
 		);
 
 ALTER TABLE `yogiedu`.`academy`
-	MODIFY COLUMN `academy_idx` INT(11) NOT NULL AUTO_INCREMENT COMMENT '학원번호';
+	MODIFY COLUMN `ACA_ASNUM` INT(11) NOT NULL AUTO_INCREMENT COMMENT '학원번호';
 
 -- 수업
 CREATE TABLE `yogiedu`.`class` (
 	`class_idx`    INT(11)     NOT NULL COMMENT '수업번호', -- 수업번호
-	`academy_idx`  INT(11)     NOT NULL COMMENT '학원번호', -- 학원번호
+	`ACA_ASNUM`    INT(11)     NOT NULL COMMENT '학원번호', -- 학원번호
 	`class_name`   VARCHAR(20) NOT NULL COMMENT '수업명', -- 수업명
 	`teacher_name` CHAR(6)     NULL     COMMENT '강사명' -- 강사명
 )
@@ -174,10 +179,10 @@ ALTER TABLE `yogiedu`.`student`
 ALTER TABLE `yogiedu`.`class`
 	ADD CONSTRAINT `FK_academy_TO_class` -- 학원 -> 수업
 		FOREIGN KEY (
-			`academy_idx` -- 학원번호
+			`ACA_ASNUM` -- 학원번호
 		)
 		REFERENCES `yogiedu`.`academy` ( -- 학원
-			`academy_idx` -- 학원번호
+			`ACA_ASNUM` -- 학원번호
 		);
 
 -- 수업시간
