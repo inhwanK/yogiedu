@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class AcademySaveRepositoryDto {
-
+	
 	private Long acaIdx;
 	private String acaName;
 	private String atptCode;
