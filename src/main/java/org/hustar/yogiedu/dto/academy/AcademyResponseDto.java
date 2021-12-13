@@ -48,7 +48,7 @@ public class AcademyResponseDto {
 		this.acaNm = entity.getAcaNm();
 		this.atptOfcdcScCode = entity.getAtptOfcdcScCode();
 		this.atptOfcdcScNm = entity.getAtptOfcdcScNm();
-		this.adminDistName = entity.getAtptOfcdcScNm();
+		this.adminDistName = entity.getAdminDistName();
 		this.estblDate = entity.getEstblDate();
 		this.regDate = entity.getRegDate();
 		this.fieldName = entity.getFieldName();
