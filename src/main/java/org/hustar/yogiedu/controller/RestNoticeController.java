@@ -24,14 +24,15 @@ public class RestNoticeController {
 
 	private final NoticeService noticeService;
 
+	
 	@GetMapping("/noticeList")
 	public List<NoticeResponseDto> getNoticeList() {
 		return noticeService.findAll();
 	}
 	
-	//select * from notice where id = ?
-	@GetMapping("/notice/{notIdx}")
-	public NoticeResponseDto findById(@PathVariable Long notIdx) {
+	//select * from notice where id = ?	
+	@GetMapping("/notice")
+	public NoticeResponseDto findById(Long notIdx) {
 		return noticeService.findById(notIdx);	
 	}
 	

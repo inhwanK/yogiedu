@@ -12,24 +12,24 @@
 		
 		$(function() {
 
-        var contextPath = "${contextPath}";
-		var notIdx = "${notIdx}";
-
-		console.log(notIdx);
-
-		$.ajax({
-	    url : contextPath + "/api/notice" + notIdx,
-	    method : "get",
-	    dataType : "json",
-	    success: function(json) {
-	    console.log(json);
-	     
-	    var dateForm = getFormatDate(json.regDate);
-	    
-	    
-	    $("p#title").append(json.notTitle);
-	    $("span#regdate").append(dateForm);
-	    $("div#content").append(json.notContent);
+	        var contextPath = "${contextPath}";
+			var notIdx = "${notIdx}";
+	
+			console.log(notIdx);
+	
+			$.ajax({
+		    url : contextPath + "/api/notice?notIdx=" + notIdx,
+		    method : "get",
+		    dataType : "json",
+		    success: function(json) {
+		    console.log(json);
+		     
+		    //var dateForm = getFormatDate(json.regDate);
+		    
+		    
+		    $("p#title").append(json.notTitle);
+		    //$("span#regdate").append(dateForm);
+		    $("div#content").append(json.notContent);
 		
 	    	}
 				
