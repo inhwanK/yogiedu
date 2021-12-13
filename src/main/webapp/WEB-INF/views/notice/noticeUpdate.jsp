@@ -50,7 +50,7 @@
 			if (conf) {
 				
 				var data = {
-					notIdx : $("#no").val(),
+					
 					notTitle : $("#title").val(),
 					notContent : $("#content").val(),
 				    }
