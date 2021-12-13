@@ -1,3 +1,9 @@
+-- yogiedu
+DROP SCHEMA IF EXISTS `yogiedu`;
+
+-- yogiedu
+CREATE SCHEMA `yogiedu`;
+
 -- 공지사항
 DROP TABLE IF EXISTS `yogiedu`.`notice` RESTRICT;
 
@@ -18,12 +24,6 @@ DROP TABLE IF EXISTS `yogiedu`.`class_timetable` RESTRICT;
 
 -- 수강생
 DROP TABLE IF EXISTS `yogiedu`.`student` RESTRICT;
-
--- yogiedu
-DROP SCHEMA IF EXISTS `yogiedu`;
-
--- yogiedu
-CREATE SCHEMA `yogiedu`;
 
 -- 공지사항
 CREATE TABLE `yogiedu`.`notice` (
@@ -47,11 +47,11 @@ ALTER TABLE `yogiedu`.`notice`
 
 -- 학원
 CREATE TABLE `yogiedu`.`academy` (
-	`ACA_ASNUM`          INT(11)     NOT NULL COMMENT '학원번호', -- 학원번호
-	`ACA_NM`             VARCHAR(20) NOT NULL COMMENT '학원명', -- 학원명
-	`ATPT_OFCDC_SC_CODE` VARCHAR(5)  NOT NULL COMMENT '시도교육청코드', -- 시도교육청코드
-	`ATPT_OFCDC_SC_NM`   VARCHAR(20) NOT NULL COMMENT '시도교육청명', -- 시도교육청명
-	`ADMST_ZONE_NM`      VARCHAR(20) NOT NULL COMMENT '행정구역명', -- 행정구역명
+	`ACA_ASNUM`          VARCHAR(20) NOT NULL COMMENT '학원번호', -- 학원번호
+	`ACA_NM`             VARCHAR(20) NULL     COMMENT '학원명', -- 학원명
+	`ATPT_OFCDC_SC_CODE` VARCHAR(5)  NULL     COMMENT '시도교육청코드', -- 시도교육청코드
+	`ATPT_OFCDC_SC_NM`   VARCHAR(20) NULL     COMMENT '시도교육청명', -- 시도교육청명
+	`ADMST_ZONE_NM`      VARCHAR(20) NULL     COMMENT '행정구역명', -- 행정구역명
 	`ESTBL_YMD`          CHAR(8)     NULL     COMMENT '개설일자', -- 개설일자
 	`REG_YMD`            CHAR(8)     NULL     COMMENT '등록일자', -- 등록일자
 	`REALM_SC_NM`        VARCHAR(10) NULL     COMMENT '분야명', -- 분야명
@@ -71,13 +71,10 @@ ALTER TABLE `yogiedu`.`academy`
 			`ACA_ASNUM` -- 학원번호
 		);
 
-ALTER TABLE `yogiedu`.`academy`
-	MODIFY COLUMN `ACA_ASNUM` INT(11) NOT NULL AUTO_INCREMENT COMMENT '학원번호';
-
 -- 수업
 CREATE TABLE `yogiedu`.`class` (
 	`class_idx`    INT(11)     NOT NULL COMMENT '수업번호', -- 수업번호
-	`ACA_ASNUM`    INT(11)     NOT NULL COMMENT '학원번호', -- 학원번호
+	`ACA_ASNUM`    VARCHAR(20) NOT NULL COMMENT '학원번호', -- 학원번호
 	`class_name`   VARCHAR(20) NOT NULL COMMENT '수업명', -- 수업명
 	`teacher_name` CHAR(6)     NULL     COMMENT '강사명' -- 강사명
 )

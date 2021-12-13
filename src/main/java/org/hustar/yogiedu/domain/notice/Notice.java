@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 public class Notice {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long notIdx;
 	
 	private String notTitle;
