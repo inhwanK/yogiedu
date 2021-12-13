@@ -14,8 +14,17 @@
 		var apiKey = "82a08de35a9d4dee805fbeb9a29f1ba5";
 		var zone = "남구";
 		
+		console.log(contextPath+"이게뭐여");
+		
+		$.getJSON("jsonfomatter.json",function(data){
+			$.each(data, function(key, val){
+				console.log(data);
+				
+			});
+		});
+		/*
 		$.ajax({
-			url:"https://open.neis.go.kr/hub/acaInsTiInfo?KEY="+apiKey+"&Type=json&ATPT_OFCDC_SC_CODE="+zone,
+			url:"https://cors-anywhere.herokuapp.com/https://open.neis.go.kr/hub/acaInsTiInfo?KEY="+apiKey+"&Type=json&ATPT_OFCDC_SC_CODE="+zone,
 			type:"get",
 			contentType:"application/json; charset=utf-8",
 			dataType: "json",
@@ -23,6 +32,7 @@
 				console.log(json);
 			}
 		});
+		*/
 	});
 
 </script>

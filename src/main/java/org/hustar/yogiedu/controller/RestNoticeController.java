@@ -29,6 +29,7 @@ public class RestNoticeController {
 		return noticeService.findAll();
 	}
 	
+	//select * from notice where id = ?
 	@GetMapping("/notice/{notIdx}")
 	public NoticeResponseDto findById(@PathVariable Long notIdx) {
 		return noticeService.findById(notIdx);	
