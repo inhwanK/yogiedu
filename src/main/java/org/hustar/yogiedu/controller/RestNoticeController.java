@@ -25,34 +25,35 @@ public class RestNoticeController {
 
 	private final NoticeService noticeService;
 
-	
-//	@GetMapping("/noticeList")
-//	public List<NoticeResponseDto> getNoticeList() {
-//		return noticeService.findAll();
-//	}
-	
+//	공지사항 목록 뽑기. 파라미터 필요없음.
 	@GetMapping("/noticeList")
 	public List<NoticeResponseDto> getNoticeList() {
 		return noticeService.findAll();
 	}
 	
-	//select * from notice where id = ?	
+//	공지사항 세부글 정보 뽑기. 
+//	/api/notice?notIdx=1 경로로 요청.
 	@GetMapping("/notice")
 	public NoticeResponseDto findById(Long notIdx) {
 		return noticeService.findById(notIdx);
 	}
 	
+//	공지사항 등록.
+//	json 형태로 body를 작성한 뒤, /api/notice 경로로 요청. 
 	@PostMapping("/notice")
 	public Long regNotice(@RequestBody NoticeSaveRequestDto noticeDto) {
 		return noticeService.save(noticeDto);
 	}
 	
-//	@PutMapping("/notice/{notIdx}")
+//	공지사항 수정.
+//	json 형태로 body를 작성한 뒤, /api/notice?notIdx=1 경로로 요청. 
 	@PutMapping("/notice")
 	public Long updateNotice(Long notIdx, @RequestBody NoticeUpdateRequestDto requestDto) {
 		return noticeService.update(notIdx, requestDto);
 	}
 	
+//	공지사항 삭제.
+//	/api/notice?notIdx=1 경로로 요청.
 	@DeleteMapping("/notice")
 	public Long deleteNotice(Long notIdx) {
 		return noticeService.deleteById(notIdx);

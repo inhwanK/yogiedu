@@ -43,6 +43,12 @@ public class AcademyService {
 		return academyList;
 	}
 	
+	@Transactional
+	public AcademyResponseDto findById(Long acaIdx) {
+//		return academyRepository.findById(acaIdx);
+		return null;
+	}
+	
 	// 기본키에 따라 삭제하기.
 	@Transactional
 	public Long deleteById(Long acaIdx) {
