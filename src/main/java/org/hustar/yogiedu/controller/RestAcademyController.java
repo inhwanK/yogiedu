@@ -6,6 +6,7 @@ import java.util.List;
 import org.hustar.yogiedu.dto.academy.AcademyResponseDto;
 import org.hustar.yogiedu.dto.academy.AcademySaveRequestDto;
 import org.hustar.yogiedu.service.AcademyService;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -45,5 +46,10 @@ public class RestAcademyController {
 		
 		
 		return acaIdxList;
+	}
+	
+	@DeleteMapping("/academy")
+	public Long deleteAcademyById(Long acaIdx) {
+		return academyService.deleteById(acaIdx);
 	}
 }

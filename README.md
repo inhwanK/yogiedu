@@ -10,6 +10,8 @@
 * Spring Boot 2.6.1
 * Gradle 7.3.1
 * JSP
+* jQuery
+* Mysql 8.0.27
 
 <!--
 ### Reference Documentation

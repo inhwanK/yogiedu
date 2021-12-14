@@ -19,14 +19,17 @@ public class AcademyService {
 
 	private final AcademyRepository academyRepository;
 	
+	// 학원 등록.
 	@Transactional
 	public Long save(AcademySaveRequestDto requestDto) {
-		requestDto.toEntity();
 		
-		System.out.println(requestDto.toString());
+//		requestDto.toEntity();
+//		System.out.println(requestDto.toString());
+		
 		return academyRepository.save(requestDto.toEntity()).getAcaIdx();
 	}
 	
+	// 학원 목록 가져오기
 	@Transactional
 	public List<AcademyResponseDto> findAll() {
 		
@@ -38,5 +41,12 @@ public class AcademyService {
 		}
 		
 		return academyList;
+	}
+	
+	// 기본키에 따라 삭제하기.
+	@Transactional
+	public Long deleteById(Long acaIdx) {
+		academyRepository.deleteById(acaIdx);
+		return acaIdx;
 	}
 }
