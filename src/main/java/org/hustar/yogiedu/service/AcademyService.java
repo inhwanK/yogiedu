@@ -2,6 +2,7 @@ package org.hustar.yogiedu.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -45,8 +46,9 @@ public class AcademyService {
 	
 	@Transactional
 	public AcademyResponseDto findById(Long acaIdx) {
-//		return academyRepository.findById(acaIdx);
-		return null;
+		Optional<Academy> entity = academyRepository.findById(acaIdx);
+		
+		return new AcademyResponseDto(entity.get());
 	}
 	
 	// 기본키에 따라 삭제하기.
