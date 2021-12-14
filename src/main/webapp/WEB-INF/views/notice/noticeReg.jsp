@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@include file="/WEB-INF/views/header.jsp"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
-<!DOCTYPE html>
-<html>
+
 
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -60,11 +60,11 @@
 		
 		// 취소 버튼
 		$("#cancel").on('click', function(){
-			window.location.href = contextPath + "/notice";
+			window.location.href = contextPath + "/noticeList";
 		});
 		
 	});
-</script>
+</script>dd
 <body>
     <div id="page-wrapper">
         <!-- 본문 -->

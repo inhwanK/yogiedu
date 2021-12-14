@@ -10,10 +10,7 @@
 
             <div class="intro-info">
                 <h2>우리아이 학원은<br><span>요기에듀</span>에서<br>찾아보고 보내세요!</h2>
-                <div>
-                    <a href="#about" class="btn-get-started scrollto">시작하기</a>
-                    <a href="#services" class="btn-services scrollto">YOGIEDU?</a>
-                </div>
+                
             </div>
 
         </div>
