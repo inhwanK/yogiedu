@@ -25,9 +25,12 @@
 				for (i = 0; i < dataLength; i++) {
 					list += "<tr>"; // 첫번째 반복문이 돌아갈 떄의 예
 					list += "<td>" + json[i].notIdx + "</td>"; //json의 데이터에 배열값 중 0번쨰 데이터의 notIdx property라는 값을 불러온다
-					list += "<td><a href='${contextPath}/notice?notIdx="
+					 list += "<td><a href='${contextPath}/notice"
+					+ json[i].notIdx + "'>" + json[i].notTitle
+					+ "</a></td>"; 
+					/* list += "<td><a href='${contextPath}/notice?notIdx="
 							+ json[i].notIdx + "'>" + json[i].notTitle
-							+ "</a></td>";
+							+ "</a></td>"; */
 					list += "<td>" + json[i].writer + "</td>";
 					list += "<tr>"
 				} // 실제 여기서 사용되는 notIdxm regDate, notTitle같은 데이터는 실제로 쿼리문에 있는 데이터의 정보임
