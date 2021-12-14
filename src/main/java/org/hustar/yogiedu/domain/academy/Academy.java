@@ -1,13 +1,17 @@
 package org.hustar.yogiedu.domain.academy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hustar.yogiedu.domain.lecture.Lecture;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -64,6 +68,9 @@ public class Academy {
 	
 	@Column(name = "FA_RDNDA") //도로명상세주소
 	private String faRdnda;
+	
+	@OneToMany(mappedBy = "academy")
+	private List<Lecture> lectures = new ArrayList<Lecture>();
 
 	@Builder
 	public Academy(Long acaIdx, String acaAsnum, String acaNm, String atptOfcdcScCode, String atptOfcdcScNm,

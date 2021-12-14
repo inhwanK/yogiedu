@@ -22,9 +22,10 @@ public class AcademyService {
 	// 학원 등록.
 	@Transactional
 	public Long save(AcademySaveRequestDto requestDto) {
-		requestDto.toEntity();
 		
-		System.out.println(requestDto.toString());
+//		requestDto.toEntity();
+//		System.out.println(requestDto.toString());
+		
 		return academyRepository.save(requestDto.toEntity()).getAcaIdx();
 	}
 	
@@ -42,7 +43,7 @@ public class AcademyService {
 		return academyList;
 	}
 	
-	// 기본키에 따라 삭제.
+	// 기본키에 따라 삭제하기.
 	@Transactional
 	public Long deleteById(Long acaIdx) {
 		academyRepository.deleteById(acaIdx);
