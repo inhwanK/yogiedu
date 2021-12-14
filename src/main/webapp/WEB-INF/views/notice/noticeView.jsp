@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@include file="/WEB-INF/views/header.jsp"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
-<!DOCTYPE html>
-<html>
 
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -37,7 +36,7 @@
 				
 				
 		$("#cancel").on('click', function(){
-			window.location.href = contextPath + "/noticeList"+ notIdx;	
+			window.location.href = contextPath + "/noticeList";	
 		});
 			
 		$("#modify").on('click', function() {
@@ -123,7 +122,7 @@
 			<div id="btn">
 							<button id="modify" class="btn btn-primary" >수정</button>
 							<button id="delete" class="btn btn-primary" >삭제</button>
-							<button id="cancel" class="btn btn-primary">취소</button>
+							<button id="cancel" class="btn btn-primary">돌아가기</button>
 			</div>       
             </div>
             
@@ -133,3 +132,4 @@
 
 </section>
 </body>
+<%@include file="/WEB-INF/views/footer.jsp"%>
