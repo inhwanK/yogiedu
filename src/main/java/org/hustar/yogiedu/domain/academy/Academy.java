@@ -28,7 +28,6 @@ public class Academy {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long acaIdx;
 	
-	@NonNull
 	@Column(name = "ACA_ASNUM")
 	private String acaAsnum;
 	

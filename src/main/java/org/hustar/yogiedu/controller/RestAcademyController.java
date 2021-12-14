@@ -49,8 +49,6 @@ public class RestAcademyController {
 			requestDto = requestDtos.get(i);
 			acaIdxList.add(academyService.save(requestDto));
 		}
-		
-		
 		return acaIdxList;
 	}
 	

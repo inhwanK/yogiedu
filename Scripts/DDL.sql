@@ -96,11 +96,11 @@ ALTER TABLE `yogiedu`.`lecture`
 
 -- 수업시간
 CREATE TABLE `yogiedu`.`lecture_time` (
-	`LECTURE_TIME_IDX`   INT(11)   NOT NULL COMMENT '수업시간번호', -- 수업시간번호
-	`LECTURE_IDX`        INT(11)   NOT NULL COMMENT '수업번호', -- 수업번호
-	`LECTURE_WEEK`       CHAR(3)   NULL     COMMENT '수업요일', -- 수업요일
-	`LECTURE_START_TIME` TIMESTAMP NULL     COMMENT '수업시작시간', -- 수업시작시간
-	`LECTURE_END_TIME`   TIMESTAMP NULL     COMMENT '수업종료시간' -- 수업종료시간
+	`LECTURE_TIME_IDX`   INT(11) NOT NULL COMMENT '수업시간번호', -- 수업시간번호
+	`LECTURE_IDX`        INT(11) NOT NULL COMMENT '수업번호', -- 수업번호
+	`LECTURE_WEEK`       CHAR(3) NULL     COMMENT '수업요일', -- 수업요일
+	`LECTURE_START_TIME` INT(2)  NULL     COMMENT '수업시작시간', -- 수업시작시간
+	`LECTURE_END_TIME`   INT(2)  NULL     COMMENT '수업종료시간' -- 수업종료시간
 )
 COMMENT '수업시간';
 

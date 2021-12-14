@@ -5,8 +5,10 @@ import java.util.Date;
 import org.hustar.yogiedu.domain.notice.Notice;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
+@NoArgsConstructor
 public class NoticeResponseDto {
 	private Long notIdx;
 	private String notTitle;

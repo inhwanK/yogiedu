@@ -1,16 +1,14 @@
 package org.hustar.yogiedu.dto.academy;
 
-import java.util.Optional;
-
 import org.hustar.yogiedu.domain.academy.Academy;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Getter;
 
 @Getter
 public class AcademyResponseDto {
 
+	private Long acaIdx;
+	
 	private String acaAsnum;
 	
 	private String acaNm;
@@ -46,6 +44,7 @@ public class AcademyResponseDto {
 	private String faRdnda;
 
 	public AcademyResponseDto(Academy entity) {
+			this.acaIdx = entity.getAcaIdx();
 			this.acaAsnum = entity.getAcaAsnum();
 			this.acaNm = entity.getAcaNm();
 			this.atptOfcdcScCode = entity.getAtptOfcdcScCode();
