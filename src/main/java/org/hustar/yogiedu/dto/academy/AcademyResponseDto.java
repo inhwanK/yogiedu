@@ -2,13 +2,13 @@ package org.hustar.yogiedu.dto.academy;
 
 import org.hustar.yogiedu.domain.academy.Academy;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import lombok.Getter;
 
 @Getter
 public class AcademyResponseDto {
 
+	private Long acaIdx;
+	
 	private String acaAsnum;
 	
 	private String acaNm;
@@ -44,20 +44,21 @@ public class AcademyResponseDto {
 	private String faRdnda;
 
 	public AcademyResponseDto(Academy entity) {
-		this.acaAsnum = entity.getAcaAsnum();
-		this.acaNm = entity.getAcaNm();
-		this.atptOfcdcScCode = entity.getAtptOfcdcScCode();
-		this.atptOfcdcScNm = entity.getAtptOfcdcScNm();
-		this.adminDistName = entity.getAdminDistName();
-		this.estblDate = entity.getEstblDate();
-		this.regDate = entity.getRegDate();
-		this.fieldName = entity.getFieldName();
-		this.liOfdName = entity.getLiOfdName();
-		this.leCrseListName = entity.getLeCrseListName();
-		this.leCrseName = entity.getLeCrseName();
-		this.faRdnzc = entity.getFaRdnzc();
-		this.faRdnma = entity.getFaRdnma();
-		this.faRdnda = entity.getFaRdnda();
+			this.acaIdx = entity.getAcaIdx();
+			this.acaAsnum = entity.getAcaAsnum();
+			this.acaNm = entity.getAcaNm();
+			this.atptOfcdcScCode = entity.getAtptOfcdcScCode();
+			this.atptOfcdcScNm = entity.getAtptOfcdcScNm();
+			this.adminDistName = entity.getAdminDistName();
+			this.estblDate = entity.getEstblDate();
+			this.regDate = entity.getRegDate();
+			this.fieldName = entity.getFieldName();
+			this.liOfdName = entity.getLiOfdName();
+			this.leCrseListName = entity.getLeCrseListName();
+			this.leCrseName = entity.getLeCrseName();
+			this.faRdnzc = entity.getFaRdnzc();
+			this.faRdnma = entity.getFaRdnma();
+			this.faRdnda = entity.getFaRdnda();
 	}
 	
 	

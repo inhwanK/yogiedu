@@ -16,6 +16,7 @@ import org.hustar.yogiedu.domain.lecture.Lecture;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 @Getter
 @NoArgsConstructor

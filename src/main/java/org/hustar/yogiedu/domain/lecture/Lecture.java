@@ -1,14 +1,19 @@
 package org.hustar.yogiedu.domain.lecture;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hustar.yogiedu.domain.academy.Academy;
+import org.hustar.yogiedu.domain.lecturetime.LectureTime;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -32,6 +37,9 @@ public class Lecture {
 	private Academy academy;
 	private String lectureName;
 	private String teacherName;
+	
+	@OneToMany(mappedBy = "lecture")
+	private List<LectureTime> lectureTimes = new ArrayList<LectureTime>();
 	
 	@Builder
 	public Lecture(Long lectureIdx, Academy academy, String lectureName, String teacherName) {

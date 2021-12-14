@@ -34,7 +34,7 @@ public class RestNoticeController {
 //	공지사항 세부글 정보 뽑기. 
 //	/api/notice?notIdx=1 경로로 요청.
 	@GetMapping("/notice")
-	public NoticeResponseDto findById(Long notIdx) {
+	public NoticeResponseDto getNotice(Long notIdx) {
 		return noticeService.findById(notIdx);
 	}
 	

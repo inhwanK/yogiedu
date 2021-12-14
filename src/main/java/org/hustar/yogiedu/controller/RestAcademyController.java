@@ -27,12 +27,18 @@ public class RestAcademyController {
 		return academyService.findAll();
 	}
 	
+	
+	@GetMapping("/academy")
+	public AcademyResponseDto getAcademy(Long acaIdx) {
+		return academyService.findById(acaIdx);
+	}
+	
 	@PostMapping("/academy")
 	public Long regAcademy(@RequestBody AcademySaveRequestDto requestDto) {
 		return academyService.save(requestDto);
 	}
 	
-//	데이터 일괄 삽입용 컨트롤러 실제론 잘 안쓰임.
+//	데이터 일괄 삽입용 컨트롤러. 실제론 잘 안쓰임.
 	@PostMapping("/academyList")
 	public List<Long> regAcademyList(@RequestBody List<AcademySaveRequestDto> requestDtos){
 		
@@ -43,8 +49,6 @@ public class RestAcademyController {
 			requestDto = requestDtos.get(i);
 			acaIdxList.add(academyService.save(requestDto));
 		}
-		
-		
 		return acaIdxList;
 	}
 	

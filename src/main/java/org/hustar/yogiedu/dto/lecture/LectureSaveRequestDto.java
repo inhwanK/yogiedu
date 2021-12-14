@@ -11,21 +11,26 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class LectureSaveRequestDto {
 	
-	private Academy academy;
+//	private Academy academy;
+	
+	// Academy 객체의 acaIdx 값을 요청값으로 받음.
+	private Long acaIdx;
 	private String lectureName;
 	private String teacherName;
 	
 	@Builder
-	public LectureSaveRequestDto(Academy academy, String lectureName, String teacherName) {
+	public LectureSaveRequestDto(Long acaIdx, String lectureName, String teacherName) {
 		super();
-		this.academy = academy;
+		this.acaIdx = acaIdx;
 		this.lectureName = lectureName;
 		this.teacherName = teacherName;
 	}
 	
 	public Lecture toEntity() {
 		return Lecture.builder()
-				.academy(academy)
+				.academy(Academy.builder()
+						.acaIdx(acaIdx)
+						.build())
 				.lectureName(lectureName)
 				.teacherName(teacherName)
 				.build();

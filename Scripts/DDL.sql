@@ -48,8 +48,8 @@ ALTER TABLE `yogiedu`.`notice`
 -- 학원
 CREATE TABLE `yogiedu`.`academy` (
 	`ACA_IDX`            INT(20)      NOT NULL COMMENT '학원번호', -- 학원번호
-	`ACA_ASNUM`          VARCHAR(30)  NULL     COMMENT '학원지정번호', -- 학원지정번호
-	`ACA_NM`             VARCHAR(100) NULL     COMMENT '학원명', -- 학원명
+	`ACA_ASNUM`          VARCHAR(30)  NOT NULL COMMENT '학원지정번호', -- 학원지정번호
+	`ACA_NM`             VARCHAR(100) NOT NULL COMMENT '학원명', -- 학원명
 	`ATPT_OFCDC_SC_CODE` VARCHAR(10)  NULL     COMMENT '시도교육청코드', -- 시도교육청코드
 	`ATPT_OFCDC_SC_NM`   VARCHAR(20)  NULL     COMMENT '시도교육청명', -- 시도교육청명
 	`ADMST_ZONE_NM`      VARCHAR(20)  NULL     COMMENT '행정구역명', -- 행정구역명
@@ -96,11 +96,11 @@ ALTER TABLE `yogiedu`.`lecture`
 
 -- 수업시간
 CREATE TABLE `yogiedu`.`lecture_time` (
-	`LECTURE_TIME_IDX`   INT(11)   NOT NULL COMMENT '수업시간번호', -- 수업시간번호
-	`LECTURE_IDX`        INT(11)   NOT NULL COMMENT '수업번호', -- 수업번호
-	`LECTURE_WEEK`       CHAR(3)   NULL     COMMENT '수업요일', -- 수업요일
-	`LECTURE_START_TIME` TIMESTAMP NULL     COMMENT '수업시작시간', -- 수업시작시간
-	`LECTURE_END_TIME`   TIMESTAMP NULL     COMMENT '수업종료시간' -- 수업종료시간
+	`LECTURE_TIME_IDX`   INT(11) NOT NULL COMMENT '수업시간번호', -- 수업시간번호
+	`LECTURE_IDX`        INT(11) NOT NULL COMMENT '수업번호', -- 수업번호
+	`LECTURE_WEEK`       CHAR(3) NULL     COMMENT '수업요일', -- 수업요일
+	`LECTURE_START_TIME` INT(2)  NULL     COMMENT '수업시작시간', -- 수업시작시간
+	`LECTURE_END_TIME`   INT(2)  NULL     COMMENT '수업종료시간' -- 수업종료시간
 )
 COMMENT '수업시간';
 
