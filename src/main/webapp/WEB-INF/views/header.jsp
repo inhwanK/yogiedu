@@ -48,10 +48,10 @@
             <nav class="main-nav float-right d-none d-lg-block">
                 <ul>
                     <li class="active"><a href="#intro">Home</a></li>
-                    <li><a href="#">예약하기</a></li>
+                    <li><a href="${contextPath}/noticeList">공지사항</a></li>
                     <li><a href="#">학원찾기</a></li>
                     <li><a href="#">등록하기</a></li>
-                    <li><a href="${contextPath}/notice">내시간표</a></li>
+                    <li><a href="#">내시간표</a></li>
                     <li class="drop-down"><a href="">Quick Menu</a>
                         <ul>
                             <li><a href="#about">About us</a></li>
