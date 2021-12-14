@@ -47,7 +47,7 @@
 					contentType:"application/json; charset=utf-8",
 					success: function(json){
 						alert("등록이 완료되었습니다.");
-						window.location.href = contextPath+'/noticelist';
+						window.location.href = contextPath+'/noticeList';
 						console.log();
 					},
 					error: function(){
