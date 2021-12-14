@@ -9,3 +9,5 @@ delete from notice;
 select * from academy WHERE aca_asnum = '3000019645';
 
 alter user root@localhost identified with mysql_native_password by 'root';
+
+select * from lecture;
