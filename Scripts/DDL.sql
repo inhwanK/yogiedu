@@ -48,8 +48,8 @@ ALTER TABLE `yogiedu`.`notice`
 -- 학원
 CREATE TABLE `yogiedu`.`academy` (
 	`ACA_IDX`            INT(20)      NOT NULL COMMENT '학원번호', -- 학원번호
-	`ACA_ASNUM`          VARCHAR(30)  NULL     COMMENT '학원지정번호', -- 학원지정번호
-	`ACA_NM`             VARCHAR(100) NULL     COMMENT '학원명', -- 학원명
+	`ACA_ASNUM`          VARCHAR(30)  NOT NULL COMMENT '학원지정번호', -- 학원지정번호
+	`ACA_NM`             VARCHAR(100) NOT NULL COMMENT '학원명', -- 학원명
 	`ATPT_OFCDC_SC_CODE` VARCHAR(10)  NULL     COMMENT '시도교육청코드', -- 시도교육청코드
 	`ATPT_OFCDC_SC_NM`   VARCHAR(20)  NULL     COMMENT '시도교육청명', -- 시도교육청명
 	`ADMST_ZONE_NM`      VARCHAR(20)  NULL     COMMENT '행정구역명', -- 행정구역명
