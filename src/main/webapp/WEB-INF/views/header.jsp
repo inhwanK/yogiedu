@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 
     <!-- Main Stylesheet File -->
-    <link href="/static/css/style3.css" rel="stylesheet">
+    <link href="/static/css/main.css" rel="stylesheet">
     
 </head>
 
@@ -42,7 +42,7 @@
             <div class="logo float-left">
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
-                <a href="#intro" class="scrollto"><img src="/static/img/Tlogo2_B.png" alt="" class="img-fluid"></a>
+                <a href="" class="scrollto"><img src="/static/img/Tlogo2_B.png" alt="" class="img-fluid"></a>
             </div>
 
             <nav class="main-nav float-right d-none d-lg-block">
@@ -50,8 +50,8 @@
                     <li class="active"><a href="#intro">Home</a></li>
                     <li><a href="${contextPath}/noticeList">공지사항</a></li>
                     <li><a href="#">학원찾기</a></li>
-                    <li><a href="#">등록하기</a></li>
-                    <li><a href="#">내시간표</a></li>
+                    <li><a href="#">마이페이지</a></li>
+                  	<li><a href="${contextPath}/qna">Q&A</a></li>
                     <li class="drop-down"><a href="">Quick Menu</a>
                         <ul>
                             <li><a href="#about">About us</a></li>
