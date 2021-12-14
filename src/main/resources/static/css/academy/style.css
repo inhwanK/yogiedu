@@ -1,0 +1,338 @@
+li {
+  list-style: none;
+}
+.search-list-wrap {
+  display: flex;
+  width: 80%;
+  margin-left: 10%;
+}
+.search-left {
+  width: 30%;
+  padding: 10px;
+}
+.search-left .search-title {
+  display: flex;
+  justify-content: space-around;
+  background-color: gray;
+  height: 5%;
+}
+.search-title h2 {
+  margin-top: 8px;
+}
+.search-title button {
+  margin-top: 5px;
+  height: 80%;
+}
+.search-right {
+  width: 70%;
+  padding: 10px;
+}
+.time-col {
+  display: flex;
+}
+.search-table-title {
+  padding-bottom: 20px;
+}
+.search-table {
+  width: 100%;
+  border: 2px solid black;
+  height: 500px;
+}
+.search-table th {
+  border: 1px solid black;
+}
+
+.search-table tr td {
+  text-align: center;
+  width: 10%;
+  border: 1px solid gray;
+}
+.search-list-wrap h2 {
+  text-align: center;
+  margin: 10px;
+}
+.search-grade {
+  display: flex;
+}
+.search-grade li {
+  padding: 5px;
+}
+.search-grade-ele {
+  display: flex;
+}
+
+.search-subject ul {
+  padding: 0px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.search-subject input {
+  height: 50px;
+  font-size: 20px;
+}
+
+.search-academy-list {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+.academy {
+  width: 33%;
+  display: inline-block;
+  padding-top: 10px;
+}
+.academy img {
+  width: 80%;
+  border-radius: 20px;
+}
+.academy p,
+h2 {
+  margin: 2px;
+}
+.search-page-move {
+  display: flex;
+  justify-content: center;
+}
+.search-page-move a {
+  padding: 10px;
+  margin: 0;
+}
+.search-time-wrap {
+  margin-top: 10px;
+}
+#slider {
+  width: 100%;
+  height: 30px;
+}
+#custom-handle {
+  width: 5%;
+  height: 40px;
+}
+.amount {
+  width: 90%;
+  text-align: end;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin: 30px 0 0 0;
+}
+.overflow {
+  height: 200px;
+}
+.selectarea {
+  display: flex;
+  list-style: none;
+  text-align: center;
+}
+.kate_ul {
+  padding: 0;
+}
+
+.first_kate_list {
+  padding: 10px;
+  border: 1px solid black;
+}
+.first_kate_list:hover {
+  color: aqua;
+}
+.second_kate_list {
+  padding: 10px;
+  border: 10px solid black;
+}
+.second_kate_list:hover {
+  color: aqua;
+}
+
+.kategory_list {
+  margin-left: 20px;
+}
+.tab-set {
+  display: flex;
+}
+
+.panel {
+  margin-left: 40px;
+}
+.academy-lecture-search-title {
+  text-align: center;
+}
+.academy-lecture-title {
+  background: #e84d1c;
+  color: white;
+  height: 40px;
+  font-size: 30px;
+}
+.academy-lecture-list-wrap {
+  overflow-y: scroll;
+}
+.academy-lecture-title ul {
+  display: flex;
+  justify-content: space-around;
+}
+.academy-lecture-list ul {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+.academy-lecture-list {
+  font-size: 20px;
+}
+.academy-lecture-wish-list-wrap {
+  background-color: red;
+  color: black;
+}
+.academy-lecture-wish-sub {
+  text-align: center;
+  height: 50px;
+  color: white;
+}
+.academy-lecture-wish-list {
+  margin-top: 10px;
+  height: 400px;
+  background: white;
+  overflow-y: scroll;
+}
+.academy-lecture-wish-list ul {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px black dotted;
+}
+.academy-lecture-wish-btn {
+  text-align: end;
+  padding-top: 20px;
+  font-size: 20px;
+}
+.academy-lecture-wish-btn input {
+  border: 0px;
+  background: #4a411e2b;
+}
+.tabs {
+  margin: 0;
+  padding: 0;
+}
+.tabs li {
+  padding-bottom: 10px;
+}
+.tabs li a {
+  font-size: 20px;
+}
+.academy-teacher-intro-wrap {
+  width: 100%;
+  overflow-y: scroll;
+}
+.teacher-intro {
+  width: 33%;
+}
+.teacher-img {
+  width: auto;
+}
+#tabs {
+  width: 100%;
+}
+.wish-list-wrap {
+  width: 80%;
+  margin-left: 10%;
+}
+.wish-list {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.wishlist-table-wrap {
+  width: 30%;
+}
+.wishlist-table {
+  width: 100%;
+}
+.wishlist-table th,
+.wishlist-table td {
+  border: 1px solid black;
+}
+
+.wishlist-option {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.wishlist-option input {
+  font-size: 20px;
+  border-radius: 20px;
+  background: rgba(189, 119, 54, 0.74);
+  border: none;
+  color: white;
+}
+.wishlist-option input:active {
+  background: rgb(173, 121, 52);
+}
+.ui-tabs-nav {
+  background: none;
+  border: none;
+}
+.ui-tabs .ui-tabs-nav li {
+  background: rgba(189, 119, 54, 0.74);
+  border-radius: 20px;
+  border: none;
+  margin-left: 20px;
+}
+
+#tabs ul li a {
+  color: white;
+}
+.my-table-wrap {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 30px;
+}
+.my-table {
+  width: 100%;
+  height: 500px;
+}
+.my-table th,
+td {
+  border: 1px solid black;
+}
+.my-table-subject-wrap {
+  background: rgba(189, 119, 54, 0.089);
+  border-radius: 50px;
+}
+.my-table-subject-list {
+  width: 100%;
+}
+.my-table-subject-list-head tr th {
+  border: 0;
+  border-bottom: 1px dotted rgb(124, 118, 118);
+  padding-bottom: 10px;
+  font-size: 25px;
+}
+.my-table-subject-list-body {
+  overflow-y: scroll;
+}
+.my-table-subject-list-body tr td {
+  border: 0 solid;
+}
+.my-table-subject-list-body td {
+  font-size: 15px;
+  padding-top: 20px;
+}
+#col1-1,
+#col1-2,
+#col2-1,
+#col2-7 {
+  background-color: red;
+}
+.go-wishlist {
+  text-align: end;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.go-wishlist a:hover {
+  color: red;
+}

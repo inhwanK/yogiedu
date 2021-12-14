@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class AcademyController {
 	
-	@GetMapping("/apitest")
-	public String apiTest() {
-		return "apitest/api";
+	@GetMapping("/academySearch")
+	public String academySearch() {
+		return "academy/academySearch";
 	}
 }
