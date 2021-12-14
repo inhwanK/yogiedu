@@ -25,7 +25,7 @@
 				for (i = 0; i < dataLength; i++) {
 					list += "<tr>"; // 첫번째 반복문이 돌아갈 떄의 예
 					list += "<td>" + json[i].notIdx + "</td>"; //json의 데이터에 배열값 중 0번쨰 데이터의 notIdx property라는 값을 불러온다
-					 list += "<td><a href='${contextPath}/notice"
+					 list += "<td><a href='${contextPath}/notice?notIdx="
 					+ json[i].notIdx + "'>" + json[i].notTitle
 					+ "</a></td>"; 
 					/* list += "<td><a href='${contextPath}/notice?notIdx="
@@ -61,11 +61,12 @@
 						</thead>
 						<tbody>
 				    <div>
-        <button id="btn_write" type="button" class="btn_write" onclick="location.href= '${contextPath}/noticedetail'" >글작성</button>
+        
                     </div>
 						</tbody>
   					</table>
 				</div>
+				<button id="btn_write" type="button" class="btn_write" onclick="location.href= '${contextPath}/noticeReg'" >글작성</button>
 			</div>
 		</section>
 	</body>

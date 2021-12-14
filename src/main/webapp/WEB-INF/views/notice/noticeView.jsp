@@ -12,9 +12,10 @@
 		
 		$(function() {
 
+		
 	        var contextPath = "${contextPath}";
 			var notIdx = "${notIdx}";
-	
+			
 			console.log(notIdx);
 	
 			$.ajax({
@@ -24,27 +25,66 @@
 		    success: function(json) {
 		    console.log(json);
 		     
-		    //var dateForm = getFormatDate(json.regDate);
-		    
 		    
 		    $("p#title").append(json.notTitle);
-		    //$("span#regdate").append(dateForm);
+		   	$("#regdate").append(json.redDate);
 		    $("div#content").append(json.notContent);
-		
+	
 	    	}
 				
 		
 			})
-		
+				
+				
+		$("#cancel").on('click', function(){
+			window.location.href = contextPath + "/noticeList";	
 		});
-
+			
+		$("#modify").on('click', function() {
+				var conf = confirm("수정하시겠습니까?");
+				if (conf) {
+					window.location.href = contextPath + "/noticeUpdate?notIdx="+ notIdx;
+				}
+			});
+		});
+					
+				
+				
+			/* 	var contextPath = "${contextPath}";
+					var data = {
+							notTitle: $("#title").val(),
+							notContent:$("#content").val()
+					}
+					
+					console.log(data);
+					
+					$.ajax({
+						url : contextPath + "/api/notice?notIdx=" + notIdx,
+						type : "put",
+						dataType : "json",
+						data : JSON.stringify(data),
+						contentType : "application/json; charset=utf-8",
+						success : function(json) {
+							alert("수정이 완료되었습니다.");
+							window.location.href = contextPath + "/noticeList";
+						},
+						error : function() {
+							alert("뭔가 잘못된 것이 분명합니다.");
+						}
+					});
+				}
+			});
+		}); */
+		
+		
+		
 </script>  
 <body>
 <section>
     
     <div id="title-wrap">
         <div class="title">
-            <a href="noticelist" style="font-weight: 900; color: #222;">공지사항</a>
+            <a href="noticeList" style="font-weight: 900; color: #222;">공지사항</a>
         </div>
         
     </div>
@@ -73,21 +113,22 @@
 
             <div class="prev-next">
                 <div class="line prev" title="이전">
-                <!-- 	<p class="tit" title="이전">이전</p>
-                    <p class="link" title="이전">이전글 제목</p>
-                    글 존재하면 a태그 존재하지 않으면 p 태그  -->
+                
                 </div>
                 <div class="line next" title="다음">
-                    <!-- <p class="tit" title="다음">다음</p>
-                    <p class="link" title="다음">다음글 제목</p>
-                    <a href="#" class="link moveBtn" data-no="10348" title="다음">
-                        다음글 제목 </a> -->
+                  
                 </div>
             </div>
             <div class="btn-group pt40">
-                <a href="${contextPath}/noticelist" class="button large listBtn"
+                <a href="${contextPath}/noticeList" class="button large listBtn"
                     title="">목록</a>
+             
+			<div id="btn">
+							<button id="modify" class="btn btn-primary" >수정</button>
+							<button id="cancel" class="btn btn-primary">취소</button>
+			</div>       
             </div>
+            
         </div>
     </div>
    

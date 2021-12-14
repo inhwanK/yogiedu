@@ -41,13 +41,14 @@ public class RestNoticeController {
 		return noticeService.save(noticeDto);
 	}
 	
-	@PutMapping("/notice/{notIdx}")
-	public Long updateNotice(@PathVariable Long notIdx, @RequestBody NoticeUpdateRequestDto requestDto) {
+//	@PutMapping("/notice/{notIdx}")
+	@PutMapping("/notice")
+	public Long updateNotice(Long notIdx, @RequestBody NoticeUpdateRequestDto requestDto) {
 		return noticeService.update(notIdx, requestDto);
 	}
 	
-	@DeleteMapping("/notice/{notIdx}")
-	public Long deleteNotice(@PathVariable Long notIdx) {
+	@DeleteMapping("/notice")
+	public Long deleteNotice(Long notIdx) {
 		return noticeService.deleteById(notIdx);
 	}
 }
