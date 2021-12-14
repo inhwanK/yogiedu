@@ -37,46 +37,43 @@
 				
 				
 		$("#cancel").on('click', function(){
-			window.location.href = contextPath + "/noticeList";	
+			window.location.href = contextPath + "/noticeList"+ notIdx;	
 		});
 			
 		$("#modify").on('click', function() {
-				var conf = confirm("수정하시겠습니까?");
-				if (conf) {
-					window.location.href = contextPath + "/noticeUpdate?notIdx="+ notIdx;
-				}
+				window.location.href = contextPath + "/noticeUpdate?notIdx="+ notIdx;
+				
 			});
+		
+		$("#delete").on('click', function(){
+			
+			var conf = confirm("ㄹㅇ로 삭 제하시 겠습니까?");
+			if(conf){
+				
+				var notIdx = "${notIdx}";
+				
+				console.log(notIdx);
+		
+				$.ajax({
+			    url : contextPath + "/api/notice?notIdx=" + notIdx,
+			    method : "delete",
+			    dataType : "json",
+			    success: function(json) {
+			    
+			    	alert("삭 제 ㅇㅋ");
+			    	window.location.href = contextPath + "/noticeList";
+			},
+				
+				error: function(){
+				alert("조졋다");
+			}
+			
+		})	
+			}
+		
 		});
-					
+});
 				
-				
-			/* 	var contextPath = "${contextPath}";
-					var data = {
-							notTitle: $("#title").val(),
-							notContent:$("#content").val()
-					}
-					
-					console.log(data);
-					
-					$.ajax({
-						url : contextPath + "/api/notice?notIdx=" + notIdx,
-						type : "put",
-						dataType : "json",
-						data : JSON.stringify(data),
-						contentType : "application/json; charset=utf-8",
-						success : function(json) {
-							alert("수정이 완료되었습니다.");
-							window.location.href = contextPath + "/noticeList";
-						},
-						error : function() {
-							alert("뭔가 잘못된 것이 분명합니다.");
-						}
-					});
-				}
-			});
-		}); */
-		
-		
 		
 </script>  
 <body>
@@ -125,6 +122,7 @@
              
 			<div id="btn">
 							<button id="modify" class="btn btn-primary" >수정</button>
+							<button id="delete" class="btn btn-primary" >삭제</button>
 							<button id="cancel" class="btn btn-primary">취소</button>
 			</div>       
             </div>
