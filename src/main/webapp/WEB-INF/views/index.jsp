@@ -15,22 +15,46 @@
     	method : "get",
     	dataType : "json",
     	success: function(json) {
-    		
+    		//<div class="col-lg-3 col-6 text-center mainAcaNm">
+            //<span data-toggle="counter-up"></span>
+            //<p>등록된 학원</p>
+        	//</div>
     	  	var list="";
     	  	var dataLength = json.length;
-    	  	
     	  	for (i=0; i<5; i++){
     	  		list += "<div class='swiper-slide'>";
     	  		list += "<div class='testimonial-item'>";
-    	  		list += "<h3 id='title'>" + json[i].acaNm + "</h3>";
-    	  		list += "<h4 id='loacation'>" +json[i].faRdnma +"</h4>";
+    	  		list += "<h3 id='title' style='border-bottom:2px solid #000000; border-left:10px solid #000000'>" + json[i].acaNm + "</h3>";
+    	  		list += "<h4 id='loacation'><i class='fa fa-map-marker'></i>"+json[i].faRdnma +"</h4>";
     	  		list += "<p id='subject'>" + json[i].leCrseName +"</p>";
     	  		list += "</div>";
     	  		list += "</div>";    	  	
     	  		console.log(json[i].acaNm);
     	  	}
     	  	$("div.swiper-wrapper").append(list);
-
+			$("div.mainAcaNm span").append(dataLength);
+			
+			var aNs = 0;
+			for (i=0; i<dataLength; i++){
+				if (json[i].fieldName === "예능(대)")
+				aNs++;
+			}
+			console.log(aNs);
+			$({val:0}).animate({val:aNs},{
+				duration:aNs,
+				step: function(){
+					var num = numberWithComas(Math.floor(this.val));
+					$(".mainAns span").text(num);
+				},
+				complete: function(){
+					var num = numberWithComas(Math.floor(this.val));
+					$(".mainAns span").text(num);
+				}
+			});
+			function numberWithComas(x){
+				return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			}
+			$("div.mainAns span").append(aNs);
     	  	//$("div.testimonial-item").append(list);
     	  	//$("div.swiper-slide").append(list);
 	    }
@@ -228,14 +252,14 @@
 
             <div class="row counters">
 
-                <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up">274</span>
+                <div class="col-lg-3 col-6 text-center mainAcaNm">
+                    <span data-toggle="counter-up"></span>
                     <p>등록된 학원</p>
                 </div>
 
-                <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up">421</span>
-                    <p>이용중인 학부모님</p>
+                <div class="col-lg-3 col-6 text-center mainAns">
+                    <span data-toggle="counter-up"></span>
+                    <p>예체능학원 수</p>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
@@ -441,16 +465,16 @@
 
                 <div class="col-lg-3 col-md-6 wow fadeInUp">
                     <div class="member">
-                        <img src="/static/img/team-1.jpg" class="img-fluid" alt="">
+                        <img src="/static/img/견종빈.jpg" class="img-fluid" alt="">
                         <div class="member-info">
                             <div class="member-info-content">
                                 <h4>견종빈</h4>
                                 <span>기획</span>
                                 <div class="social">
-                                    <a href=""><i class="fa fa-phone"></i></a>
-                                    <a href=""><i class="fa fa-github"></i></a>
-                                    <a href=""><i class="fa fa-instagram"></i></a>
-                                    <a href=""><i class="fa fa-envelope"></i></a>
+                                    <a href="#" title="010-5128-3505"><i class="fa fa-phone"></i></a>
+                                    <a href="https://github.com/jbGyeon"><i class="fa fa-github"></i></a>
+                                    <a href="https://www.instagram.com/jongbin.kyun/"><i class="fa fa-instagram"></i></a>
+                                    <a href="#" title="kevin0209@naver.com"><i class="fa fa-envelope"></i></a>
                                 </div>
                             </div>
                         </div>

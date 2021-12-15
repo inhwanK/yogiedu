@@ -33,6 +33,7 @@
 						notContent:$("#content").val(),
 						regDate: new Date(),
 						writer: "dafsfddf"
+						
 			        };
 				
                 
