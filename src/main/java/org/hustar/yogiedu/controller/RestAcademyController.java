@@ -27,7 +27,6 @@ public class RestAcademyController {
 		return academyService.findAll();
 	}
 	
-	
 	@GetMapping("/academy")
 	public AcademyResponseDto getAcademy(Long acaIdx) {
 		return academyService.findById(acaIdx);
