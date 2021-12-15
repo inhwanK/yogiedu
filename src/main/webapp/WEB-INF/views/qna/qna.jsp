@@ -440,7 +440,7 @@
 <div class="container">
 
 <div class="page-header">
-    <h1>Bootstrap FAQ <small>Bootsrap Frequently Asked Questions</small></h1>
+    <h1>YOGIEDU FAQ <small style="color:#cdcdcd;">요기에듀에게 자주 하는 질문</small></h1>
 </div>
 
 <!-- FAQ - START -->
