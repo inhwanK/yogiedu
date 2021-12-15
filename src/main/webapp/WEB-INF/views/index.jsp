@@ -104,19 +104,19 @@
                     <div class="icon-box wow fadeInUp">
                         <div class="icon"><i class="fa fa-calendar"></i></div>
                         <h4 class="title"><a href="">장바구니 시간표</a></h4>
-                        <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+                        <p class="description">일반 쇼핑몰의 장바구니 기능과 유사한 형태로, 여러 시간표를 만들어 놓고 비교하여 선택할 수 있게 구현하였습니다. 필요한 기능이 있으시다면 저희에게 피드백을 주세요!</p>
                     </div>
 
                     <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
                         <div class="icon"><i class="fa fa-address-card"></i></div>
                         <h4 class="title"><a href="">학원 소개</a></h4>
-                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <p class="description">각 학원의 원장 혹은 관계자분들이 직접 작성한 소개란으로, 저희가 일절 손대지 않은 날것으로 정확한 정보를 받아 보세요!</p>
                     </div>
 
                     <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
                         <div class="icon"><i class="fa fa-comments"></i></div>
                         <h4 class="title"><a href="">학부모들의 리뷰</a></h4>
-                        <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                        <p class="description">미구현 기능으로 학부모님들께서 직접 리뷰를 작성하고 볼 수 있게 할 예정입니다. 결제정보를 받아 쓰므로 댓글알바등의 잘못된 정보에서 벗어날 수 있습니다!</p>
                     </div>
 
                 </div>
@@ -150,7 +150,7 @@
 
             <header class="section-header">
                 <h3>제공하는 서비스</h3>
-                <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
+                <p>여러가지 서비스를 준비하였습니다. 일단 맛보고 즐기세요!</p>
             </header>
 
             <div class="row justify-content-center">
@@ -628,7 +628,7 @@
                         </div>
                         <div class="col-md-4 info">
                             <i class="fa fa-envelope"></i>
-                            <p>info@yogiedu.com</p>
+                            <p>yogieduContact@gmail.com</p>
                         </div>
                         <div class="col-md-3 info">
                             <i class="fa fa-mobile"></i>
@@ -637,7 +637,7 @@
                     </div>
 
                     <div class="form">
-                        <div id="sendmessage">Your message has been sent. Thank you!</div>
+                        <div id="sendmessage">메세지 전송에 성공하셨습니다.!</div>
                         <div id="errormessage"></div>
                         <form action="" method="post" role="form" class="contactForm">
                             <div class="form-row">

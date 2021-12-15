@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
      <footer id="footer">
         <div class="footer-top">
             <div class="container">
@@ -31,15 +30,15 @@
                             70 Dong-nae ro <br>
                             Dong-gu, Deagu<br>
                             Republic of Korea<br>
-                            <strong>Phone:</strong> +82 5128 3505<br>
-                            <strong>Email:</strong> info@yogiedu.com<br>
+                            <strong>Phone:</strong> +82 010 5128 3505<br>
+                            <strong>Email:</strong> yogieduContact@gmail.com<br>
                         </p>
 
                         <div class="social-links">
-                          <a href=""><i class="fa fa-phone"></i></a>
-                          <a href=""><i class="fa fa-github"></i></a>
-                          <a href=""><i class="fa fa-instagram"></i></a>
-                          <a href=""><i class="fa fa-envelope"></i></a>
+                          <a href="#" title="010-5128-3505"><i class="fa fa-phone"></i></a>
+                          <a href="https://github.com/inhwanK/yogiedu"><i class="fa fa-github"></i></a>
+                          <a href="#"><i class="fa fa-instagram"></i></a>
+                          <a href="#" title="yogieduContact@gmail.com"><i class="fa fa-envelope"></i></a>
                         </div>
 
                     </div>
@@ -79,63 +78,63 @@
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <script src="/static/js/main.js"></script>
-    <!-- Template Main Javascript File -->
+    
+	<script type="text/javascript" charset="utf-8">
 
-<script type="text/javascript" charset="utf-8">
-
-	function createHtmlFAQ(q, a, id)
-	{
-		return (
-          "<div class=\"panel panel-default\">" +
-          "    <div class=\"panel-heading\">" +
-          "        <h4 class=\"panel-title\">" +
-          "            <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse"+id+"\">"+q+"</a>" +
-          "        </h4>" +
-          "    </div>" +
-          "    <div id=\"collapse"+id+"\" class=\"panel-collapse collapse\">" +
-          "        <div class=\"panel-body\">" +
-          "            " + marked(a) +
-          "        </div>" +
-          "    </div>" +
-          "</div>\n");
-	}
-
-	$(document).ready(function(){
-		var cArray = [];
-		for(i in FAQ)
+		function createHtmlFAQ(q, a, id)
 		{
-			var cItem = {};
-			var indexCategory = -1;
-			for(j in cArray)
+			return (
+          	"<div class=\"panel panel-default\">" +
+          	"    <div class=\"panel-heading\">" +
+          	"        <h4 class=\"panel-title\">" +
+          	"            <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse"+id+"\">"+q+"</a>" +
+          	"        </h4>" +
+          	"    </div>" +
+          	"    <div id=\"collapse"+id+"\" class=\"panel-collapse collapse\">" +
+          	"        <div class=\"panel-body\">" +
+          	"            " + marked(a) +
+          	"        </div>" +
+          	"    </div>" +
+          	"</div>\n");
+		}
+
+		$(document).ready(function(){
+			var cArray = [];
+			for(i in FAQ)
 			{
-				if (cArray[j].text == FAQ[i].category) {
-					indexCategory = j;
-					break;
+				var cItem = {};
+				var indexCategory = -1;
+				for(j in cArray)
+				{
+					if (cArray[j].text == FAQ[i].category) {
+						indexCategory = j;
+						break;
+					}
+				}
+				
+				if (indexCategory == -1) {
+					cItem.text = FAQ[i].category;
+					cItem.html = createHtmlFAQ(FAQ[i].question, FAQ[i].answer, i);
+					cArray.push(cItem);
+				} else {
+					cArray[indexCategory].html += createHtmlFAQ(FAQ[i].question, FAQ[i].answer, i);
 				}
 			}
+				
+			var html = "";
 			
-			if (indexCategory == -1) {
-				cItem.text = FAQ[i].category;
-				cItem.html = createHtmlFAQ(FAQ[i].question, FAQ[i].answer, i);
-				cArray.push(cItem);
-			} else {
-				cArray[indexCategory].html += createHtmlFAQ(FAQ[i].question, FAQ[i].answer, i);
+			for(i in cArray)
+			{
+				html += "<div class=\"faqHeader\">"+cArray[i].text+"</div>\n" + cArray[i].html + "<br />"
 			}
-		}
 		
-		var html = "";
-		
-		for(i in cArray)
-		{
-			html += "<div class=\"faqHeader\">"+cArray[i].text+"</div>\n" + cArray[i].html + "<br />"
-		}
-		
-		$("#accordion").html($(html));
-		$(".accordion-toggle:first").click();
-	});
-</script>
+			$("#accordion").html($(html));
+			$(".accordion-toggle:first").click();
+		});
+	</script>
 
-</body>
+	</body>
 
 </html>
