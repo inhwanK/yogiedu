@@ -53,8 +53,6 @@ public class AcademyResponseDto {
 			this.estblDate = entity.getEstblDate();
 			this.regDate = entity.getRegDate();
 			this.fieldName = entity.getFieldName();
-			this.liOfdName = entity.getLiOfdName();
-			this.leCrseListName = entity.getLeCrseListName();
 			this.leCrseName = entity.getLeCrseName();
 			this.faRdnzc = entity.getFaRdnzc();
 			this.faRdnma = entity.getFaRdnma();

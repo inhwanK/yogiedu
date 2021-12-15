@@ -36,11 +36,11 @@ public class AcademySaveRequestDto {
 	@JsonProperty("REALM_SC_NM")
 	private String fieldName;
 	
-	@JsonProperty("LE_OFD_NM") // 교습계열명
-	private String liOfdName;
-	
-	@JsonProperty("LE_CRSE_LIST_NM") // 교습과정목록명
-	private String leCrseListName;
+//	@JsonProperty("LE_OFD_NM") // 교습계열명
+//	private String liOfdName;
+//	
+//	@JsonProperty("LE_CRSE_LIST_NM") // 교습과정목록명
+//	private String leCrseListName;
 	
 	@JsonProperty("LE_CRSE_NM") // 교습과정명
 	private String leCrseName;
@@ -56,8 +56,8 @@ public class AcademySaveRequestDto {
 	
 	@Builder
 	public AcademySaveRequestDto(String acaAsnum, String acaNm, String atptOfcdcScCode, String atptOfcdcScNm,
-			String adminDistName, String estblDate, String regDate, String fieldName, String liOfdName,
-			String leCrseListName, String leCrseName, String faRdnzc, String faRdnma, String faRdnda) {
+			String adminDistName, String estblDate, String regDate, String fieldName, String leCrseName,
+			String faRdnzc, String faRdnma, String faRdnda) {
 		super();
 		this.acaAsnum = acaAsnum;
 		this.acaNm = acaNm;
@@ -67,8 +67,6 @@ public class AcademySaveRequestDto {
 		this.estblDate = estblDate;
 		this.regDate = regDate;
 		this.fieldName = fieldName;
-		this.liOfdName = liOfdName;
-		this.leCrseListName = leCrseListName;
 		this.leCrseName = leCrseName;
 		this.faRdnzc = faRdnzc;
 		this.faRdnma = faRdnma;
@@ -86,8 +84,6 @@ public class AcademySaveRequestDto {
 				.estblDate(estblDate)
 				.regDate(regDate)
 				.fieldName(fieldName)
-				.liOfdName(liOfdName)
-				.leCrseListName(leCrseListName)
 				.leCrseName(leCrseName)
 				.faRdnzc(faRdnzc)
 				.faRdnma(faRdnma)

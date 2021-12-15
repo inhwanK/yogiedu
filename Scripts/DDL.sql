@@ -56,8 +56,6 @@ CREATE TABLE `yogiedu`.`academy` (
 	`ESTBL_YMD`          CHAR(8)      NULL     COMMENT '개설일자', -- 개설일자
 	`REG_YMD`            CHAR(8)      NULL     COMMENT '등록일자', -- 등록일자
 	`REALM_SC_NM`        VARCHAR(10)  NULL     COMMENT '분야명', -- 분야명
-	`LE_OFD_NM`          VARCHAR(10)  NULL     COMMENT '교습계열명', -- 교습계열명
-	`LE_CRSE_LIST_NM`    VARCHAR(80)  NULL     COMMENT '교습과정목록명', -- 교습과정목록명
 	`LE_CRSE_NM`         VARCHAR(80)  NULL     COMMENT '교습과정명', -- 교습과정명
 	`FA_RDNZC`           VARCHAR(20)  NULL     COMMENT '도로명우편번호', -- 도로명우편번호
 	`FA_RDNMA`           VARCHAR(60)  NULL     COMMENT '도로명주소', -- 도로명주소
