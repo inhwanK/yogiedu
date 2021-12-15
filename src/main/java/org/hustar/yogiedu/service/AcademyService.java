@@ -7,9 +7,11 @@ import javax.transaction.Transactional;
 
 import org.hustar.yogiedu.domain.academy.Academy;
 import org.hustar.yogiedu.domain.academy.AcademyRepository;
+import org.hustar.yogiedu.domain.lecture.Lecture;
 import org.hustar.yogiedu.domain.lecture.LectureRepository;
 import org.hustar.yogiedu.dto.academy.AcademyResponseDto;
 import org.hustar.yogiedu.dto.academy.AcademySaveRequestDto;
+import org.hustar.yogiedu.dto.lecture.LectureResponseDto;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
@@ -50,18 +52,16 @@ public class AcademyService {
 		Academy entity = academyRepository.findById(acaIdx)
 				.orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id="+acaIdx));
 		
-//		System.out.println("academyEntity > " + academyEntity.toString());
-//		
-//		List<Lecture> lectureEntity = lectureRepository.findByAcademy(academyEntity);
-//		
-//		academyEntity.setLectureInfo(lectureEntity);
-//		
-//		System.out.println(academyEntity.toString());
-//		AcademyResponseDto academyResponse = new AcademyResponseDto(academyEntity);
-//		
-//		System.out.println(academyResponse);
-//		return academyResponse;
-		return new AcademyResponseDto(entity);
+		List<Lecture> lectureEntityList = lectureRepository.findByAcademy(entity);
+		
+		List<LectureResponseDto> lectureResponseList = new ArrayList<LectureResponseDto>();
+		
+		for(int i = 0 ; i < lectureEntityList.size();i++) {
+			lectureResponseList.add(new LectureResponseDto(lectureEntityList.get(i)));
+//			System.out.println("내가 좀 더 원하던 것 > "+lectureResponseList.get(i).getLectureName());
+		}
+		
+		return new AcademyResponseDto(entity, lectureResponseList);
 	}
 	
 	// 기본키에 따라 삭제하기.
