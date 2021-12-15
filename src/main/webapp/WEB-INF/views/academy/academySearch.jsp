@@ -39,14 +39,15 @@
 		    var dataLength = json.length;
 		    var list = "";
 		    
-		    console.log(json[0].acaNm);
+		  
 		    $("#academy-name").append(json[0].acaNm);
 		    $("#academy-area").append(json[0].faRdnma);
 		   
-		    for(i=0; i <=dataLength-253; i++ )
+		    for(i=0; i <=dataLength-248; i++ )
 		    	{
-		    		console.log("i"); 
-		    		list += '<div class="product_item1 col-md-3" data-type="daugu">';
+		    	
+					
+					list += '<div class="product_item1 col-md-4" data-type="daugu">';
 		    		list += '<div class="product_item" id="opener">';
 		    		list += '<div class="pi-img-wrapper"  >';
 		    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
@@ -57,8 +58,14 @@
 		    		list += '</div>';
 		    		list += '</div>';
 		    		list += '</div>';
+		    		
+		    		
+		    			
+					
+		    		
 		    	}
-		    $("#product-list").append(list);
+		    console.log(list);
+		    $("#product-list-wrap").append(list);
 		    }
 		})
 	})
@@ -280,7 +287,7 @@
                       </select>
                     </div>
                        <!--상품리스트 시작-->
-                    <div class="product_list row col-md-12" id="product-list">
+                    <div class="product_list row col-md-12" id="product-list-wrap">
                         <!-- PRODUCT ITEM START -->
                                  
                           
