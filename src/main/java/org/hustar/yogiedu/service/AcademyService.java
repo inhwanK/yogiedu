@@ -2,12 +2,12 @@ package org.hustar.yogiedu.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import javax.transaction.Transactional;
 
 import org.hustar.yogiedu.domain.academy.Academy;
 import org.hustar.yogiedu.domain.academy.AcademyRepository;
+import org.hustar.yogiedu.domain.lecture.LectureRepository;
 import org.hustar.yogiedu.dto.academy.AcademyResponseDto;
 import org.hustar.yogiedu.dto.academy.AcademySaveRequestDto;
 import org.springframework.stereotype.Service;
@@ -19,6 +19,7 @@ import lombok.RequiredArgsConstructor;
 public class AcademyService {
 
 	private final AcademyRepository academyRepository;
+	private final LectureRepository lectureRepository;
 	
 	// 학원 등록.
 	@Transactional
@@ -46,9 +47,21 @@ public class AcademyService {
 	
 	@Transactional
 	public AcademyResponseDto findById(Long acaIdx) {
-		Optional<Academy> entity = academyRepository.findById(acaIdx);
+		Academy entity = academyRepository.findById(acaIdx)
+				.orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id="+acaIdx));
 		
-		return new AcademyResponseDto(entity.get());
+//		System.out.println("academyEntity > " + academyEntity.toString());
+//		
+//		List<Lecture> lectureEntity = lectureRepository.findByAcademy(academyEntity);
+//		
+//		academyEntity.setLectureInfo(lectureEntity);
+//		
+//		System.out.println(academyEntity.toString());
+//		AcademyResponseDto academyResponse = new AcademyResponseDto(academyEntity);
+//		
+//		System.out.println(academyResponse);
+//		return academyResponse;
+		return new AcademyResponseDto(entity);
 	}
 	
 	// 기본키에 따라 삭제하기.

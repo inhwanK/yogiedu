@@ -6,6 +6,7 @@ import org.hustar.yogiedu.domain.lecture.Lecture;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 @Getter
 @NoArgsConstructor
@@ -14,6 +15,7 @@ public class LectureSaveRequestDto {
 //	private Academy academy;
 	
 	// Academy 객체의 acaIdx 값을 요청값으로 받음.
+	@NonNull
 	private Long acaIdx;
 	private String lectureName;
 	private String teacherName;
