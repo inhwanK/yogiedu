@@ -64,9 +64,6 @@ public class Academy {
 	@Column(name = "FA_RDNDA") //도로명상세주소
 	private String faRdnda;
 	
-//	@OneToMany(mappedBy = "academy")
-//	private List<Lecture> lectures = new ArrayList<Lecture>();
-	
 	@Builder
 	public Academy(Long acaIdx, String acaAsnum, String acaNm, String atptOfcdcScCode, String atptOfcdcScNm,
 			String adminDistName, String estblDate, String regDate, String fieldName, String leCrseName, String faRdnzc,
@@ -86,25 +83,4 @@ public class Academy {
 		this.faRdnma = faRdnma;
 		this.faRdnda = faRdnda;
 	}
-
-	
-/*	
-	public Academy(Long acaIdx, String acaAsnum, String acaNm, String atptOfcdcScCode, String atptOfcdcScNm,
-			String adminDistName, String estblDate, String regDate, String fieldName, String leCrseName, String faRdnzc, String faRdnma, String faRdnda) {
-		super();
-		this.acaIdx = acaIdx;
-		this.acaAsnum = acaAsnum;
-		this.acaNm = acaNm;
-		this.atptOfcdcScCode = atptOfcdcScCode;
-		this.atptOfcdcScNm = atptOfcdcScNm;
-		this.adminDistName = adminDistName;
-		this.estblDate = estblDate;
-		this.regDate = regDate;
-		this.fieldName = fieldName;
-		this.leCrseName = leCrseName;
-		this.faRdnzc = faRdnzc;
-		this.faRdnma = faRdnma;
-		this.faRdnda = faRdnda;
-	}
-	*/	
 }

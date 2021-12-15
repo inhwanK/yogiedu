@@ -14,5 +14,10 @@ select * from academy WHERE aca_asnum = '3000019645';
 alter user root@localhost identified with mysql_native_password by 'root';
 
 select * from lecture;
-delete from lecture;
+
+
+delete from lecture_time;
+
+
+alter table lecture_time auto_increment=1;
 alter table lecture auto_increment=1;
