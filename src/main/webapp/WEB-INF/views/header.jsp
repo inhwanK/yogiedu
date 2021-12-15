@@ -31,10 +31,54 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
     <!-- Main Stylesheet File -->
     <link href="/static/css/main.css" rel="stylesheet">
     
+        <script type="text/javascript" charset="utf-8">
+    // answer 항목에 Markdown 문법을 지원 합니다.
+    var FAQ = [
+      { 
+      	  category: "General questions"
+      	, question: "question 1"
+      	, answer: "answer 1" 
+      }, { 
+      	  category: "General questions"
+      	, question: "question 2"
+      	, answer: "answer 2" 
+      }, { 
+      	  category: "General questions"
+      	, question: "question 3"
+      	, answer: "answer 3" 
+      }, { 
+          category: "markdown"
+        , question: "text style"
+        , answer: "*bold*, **italic**, ~~strike~~" 
+      }, { 
+          category: "markdown"
+        , question: "table example"
+        , answer: "table\n\n" 
+                + "| header 1 | header 2 |\n"
+                + "|:--------:|:--------:|\n"
+                + "|   item 1 |   item 2 |\n"
+                + "|   item 3 |   item 3 |\n"
+      }, { 
+          category: "link"
+        , question: "html template"
+        , answer: "[bootstrap-template](http://www.prepbootstrap.com/bootstrap-template/faq-example)"
+      }, { 
+          category: "link"
+        , question: "markdown paser"
+        , answer: "[marked](https://github.com/chjj/marked)"
+      }, { 
+          category: "link"
+        , question: "my bolg"
+        , answer: "[newtype's blog](http://www.newtype.pe.kr/)"
+      }
+    ]
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.js"></script>
 </head>
 
 <body>

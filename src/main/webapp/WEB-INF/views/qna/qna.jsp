@@ -15,7 +15,7 @@
 
         </div>
     </section>
-  <main id="main">
+  <!-- <main id="main">
 
       <section class="section-qna u-wrap">
         
@@ -435,6 +435,81 @@
           }
       }
   </script>
-</main>
+</main> -->
+
+<div class="container">
+
+<div class="page-header">
+    <h1>Bootstrap FAQ <small>Bootsrap Frequently Asked Questions</small></h1>
+</div>
+
+<!-- FAQ - START -->
+<div class="container">
+    <br />
+
+    <div class="panel-group" id="accordion">
+    </div>
+</div>
+</div>
+<style>
+    .faqHeader {
+        font-size: 27px;
+        margin: 20px;
+    }
+
+    .panel-heading [data-toggle="collapse"]:after {
+        font-family: 'Glyphicons Halflings';
+        content: "\e072"; /* "play" icon */
+        float: right;
+        color: #F58723;
+        font-size: 18px;
+        line-height: 22px;
+        /* rotate "play" icon from > (right arrow) to down arrow */
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+
+    .panel-heading [data-toggle="collapse"].collapsed:after {
+        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        color: #454444;
+    }
+    
+    .panel-body table {
+		margin:15px 0;
+		border:0;
+    }
+    .panel-body th {
+		margin:15px 0;
+		font-weight:bold;
+		background-color:#dddddd;
+		color:#cccccc
+		border: 1px solid #cccccc;
+		border-width:1px
+    }
+    
+	.panel-body th,.panel-body td {
+		font-size:0.95em;
+		text-align:center;
+		padding:4px;
+		border-collapse:collapse;
+	}
+	.panel-body td {
+		border: 1px solid #cccccc;
+		border-width:1px
+	}
+	.panel-body tr {
+		border: 1px solid #ffffff;
+	}
+    
+</style>
+</body>
 <%@include file="/WEB-INF/views/footer.jsp"%>
 
