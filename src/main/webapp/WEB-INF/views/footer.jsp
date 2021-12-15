@@ -79,10 +79,62 @@
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
     <script src="/static/js/main.js"></script>
     <!-- Template Main Javascript File -->
 
+<script type="text/javascript" charset="utf-8">
+
+	function createHtmlFAQ(q, a, id)
+	{
+		return (
+          "<div class=\"panel panel-default\">" +
+          "    <div class=\"panel-heading\">" +
+          "        <h4 class=\"panel-title\">" +
+          "            <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse"+id+"\">"+q+"</a>" +
+          "        </h4>" +
+          "    </div>" +
+          "    <div id=\"collapse"+id+"\" class=\"panel-collapse collapse\">" +
+          "        <div class=\"panel-body\">" +
+          "            " + marked(a) +
+          "        </div>" +
+          "    </div>" +
+          "</div>\n");
+	}
+
+	$(document).ready(function(){
+		var cArray = [];
+		for(i in FAQ)
+		{
+			var cItem = {};
+			var indexCategory = -1;
+			for(j in cArray)
+			{
+				if (cArray[j].text == FAQ[i].category) {
+					indexCategory = j;
+					break;
+				}
+			}
+			
+			if (indexCategory == -1) {
+				cItem.text = FAQ[i].category;
+				cItem.html = createHtmlFAQ(FAQ[i].question, FAQ[i].answer, i);
+				cArray.push(cItem);
+			} else {
+				cArray[indexCategory].html += createHtmlFAQ(FAQ[i].question, FAQ[i].answer, i);
+			}
+		}
+		
+		var html = "";
+		
+		for(i in cArray)
+		{
+			html += "<div class=\"faqHeader\">"+cArray[i].text+"</div>\n" + cArray[i].html + "<br />"
+		}
+		
+		$("#accordion").html($(html));
+		$(".accordion-toggle:first").click();
+	});
+</script>
 
 </body>
 
