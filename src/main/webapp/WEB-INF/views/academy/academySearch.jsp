@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@include file="/WEB-INF/views/header.jsp"%>-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="contextPath" value="<%=request.getContextPath()%>" />
+<%@include file="/WEB-INF/views/header.jsp"%>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/static/css/academy/style.css">    
  <link rel="stylesheet" href="/static/css/academy/bootstrap.css">
  <link rel="stylesheet" href="/static/css/academy/main.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- 
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
  
  <!-- js -->
  	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -15,6 +17,8 @@
     <script src="/static/js/academy/academySearch.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>  
+   
+     <meta charset="UTF-8">
  <body>
  
  <script type="text/javascript">
@@ -32,13 +36,41 @@
 		    success: function(json) {
 		    console.log(json);
 		    
+		    var dataLength = json.length;
+		    var list = "";
+		    
+		  
+		    $("#academy-name").append(json[0].acaNm);
+		    $("#academy-area").append(json[0].faRdnma);
 		   
-		    console.log(json[0].acaNm);
+		    for(i=0; i <=dataLength-248; i++ )
+		    	{
+		    	
+					
+					list += '<div class="product_item1 col-md-4" data-type="daugu">';
+		    		list += '<div class="product_item" id="opener">';
+		    		list += '<div class="pi-img-wrapper"  >';
+		    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
+		    		list += '<div id="academy-name">';
+		    		list += '</div>';
+		    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
+		    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
+		    		list += '</div>';
+		    		list += '</div>';
+		    		list += '</div>';
+		    		
+		    		
+		    			
+					
+		    		
+		    	}
+		    console.log(list);
+		    $("#product-list-wrap").append(list);
 		    }
 		})
-	});
+	})
  </script>
-    
+    <body>
     <div class="search-list-wrap" style="padding-top:150px;">
         <div class="row col-md-12 ">
            
@@ -255,20 +287,11 @@
                       </select>
                     </div>
                        <!--상품리스트 시작-->
-                    <div class="product_list row col-md-12">
+                    <div class="product_list row col-md-12" id="product-list-wrap">
                         <!-- PRODUCT ITEM START -->
-                        <div class="product_item1 col-md-4 " data-type="daugu" ">
-                          <div class="product_item" id="opener" >
-                            <div class="pi-img-wrapper" id="academy-name"  >
-
-
-                            </div >
-                            
-                              <h3><a href="shop-item.html"><h1></h1></a></h3>
-                              <div class="pi-price">대구광역시 동성로 12길</div>
-                          </div>                
+                                 
                           
-                        </div>
+                      </div>
                    
                         <!-- PRODUCT ITEM END -->
                         
@@ -276,7 +299,7 @@
                         <!-- product item script-->
        
                       <!-- END PRODUCT LIST -->
-                    </div>
+                  
                    
                  
                
@@ -356,78 +379,7 @@
                             </tr>
                               </table>
                             </div>
-                              <script>
-
-                        $(document).ready(function(e) {
-                          var total = 0;
-                         
-                         //상품 담기 리스트
-                          $('.subject_teacher > button').click(function(e) {
-                          var btnName =  $(this).get(0).className;
-                          console.log(btnName);
-                          var $tagGood;
-                           
-                          switch (btnName) {
-                            case "btn_add1":
-                              $tagGood = $('<tr align="center" class="good1"></tr>')
-                              .append('<td>고등국어</td>')
-                              .append('<td>김인환</td>')
-                              .append('<td>고3</td>')
-                              .append('<td>1</td>')
-                              .append('<td><button type="button" title="삭제" class="btn_del">삭제</button></td>');
-                              
-                              total = total +1;
-                              
-                            break;
-                          }	
-                          $('#cart .basic').append( $tagGood );
-                          $('#show_total').empty().append( "총 수강 개수:" + total + "개"  );
-                          
-                          });
-                          //삭제 기능
-                          $('.basic').click(function(e) {
-                            if (e.target.className == 'btn_del') {
-                              var good = $(e.target).parents('tr');
-                              switch (good.get(0).className) {
-                                case "good1":
-                                  total = total - 1;
-                                break;
-                                case "good2":
-                                  total = total - 1;
-                                break;
-                                case "good3":
-                                  total = total - 1;
-                                break;
-                                case "good4":
-                                  total = total - 1;
-                                break;
-                              }
-                              good.remove();
-                              
-                              $('#show_total').empty().append(  "총 수강 개수:" + total + "개"  );
-                            }
-                          });
-                        
-                          $('#btn_buy').click(function(e) {
-                            var sale;
-                            alert("수강꾸러미에 담으시겠습니까?");
-                            
-                            console.log($(".good1"));
-                            if( $(".good1").length == 0){
-                              alert("시간표가 비었습니다");
-                            }else{
-                              var col11 = document.getElementById("col1-1");
-                              col11.style.backgroundColor = "blue"; 
-                            console.log(col11);
-                            }
-                          });
-                          $('#wishlist').click(function(){
-                        	  var input1 = document.getElementById("mon-data");
-                        	  
-
-                        	});
-                        });
-                        </script>
+                             
                           </div>
                           
                           
