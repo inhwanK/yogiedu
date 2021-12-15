@@ -66,7 +66,7 @@
 </script>  
 <%@include file="/WEB-INF/views/header.jsp"%>
 
-<section id="intro" class="clearfix">
+<section id="introQ" class="clearfix">
     <div class="container">
 
         <div class="intro-img">

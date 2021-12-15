@@ -436,8 +436,8 @@
       }
   </script>
 </main> -->
-
-<div class="container">
+<section style="background-color:#e4eefa;">
+<div class="container" >
 
 <div class="page-header">
     <h1>YOGIEDU FAQ <small style="color:#cdcdcd;">요기에듀에게 자주 하는 질문</small></h1>
@@ -451,6 +451,7 @@
     </div>
 </div>
 </div>
+</section>
 <style>
     .faqHeader {
         font-size: 27px;
