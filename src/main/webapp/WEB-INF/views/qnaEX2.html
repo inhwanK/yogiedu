@@ -1,0 +1,69 @@
+<script type="text/javascript">
+  function show_layer(div_i_wrap){
+    document.all.question_1_wrap.style.display="none";
+    document.all.question_2_wrap.style.display="none";
+    document.all.question_3_wrap.style.display="none";
+    document.all.question_4_wrap.style.display="none"; // 메뉴 숫자에 따라 늘려주세요
+      switch(div_i_wrap)
+        {
+        case '1':
+        document.all.question_1_wrap.style.display="";
+        break;
+        case '2':
+        document.all.question_2_wrap.style.display="";
+        break;
+        case '3':
+        document.all.question_3_wrap.style.display="";
+        break;
+        case '4':
+        document.all.question_4_wrap.style.display="";
+        break;
+        }
+    }
+</script>
+
+<DIV id=question_1_wrap>
+  <table width="707px" cellspacing="0" cellpadding="0" border="0" align="center" style="margin-top: 30px;" >
+    <tr>
+      <td>메뉴 또는 탭 1</td>
+      <td><a href="javascript:show_layer('2');">메뉴 또는 탭 2</a></td>
+      <td><a href="javascript:show_layer('3');">메뉴 또는 탭 3</a></td>
+      <td><a href="javascript:show_layer('4');">메뉴 또는 탭 4</a></td>    
+    </tr>
+    <div>내용1</div>
+  </table>
+</DIV>
+<DIV id=question_2_wrap style="DISPLAY: none">
+  <table width="707px" cellspacing="0" cellpadding="0" border="0" align="center" style="margin-top: 30px;" >
+    <tr>
+      <td><a href="javascript:show_layer('1');">메뉴 또는 탭 1</a></td>
+      <td>메뉴 또는 탭2</td>
+      <td><a href="javascript:show_layer('3');">메뉴 또는 탭3</a></td>
+      <td><a href="javascript:show_layer('4');">메뉴 또는 탭4</a></td>    
+    </tr>
+    <div>내용2</div>
+  </table>
+</DIV>
+<DIV id=question_3_wrap style="DISPLAY: none">
+  <table width="707px" cellspacing="0" cellpadding="0" border="0" align="center" style="margin-top: 30px;" >
+    <tr>
+      <td><a href="javascript:show_layer('1');">메뉴 또는 탭1</a></td>
+      <td><a href="javascript:show_layer('2');">메뉴 또는 탭2</a></td>
+      <td>메뉴 또는 탭3</td>
+      <td><a href="javascript:show_layer('4');">메뉴 또는 탭4</a></td>    
+    </tr>
+    <div>내용3</div>
+  </table>
+</DIV>
+<DIV id=question_4_wrap style="DISPLAY: none">
+  <table width="707px" cellspacing="0" cellpadding="0" border="0" align="center" style="margin-top: 30px;" >
+    <tr>
+      <td><a href="javascript:show_layer('1');">메뉴 또는 탭1</a></td>
+      <td><a href="javascript:show_layer('2');">메뉴 또는 탭2</a></td>
+      <td><a href="javascript:show_layer('3');">메뉴 또는 탭3</a></td>
+      <td>메뉴 또는 탭4</td>    
+    </tr>
+    <div>내용4</div>
+  </table>
+</DIV>
+
