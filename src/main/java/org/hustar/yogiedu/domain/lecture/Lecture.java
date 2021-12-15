@@ -32,10 +32,7 @@ public class Lecture {
 	private Academy academy;
 	private String lectureName;
 	private String teacherName;
-	
-//	@OneToMany(mappedBy = "lecture")
-//	private List<LectureTime> lectureTimes = new ArrayList<LectureTime>();
-	
+		
 	@Builder
 	public Lecture(Long lectureIdx, Academy academy, String lectureName, String teacherName) {
 		super();

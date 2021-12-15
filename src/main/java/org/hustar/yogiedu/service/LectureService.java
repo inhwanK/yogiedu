@@ -5,11 +5,13 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
-import org.hustar.yogiedu.domain.academy.Academy;
 import org.hustar.yogiedu.domain.lecture.Lecture;
 import org.hustar.yogiedu.domain.lecture.LectureRepository;
+import org.hustar.yogiedu.domain.lecturetime.LectureTime;
+import org.hustar.yogiedu.domain.lecturetime.LectureTimeRepository;
 import org.hustar.yogiedu.dto.lecture.LectureResponseDto;
 import org.hustar.yogiedu.dto.lecture.LectureSaveRequestDto;
+import org.hustar.yogiedu.dto.lecturetime.LectureTimeResponseDto;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
@@ -20,7 +22,8 @@ import lombok.RequiredArgsConstructor;
 public class LectureService {
 
 	private final LectureRepository lectureRepository;
-
+	private final LectureTimeRepository ltRepository;
+	
 	@Transactional
 	public Long save(LectureSaveRequestDto requestDto) {
 
@@ -41,24 +44,20 @@ public class LectureService {
 
 	@Transactional
 	public LectureResponseDto findById(Long lectureIdx) {
-		Lecture lecture = lectureRepository.findById(lectureIdx)
-				.orElseThrow(() -> new IllegalArgumentException("해당 강의가 없습니다. id="+lectureIdx));
-		return new LectureResponseDto(lecture);
+		Lecture entity = lectureRepository.findById(lectureIdx)
+				.orElseThrow(() -> new IllegalArgumentException("해당 강의가 없습니다. id=" + lectureIdx));
+
+		List<LectureTime> ltEntityList = ltRepository.findByLecture(entity);
+		List<LectureTimeResponseDto> ltResponseList = new ArrayList<LectureTimeResponseDto>();
+
+		for (int i = 0; i < ltEntityList.size(); i++) {
+			ltResponseList.add(new LectureTimeResponseDto(ltEntityList.get(i)));
+			System.out.println("내가 원하는 것 > "+ltResponseList.get(i).getLectureWeek());
+		}
+
+		return new LectureResponseDto(entity, ltResponseList);
 	}
-	
-	@Transactional
-	public List<LectureResponseDto> findByAcademy(Academy academy){
-//		List<Lecture> entityList = lectureRepository.findByAcademy(academy);
-//		List<LectureResponseDto> lectureList = new ArrayList<LectureResponseDto>();
-//		
-//		for(int i = 0; i < entityList.size();i++) {
-//			lectureList.add(new LectureResponseDto(entityList.get(i)));
-//		}
-		
-		return null;
-//		return lectureList;
-	}
-	
+
 	@Transactional
 	public Long deleteById(Long lectureIdx) {
 		lectureRepository.deleteById(lectureIdx);
