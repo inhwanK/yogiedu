@@ -15,11 +15,16 @@ $(function(){
     	var contextPath = "${contextPath}";
 
     		var data={
-    				ACA_ASNUM : $("#inputEmail"),
-    				ACA_NM: $("#inputPassword")
+    				ACA_ASNUM : $("#inputName").val(),
+    				
+    				ACA_PH: $("#inputTel").val(),
+    				ACA_AREA: $("#inputArea").val(),
+    				ACA_CONTENT: $("#inputContent").val()
+    				
     				
     		};
        
+    		
         $.ajax({
             type: "post",
             url: "/api/academy",
@@ -39,6 +44,19 @@ $(function(){
     
   
 });
+
+$(function getCheckboxValue(event) {
+	  let result = '';
+	  if(event.target.checked)  {
+	    result = event.target.value;
+	    console.log(result);
+	  }else {
+	    result = '';
+	    
+	  }
+	   document.getElementById('result').innerText
+	    = result;
+	})
 </script>
 <body>
  <div id="container" style="width: 30%; height: 80px; margin-left: 30%; margin-top: 10%;" >
@@ -48,7 +66,7 @@ $(function(){
             <input type="text" name="ACA_ASNUM" id="inputEmail" class="form-control" required autofocus>
             <label for="inputPassword" class="sr-only">Password</label>
             <input type="text" name="ACA_NM" id="inputPassword" class="form-control"  required>
-<label for="inputEmail" class="sr-only">subject</label>
+			<label for="inputEmail" class="sr-only">subject</label>
             <input type="text" name="" id="inputEmail" class="form-control" required autofocus>
             <div>
                 <label>
@@ -58,4 +76,118 @@ $(function(){
             <button class="btn btn-lg btn-primary btn-block" id="submit" type="button">Sign in</button>
         </form>
         </div>
+        
+        <div id="container">
+    <form class="form-enroll" id="form">
+            <div class="enroll-name-wrap ">
+                <h1>학원 등록하기</h1>
+                <div>
+                    
+                    <div class="enroll-name-tit" >
+                       <h3>학원명*</h3>
+                       <p>(실제 학원명을 입력해주세요.)</p>
+                    </div>
+                    <div class="enroll-name " >
+                        <input type="text" name="ACA_NM" id="inputName" style="width:50%;" >
+                    </div>
+
+           
+                    
+                    <div class="enroll-phone-tit" >
+                        
+                        <h3>학원 전화번호</h3>
+                        
+                    </div>
+                    <div class="enroll-phone" >
+                        <input type="tel" name="ACA_NM" id="inputName" style="width:50%;">
+                    </div>
+                    
+                    <div class="enroll-area-tit" >
+                        <h3>지역</h3>
+                    </div>
+                    <div class="enroll-area " >
+                        <input type="text" name="ACA_NM" id="inputArea" style="width:50%;" placeholder="" >
+                    </div>
+
+                    <div class="enroll-adress-tit" >
+                        <h3>학원 상세주소</h3>
+                    </div>
+                    <div class="enroll-adress " >
+                        <input type="text" name="ACA_NM" id="inputContent" style="width:50%;" placeholder="" >
+                    </div>
+
+                    <div class="enroll-intro-tit" >
+                        <h3>학원 소개</h3>
+                    </div>
+                   <div class="enroll-intro" >
+                    <input type="text" name="ACA_NM" id="inputContent" style="width:50%; height:100px;" placeholder="학원을 간단하게 소개하십쇼.">
+                   </div>
+                </div> 
+                 
+            
+                <div class="enroll-wrap row col-md-6">
+                    <div class="enroll-grade-wrap col-md-3">
+                    <h1>대상</h1>
+                    <div class="wrap">
+                        <input id="ele" type="checkbox">
+                        <label for="ele">
+                        <span>초등학생</span>
+                        </label>
+                    </div>
+                    <div class="wrap">
+                        <input id="mid" type="checkbox">
+                        <label for="mid">
+                        <span>중학생</span>
+                        </label>
+                    </div>
+                    <div class="wrap">
+                        <input id="high" type="checkbox">
+                        <label for="high">
+                        <span>고등학생</span>
+                        </label>
+                    <div class="wrap">
+                            <input id="agree" type="checkbox">
+                            <label for="agree">
+                            <span>일반인</span>
+                            </label>
+                    </div>
+                    </div>
+                    </div>  
+                    <div class="enroll-grade-wrap col-md-3">
+                        <h1>대상</h1>
+                        <div class="wrap">
+                            <input id="agree" type="checkbox">
+                            <label for="agree">
+                            <span>초등학생</span>
+                            </label>
+                        </div>
+                        <div class="wrap">
+                            <input id="agree" type="checkbox">
+                            <label for="agree">
+                            <span>중학생</span>
+                            </label>
+                        </div>
+                        <div class="wrap">
+                            <input id="agree" type="checkbox">
+                            <label for="agree">
+                            <span>고등학생</span>
+                            </label>
+                        <div class="wrap">
+                                <input id="agree" type="checkbox">
+                                <label for="agree">
+                                <span>일반인</span>
+                                </label>
+                        </div>
+                        </div>
+                    </div> 
+                </div>  
+                <div class="enroll-btn">
+                    <button type="submit" style="width:100px; padding: 10px;" id="reg">등록하기</button>
+                    <button type="submit" style="width:100px; padding: 10px;" id="cancel">취소하기</button>
+                </div>
+            </div>
+
+            
+    </form>
+</div>
 </body>
