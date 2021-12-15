@@ -45,8 +45,12 @@ dependencies {
 	//implementation 'com.googlecode.json-simple:json-simple:1.1.1'
 	
 	//security
-	//implementation 'org.springframework.boot:spring-boot-starter-security'
-	//implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+	testImplementation 'org.springframework.security:spring-security-test'
+	
+	//thymeleaf
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	
 }
 

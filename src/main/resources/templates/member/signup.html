@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<title>회원가입 페이지</title>
+</head>
+<body>
+    <h1>회원 가입</h1>
+    <hr>
+
+    <form th:action="@{/user/signup}" th:object="${MemberDto}" method="post">
+    	<input type="text" name="memberId" placeholder="아이디 입력해주세요">
+    	<input type="password" name="memberPassword" placeholder="비밀번호 입력해주세요">
+    	<input type="text" name="memberName" placeholder="이름 입력해주세요">
+    	<input type="text" name="memberBirth" placeholder="생일 입력해주세요">
+    	<input type="text" name="memberEmail" placeholder="이메일 입력해주세요">
+        <button type="submit">가입하기</button>
+    </form>
+    
+<!--     <form th:action="@{/user/signup}" th:object="${memberDto}" method="post"> -->
+<!--     	<input type="text" th:field="{memberId}" placeholder="아이디 입력해주세요"> -->
+<!--     	<input type="password" th:field="{memberPassword}" placeholder="비밀번호 입력해주세요"> -->
+<!--     	<input type="text" th:field="{memberName}" placeholder="이름 입력해주세요"> -->
+<!--     	<input type="text" th:field="{memberBirth}" placeholder="생일 입력해주세요"> -->
+<!--     	<input type="text" th:field="{memberEmail}" placeholder="이메일 입력해주세요"> -->
+<!--         <button type="submit">가입하기</button> -->
+<!--     </form> -->
+</body>
+</html>
