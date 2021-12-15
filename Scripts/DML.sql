@@ -1,4 +1,4 @@
-SELECT * FROM academy where ADMST_ZONE_NM = '달성군';
+SELECT * FROM academy where ADMST_ZONE_NM = '동구' and ACA_NM LIKE '%영어%';
 where ADMST_ZONE_NM = '남구';
 
 SELECT * FROM notice;

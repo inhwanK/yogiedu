@@ -2,10 +2,10 @@ package org.hustar.yogiedu.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import javax.transaction.Transactional;
 
+import org.hustar.yogiedu.domain.academy.Academy;
 import org.hustar.yogiedu.domain.lecture.Lecture;
 import org.hustar.yogiedu.domain.lecture.LectureRepository;
 import org.hustar.yogiedu.dto.lecture.LectureResponseDto;
@@ -44,6 +44,19 @@ public class LectureService {
 		Lecture lecture = lectureRepository.findById(lectureIdx)
 				.orElseThrow(() -> new IllegalArgumentException("해당 강의가 없습니다. id="+lectureIdx));
 		return new LectureResponseDto(lecture);
+	}
+	
+	@Transactional
+	public List<LectureResponseDto> findByAcademy(Academy academy){
+//		List<Lecture> entityList = lectureRepository.findByAcademy(academy);
+//		List<LectureResponseDto> lectureList = new ArrayList<LectureResponseDto>();
+//		
+//		for(int i = 0; i < entityList.size();i++) {
+//			lectureList.add(new LectureResponseDto(entityList.get(i)));
+//		}
+		
+		return null;
+//		return lectureList;
 	}
 	
 	@Transactional
