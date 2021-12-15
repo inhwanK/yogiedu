@@ -25,11 +25,11 @@ public class AcademyResponseDto {
 	
 	private String fieldName;
 	
-	// 교습계열명
-	private String liOfdName;
-	
-	// 교습과정목록명
-	private String leCrseListName;
+//	// 교습계열명
+//	private String liOfdName;
+//	
+//	// 교습과정목록명
+//	private String leCrseListName;
 	
 	// 교습과정명
 	private String leCrseName;
