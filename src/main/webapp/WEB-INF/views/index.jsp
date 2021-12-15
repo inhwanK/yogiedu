@@ -1,5 +1,45 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="contextPath" value="<%=request.getContextPath()%>" />
+    
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+
+	$(function() {
+    var contextPath = "${contextPath}";
+
+	$.ajax({
+    	url : contextPath + "/api/academyList",
+    	method : "get",
+    	dataType : "json",
+    	success: function(json) {
+    		
+    	  	var list="";
+    	  	var dataLength = json.length;
+    	  	
+    	  	for (i=0; i<5; i++){
+    	  		list += "<div class='swiper-slide'>";
+    	  		list += "<div class='testimonial-item'>";
+    	  		list += "<h3 id='title'>" + json[i].acaNm + "</h3>";
+    	  		list += "<h4 id='loacation'>" +json[i].faRdnma +"</h4>";
+    	  		list += "<p id='subject'>" + json[i].leCrseName +"</p>";
+    	  		list += "</div>";
+    	  		list += "</div>";    	  	
+    	  		console.log(json[i].acaNm);
+    	  	}
+    	  	$("div.swiper-wrapper").append(list);
+
+    	  	//$("div.testimonial-item").append(list);
+    	  	//$("div.swiper-slide").append(list);
+	    }
+	
+	})
+
+});
+		
+</script>  
 <%@include file="/WEB-INF/views/header.jsp"%>
 
 <section id="intro" class="clearfix">
@@ -362,9 +402,8 @@
 
         </div>
     </section>
-
     <section id="testimonials" class="section-bg">
-        <div class="container" data-aso="zoom-in">
+        <div class="container">
 
             <header class="section-header">
                 <h3>생생리뷰</h3>
@@ -373,68 +412,18 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
 
-                    <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                        <div class="swiper-wrapper">
-
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <img src="/static/img/testimonial-1.jpg" class="testimonial-img" alt="">
-                                    <h3>Saul Goodman</h3>
-                                    <h4>Ceo &amp; Founder</h4>
-                                    <p>
-                                        Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                                    </p>
-                                </div>
-                            </div><!-- End testimonial item -->
-
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <img src="/static/img/testimonial-2.jpg" class="testimonial-img" alt="">
-                                    <h3>Sara Wilsson</h3>
-                                    <h4>Designer</h4>
-                                    <p>
-                                        Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                                    </p>
-                                </div>
-                            </div><!-- End testimonial item -->
-
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <img src="/static/img/testimonial-3.jpg" class="testimonial-img" alt="">
-                                    <h3>Jena Karlis</h3>
-                                    <h4>Store Owner</h4>
-                                    <p>
-                                        Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                                    </p>
-                                </div>
-                            </div><!-- End testimonial item -->
-
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <img src="/static/img/testimonial-4.jpg" class="testimonial-img" alt="">
-                                    <h3>Matt Brandon</h3>
-                                    <h4>Freelancer</h4>
-                                    <p>
-                                        Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                                    </p>
-                                </div>
-                            </div><!-- End testimonial item -->
-
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <img src="/static/img/testimonial-5.jpg" class="testimonial-img" alt="">
-                                    <h3>John Larson</h3>
-                                    <h4>Entrepreneur</h4>
-                                    <p>
-                                        Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                                    </p>
-                                </div>
-                            </div><!-- End testimonial item -->
-
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-
+					<div class="testimonials-slider swiper">
+    	          		<div class="swiper-wrapper">
+		                	<div class="swiper-slide">
+        		          		<div class="testimonial-item">
+                		    		<h3 id='title'></h3>
+                    				<h4 id='location'></h4>
+                    				<p id='subject'></p>
+		                  		</div>
+        		        	</div>
+	              		</div>
+              			<div class="swiper-pagination"></div>
+					</div>
                 </div>
             </div>
 
