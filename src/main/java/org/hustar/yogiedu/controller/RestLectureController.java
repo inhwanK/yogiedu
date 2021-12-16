@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
@@ -22,9 +23,16 @@ public class RestLectureController {
 	private final LectureService lectureService;
 //	private final AcademyService academyService;
 	
+
 	@GetMapping("/lecture")
-	public LectureResponseDto getLecture(Long lectureIdx) {
+	public LectureResponseDto getLectureByIdx(@RequestParam("lectureIdx") Long lectureIdx) {
 		return lectureService.findById(lectureIdx);
+	}
+	
+
+	@GetMapping("/lecture/academy")
+	public List<LectureResponseDto> getLectureByAcaIdx(@RequestParam("acaIdx") Long acaIdx) {
+		return lectureService.findByAcaIdx(acaIdx);
 	}
 	
 	@GetMapping("/lectureList")
@@ -42,9 +50,9 @@ public class RestLectureController {
 		
 		return lectureService.save(requestDto);
 	}
-	
+
 	@DeleteMapping("/lecture")
-	public Long deleteLecture(Long lectureIdx) {
+	public Long deleteLecture(@RequestParam("lectureIdx") Long lectureIdx) {
 		return lectureService.deleteById(lectureIdx);
 	}
 }
