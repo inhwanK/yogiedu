@@ -74,6 +74,7 @@ $(function(){
           console.log(a);
             }
        })
+       
        $("#grade2").on("click",function(){
 		
         var a = $("#grade2").is(":checked");
@@ -90,6 +91,7 @@ $(function(){
           console.log(a);
             }
        })
+      
        $("#grade3").on("click",function(){
 		
         var a = $("#grade3").is(":checked");
@@ -106,9 +108,10 @@ $(function(){
           console.log(a);
             }
        })
-
-	
-	
+       
+       
+    
+     
     $('#reg').on("click",function () {
 
         var contextPath = "${contextPath}";
@@ -119,7 +122,7 @@ $(function(){
    				  "FA_RDNMA":$("#inputAdress").val(),
    				  "ESTBL_YMD": $("#inputContent").val(),
    				  "ADMST_ZONE_NM" :$("#inputArea").val()
-   				  
+   				 
             };
         		console.log(data);
         $.ajax({
@@ -131,6 +134,7 @@ $(function(){
             success: function (data) {
                 alert("success");
                 console.log(data);
+                window.location.href = contextPath + "/academy?acaIdx=" + acaIdx;
             },
             error: function (request, status, error) {
                 console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
@@ -142,20 +146,7 @@ $(function(){
   
 }); 
 
- $(function(){
-	 $("#grade").on("click",function(){
-		 var a= $("#grade").val();
-		 if( a.is("checked") == true);
-		 console.log("hi");
-	 })
-	 	 $("#grade1").on("change",function(){
-		 var b= $("#grade1").val();
-		 console.log(b);
-		
-	 })
-		 
-	
- })
+ 
 
 
 </script>

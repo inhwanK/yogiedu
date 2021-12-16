@@ -15,7 +15,7 @@ $(function() {
 	var acaIdx = "${acaIdx}";
 	
 	console.log(acaIdx);
-
+	
 	$.ajax({
     url : contextPath+ "/api/academy?acaIdx=" +acaIdx ,
     method : "get",
@@ -38,7 +38,7 @@ $(function() {
 		
 		
 $("#cancel").on('click', function(){
-	window.location.href = contextPath + "/academyMypage";	
+	window.location.href = contextPath + "/academy";	
 });
 	
 

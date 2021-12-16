@@ -22,4 +22,5 @@ public class AcademyController {
 	ModelAndView mav = new ModelAndView("academy/academyView", "acaIdx", acaIdx);
 			return mav;
 	}
+	
 }
