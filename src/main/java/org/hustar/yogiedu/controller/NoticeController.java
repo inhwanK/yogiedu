@@ -26,6 +26,7 @@ public class NoticeController {
 	public String noticeReg() {
 		return "notice/noticeReg";
 	}
+	
 	@GetMapping("/noticeUpdate")
 	public ModelAndView noticeUpdate(Long notIdx) {
 		ModelAndView mav = new ModelAndView("notice/noticeUpdate", "notIdx", notIdx);
