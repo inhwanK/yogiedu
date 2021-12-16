@@ -47,15 +47,33 @@ public class LectureService {
 		Lecture entity = lectureRepository.findById(lectureIdx)
 				.orElseThrow(() -> new IllegalArgumentException("해당 강의가 없습니다. id=" + lectureIdx));
 
-		List<LectureTime> ltEntityList = ltRepository.findByLecture(entity);
-		List<LectureTimeResponseDto> ltResponseList = new ArrayList<LectureTimeResponseDto>();
-
-		for (int i = 0; i < ltEntityList.size(); i++) {
-			ltResponseList.add(new LectureTimeResponseDto(ltEntityList.get(i)));
-			System.out.println("내가 원하는 것 > "+ltResponseList.get(i).getLectureWeek());
+		String[] timeTable = entity.getLectureTimeNum().split(",");
+		List<Integer> lectureTimeArr = new ArrayList<Integer>();
+		
+		for(int i = 0 ; i < timeTable.length;i++) {	
+			lectureTimeArr.add(Integer.parseInt(timeTable[i].trim()));
 		}
-
-		return new LectureResponseDto(entity, ltResponseList);
+		
+		LectureResponseDto responseDto = LectureResponseDto.builder()
+				.lectureIdx(entity.getLectureIdx())
+				.acaIdx(entity.getAcademy().getAcaIdx())
+				.lectureName(entity.getLectureName())
+				.teacherName(entity.getTeacherName())
+				.lectureTimeArr(lectureTimeArr)
+				.build();
+		
+		
+//		List<LectureTime> ltEntityList = ltRepository.findByLecture(entity);
+//		List<LectureTimeResponseDto> ltResponseList = new ArrayList<LectureTimeResponseDto>();
+//
+//		for (int i = 0; i < ltEntityList.size(); i++) {
+//			ltResponseList.add(new LectureTimeResponseDto(ltEntityList.get(i)));
+//			System.out.println("내가 원하는 것 > "+ltResponseList.get(i).getLectureWeek());
+//		}
+//
+//		return new LectureResponseDto(entity, ltResponseList);
+		
+		return responseDto;
 	}
 
 	@Transactional
