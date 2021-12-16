@@ -73,16 +73,16 @@
   <script>
     
 function gradeChange(e) {
-  var ele = ["1", "2", "3", "4", "5", "6"];
+  var ele = ["1", "2", "3", "4", "5", "6"]; // ele를 받아서 1~6학년을 준거
   var mid = ["1", "2", "3"];
   var high = ["1", "2", "3"];
   var target = document.getElementById("grade");
 
-  if(e.value == "a") var d = ele;
+  if(e.value == "a") var d = ele;       // a(초등학교 이면) d(학년)의 값을 ele로 설정해서 4줄위로 감
   else if(e.value == "b") var d = mid;
   else if(e.value == "c") var d = high;
 
-  target.options.length = 0;
+  target.options.length = 0;  //초기화
 
   for (x in d) {
       var opt = document.createElement("option");
@@ -93,7 +93,7 @@ function gradeChange(e) {
 }
   </script>
   <script>
-    $("select[name=school]").change(function(){
+    $("select[name=school]").change(function(){                   // 실험한다고 넣은거
       //console.log($(this).val());
       console.log($("select[name=school] option:selected").text());
       
@@ -124,15 +124,16 @@ function gradeChange(e) {
   <script type="text/javascript">
     function getValueInput(e){
       var html=""
-      
-      var school=$("#school").val();
+      var total =0;
+
+      var school=$("#school").val();        // dropbox에서 입력한값 받는곳
       var grade=$("#grade").val();
       var subject=$("#subject").val();
       var lecInput=$("#lecInput").val();
 
       //html += '<colgroup>';
-      html += '<tr>';
-      html += '<td>' + '#' +'</th>'
+      html += '<tr id="abc">';              //받은걸 table형식으로 넣어주는거
+      html += '<td>' + total +'</th>'
       html += '<td>' + school +'</td>';
       html += '<td>' + grade + '</td>';
       html += '<td>' + subject + '</td>';
@@ -140,18 +141,19 @@ function gradeChange(e) {
       html += '<td><button onclick="tableDelete()">'+'삭제하기'+'</button></td>';
       html += '</tr>';
       //html += '</colgroup>';
+      console.log("del");
+      $("#newLec").append(html);        //table형식으로 받은걸 삽입
 
-      $("#newLec").append(html);
-
-      $("#school").val('');
+      $("#school").val('');           //삽입했으니 초기화
       $("#grade").val('');
       $("#subject").val('');
       $("#lecInput").val('');
     }
   </script>
   <script>
-    function tableDelete(){
-      $('#lectureIns tbody tr:last').remove();
+    function tableDelete(){     //해당줄 삭제
+      $('#abc').remove();
+      console.log("#abc");
     }
   </script>
 </body>
