@@ -6,6 +6,69 @@
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <%@include file="/WEB-INF/views/header.jsp"%>
+  <section id="introLA" class="clearfix">
+    <div class="container">
+      <h1>강의 등록하기</h1>
+    </div>
+  </section>
+  <!-- #intro -->
+  <main id="main">
+<!-- Example single danger button -->
+    <div class="container"style="float: none; margin:0 auto;">
+      <div class="btn-wrap row col-sm-12 justify-content-md-center"style="float: none; margin:0 auto;">
+        <div class="form-group col-sm-3">
+          <label for="school">학교</label>
+          <select class="form-control" id="school" name="school" onchange="gradeChange(this)">
+            <option value="none">학년을 선택해주세요</option>
+            <option value="a">초등학생</option>
+            <option value="b">중학생</option>
+            <option value="c">고등학생</option>
+          </select>
+        </div>
+        <div class="form-group col-sm-3">
+          <label for="grade">학년</label>
+          <select class="form-control" id="grade" name="grade">
+            <option>선택해주세요.</option>
+          </select>
+        </div>
+        <div class="form-group col-sm3">
+          <label for="subject">과목</label>
+          <select name="subject" id="subject" class="form-control">
+            <option>과목을 선택해주세요</option>
+            <option value="ko">국어</option>
+            <option value="en">영어</option>
+            <option value="ma">수학</option>
+            <option value="etc">예체능</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <input id="lecInput" class="form-control col" type="text" placeholder="강좌명을 입력해주세요" value="" >
+        </div>
+        <button type="button" class="btn btn-success" id="send" onclick="getValueInput()">완료</button>
+        <button type="button" class="btn btn-warning" id="cancel" onclick="javascript:history.back()">취소</button>
+      </div>
+      <p id="valueInput"></p>
+    <div class="list-wrap" style="padding-top:30px;">
+      <Table id="lectureIns">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>학원이름</th>
+            <th>과목</th>
+            <th>학년</th>
+            <th>시간</th>
+          </tr>
+        </thead>
+        <tbody id="newLec">
+
+        </tbody>
+      </Table>
+
+    </div>
+  </div>
+
+  </main>
 
   <script>
     
@@ -44,104 +107,52 @@ function gradeChange(e) {
       console.log($("select[name=subject] option:selected").text());
     })
     
-    const getValueInput = () =>{
-      let inputValue1 =document.querySelector("#school").value;
-      let inputValue2 =document.querySelector("#grade").value;
-      let inputValue3 =document.querySelector("#subject").value;
-      let inputValue4 =document.getElementById("lecInput").innerText=lecInput;
-      document.querySelector("#valueInput").innerHTML=`${inputValue1} ${inputValue2}학년 ${inputValue3}과목 ${lecInput}강의 개설`;
+
+    //const getValueInput = () =>{
+    //  let inputValue1 =document.querySelector("#school").value;
+    //  let inputValue2 =document.querySelector("#grade").value;
+    //  let inputValue3 =document.querySelector("#subject").value;
+    //  let inputValue4 =document.getElementById("lecInput").value;
+//
+    //  console.log(inputValue4,  $("#valueInput").length);
+//
+//
+//
+    //  document.querySelector("#valueInput").innerText=`${inputValue1} ${inputValue2}학년 ${inputValue3}과목 ${inputValue4}강의 개설`;
+//    }
+  </script>
+  <script type="text/javascript">
+    function getValueInput(e){
+      var html=""
+      
+      var school=$("#school").val();
+      var grade=$("#grade").val();
+      var subject=$("#subject").val();
+      var lecInput=$("#lecInput").val();
+
+      //html += '<colgroup>';
+      html += '<tr>';
+      html += '<td>' + '#' +'</th>'
+      html += '<td>' + school +'</td>';
+      html += '<td>' + grade + '</td>';
+      html += '<td>' + subject + '</td>';
+      html += '<td>' + lecInput + '</td>';
+      html += '<td><button onclick="tableDelete()">'+'삭제하기'+'</button></td>';
+      html += '</tr>';
+      //html += '</colgroup>';
+
+      $("#newLec").append(html);
+
+      $("#school").val('');
+      $("#grade").val('');
+      $("#subject").val('');
+      $("#lecInput").val('');
     }
   </script>
   <script>
-    $(document).ready(function(){
-      $('#send').click(function(){
-        let sendData = "학교="+$('input[name=school]').val();
-      $.ajax({
-        type:'post',
-        url:'acaLec.jsp',
-        data:sendData,
-        dataType:'json',
-        success:function(data){
-          $('#valueInput').html(data);
-        }
-      });
-      });
-    });
+    function tableDelete(){
+      $('#lectureIns tbody tr:last').remove();
+    }
   </script>
-  
-	<section id="intro">
-	    <div class="container">
-	    	<h1>강의등록하기</h1>
-		</div>
-	</section>
-  <main id="main">
-    <div class="container"style="float: none; margin:0 auto;">
-      <div class="btn-wrap row col-sm-12 justify-content-md-center"style="float: none; margin:0 auto;">
-        <div class="form-group col-sm-3">
-          <label for="school">학교</label>
-          <select class="form-control" id="school" name="school" onchange="gradeChange(this)">
-            <option value="none">학년을 선택해주세요</option>
-            <option value="a">초등학생</option>
-            <option value="b">중학생</option>
-            <option value="c">고등학생</option>
-          </select>
-        </div>
-        <div class="form-group col-sm-3">
-          <label for="grade">학년</label>
-          <select class="form-control" id="grade" name="grade">
-            <option>선택해주세요.</option>
-          </select>
-        </div>
-        <div class="form-group col-sm3">
-          <label for="subject">과목</label>
-          <select name="subject" id="subject" class="form-control">
-            <option>과목을 선택해주세요</option>
-            <option value="ko">국어</option>
-            <option value="en">영어</option>
-            <option value="ma">수학</option>
-            <option value="etc">예체능</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <input id="lecInput" class="form-control col" type="text" placeholder="강좌명을 입력해주세요" >
-        </div>
-        <button type="button" class="btn btn-success" id="send" onclick="getValueInput()">완료</button>
-        <button type="button" class="btn btn-warning" id="cancel" onclick="javascript:history.back()">취소</button>
-      </div>
-      <p id="valueInput"></p>
-    <div class="list-wrap" style="padding-top:30px;">
-      <Table>
-        <thead>
-          <td>#</td>
-          <td>학원이름</td>
-          <td>과목</td>
-          <td>학년</td>
-          <td>시간</td>
-
-        </thead>
-        <tbody>
-          <colgroup>
-            <td id=""></td>
-            <td id="out_school"></td>
-            <td>3</td>
-            <td>4</td>
-            <td id='lecName'></td>
-          </colgroup>
-          <colgroup>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-          </colgroup>
-        </tbody>
-      </Table>
-
-    </div>
-  </div>
-
-  </main>
-
 </body>
 <%@include file="/WEB-INF/views/footer.jsp"%>
