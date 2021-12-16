@@ -104,7 +104,7 @@
 
             <nav class="main-nav float-right d-none d-lg-block">
                 <ul>
-                    <li class="active"><a href="#intro">Home</a></li>
+                    <li class="active"><a href="${contextPath}/">Home</a></li>
                     <li><a href="${contextPath}/noticeList">공지사항</a></li>
                     <li><a href="${contextPath}/academySearch">학원찾기</a></li>
                     <li><a href="${contextPath}/academy">마이페이지</a></li>

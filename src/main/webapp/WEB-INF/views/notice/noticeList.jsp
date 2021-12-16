@@ -54,6 +54,7 @@
 								<th scope="col" >글 번호</th>
 								<th scope="col" >글 제목</th>
 								<th scope="col" >글쓴이</th>
+								<th scope="col">
 							</tr>
 						</thead>
 						<tbody>

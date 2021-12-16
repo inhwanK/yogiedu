@@ -6,75 +6,14 @@
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <%@include file="/WEB-INF/views/header.jsp"%>
-
-  <script>
-    
-function gradeChange(e) {
-  var ele = ["1", "2", "3", "4", "5", "6"];
-  var mid = ["1", "2", "3"];
-  var high = ["1", "2", "3"];
-  var target = document.getElementById("grade");
-
-  if(e.value == "a") var d = ele;
-  else if(e.value == "b") var d = mid;
-  else if(e.value == "c") var d = high;
-
-  target.options.length = 0;
-
-  for (x in d) {
-      var opt = document.createElement("option");
-      opt.value = d[x];
-      opt.innerHTML = d[x];
-      target.appendChild(opt);
-  }   
-}
-  </script>
-  <script>
-    $("select[name=school]").change(function(){
-      //console.log($(this).val());
-      console.log($("select[name=school] option:selected").text());
-      
-    })
-    $("select[name=grade]").change(function(){
-      //console.log($(this).val());
-      console.log($("select[name=grade] option:selected").text());
-    })
-    $("select[name=subject]").change(function(){
-      //console.log($(this).val());
-      console.log($("select[name=subject] option:selected").text());
-    })
-    
-    const getValueInput = () =>{
-      let inputValue1 =document.querySelector("#school").value;
-      let inputValue2 =document.querySelector("#grade").value;
-      let inputValue3 =document.querySelector("#subject").value;
-      let inputValue4 =document.getElementById("lecInput").innerText=lecInput;
-      document.querySelector("#valueInput").innerHTML=`${inputValue1} ${inputValue2}학년 ${inputValue3}과목 ${lecInput}강의 개설`;
-    }
-  </script>
-  <script>
-    $(document).ready(function(){
-      $('#send').click(function(){
-        let sendData = "학교="+$('input[name=school]').val();
-      $.ajax({
-        type:'post',
-        url:'acaLec.jsp',
-        data:sendData,
-        dataType:'json',
-        success:function(data){
-          $('#valueInput').html(data);
-        }
-      });
-      });
-    });
-  </script>
-  
-	<section id="intro">
-	    <div class="container">
-	    	<h1>강의등록하기</h1>
-		</div>
-	</section>
+  <section id="introLA" class="clearfix">
+    <div class="container">
+      <h1>강의 등록하기</h1>
+    </div>
+  </section>
+  <!-- #intro -->
   <main id="main">
+<!-- Example single danger button -->
     <div class="container"style="float: none; margin:0 auto;">
       <div class="btn-wrap row col-sm-12 justify-content-md-center"style="float: none; margin:0 auto;">
         <div class="form-group col-sm-3">
@@ -104,37 +43,25 @@ function gradeChange(e) {
         </div>
 
         <div class="form-group">
-          <input id="lecInput" class="form-control col" type="text" placeholder="강좌명을 입력해주세요" >
+          <input id="lecInput" class="form-control col" type="text" placeholder="강좌명을 입력해주세요" value="" >
         </div>
         <button type="button" class="btn btn-success" id="send" onclick="getValueInput()">완료</button>
         <button type="button" class="btn btn-warning" id="cancel" onclick="javascript:history.back()">취소</button>
       </div>
       <p id="valueInput"></p>
     <div class="list-wrap" style="padding-top:30px;">
-      <Table>
+      <Table id="lectureIns">
         <thead>
-          <td>#</td>
-          <td>학원이름</td>
-          <td>과목</td>
-          <td>학년</td>
-          <td>시간</td>
-
+          <tr>
+            <th>#</th>
+            <th>학원이름</th>
+            <th>과목</th>
+            <th>학년</th>
+            <th>시간</th>
+          </tr>
         </thead>
-        <tbody>
-          <colgroup>
-            <td id=""></td>
-            <td id="out_school"></td>
-            <td>3</td>
-            <td>4</td>
-            <td id='lecName'></td>
-          </colgroup>
-          <colgroup>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-          </colgroup>
+        <tbody id="newLec">
+
         </tbody>
       </Table>
 
@@ -143,5 +70,91 @@ function gradeChange(e) {
 
   </main>
 
+  <script>
+    
+function gradeChange(e) {
+  var ele = ["1", "2", "3", "4", "5", "6"]; // ele를 받아서 1~6학년을 준거
+  var mid = ["1", "2", "3"];
+  var high = ["1", "2", "3"];
+  var target = document.getElementById("grade");
+
+  if(e.value == "a") var d = ele;       // a(초등학교 이면) d(학년)의 값을 ele로 설정해서 4줄위로 감
+  else if(e.value == "b") var d = mid;
+  else if(e.value == "c") var d = high;
+
+  target.options.length = 0;  //초기화
+
+  for (x in d) {
+      var opt = document.createElement("option");
+      opt.value = d[x];
+      opt.innerHTML = d[x];
+      target.appendChild(opt);
+  }   
+}
+  </script>
+  <script>
+    $("select[name=school]").change(function(){                   // 실험한다고 넣은거
+      //console.log($(this).val());
+      console.log($("select[name=school] option:selected").text());
+      
+    })
+    $("select[name=grade]").change(function(){
+      //console.log($(this).val());
+      console.log($("select[name=grade] option:selected").text());
+    })
+    $("select[name=subject]").change(function(){
+      //console.log($(this).val());
+      console.log($("select[name=subject] option:selected").text());
+    })
+    
+
+    //const getValueInput = () =>{
+    //  let inputValue1 =document.querySelector("#school").value;
+    //  let inputValue2 =document.querySelector("#grade").value;
+    //  let inputValue3 =document.querySelector("#subject").value;
+    //  let inputValue4 =document.getElementById("lecInput").value;
+//
+    //  console.log(inputValue4,  $("#valueInput").length);
+//
+//
+//
+    //  document.querySelector("#valueInput").innerText=`${inputValue1} ${inputValue2}학년 ${inputValue3}과목 ${inputValue4}강의 개설`;
+//    }
+  </script>
+  <script type="text/javascript">
+    function getValueInput(e){
+      var html=""
+      var total =0;
+
+      var school=$("#school").val();        // dropbox에서 입력한값 받는곳
+      var grade=$("#grade").val();
+      var subject=$("#subject").val();
+      var lecInput=$("#lecInput").val();
+
+      //html += '<colgroup>';
+      html += '<tr id="abc">';              //받은걸 table형식으로 넣어주는거
+      html += '<td>' + total +'</th>'
+      html += '<td>' + school +'</td>';
+      html += '<td>' + grade + '</td>';
+      html += '<td>' + subject + '</td>';
+      html += '<td>' + lecInput + '</td>';
+      html += '<td><button onclick="tableDelete()">'+'삭제하기'+'</button></td>';
+      html += '</tr>';
+      //html += '</colgroup>';
+      console.log("del");
+      $("#newLec").append(html);        //table형식으로 받은걸 삽입
+
+      $("#school").val('');           //삽입했으니 초기화
+      $("#grade").val('');
+      $("#subject").val('');
+      $("#lecInput").val('');
+    }
+  </script>
+  <script>
+    function tableDelete(){     //해당줄 삭제
+      $('#abc').remove();
+      console.log("#abc");
+    }
+  </script>
 </body>
 <%@include file="/WEB-INF/views/footer.jsp"%>
