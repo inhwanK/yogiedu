@@ -14,7 +14,7 @@ select * from academy WHERE aca_asnum = '3000019645';
 alter user root@localhost identified with mysql_native_password by 'root';
 
 select * from lecture;
-
+insert into lecture(aca_idx, LECTURE_NAME,TEACHER_NAME,LECTURE_TIME_NUM) values(1,'A반','김인환','4, 11');
 
 delete from lecture_time;
 

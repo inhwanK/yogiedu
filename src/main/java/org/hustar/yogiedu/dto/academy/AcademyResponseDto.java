@@ -7,10 +7,13 @@ import org.hustar.yogiedu.domain.academy.Academy;
 import org.hustar.yogiedu.domain.lecture.Lecture;
 import org.hustar.yogiedu.dto.lecture.LectureResponseDto;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
+@Setter
 @NoArgsConstructor
 public class AcademyResponseDto {
 
@@ -44,8 +47,6 @@ public class AcademyResponseDto {
 	// 도로명상세주소
 	private String faRdnda;
 
-	private List<LectureResponseDto> lectures = new ArrayList<LectureResponseDto>();
-
 	public AcademyResponseDto(Academy entity) {
 		this.acaIdx = entity.getAcaIdx();
 		this.acaAsnum = entity.getAcaAsnum();
@@ -62,22 +63,4 @@ public class AcademyResponseDto {
 		this.faRdnda = entity.getFaRdnda();
 	}
 	
-	//
-	public AcademyResponseDto(Academy entity, List<LectureResponseDto> lectures) {
-		this.acaIdx = entity.getAcaIdx();
-		this.acaAsnum = entity.getAcaAsnum();
-		this.acaNm = entity.getAcaNm();
-		this.atptOfcdcScCode = entity.getAtptOfcdcScCode();
-		this.atptOfcdcScNm = entity.getAtptOfcdcScNm();
-		this.adminDistName = entity.getAdminDistName();
-		this.estblDate = entity.getEstblDate();
-		this.regDate = entity.getRegDate();
-		this.fieldName = entity.getFieldName();
-		this.leCrseName = entity.getLeCrseName();
-		this.faRdnzc = entity.getFaRdnzc();
-		this.faRdnma = entity.getFaRdnma();
-		this.faRdnda = entity.getFaRdnda();
-		this.lectures = lectures;
-	}
-
 }

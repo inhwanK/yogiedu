@@ -27,11 +27,11 @@ DROP TABLE IF EXISTS `yogiedu`.`student` RESTRICT;
 
 -- 공지사항
 CREATE TABLE `yogiedu`.`notice` (
-	`not_idx`     INT(11)      NOT NULL COMMENT '공지번호', -- 공지번호
-	`not_title`   VARCHAR(50)  NULL     COMMENT '공지제목', -- 공지제목
-	`not_content` VARCHAR(300) NULL     COMMENT '글내용', -- 글내용
-	`reg_date`    DATETIME     NULL     COMMENT '작성일', -- 작성일
-	`writer`      VARCHAR(20)  NULL     COMMENT '작성자' -- 작성자
+	`NOT_IDX`     INT(11)      NOT NULL COMMENT '공지번호', -- 공지번호
+	`NOT_TITLE`   VARCHAR(50)  NULL     COMMENT '공지제목', -- 공지제목
+	`NOT_CONTENT` VARCHAR(300) NULL     COMMENT '글내용', -- 글내용
+	`REG_DATE`    DATETIME     NULL     COMMENT '작성일', -- 작성일
+	`WRITER`      VARCHAR(20)  NULL     COMMENT '작성자' -- 작성자
 )
 COMMENT '공지사항';
 
@@ -39,11 +39,11 @@ COMMENT '공지사항';
 ALTER TABLE `yogiedu`.`notice`
 	ADD CONSTRAINT `PK_notice` -- 공지사항 기본키
 		PRIMARY KEY (
-			`not_idx` -- 공지번호
+			`NOT_IDX` -- 공지번호
 		);
 
 ALTER TABLE `yogiedu`.`notice`
-	MODIFY COLUMN `not_idx` INT(11) NOT NULL AUTO_INCREMENT COMMENT '공지번호';
+	MODIFY COLUMN `NOT_IDX` INT(11) NOT NULL AUTO_INCREMENT COMMENT '공지번호';
 
 -- 학원
 CREATE TABLE `yogiedu`.`academy` (
@@ -75,10 +75,11 @@ ALTER TABLE `yogiedu`.`academy`
 
 -- 수업
 CREATE TABLE `yogiedu`.`lecture` (
-	`LECTURE_IDX`  INT(11)     NOT NULL COMMENT '수업번호', -- 수업번호
-	`ACA_IDX`      INT(20)     NULL     COMMENT '학원번호', -- 학원번호
-	`LECTURE_NAME` VARCHAR(30) NULL     COMMENT '수업명', -- 수업명
-	`TEACHER_NAME` CHAR(6)     NULL     COMMENT '강사명' -- 강사명
+	`LECTURE_IDX`      INT(11)      NOT NULL COMMENT '수업번호', -- 수업번호
+	`ACA_IDX`          INT(20)      NULL     COMMENT '학원번호', -- 학원번호
+	`LECTURE_NAME`     VARCHAR(30)  NULL     COMMENT '수업명', -- 수업명
+	`TEACHER_NAME`     CHAR(6)      NULL     COMMENT '강사명', -- 강사명
+	`LECTURE_TIME_STR` VARCHAR(110) NULL     COMMENT '수업시간' -- 수업시간
 )
 COMMENT '수업';
 
@@ -95,7 +96,6 @@ ALTER TABLE `yogiedu`.`lecture`
 -- 수업시간
 CREATE TABLE `yogiedu`.`lecture_time` (
 	`LECTURE_TIME_IDX`   INT(11) NOT NULL COMMENT '수업시간번호', -- 수업시간번호
-	`LECTURE_IDX`        INT(11) NOT NULL COMMENT '수업번호', -- 수업번호
 	`LECTURE_WEEK`       CHAR(3) NULL     COMMENT '수업요일', -- 수업요일
 	`LECTURE_START_TIME` INT(2)  NULL     COMMENT '수업시작시간', -- 수업시작시간
 	`LECTURE_END_TIME`   INT(2)  NULL     COMMENT '수업종료시간' -- 수업종료시간
@@ -182,26 +182,6 @@ ALTER TABLE `yogiedu`.`lecture`
 		)
 		REFERENCES `yogiedu`.`academy` ( -- 학원
 			`ACA_IDX` -- 학원번호
-		);
-
--- 수업시간
-ALTER TABLE `yogiedu`.`lecture_time`
-	ADD CONSTRAINT `FK_lecture_TO_lecture_time` -- 수업 -> 수업시간
-		FOREIGN KEY (
-			`LECTURE_IDX` -- 수업번호
-		)
-		REFERENCES `yogiedu`.`lecture` ( -- 수업
-			`LECTURE_IDX` -- 수업번호
-		);
-
--- 예약시간표
-ALTER TABLE `yogiedu`.`class_timetable`
-	ADD CONSTRAINT `FK_lecture_TO_class_timetable` -- 수업 -> 예약시간표
-		FOREIGN KEY (
-			`LECTURE_IDX` -- 수업번호
-		)
-		REFERENCES `yogiedu`.`lecture` ( -- 수업
-			`LECTURE_IDX` -- 수업번호
 		);
 
 -- 예약시간표
