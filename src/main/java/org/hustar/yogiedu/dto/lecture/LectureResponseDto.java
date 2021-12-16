@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.hustar.yogiedu.domain.lecture.Lecture;
-import org.hustar.yogiedu.domain.lecturetime.LectureTime;
-import org.hustar.yogiedu.dto.lecturetime.LectureTimeResponseDto;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -16,42 +14,41 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class LectureResponseDto {
+
 	private Long lectureIdx;
 	private Long acaIdx;
 	private String lectureName;
 	private String teacherName;
+	
+//	시간 문자열.
+	private String lectureTimeStr;
+	
+//	시간 배열.
 	private List<Integer> lectureTimeArr;
-//	private List<LectureTimeResponseDto> lectureTimes = new ArrayList<LectureTimeResponseDto>();
+	
 
+//	아카데미 하나의 강의정보 볼 때 사용.
 	@Builder
 	public LectureResponseDto(Long lectureIdx, Long acaIdx, String lectureName, String teacherName,
-			List<Integer> lectureTimeArr) {
+			String lectureTimeStr, List<Integer> lectureTimeArr) {
 		super();
 		this.lectureIdx = lectureIdx;
 		this.acaIdx = acaIdx;
 		this.lectureName = lectureName;
 		this.teacherName = teacherName;
+		this.lectureTimeStr = lectureTimeStr;
 		this.lectureTimeArr = lectureTimeArr;
-	}	
-	
-	
+	}
+
+	//리스트 뽑을 때 사용.
 	public LectureResponseDto(Lecture entity) {
 		super();
 		this.lectureIdx = entity.getLectureIdx();
 		this.acaIdx = entity.getAcademy().getAcaIdx();
 		this.lectureName = entity.getLectureName();
 		this.teacherName = entity.getTeacherName();
-//		this.lectureTimeArr = entity.get
+		this.lectureTimeStr = entity.getLectureTimeStr();
 	}
-
-	public LectureResponseDto(Lecture entity, List<LectureTimeResponseDto> lectureTimes) {
-		super();
-		this.lectureIdx = entity.getLectureIdx();
-		this.acaIdx = entity.getAcademy().getAcaIdx();
-		this.lectureName = entity.getLectureName();
-		this.teacherName = entity.getTeacherName();
-//		this.lectureTimes = lectureTimes;
-	}
-
+	
 	
 }

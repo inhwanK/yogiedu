@@ -7,8 +7,10 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.Setter;
 
 @Getter
+@Setter
 @NoArgsConstructor
 public class LectureSaveRequestDto {
 	
@@ -19,15 +21,15 @@ public class LectureSaveRequestDto {
 	private String teacherName;
 	
 //	인표야 이 데이터 요청할 때는 나한테 얘기해!
-	private String lectureTimeNum;
+	private String lectureTimeStr;
 	
 	@Builder
-	public LectureSaveRequestDto(@NonNull Long acaIdx, String lectureName, String teacherName, String lectureTimeNum) {
+	public LectureSaveRequestDto(@NonNull Long acaIdx, String lectureName, String teacherName, String lectureTimeStr) {
 		super();
 		this.acaIdx = acaIdx;
 		this.lectureName = lectureName;
 		this.teacherName = teacherName;
-		this.lectureTimeNum = lectureTimeNum;
+		this.lectureTimeStr = lectureTimeStr;
 	}
 	
 	public Lecture toEntity() {
@@ -37,7 +39,7 @@ public class LectureSaveRequestDto {
 						.build())
 				.lectureName(lectureName)
 				.teacherName(teacherName)
-				.lectureTimeNum(lectureTimeNum)
+				.lectureTimeStr(lectureTimeStr)
 				.build();
 	}
 }

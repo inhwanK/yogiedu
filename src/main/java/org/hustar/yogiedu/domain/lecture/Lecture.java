@@ -33,15 +33,15 @@ public class Lecture {
 	
 	private String lectureName;
 	private String teacherName;
-	private String lectureTimeNum;
+	private String lectureTimeStr;
 	
 	@Builder
-	public Lecture(Long lectureIdx, Academy academy, String lectureName, String teacherName, String lectureTimeNum) {
+	public Lecture(Long lectureIdx, Academy academy, String lectureName, String teacherName, String lectureTimeStr) {
 		this.lectureIdx = lectureIdx;
 		this.academy = academy;
 		this.lectureName = lectureName;
 		this.teacherName = teacherName;
-		this.lectureTimeNum = lectureTimeNum;
+		this.lectureTimeStr = lectureTimeStr;
 	}
 	
 

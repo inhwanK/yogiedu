@@ -1,21 +1,15 @@
 package org.hustar.yogiedu.service;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.transaction.Transactional;
 
 import org.hustar.yogiedu.domain.academy.Academy;
 import org.hustar.yogiedu.domain.academy.AcademyRepository;
-import org.hustar.yogiedu.domain.lecture.Lecture;
 import org.hustar.yogiedu.domain.lecture.LectureRepository;
-import org.hustar.yogiedu.domain.lecturetime.LectureTime;
-import org.hustar.yogiedu.domain.lecturetime.LectureTimeRepository;
 import org.hustar.yogiedu.dto.academy.AcademyResponseDto;
 import org.hustar.yogiedu.dto.academy.AcademySaveRequestDto;
-import org.hustar.yogiedu.dto.lecture.LectureResponseDto;
-import org.hustar.yogiedu.dto.lecturetime.LectureTimeResponseDto;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
@@ -26,7 +20,6 @@ public class AcademyService {
 
 	private final AcademyRepository academyRepository;
 	private final LectureRepository lectureRepository;
-	private final LectureTimeRepository ltResponsitory;
 
 	// 학원 등록.
 	@Transactional
@@ -59,31 +52,8 @@ public class AcademyService {
 		Academy entity = academyRepository.findById(acaIdx)
 				.orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id=" + acaIdx));
 
-		List<Lecture> lectureEntityList = lectureRepository.findByAcademy(entity);
-		List<LectureResponseDto> lectureResponseList = new ArrayList<LectureResponseDto>();
-
-		Long lectureIdx;
-
-		for (int i = 0; i < lectureEntityList.size(); i++) {
-
-//			강의리스트에서 각 강의 번호를 가져옴.
-			lectureIdx = lectureEntityList.get(i).getLectureIdx();
-			Lecture lecture = lectureRepository.findById(lectureIdx)
-					.orElseThrow(() -> new IllegalArgumentException("해당 강의가 없습니다."));
-
-//			강의번호로 강의 시간을 가져오는 작업.
-			List<LectureTime> ltEntityList = ltResponsitory.findByLecture(lecture);
-			List<LectureTimeResponseDto> ltResponseDtos = new ArrayList<LectureTimeResponseDto>();
-
-			for (int j = 0; j < ltEntityList.size(); j++) {
-				ltResponseDtos.add(new LectureTimeResponseDto(ltEntityList.get(j)));
-			}
-			
-			lectureResponseList.add(new LectureResponseDto(lecture, ltResponseDtos));
-//			System.out.println("내가 좀 더 원하던 것 > "+lectureResponseList.get(i).getLectureName());
-		}
-
-		return new AcademyResponseDto(entity, lectureResponseList);
+//		그냥 요청 두번해야돼...
+		return new AcademyResponseDto(entity);
 	}
 
 	// 기본키에 따라 삭제하기.

@@ -4,7 +4,6 @@ DROP SCHEMA IF EXISTS `yogiedu`;
 -- yogiedu
 CREATE SCHEMA `yogiedu`;
 
-
 -- 공지사항
 DROP TABLE IF EXISTS `yogiedu`.`notice` RESTRICT;
 
@@ -80,7 +79,7 @@ CREATE TABLE `yogiedu`.`lecture` (
 	`ACA_IDX`          INT(20)      NULL     COMMENT '학원번호', -- 학원번호
 	`LECTURE_NAME`     VARCHAR(30)  NULL     COMMENT '수업명', -- 수업명
 	`TEACHER_NAME`     CHAR(6)      NULL     COMMENT '강사명', -- 강사명
-	`LECTURE_TIME_NUM` VARCHAR(110) NULL     COMMENT '수업시간' -- 수업시간
+	`LECTURE_TIME_STR` VARCHAR(110) NULL     COMMENT '수업시간' -- 수업시간
 )
 COMMENT '수업';
 
