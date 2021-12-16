@@ -106,8 +106,8 @@
                 <ul>
                     <li class="active"><a href="#intro">Home</a></li>
                     <li><a href="${contextPath}/noticeList">공지사항</a></li>
-                    <li><a href="${contextPath}/academy">학원찾기</a></li>
-                    <li><a href="#">마이페이지</a></li>
+                    <li><a href="${contextPath}/academySearch">학원찾기</a></li>
+                    <li><a href="${contextPath}/academy">마이페이지</a></li>
                   	<li><a href="${contextPath}/qna">Q&A</a></li>
                     <li class="drop-down"><a href="">Quick Menu</a>
                         <ul>

@@ -28,7 +28,8 @@
 		    $("p#title").append(json.notTitle);
 		   	$("#regdate").append(json.regDate);
 		    $("div#content").append(json.notContent);
-	
+				
+		    
 	    	}
 				
 		
