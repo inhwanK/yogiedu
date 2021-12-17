@@ -23,18 +23,13 @@
 					
 					var conf = confirm("강의를 등록하시겠습니까?");
 					if(conf){
-	 				
-						
-					
-					
+		
 	     		var data={
-	     			
-	     				
-	     				 
+		 
 	     				  "lectureName": "B반",
 	     				  "teacherName": "김인표",
 	     				  "acaIdx":1,
-	     				  "lectureTimeStr": "2, 3, 9, 10",
+	     				  "lectureTimeStr" : "2, 3, 9, 10",
 				
 	     		};
 	 
@@ -51,7 +46,7 @@
 		            	alert("success");
 		            	
 		                console.log(data);
-		                window.location.href = contextPath + "/lecture";
+		               
 		            
 		           
 		            },

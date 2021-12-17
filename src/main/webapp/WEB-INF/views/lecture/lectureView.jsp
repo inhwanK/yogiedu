@@ -29,18 +29,41 @@
 	    method : "get",
 	    dataType : "json",
 	    success: function(json) {
-	   console.log(json);
+	    console.log(json);
+	   	console.log(json.length);
+	   
+	   	console.log(json[0].lectureTimeStr);
 	    console.log("success");
-	    
-	    
-	    $("#title").append(json[0].lectureName);
-	   	$("#tel").append(json[0].teacherName);
-	
-	    
+	    console.log(json[0].lectureTimeArr[1]);
+	    		var list = '';
+	    	for(i = 0; i <json.length ; i++){
+	    		
+	    		list += '<tr>';
+                list += '<td>' + json[i].lectureName + '</td>';
+                list += '<td>' + json[i].teacherName + '</td>';
+                list += '</tr>';
+                
+	    	}
 	    	
-	    },
-		error: function(){
-				console.log("fail");
+				 		for(i=0 ; i<json.length ; i++){
+	    		
+	    		for(j = 0; j <json[i].lectureTimeArr.length; j++){
+	 				var time = '';
+	             console.log(json[i].lectureTimeArr[j]);
+	             
+	       		time = "<td>"
+	             
+	             }
+	    	} 
+	    	 
+            
+	    		
+	    	
+	    	$("#subjectList").append(list);
+ 	
+	   	 },
+	    		error: function(){
+					console.log("fail");
 		}
 			
 		});
@@ -48,54 +71,34 @@
   });
   </script>  
 	    
-  <body>
+  <body style='padding-top: 100px;'>
 	 <div id="container">
      <form class="form-enroll" id="form">
-             <div class="enroll-name-wrap ">
-                 <h1>학원 등록하기</h1>
-                 
-                     
-                     <div class="enroll-name-tit" id="title" >
-                        <h3>학원명*</h3>
-                        <p>(실제 학원명을 입력해주세요.)</p>
-                     </div>
-                     
- 
+          <div class="my-table-subject-wrap"> 
+          <div class="my-table-subject">
+            <table class="my-table-subject-list">
+              <thead class="my-table-subject-list-head">
+                <tr>
+                  <th>수강학원</th>
+                  <th>선생님</th>
+               			
+                </tr>
+              </thead>
+              <tbody class="my-table-subject-list-body" id="subjectList">
             
-                     
-                     <div class="enroll-phone-tit" id="tel">
-                         
-                         <h3>학원 전화번호</h3>
-                         
-                     </div>
-                     
-                     
-                     <div class="enroll-area-tit" id="area" >
-                         <h3>지역</h3>
-                     </div>
-                     
- 
-                     <div class="enroll-adress-tit" id="adress">
-                         <h3>학원 상세주소</h3>
-                     </div>
-                     
-                    
-                        
- 
-                     <div class="enroll-intro-tit" id="introduce">
-                         <h3>학원 소개</h3>
-
-                     </div>
-                    	<div class="enroll-grade" >
-                     
-                    	</div>
-                </div>
+               
+              </tbody>
+            </table>
+          </div>
+        </div>
           </form>
-         
+         		
 							<button id="delete" class="btn btn-primary" >삭제</button>
 							<button id="cancel" class="btn btn-primary">돌아가기</button>
 							<button id="lecture" class="btn">강의 만들기</button>
+							
+							
     </div>
-                
+                		
 </body>
   
