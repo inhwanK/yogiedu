@@ -89,11 +89,11 @@
 
         <div class="intro-info">
             <h2>우리아이 학원은<br><span>요기에듀</span>에서<br>찾아보고 보내세요!</h2>
-            <div>
+            <!-- <div>
                 <a href="#about" class="btn-get-started scrollto">시작하기</a>
                 <a href="#services" class="btn-services scrollto">YOGIEDU?</a>
             </div>
-        </div>
+ -->        </div>
 
     </div>
 </section>
@@ -444,7 +444,7 @@
         <div class="container">
 
             <header class="section-header">
-                <h3>생생리뷰</h3>
+                <h3>회원 학원 목록</h3>
             </header>
 
             <div class="row justify-content-center">

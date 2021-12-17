@@ -73,54 +73,52 @@ $("#delete").on('click', function(){
 });
 
 </script>
+<style>
+.enroll-name-wrap {
+display:flex;
+justify-content:center;
+}
+#acapage tr,#acapage td,#acapage th{
+border:1px solid #000 !important;}
+</style>
 <body>
-	 <div id="container">
-        <form class="form-enroll" id="form">
-                <div class="enroll-name-wrap ">
-                    <h1>학원 등록하기</h1>
-                    
-                        
-                        <div class="enroll-name-tit" id="title" >
-                           <h3>학원명*</h3>
-                           <p>(실제 학원명을 입력해주세요.)</p>
-                        </div>
-                        
-    
-               
-                        
-                        <div class="enroll-phone-tit" id="tel">
-                            
-                            <h3>학원 전화번호</h3>
-                            
-                        </div>
-                        
-                        
-                        <div class="enroll-area-tit" id="area" >
-                            <h3>지역</h3>
-                        </div>
-                        
-    
-                        <div class="enroll-adress-tit" id="adress">
-                            <h3>학원 상세주소</h3>
-                        </div>
-                        
-                       
-                           
-    
-                        <div class="enroll-intro-tit" id="introduce">
-                            <h3>학원 소개</h3>
-
-                        </div>
-                       	<div class="enroll-grade" >
-                        
-                       	</div>
-                   </div>
-             </form>
+	<section id="introLA">
+		<div id="container">
+			<form class="form-enroll" id="form" style="max-width:40%;">
+				<div class="acaImg">
+					<img></img>	<!-- 학원 대표이미지 오면 좋을듯? -->
+				</div>
+				<table class="table col-sm-9" id="acapage">
+					<thead>
+						<tr>
+							<td colspan="2" ">XXX학원님 안녕하세요!</td>
+						<tr>	
+					</thead>
+					<tbody>
+						<tr>
+							<th class="col-sm-2">학원명</td>
+							<td class="col-sm-7 enroll-name-tit" id="title"></td>
+						</tr>
+						<tr>
+							<th>전화번호</td>
+							<td class="enroll-phone-tit" id="tel"></td>
+						</tr>
+						<tr>
+							<th>지역</td>
+							<td class="enroll-area-tit" id="area"></td>
+						</tr><tr>
+							<th>학원소개</td>
+							<td class="enroll-intro-tit" id="introduce"></td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
             
-							<button id="delete" class="btn btn-primary" >삭제</button>
-							<button id="cancel" class="btn btn-primary">돌아가기</button>
-       </div>
-                   
+			<button id="delete" class="btn btn-danger" >수정</button>
+			<button id="cancel" class="btn btn-primary">홈으로돌아가기</button>
+			<button id="lecture" class="btn btn-info">강의목록 보기</button>
+		</div>
+	</section>   
 </body>
 </html>
 <%@include file="/WEB-INF/views/footer.jsp"%>

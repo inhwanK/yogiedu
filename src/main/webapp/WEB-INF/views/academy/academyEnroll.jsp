@@ -226,11 +226,11 @@ $(function(){
                         <input type="text" id="inputTel" placeholder="학원전화번호를 입력해주세요" class="form-control" autofocus>
                     </div>
                 </div>
-                <!--<div class="form-group">	여기가 젤 문제인 부분 city/town/area_sepc을 합쳐서 주소로 보여줘야 하고, 등록은 따로 되야됨
+                <div class="form-group">	<!-- 여기가 젤 문제인 부분 city/town/area_sepc을 합쳐서 주소로 보여줘야 하고, 등록은 따로 되야됨 -->
                     <label for="enroll-area" class="enroll-area-tit col-sm-3 control-label">지역</label>
                     <div class="enroll-area col-sm-9" style="display:flex;">
 	                    <div >
-	                        <input list="city">
+	                        <input list="city" placeholder="시/도를 골라주세요">
 	                        	<datalist id=city>
 	                        		<option value="서울">
 	                        		<option value="부산">
@@ -241,7 +241,7 @@ $(function(){
 	                        	</datalist>
 	                    </div>
 	                    <div >
-	                        <input list="town">
+	                        <input list="town" placeholder="군/구를 골라주세요">
 	                        	<datalist id="town">
 	                        		<option value="중구">
 	                        		<option value="동구">
@@ -251,7 +251,7 @@ $(function(){
 	                        <input type="text" id="area_sepc" placeholder="상세주소를 입력해주세요" class="form-contrl" autofocus>
 						</div>
 					</div>
-                </div> -->
+                </div>
                 <div class="form-group">
                     <label for="enroll-intro" class="enroll-intro-tit col-sm-3 control-label">학원소개</label>
                     <div class="enroll-intro col-sm-9">
@@ -283,7 +283,7 @@ $(function(){
 				</div>  --> 
                 <div class="enroll-btn">
 					<input class="btn btn-primary" type="button" id="reg" value="등록하기">
-               		<input class="btn btn-primary" type="button" id="cancel" value="취소하기">
+               		<input class="btn btn-danger" type="button" id="cancel" value="취소하기">
                 </div>
                 
                 
