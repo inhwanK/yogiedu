@@ -41,111 +41,87 @@
 });  */
  
 $(function(){
+		
+	var a;
 	
-	 $("#grade").on("click",function(){
+	
+	
+	
+	
+    
+    	 $('#reg').on("click",function () {
+    		    
+				var contextPath = "${contextPath}";
+			$("")
 			
-         var a = $("#grade").is(":checked");
-         if(a){
-          $("#grade").prop('checked', true);
-             var a = $("#grade").val();
-             console.log(a)
-         } 
-         else{
-
-          $("#grade1").prop('checked', false);
-         
-           var a= null;
-           console.log(a);
-             }
-        })
-        $("#grade1").on("click",function(){
-		
-        var a = $("#grade1").is(":checked");
-        if(a){
-         $("#grade1").prop('checked', true);
-            var a = $("#grade1").val();
-            console.log(a)
-        } 
-        else{
-
-         $("#grade1").prop('checked', false);
-        
-          var a= null;
-          console.log(a);
-            }
-       })
-       
-       $("#grade2").on("click",function(){
-		
-        var a = $("#grade2").is(":checked");
-        if(a){
-         $("#grade2").prop('checked', true);
-            var a = $("#grade2").val();
-            console.log(a)
-        } 
-        else{
-
-         $("#grade2").prop('checked', false);
-        
-          var a= null;
-          console.log(a);
-            }
-       })
-      
-       $("#grade3").on("click",function(){
-		
-        var a = $("#grade3").is(":checked");
-        if(a){
-         $("#grade3").prop('checked', true);
-            var a = $("#grade3").val();
-            console.log(a)
-        } 
-        else{
-
-         $("#grade3").prop('checked', false);
-        
-          var a= null;
-          console.log(a);
-            }
-       })
-       
-       
+				
+				if($("#inputName").val() == "" || $("#inputArea").val() == "" || $("#inputAdress").val() == ""){
+ 					
+ 					alert("안돼 돌아가");
+ 					return;
+ 				}
+				//ㅁㅁㅁㄴㅁㄹㄴㅁㄹㄴㅁㄹㄴㅁㄹ
+				
+				var conf = confirm("등록하시겠습니까?");
+				if(conf){
+ 				
+				
+				
+     		var data={
+     				
+     		 "ACA_ASNUM" : $("#inputName").val(),
+			 	"ADMST_ZONE_NM" :$("#inputArea").val(),
+			  "FA_RDNMA":$("#inputAdress").val(),
+			  "ESTBL_YMD": $("#inputContent").val()
+			
+     		}
+ 
+      	
+     		  console.log($("#inputName").val());
+ 		
+					var acaIdx = "${acaIdx}";
+	             
+	        $.ajax({
+	            type: "post",
+	            url: contextPath + "/api/academy",
+	            data: JSON.stringify(data),
+	            dataType: 'json',
+	            contentType:"application/json; charset=utf-8",
+	            success: function (data) {
+	              
+	            	alert("success");
+	                console.log(data);
+	                window.location.href = contextPath + "/academy?acaIdx=" + acaIdx;
+	            
+	           
+	            },
+	            error: function (request, status, error) {
+	                console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+	
+	            }
+	        })
+				}
+		}) 
     
+    
+   
+    
+});
+
+
+function NoMultiChk(chk){
+	 var obj = document.getElementsByName("box");
+	console.log(obj);
+}
+		      
+    	 
      
-    $('#reg').on("click",function () {
-
-        var contextPath = "${contextPath}";
-
-            var data={
-            		 "ACA_ASNUM" : $("#inputName").val(),
-   				  "ACA_NM" : $("#inputTel").val(),
-   				  "FA_RDNMA":$("#inputAdress").val(),
-   				  "ESTBL_YMD": $("#inputContent").val(),
-   				  "ADMST_ZONE_NM" :$("#inputArea").val()
-   				 
-            };
-        		console.log(data);
-        $.ajax({
-            type: "post",
-            url: contextPath + "/api/academy",
-            data: JSON.stringify(data),
-            dataType: 'json',
-            contentType:"application/json; charset=utf-8",
-            success: function (data) {
-                alert("success");
-                console.log(data);
-                window.location.href = contextPath + "/academy?acaIdx=" + acaIdx;
-            },
-            error: function (request, status, error) {
-                console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-
-            }
-        });
-    });
-    
-  
-}); 
-
+     
+		            
+             
+        
+            
+            
  
 
 
@@ -222,34 +198,9 @@ $(function(){
                  
             
                 <div class="enroll-wrap row col-md-6">
-                    <div class="enroll-grade-wrap col-md-3">
-                    <h1>대상</h1>
-                    <div class="wrap">
-                        <input id="grade" type="checkbox"  value="초등학생" >
-                        <label for="grade1">
-                        <span>초등학생</span>
-                        </label>
-                    </div>
-                    <div class="wrap">
-                        <input id="grade2" type="checkbox"  value="중학생" >
-                        <label for="grade2">
-                        <span>중학생</span>
-                        </label>
-                    </div>
-                    <div class="wrap">
-                        <input id="grade2" type="checkbox"  value="대학생" >
-                        <label for="grade2">
-                        <span>고등학생</span>
-                        </label>
-                    </div>
-                    <div class="wrap">
-                            <input id="grade3" type="checkbox" value="일반인" >
-                            <label for="grade3">
-                            <span>일반인</span>
-                            </label>
-                    </div>
-                    
-                    </div>  
+                     <label for="box"> 초딩
+            	<input name="box" type="checkbox" value="1" class="초등학생" >
+        			</label> 
                     
                 </div>  
                 <div class="enroll-btn">
