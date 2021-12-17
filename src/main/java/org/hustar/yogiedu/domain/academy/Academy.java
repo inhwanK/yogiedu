@@ -2,25 +2,32 @@ package org.hustar.yogiedu.domain.academy;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale.Category;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hustar.yogiedu.domain.lecture.Lecture;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.Setter;
 
+@Entity
 @Getter
 @NoArgsConstructor
-@Entity
 @Table(name = "academy")
 public class Academy {
 	
@@ -63,6 +70,8 @@ public class Academy {
 	
 	@Column(name = "FA_RDNDA") //도로명상세주소
 	private String faRdnda;
+	
+	
 	
 	@Builder
 	public Academy(Long acaIdx, String acaAsnum, String acaNm, String atptOfcdcScCode, String atptOfcdcScNm,
