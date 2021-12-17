@@ -29,6 +29,7 @@
 							+ json[i].notIdx + "'>" + json[i].notTitle
 							+ "</a></td>"; */
 					list += "<td>" + json[i].writer + "</td>";
+					list += "<td>" + json[i].regDate + "</td>";
 					list += "<tr>"
 				} // 실제 여기서 사용되는 notIdxm regDate, notTitle같은 데이터는 실제로 쿼리문에 있는 데이터의 정보임
 				
@@ -51,16 +52,14 @@
 						</colgroup>
 						<thead>
 							<tr>
-								<th scope="col" >글 번호</th>
-								<th scope="col" >글 제목</th>
-								<th scope="col" >글쓴이</th>
-								<th scope="col">
+								<th scope="col">글 번호</th>
+								<th scope="col">글 제목</th>
+								<th scope="col">글쓴이</th>
+								<th scope="col">작성일</th>
 							</tr>
 						</thead>
 						<tbody>
-				    <div>
-        
-                    </div>
+			
 						</tbody>
   					</table>
 				</div>

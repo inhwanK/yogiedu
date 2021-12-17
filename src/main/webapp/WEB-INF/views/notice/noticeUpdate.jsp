@@ -48,7 +48,7 @@
 		});
 </script>
 <body>
-	
+	<section id="introLA">
 	<div id="page-wrapper">
 		<!-- 본문 -->
 		<div class="main">
@@ -76,6 +76,7 @@
 			</div>
 		</div>
 	</div>
+	</section>
 </body>
 
 <%@include file="/WEB-INF/views/footer.jsp"%>
