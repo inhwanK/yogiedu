@@ -1,15 +1,20 @@
 package org.hustar.yogiedu.config.auth;
 
+import java.util.Collections;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.hustar.yogiedu.config.auth.dto.OAuthAttributes;
-import org.hustar.yogiedu.config.auth.dto.SessionMember;
-import org.hustar.yogiedu.domain.domain.member.Member;
-import org.hustar.yogiedu.domain.domain.member.MemberRepository;
+import org.hustar.yogiedu.config.auth.dto.SessionUser;
+import org.hustar.yogiedu.domain.domain.user.User;
+import org.hustar.yogiedu.domain.domain.user.UserRepository;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
+import org.springframework.security.oauth2.core.user.DefaultOAuth2User;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +24,7 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
 
-	private final MemberRepository memberRepository;
+	private final UserRepository userRepository;
 	private final HttpSession httpSession;
 
 	@Override
@@ -38,17 +43,24 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 		OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName,
 				oAuth2User.getAttributes());
 
-		Member member = saveOrUpdate(attributes);
-		httpSession.setAttribute("user", new SessionMember(member));
+		User user = saveOrUpdate(attributes);
+		httpSession.setAttribute("user", new SessionUser(user));
+		
+		System.out.println("attributes > "+attributes.getAttributes());
+		
 
-		return null;
+		return new DefaultOAuth2User(
+				Collections.singleton(new SimpleGrantedAuthority(user.getRoleKey())), attributes.getAttributes(), attributes.getNameAttributeKey());
 	}
 
-	private Member saveOrUpdate(OAuthAttributes attributes) {
-		Member member = memberRepository.findByEmail(attributes.getEmail())
-				.map(entity -> entity.update(attributes.getName(), attributes.getPicture()))
+	private User saveOrUpdate(OAuthAttributes attributes) {
+		
+		User user = userRepository.findByEmail(attributes.getEmail()).map(entity -> entity.update(attributes.getName(), attributes.getPicture()))
 				.orElse(attributes.toEntity());
+//		List<Member> member = memberRepository.findByMemberEmail(attributes.getMemberEmail());
 
-		return memberRepository.save(member);
+		
+		
+		return userRepository.save(user);
 	}
 }

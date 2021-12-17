@@ -10,7 +10,7 @@ import lombok.RequiredArgsConstructor;
 @EnableWebSecurity
 public class SecurtiyConfig extends WebSecurityConfigurerAdapter {
 
-	private final CustomOAuth2UserService custoOAuth2UserService;
+	private final CustomOAuth2UserService customOAuth2UserService;
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -25,7 +25,7 @@ public class SecurtiyConfig extends WebSecurityConfigurerAdapter {
 		.and()
 			.oauth2Login()
 			.userInfoEndpoint()
-			.userService(custoOAuth2UserService);
+			.userService(customOAuth2UserService);
 	}
 
 }
