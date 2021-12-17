@@ -45,7 +45,7 @@
 		<section id="introN" class="clearfix">
 			<div class="container" style="margin-top:20px;">
 				<div>
-					<h1 class="mb-3" style="font-weight:700;">공 지 사 항</h1>
+					<h1 class="mb-4" style="font-weight:400;">YOGIEDU에서 알려드립니다</h1>
 				</div>
 				<div class="table-responsive-sm">
 					<table class="table board-list">
@@ -56,7 +56,7 @@
 							<col stlye="width:55%;">
 						</colgroup>
 						<thead>
-							<tr>
+							<tr style="border-top:2px solid #000; background-color:#f6f7fb">
 								<th scope="col">글 번호</th>
 								<th scope="col">글 제목</th>
 								<th scope="col">글쓴이</th>
@@ -75,7 +75,11 @@
 	<style>
 	tbody td, th, tr{
 	padding:10px;
-	border:1px solid #dee2e6;}
+	border:1px solid #dee2e6;
+	border-left:none;
+	border-right:none;}
+	tbody tr:last-child{
+	border-bottom:2px solid #000;}
 	</style>
 
 <%@include file="/WEB-INF/views/footer.jsp"%>

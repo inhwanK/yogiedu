@@ -81,7 +81,7 @@
     
     <div id="title-wrap">
         <div class="title">
-            <a href="noticeList" style="font-size:3rem;font-weight: 900; color: #222;">공지사항</a>
+            <a href="noticeList" style="font-size:3rem;font-weight: 900; color: #222;"><p class= "tit" id="title"></p></a>
         </div>
         
     </div>
@@ -92,13 +92,12 @@
                 <div class="container col-sm-9">
                 	<table class="table">
                 		<thead>
-                			<td class="tit-area" style="display:flex;"><span>제목 : </span><p class="tit" id="title" style="margin:0 auto;"></p></td>
                 			<td class="info" style="border-top:none;"><span class="tit">등록일 : </span><span class="txt" id="regdate"></span></td>
                 			<td class="" style="display:flex;"><span>작성자 : </span><div class="writer" id="writer"></div></td>
                 		</thead>
                 		<tbody>
                 			
-                			<td colspan="3"><div class="cont" id="content"></div></td>
+                			<td colspan="2"><div class="cont" id="content"></div></td>
                 		</tbody>
                 	</table>
                 </div>	

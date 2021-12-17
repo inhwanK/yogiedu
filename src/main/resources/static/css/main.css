@@ -213,6 +213,7 @@ h6 {
     white-space: nowrap;
     float: left;
 }
+
 .main-nav a {
     display: block;
     position: relative;
@@ -222,12 +223,20 @@ h6 {
     font-size: 14px;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
+    
 }
 .main-nav a:hover,
 .main-nav .active > a,
 .main-nav li:hover > a {
     color: #007bff;
     text-decoration: none;
+}
+.main-nav li:hover > a {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.main-nav li > a {
+    transition: all 0.4s ease-in-out;
 }
 .main-nav .drop-down ul {
     display: block;

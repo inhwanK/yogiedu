@@ -57,6 +57,9 @@
 			$("div.mainAns span").append(aNs);
     	  	//$("div.testimonial-item").append(list);
     	  	//$("div.swiper-slide").append(list);
+    	  	
+
+
 	    }
 	
 	})
@@ -263,7 +266,7 @@
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up">1,364</span>
+                    <span data-toggle="counter-up">3423</span>
                     <p>리뷰 갯수</p>
                 </div>
 
