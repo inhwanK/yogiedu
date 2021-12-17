@@ -172,15 +172,16 @@ $(function(){
 </body>
  -->
  <body>
+ <section id="introLA">
     <div id="container">
     <form class="form-enroll" id="form">
             <div class="enroll-name-wrap ">
-                <h1>학원 등록하기</h1>
+                <h1 style="font-weight:600;">학원 등록하기</h1>
                 <div>
                     
-                    <div class="enroll-name-tit" >
-                       <h3>학원명*</h3>
-                       <p>(실제 학원명을 입력해주세요.)</p>
+                    <div class="enroll-name-tit" style="display:flex; justify-content:center;align-items: flex-end; margin-bottom:15px;" >
+                       <h3 style="margin-bottom:0 ;">학원명*</h3>
+                       <p style="margin-bottom:0 ;">(실제 학원명을 입력해주세요.)</p>
                     </div>
                     <div class="enroll-name " >
                         <input type="text" name="ACA_NM" id="inputName" style="width:50%;" >
@@ -262,4 +263,5 @@ $(function(){
     </form>
     
 </div> 
+</section>
 </body>
