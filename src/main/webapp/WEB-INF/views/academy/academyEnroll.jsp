@@ -254,7 +254,7 @@ $(function(){
                 </div> -->
                 <div class="form-group">
                     <label for="enroll-intro" class="enroll-intro-tit col-sm-3 control-label">학원소개</label>
-                    <div class="col-sm-9">
+                    <div class="enroll-intro col-sm-9">
                         <input type="text" id="inputContent" placeholder="당신의 학원을 소개해주세요" class="form-control" rows="5">
                     </div>
                 </div>
@@ -282,10 +282,8 @@ $(function(){
                     </div>
 				</div>  --> 
                 <div class="enroll-btn">
-               		<input class="btn btn-primary" type="button" id="reg">등록하기
-               		<input class="btn btn-primary" type="button" id="cancel">취소하기
-                    <!-- <button class="btn btn-primary" id="reg">등록하기</button>
-                	<button type="cancel" class="btn btn-danger" id="cancel">취소하기</button> -->
+					<input class="btn btn-primary" type="button" id="reg" value="등록하기">
+               		<input class="btn btn-primary" type="button" id="cancel" value="취소하기">
                 </div>
                 
                 
