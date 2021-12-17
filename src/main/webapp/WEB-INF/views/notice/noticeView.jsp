@@ -28,7 +28,7 @@
 		    $("p#title").append(json.notTitle);
 		   	$("#regdate").append(json.regDate);
 		    $("div#content").append(json.notContent);
-				
+			$("div#writer").append(json.writer);	
 		    
 	    	}
 				
@@ -77,7 +77,7 @@
 		
 </script>  
 <body style="padding-top:100px;">
-<section>
+<section id=introLA>
     
     <div id="title-wrap">
         <div class="title">
@@ -89,24 +89,19 @@
     <div id="notice-detail-wrap">
         <div id="contents">
             <div class="table-wrap">
-                <div class="board-view">
-                    <div class="tit-area">
-                        <p class="tit" id="title"></p>
-                        
-                    </div>
-
-                    <div class="info">
-                        <p>
-                            <span class="tit">등록일</span> <span class="txt" id="regdate"></span>
-                           
-                            </span>
-                        </p>
-                        
-                        
-                    </div>
-
-                    <div class="cont" id="content"></div>
-                </div>
+                <div class="container col-sm-9">
+                	<table class="table">
+                		<thead>
+                			<td class="tit-area" style="display:flex;"><span>제목 : </span><p class="tit" id="title" style="margin:0 auto;"></p></td>
+                			<td class="info" style="border-top:none;"><span class="tit">등록일 : </span><span class="txt" id="regdate"></span></td>
+                			<td class="" style="display:flex;"><span>작성자 : </span><div class="writer" id="writer"></div></td>
+                		</thead>
+                		<tbody>
+                			
+                			<td colspan="3"><div class="cont" id="content"></div></td>
+                		</tbody>
+                	</table>
+                </div>	
             </div>
 
             <div class="prev-next">
