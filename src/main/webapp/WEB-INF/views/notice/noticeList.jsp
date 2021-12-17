@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
-	
+		
 		$(function(){
 		var contextPath = "${contextPath}";
 		$.ajax({
@@ -15,7 +15,7 @@
 			contextType:"apllication/json; charset=utf-8",
 			dataType: "json", //로드된 데이터의 형태, 문자열은 string
 			success: function(json) { //succeess 데이터 로드가 완료되면 호출하는 함수
-				
+ 
 				var list = "";
 				var dataLength = json.length; // noticelist에 있는 json 데이터의 모든 데이터의 총 갯수(length 함수)를 변수 형태로 지정(var anything)
 				
@@ -31,6 +31,7 @@
 					list += "<td>" + json[i].writer + "</td>";
 					list += "<td>" + json[i].regDate + "</td>";
 					list += "<tr>"
+					console.log(typeof(json[i].regDate));
 				} // 실제 여기서 사용되는 notIdxm regDate, notTitle같은 데이터는 실제로 쿼리문에 있는 데이터의 정보임
 				
 				// append 는 jquery문법으로 선택한 확장집합의 요소 자식중에 가장 끝에 있는 매개변수를 추가한다는 뜻. 쉽게 생각하면 위에 list라는 변수 만들었고 tbody(html단)의 클래스안에 list의 정보들을 뿌려주는 것.
@@ -42,13 +43,17 @@
 	
 	<body>
 		<section id="introN" class="clearfix">
-			<div class="container">
+			<div class="container" style="margin-top:20px;">
+				<div>
+					<h1 class="mb-3" style="font-weight:700;">공 지 사 항</h1>
+				</div>
 				<div class="table-responsive-sm">
-					<table class="board-list">
+					<table class="table board-list">
 						<colgroup>
 							<col style="width:15%;">
-							<col>
 							<col style="width:15%;">
+							<col style="width:15%;">
+							<col stlye="width:55%;">
 						</colgroup>
 						<thead>
 							<tr>
@@ -63,9 +68,15 @@
 						</tbody>
   					</table>
 				</div>
-				<button id="btn_write" type="button" class="btn_write" onclick="location.href= '${contextPath}/noticeReg'" >글작성</button>
+				<button id="btn_write" type="button" class="btn_write btn btn-primary btn-floating" onclick="location.href= '${contextPath}/noticeReg'"  style="margin:20px 0;">글작성</button>
 			</div>
 		</section>
 	</body>
+	<style>
+	tbody td, th, tr{
+	padding:10px;
+	border:1px solid #dee2e6;}
+	</style>
+
 <%@include file="/WEB-INF/views/footer.jsp"%>
 	
