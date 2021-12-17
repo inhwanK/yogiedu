@@ -60,7 +60,7 @@ $(function(){
  					alert("안돼 돌아가");
  					return;
  				}
-				//
+				//ㅁㅁㅁㄴㅁㄹㄴㅁㄹㄴㅁㄹㄴㅁㄹ
 				
 				var conf = confirm("등록하시겠습니까?");
 				if(conf){
