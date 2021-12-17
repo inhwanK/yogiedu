@@ -42,25 +42,14 @@
  
 $(function(){
 		
-	var a;
 	
-	
-	
-	
-	
-    
     	 $('#reg').on("click",function () {
     		    
 				var contextPath = "${contextPath}";
-			$("")
+			
 			
 				
-				if($("#inputName").val() == "" || $("#inputArea").val() == "" || $("#inputAdress").val() == ""){
- 					
- 					alert("안돼 돌아가");
- 					return;
- 				}
-				//ㅁㅁㅁㄴㅁㄹㄴㅁㄹㄴㅁㄹㄴㅁㄹ
+				//
 				
 				var conf = confirm("등록하시겠습니까?");
 				if(conf){
@@ -74,7 +63,7 @@ $(function(){
 			  "FA_RDNMA":$("#inputAdress").val(),
 			  "ESTBL_YMD": $("#inputContent").val()
 			
-     		}
+     		};
  
       	
      		  console.log($("#inputName").val());
@@ -109,11 +98,7 @@ $(function(){
 });
 
 
-function NoMultiChk(chk){
-	 var obj = document.getElementsByName("box");
-	console.log(obj);
-}
-		      
+
     	 
      
      

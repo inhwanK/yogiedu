@@ -39,7 +39,6 @@
 		    var dataLength = json.length;
 		    var list = "";
 		    
-		  
 		    $("#academy-name").append(json[0].acaNm);
 		    $("#academy-area").append(json[0].faRdnma);
 		   
@@ -81,7 +80,8 @@
                             <li class="main-nav-list" data-filter="daugu"><a data-toggle="collapse" href="#fruitsVegetable" aria-expanded="false" aria-controls="fruitsVegetable"><span
                                      class="lnr lnr-arrow-right" ></span>대구</a>
                                 <ul class="collapse daegu" id="fruitsVegetable" data-toggle="collapse" aria-expanded="false" aria-controls="fruitsVegetable">
-                                    <li class="main-nav-list child "><a href="#" data-filter="a">동구</span></a></li>
+                                    <li class="main-nav-list child "><a href="#" data-filter="a">동구</span>
+                                    </a></li>
                                     <li class="main-nav-list child "><a href="#" data-filter="b">서구</span></a></li>
                                     <li class="main-nav-list child "><a href="#" data-filter="c">남구</span></a></li>
                                     <li class="main-nav-list child"><a href="#" >북구</span></a></li>
@@ -289,7 +289,17 @@
                        <!--상품리스트 시작-->
                     <div class="product_list row col-md-12" id="product-list-wrap">
                         <!-- PRODUCT ITEM START -->
-                                 
+                                 list += '<div class="product_item1 col-md-4" data-type="daegu">';
+		    	<div class="product_item" id="opener">';
+		    	<div class="pi-img-wrapper"  >';
+		    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
+		    		list += '<div id="academy-name">';
+		    		list += '</div>';
+		    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
+		    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
+		    		list += '</div>';
+		    		list += '</div>';
+		    		list += '</div>';
                           
                       </div>
                    

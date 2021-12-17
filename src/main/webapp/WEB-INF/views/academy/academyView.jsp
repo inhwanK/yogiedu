@@ -14,7 +14,6 @@ $(function() {
     var contextPath = "${contextPath}";
 	var acaIdx = "${acaIdx}";
 	
-	console.log(acaIdx);
 	
 	$.ajax({
     url : contextPath+ "/api/academy?acaIdx=" +acaIdx ,
@@ -70,6 +69,47 @@ $("#delete").on('click', function(){
 	}
 
 });
+
+
+
+$("#lecture").on('click',function(){
+			
+			
+			var conf = confirm("강의 수정할래??");
+			
+			if(conf){
+				
+				var contextPath= "${contextPath}";
+				var acaIdx = "${acaIdx}";
+				var lectureIdx = "${lectureIdx}"; 
+				
+				
+				$.ajax({
+				    url : contextPath + "/api/academy?acaIdx="+acaIdx,
+				    method : "get",
+				    dataType : "json",
+				    success: function(json) {
+							
+				    	alert("hi");
+				    	console.log(json);
+				 
+				    	window.location.href = contextPath + "/lectureView/"+acaIdx;
+				    	
+				    
+				    	
+				},
+					error: function(){
+					alert("조졋다");
+				}
+				
+			})
+				
+			}
+
+    		
+	
+	
+})
 });
 
 </script>
@@ -119,6 +159,7 @@ $("#delete").on('click', function(){
             
 							<button id="delete" class="btn btn-primary" >삭제</button>
 							<button id="cancel" class="btn btn-primary">돌아가기</button>
+							<button id="lecture" class="btn">강의 만들기</button>
        </div>
                    
 </body>
