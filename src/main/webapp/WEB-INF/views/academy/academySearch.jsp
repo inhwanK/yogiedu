@@ -164,14 +164,14 @@
                     </div>
                     <!-- 강의시간표-->
                     <table class="search-table col-md-12">
-                        <th></th>
-                        <th>월</th>
-                        <th>화</th>
-                        <th>수</th>
-                        <th>목</th>
-                        <th>금</th>
-                        <th>토</th>
-                        <th>일</th>
+	                        <th></th>
+	                        <th>월</th>
+	                        <th>화</th>
+	                        <th>수</th>
+	                        <th>목</th>
+	                        <th>금</th>
+	                        <th>토</th>
+	                        <th>일</th>
                         <tr>
                             <td class="time">
                                 3-4
