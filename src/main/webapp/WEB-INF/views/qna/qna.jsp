@@ -9,7 +9,7 @@
             </div>
 
             <div class="intro-info">
-                <h2>우리아이 학원은<br><span>요기에듀</span>에서<br>찾아보고 보내세요!</h2>
+                <h2><span>요기에듀</span>에게<br>자주 하는 질문들 입니다!<br>다른 질문은<br>이메일로 주세요!</h2>
                 
             </div>
 

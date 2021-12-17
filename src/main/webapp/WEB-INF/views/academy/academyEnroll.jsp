@@ -236,7 +236,7 @@ function NoMultiChk(chk){
                 <div class="form-group">	<!-- 여기가 젤 문제인 부분 city/town/area_sepc을 합쳐서 주소로 보여줘야 하고, 등록은 따로 되야됨 -->
                     <label for="enroll-area" class="enroll-area-tit col-sm-3 control-label">지역</label>
                     <div class="enroll-area col-sm-9" style="display:flex;">
-	                    <div class="col-sm-3">
+	                    <div >
 	                        <input list="city">
 	                        	<datalist id=city>
 	                        		<option value="서울">
@@ -247,14 +247,14 @@ function NoMultiChk(chk){
 	                        		<option value="인천">
 	                        	</datalist>
 	                    </div>
-	                    <div class="col-sm-3">
+	                    <div >
 	                        <input list="town">
 	                        	<datalist id="town">
 	                        		<option value="중구">
 	                        		<option value="동구">
 	                        	</datalist>
 	                    </div>
-						<div class="col-sm-3">
+						<div >
 	                        <input type="text" id="area_sepc" placeholder="상세주소를 입력해주세요" class="form-contrl" autofocus>
 						</div>
 					</div>
@@ -262,7 +262,7 @@ function NoMultiChk(chk){
                 <div class="form-group">
                     <label for="enroll-intro" class="enroll-intro-tit col-sm-3 control-label">학원소개</label>
                     <div class="col-sm-9">
-                        <textarea type="text" id="inputContent" placeholder="당신의 학원을 소개하세요" class="form-control" rows="5"></textarea>
+                        <textarea type="text" id="inputContent" placeholder="당신의 학원을 소개해주세요" class="form-control" rows="5"></textarea>
                     </div>
                 </div>
                 
@@ -270,16 +270,22 @@ function NoMultiChk(chk){
                 <div class="form-group enroll-wrap row col-md-9">
 					<span>대상학년(중복체크가능) :</span>
                     <div class="form-check">
-            			<input name="box" type="checkbox" value="1" class="초등학생" >
-            			<label for="box">초등학생</label>
+            			<label for="ele">
+            				<input id="ele" name="box" type="checkbox" value="1" class="초등학생" >
+            				<span>초등학생</span>
+            			</label>
         			</div>
         			<div class="form-check">
-        			 	<input name="box" type="checkbox" value="2" class="중학생">
-        			 	<label for="box">중학생</label>
+        				<label for="mid">
+	        			 	<input id = "mid" name="box" type="checkbox" value="2" class="중학생">
+							<span>중학생</span>
+						</label>
         			</div>
         			<div class="form-check">
-        			 	<input name="box" type="checkbox" value="3" class="고등학생">
-        			 	<label for="box">고등학생</label>	
+        			 	<label for="high">
+	        			 	<input id = "high" name="box" type="checkbox" value="2" class="고등학생">
+							<span>고등학생</span>
+						</label>
                     </div>
 				</div>  
                 <div class="enroll-btn">

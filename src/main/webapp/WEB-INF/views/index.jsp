@@ -58,8 +58,19 @@
     	  	//$("div.testimonial-item").append(list);
     	  	//$("div.swiper-slide").append(list);
     	  	
-
-
+			var bos="";
+			for (i=0; i<dataLength; i++){
+				if (json[i].leCrseName ==="보습")
+					bos++;
+			}
+			$("div.bos span").append(bos);
+			
+			var sus=0;
+			for (i=0; i<dataLength; i++){
+				if (json[i].adminDistName =="수성구")
+					sus++;
+			}
+			$("div.sus span").append(sus);
 	    }
 	
 	})
@@ -265,14 +276,14 @@
                     <p>예체능학원 수</p>
                 </div>
 
-                <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up">3423</span>
-                    <p>리뷰 갯수</p>
+                <div class="col-lg-3 col-6 text-center bos">
+                    <span data-toggle="counter-up"></span>
+                    <p>보습학원 수</p>
                 </div>
 
-                <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up">18달</span>
-                    <p>최장 이용 고객님</p>
+                <div class="col-lg-3 col-6 text-center sus">
+                    <span data-toggle="counter-up"></span>
+                    <p>수성구 학원 수</p>
                 </div>
 
             </div>
