@@ -81,7 +81,7 @@
     
     <div id="title-wrap">
         <div class="title">
-            <a href="noticeList" style="font-weight: 900; color: #222;">공지사항</a>
+            <a href="noticeList" style="font-size:3rem;font-weight: 900; color: #222;">공지사항</a>
         </div>
         
     </div>
