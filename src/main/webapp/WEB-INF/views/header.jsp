@@ -102,7 +102,7 @@
                 <a href="${contextPath}/" class="scrollto"><img src="/static/img/Tlogo2_B.png" alt="" class="img-fluid"></a>
             </div>
 
-            <nav class="main-nav float-right d-none d-lg-block">
+            <nav class="main-nav float-right d-lg-block">
                 <ul>
                     <li class="active"><a href="${contextPath}/">Home</a></li>
                     <li><a href="${contextPath}/noticeList">공지사항</a></li>

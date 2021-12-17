@@ -88,7 +88,7 @@
         </div>
 
         <div class="intro-info">
-            <h2>우리아이 학원은<br><span>요기에듀</span>에서<br>찾아보고 보내세요!</h2>
+            <h2>우리아이 학원!<br><span>요기에듀</span>에서<br>찾아보고 보내세요!</h2>
             <!-- <div>
                 <a href="#about" class="btn-get-started scrollto">시작하기</a>
                 <a href="#services" class="btn-services scrollto">YOGIEDU?</a>
@@ -220,7 +220,7 @@
     </section>
 
     <section id="why-us" class="wow fadeIn">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
             <header class="section-header">
                 <h3>Why YOGIEDU?</h3>
                 <p>왜 요기에듀를 선택하여야 할까요?</p>
@@ -276,7 +276,7 @@
                     <p>예체능학원 수</p>
                 </div>
 
-                <div class="col-lg-3 col-6 text-center bos">
+                <div class="col-lg-3 col-6 text-center bos ">
                     <span data-toggle="counter-up"></span>
                     <p>보습학원 수</p>
                 </div>
@@ -636,11 +636,11 @@
 
                 <div class="col-lg-6">
                     <div class="row">
-                        <div class="col-md-5 info">
+                        <div class="col-md-3 info">
                             <i class="fa fa-map-marker"></i>
                             <p>동내로 70, 대구 동구</p>
                         </div>
-                        <div class="col-md-4 info">
+                        <div class="col-md-3 info">
                             <i class="fa fa-envelope"></i>
                             <p>yogieduContact@gmail.com</p>
                         </div>

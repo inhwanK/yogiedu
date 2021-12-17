@@ -85,11 +85,14 @@ border:1px solid #000 !important;}
 	<section id="introLA">
 		<div id="container">
 			<form class="form-enroll" id="form" style="max-width:40%;">
-				<div class="acaImg">
-					<img></img>	<!-- 학원 대표이미지 오면 좋을듯? -->
-				</div>
+				
 				<table class="table col-sm-9" id="acapage">
 					<thead>
+						<tr>
+							<div class="acaImg">
+								<img></img>	<!-- 학원 대표이미지 오면 좋을듯? -->
+							</div>
+						</tr>
 						<tr>
 							<td colspan="2" ">XXX학원님 안녕하세요!</td>
 						<tr>	
