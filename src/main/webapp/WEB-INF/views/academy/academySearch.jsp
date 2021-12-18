@@ -3,73 +3,110 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
 <%@include file="/WEB-INF/views/header.jsp"%>
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/static/css/academy/style.css">
-<link rel="stylesheet" href="/static/css/academy/bootstrap.css">
-<link rel="stylesheet" href="/static/css/academy/main.css">
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/static/css/academy/style.css">    
+ <link rel="stylesheet" href="/static/css/academy/bootstrap.css">
+ <link rel="stylesheet" href="/static/css/academy/main.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<!-- js -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="/static/js/academy/academySearch.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+ 
+ <!-- js -->
+ 	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ -->    <script src="/static/js/academy/academySearch.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>  
+   
+     <meta charset="UTF-8">
+ <body>
+ 
+ <script type="text/javascript">
+	
+	$(function() {
 
-<meta charset="UTF-8">
+		var contextPath = "${contextPath}";
+		var notIdx = "${notIdx}";
+		 
+		
+		$.ajax({
+		    url : contextPath + "/api/academyList",
+		    method : "get",
+		    dataType : "json",
+		    success: function(json) {
+		    console.log(json);
+		    
+		   
+	
+		    console.log(json[100].adminDistName);
+		    $("#academy-name").append(json[0].acaNm);
+		    $("#academy-area").append(json[0].faRdnma);
+		
+				console.log("hi")
+				
+						for(i=0; i<=json.length; i++){
+					
+					console.log(json[i].adminDistName);
+			$("#a > a").on("click",function(){
+		
+				if( json[i].adminDistName == "동구" ){
+					var li="";
+					
+					li += '<div>동구</div>'
+					$("#product-list-wrap").append(li);
+					
+				}
+				else if( json[i].adminDistName == "서구" ){
+					var li="";
+					
+					li += '<div>서구</div>'
+					$("#product-list-wrap").append(li);
+					
+				}
+		
+				
+				
+				
+			}
+		
+	})
 
-<body>
+    
+		
+		
+	})
 
-    <script type="text/javascript">
-        $(function() {
-
-            var contextPath = "${contextPath}";
-            var notIdx = "${notIdx}";
-
-
-            $.ajax({
-                url: contextPath + "/api/academyList",
-                method: "get",
-                dataType: "json",
-                success: function(json) {
-                    console.log(json);
-
-                    var dataLength = json.length;
-                    var list = "";
-
-
-                    $("#academy-name").append(json[0].acaNm);
-                    $("#academy-area").append(json[0].faRdnma);
-
-                    for (i = 0; i <= dataLength - 248; i++) {
-
-
-                        list += '<div class="product_item1 col-md-4" data-type="daugu">';
-                        list += '<div class="product_item" id="opener">';
-                        list += '<div class="pi-img-wrapper"  >';
-                        list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
-                        list += '<div id="academy-name">';
-                        list += '</div>';
-                        list += '<h3><a href="shop-item.html"><h1>' + json[i].acaNm + '</h1></a></h3>';
-                        list += '<div class="pi-price">' + json[i].faRdnma + '</div>';
-                        list += '</div>';
-                        list += '</div>';
-                        list += '</div>';
-
-
-
-
-
-                    }
-                    console.log(list);
-                    $("#product-list-wrap").append(list);
-                }
-            })
-        })
-    </script>
-
+		 /*    for(i=0; i <=dataLength-248; i++ )
+		    	{
+		    	
+					
+					list += '<div class="product_item1 col-md-4" data-type="daugu">';
+		    		list += '<div class="product_item" id="opener">';
+		    		list += '<div class="pi-img-wrapper"  >';
+		    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
+		    		list += '<div id="academy-name">';
+		    		list += '</div>';
+		    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
+		    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
+		    		list += '</div>';
+		    		list += '</div>';
+		    		list += '</div>';
+		    		
+		    		
+		    			
+					
+		    		
+		    	}
+		    console.log(list);
+		    $("#product-list-wrap").append(list); */
+		    
+		    
+	
+		
+		
+	
+ </script>
     <body>
     	<section id="introLA">
         <div class="search-list-wrap" >
@@ -78,46 +115,28 @@
                 <div class="search-left col-md-3 ">
                     <div class="sidebar-categories ">
                         <div class="head">area</div>
-                        <ul class="main-categories">
-                            <li class="main-nav-list" data-filter="daugu"><a data-toggle="collapse" href="#fruitsVegetable" aria-expanded="false" aria-controls="fruitsVegetable"><span class="lnr lnr-arrow-right"></span>대구</a>
-                                <ul class="collapse daegu" id="fruitsVegetable" data-toggle="collapse" aria-expanded="false" aria-controls="fruitsVegetable">
-                                    <li class="main-nav-list child "><a href="#" data-filter="a">동구</span></a></li>
-                                    <li class="main-nav-list child "><a href="#" data-filter="b">서구</span></a></li>
-                                    <li class="main-nav-list child "><a href="#" data-filter="c">남구</span></a></li>
-                                    <li class="main-nav-list child"><a href="#">북구</span></a></li>
 
-                                    <li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-                                </ul>
+                        <ul class="main-categories" >
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><a id="donggu" data-toggle="collapse" href="#fruitsVegetable" aria-expanded="false" aria-controls="fruitsVegetable"><span
+                                     class="lnr lnr-arrow-right" ></span>대구</a>
+                               
                             </li>
+    
+                            <li class="main-nav-list" id="a"  ><a id="seogu" data-toggle="collapse" href="#meatFish" aria-expanded="false" aria-controls="meatFish"><span
+                                     class="lnr lnr-arrow-right" ></span>울산<span class="number">(1)</span></a>
+                               
+                            </li>
+                            
+                            <li class="main-nav-list" id="a" ><a data-toggle="collapse" href="#cooking" aria-expanded="false" aria-controls="cooking"><span
+                                     class="lnr lnr-arrow-right gwangju"></span>광주<span class="number"></span></a>
+                               
+                            </li>
+                            
+                            
+                            <li class="main-nav-list" id="a" ><a class="border-bottom-0" data-toggle="collapse" href="#babyCare" aria-expanded="false"
+                                 aria-controls="babyCare"><span class="lnr lnr-arrow-right"></span>기타<span class="number">(48)</span></a>
+                               
 
-                            <li class="main-nav-list"><a data-toggle="collapse" href="#meatFish" aria-expanded="false" aria-controls="meatFish"><span class="lnr lnr-arrow-right"></span>울산<span class="number">(1)</span></a>
-                                <ul class="collapse" id="meatFish" data-toggle="collapse" aria-expanded="false" aria-controls="meatFish">
-                                    <li class="main-nav-list child"><a href="#">동구</span></a></li>
-                                    <li class="main-nav-list child"><a href="#">서구</span></a></li>
-                                    <li class="main-nav-list child"><a href="#">남구</span></a></li>
-                                    <li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-                                    <li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-                                </ul>
-                            </li>
-
-                            <li class="main-nav-list"><a data-toggle="collapse" href="#cooking" aria-expanded="false" aria-controls="cooking"><span class="lnr lnr-arrow-right gwangju"></span>광주<span class="number"></span></a>
-                                <ul class="collapse" id="cooking" data-toggle="collapse" aria-expanded="false" aria-controls="cooking">
-                                    <li class="main-nav-list child"><a href="#">1학년</span></a></li>
-                                    <li class="main-nav-list child"><a href="#">2학년</span></a></li>
-                                    <li class="main-nav-list child"><a href="#">3학년</span></a></li>
-                                    <li class="main-nav-list child"><a href="#">Meat<span class="number">(11)</span></a></li>
-                                </ul>
-                            </li>
-                            </li>
-
-                            <li class="main-nav-list"><a class="border-bottom-0" data-toggle="collapse" href="#babyCare" aria-expanded="false" aria-controls="babyCare"><span class="lnr lnr-arrow-right"></span>기타<span class="number">(48)</span></a>
-                                <ul class="collapse" id="babyCare" data-toggle="collapse" aria-expanded="false" aria-controls="babyCare">
-                                    <li class="main-nav-list child"><a href="#">구미<span class="number">(13)</span></a></li>
-                                    <li class="main-nav-list child"><a href="#">청도<span class="number">(09)</span></a></li>
-                                    <li class="main-nav-list child"><a href="#">Fresh Fish<span class="number">(17)</span></a></li>
-                                    <li class="main-nav-list child"><a href="#">Meat Alternatives<span class="number">(01)</span></a></li>
-                                    <li class="main-nav-list child"><a href="#" class="border-bottom-0">Meat<span class="number">(11)</span></a></li>
-                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -150,6 +169,7 @@
                         </div>
 
                     </div>
+
                 </div>
 
                 <div class="search-right col-md-9">
@@ -292,6 +312,7 @@
 
 
                         </div>
+
 
                         <!-- PRODUCT ITEM END -->
 

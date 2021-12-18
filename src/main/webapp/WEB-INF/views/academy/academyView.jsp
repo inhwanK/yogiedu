@@ -13,8 +13,7 @@ $(function() {
 	
     var contextPath = "${contextPath}";
 	var acaIdx = "${acaIdx}";
-	
-	console.log(acaIdx);
+	console.log(acaIdx)
 	
 	$.ajax({
     url : contextPath+ "/api/academy?acaIdx=" +acaIdx ,
@@ -22,8 +21,8 @@ $(function() {
     dataType : "json",
     success: function(json) {
     console.log(json);
-     
-    
+	
+    console.log(json.acaIdx);
     $("#title").append(json.acaAsnum);
    	$("#tel").append(json.acaNm);
    	$("#adress").append(json.faRdnma);
@@ -35,7 +34,7 @@ $(function() {
 		
 
 	})
-		
+
 		
 $("#cancel").on('click', function(){
 	window.location.href = contextPath + "/academy";	
@@ -70,6 +69,47 @@ $("#delete").on('click', function(){
 	}
 
 });
+
+
+
+$("#lecture").on('click',function(){
+			
+			
+			var conf = confirm("강의 수정할래??");
+			
+			if(conf){
+				
+				var contextPath= "${contextPath}";
+				var acaIdx = "${acaIdx}";
+				var lectureIdx = "${lectureIdx}"; 
+				
+				
+				$.ajax({
+				    url : contextPath + "/api/academy?acaIdx="+acaIdx,
+				    method : "get",
+				    dataType : "json",
+				    success: function(json) {
+							
+				    	alert("hi");
+				    	console.log(json);
+				 
+				  window.location.href= contextPath+"academyLectureView/" + acaIdx;
+				    	
+				    
+				    	
+				},
+					error: function(){
+					alert("조졋다");
+				}
+				
+			})
+				
+			}
+
+    		
+	
+	
+})
 });
 
 </script>
@@ -82,6 +122,7 @@ justify-content:center;
 border:1px solid #000 !important;}
 </style>
 <body>
+
 	<section id="introLA">
 		<div id="container">
 			<form class="form-enroll" id="form" style="max-width:80%; padding-top:50px;">
@@ -122,6 +163,7 @@ border:1px solid #000 !important;}
 			<button id="lecture" class="btn btn-info">강의목록 보기</button>
 		</div>
 	</section>   
+
 </body>
 </html>
 <%@include file="/WEB-INF/views/footer.jsp"%>

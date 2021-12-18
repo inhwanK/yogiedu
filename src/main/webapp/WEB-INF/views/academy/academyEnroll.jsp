@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="/WEB-INF/views/header.jsp"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
@@ -42,70 +42,70 @@
 });  */
  
 $(function(){
-	console.log(" 되냐?")
-	$('#reg').on("click",function () {
-		var contextPath = "${contextPath}";
-		
-		console.log("이건 되?");
 
-		if($("#inputName").val() == "" || $("#inputArea").val() == "" || $("#inputAdress").val() == ""){		
-			alert("안돼 돌아가");
-			return;
-		}
-		
-		
-		
-		console.log("하 시발..");
-		var conf = confirm("등록하시겠습니까?");
-		if(conf){
-			console.log("하 시발..");
-			//	"ACA_NM" :$("#inputArea").val(),
-			var data={
+   console.log("시작성공")
+   $('#reg').on("click",function () {
+      var contextPath = "${contextPath}";
+      let a ;
+    
+      console.log("저장버튼 클릭성공");
 
-					"ACA_ASNUM" : $("#inputName").val(),
-					"ACA_NM" : $("#inputTel").val(),
-					"ESTBL_YMD": "ㅎ"//$("#inputContent").val()		
-			};
-		
-			console.log($("#inputName").val());
-			console.log(data);
+      if($("#inputName").val() == "" || $("#inputArea").val() == "" || $("#inputAdress").val() == ""){      
+         alert("안돼 돌아가");
+         return;
+      }
+      
+      
+  
+      var conf = confirm("등록하시겠습니까?");
+      if(conf){
+ 			console.log("confirm 확인")
+         //   "ACA_NM" :$("#inputArea").val(),
+         var data={
 
-			var acaIdx = "${acaIdx}";
-			
-			console.log(acaIdx);
-			
-			$.ajax({
-		        type: "post",
-		        url: contextPath + "/api/academy",
-		        data: JSON.stringify(data),
-		        dataType: 'json',
-		        contentType:"application/json; charset=utf-8",
-		        success: function (data) {
+               "ACA_ASNUM" : $("#inputName").val(),
+               "ACA_NM" : $("#inputTel").val(),
+               "ESTBL_YMD": "ㅎ"//$("#inputContent").val()      
+         };
+      
+         console.log($("#inputName").val());
+   
+
+         var acaIdx = "${acaIdx}";
+         
+         console.log(acaIdx);
+         //비동기로 return값으로 페이지 내부에서 post 한 후 idx만 받아오려 했는데 지금 잘 안돼서
+         //일단 json에서 post 했을때 idx 값 받아서 그대로 마이페이지로 이동하게끔 구현
+         //좋은 방법 추천좀..
+         $.ajax({
+              type: "post",
+              url: contextPath + "/api/academy",
+              data: JSON.stringify(data),
+              
+              dataType: 'json',
+			  contentType:"application/json; charset=utf-8",
+              success: function (json) {
           
-		        	alert("success");
-		            console.log(data);
-		            
-		      		window.location.href =contextPath+ "/academy?acaIdx="+acaIdx;
-		            
-		        },
-		        error: function () {
-		        	console.log("fail");
-		        }
-		     });
+                 alert("success");
+                 console.log(json);
+                 window.location.href = contextPath + "/academy?acaIdx=" + json ;
+              },
+              error: function () {
+                 console.log("fail");
+              }
+              
+           });
+   
 
-		}
-		
-		
-		
-		else{
-			 console.log("시발럼이...");
-		 }
-	}); 
+      }
+  
+      
+   }); 
 });
 
      
      
-		            
+                  
              
         
             
@@ -187,11 +187,12 @@ $(function(){
                 </div> 
 
 				</div>
+
             
                 <div class="enroll-wrap row col-md-6">
                      <label for="box"> 초딩
-            	<input name="box" type="checkbox" value="1" class="초등학생" >
-        			</label> 
+               <input name="box" type="checkbox" value="1" class="초등학생" >
+                 </label> 
                     
                 </div>  
                 <div class="enroll-btn">
