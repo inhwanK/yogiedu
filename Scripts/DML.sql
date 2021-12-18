@@ -21,3 +21,13 @@ delete from lecture_time;
 
 alter table lecture_time auto_increment=1;
 alter table lecture auto_increment=1;
+
+select * 
+  from academy 
+order by aca_idx desc;
+
+
+select * from user;
+
+
+show tables;

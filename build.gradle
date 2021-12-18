@@ -41,6 +41,10 @@ dependencies {
 	implementation 'javax.servlet:jstl'
 	implementation "org.apache.tomcat.embed:tomcat-embed-jasper"
 	
+	// security
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-oauth2-client
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-oauth2-client'
+	
 	// https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
 	//implementation 'com.googlecode.json-simple:json-simple:1.1.1'
 	
