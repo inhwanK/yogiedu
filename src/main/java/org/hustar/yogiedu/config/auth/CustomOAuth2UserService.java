@@ -1,14 +1,14 @@
 package org.hustar.yogiedu.config.auth;
 
 import java.util.Collections;
-import java.util.List;
+import java.util.Optional;
 
 import javax.servlet.http.HttpSession;
 
 import org.hustar.yogiedu.config.auth.dto.OAuthAttributes;
 import org.hustar.yogiedu.config.auth.dto.SessionUser;
-import org.hustar.yogiedu.domain.domain.user.User;
-import org.hustar.yogiedu.domain.domain.user.UserRepository;
+import org.hustar.yogiedu.domain.user.User;
+import org.hustar.yogiedu.domain.user.UserRepository;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
@@ -55,8 +55,11 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
 	private User saveOrUpdate(OAuthAttributes attributes) {
 		
-		User user = userRepository.findByEmail(attributes.getEmail()).map(entity -> entity.update(attributes.getName(), attributes.getPicture()))
-				.orElse(attributes.toEntity());
+//		User user = userRepository.findByEmail(attributes.getEmail()).map(entity -> entity.update(attributes.getName(), attributes.getPicture()))
+//				.orElse(attributes.toEntity());
+		
+		User user = userRepository.findByUserEmail(attributes.getUserEmail()).map(entity -> entity.update(attributes.getUserName(), attributes.getUserBirth(),
+				attributes.getUserDiv(), attributes.getUserEdu(), attributes.getUserGrade())).orElse(attributes.toEntity());
 //		List<Member> member = memberRepository.findByMemberEmail(attributes.getMemberEmail());
 
 		

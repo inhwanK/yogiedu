@@ -1,4 +1,4 @@
-package org.hustar.yogiedu.domain.domain.user;
+package org.hustar.yogiedu.domain.user;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,21 +26,26 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long userIdx;
 	
+	// unique key
 	private String userEmail;
+	
 	private String userName;
 	private String userBirth;
+	
+	// 회원 구분. 학원 또는 수강생.
 	private String userDiv;
+	
+	// 회원의 학교 구분
 	private String userEdu;
-	private int userGrade;	
+	private int userGrade;
 	
 	@Enumerated(EnumType.STRING)
 	private Role userRole;
 
 	@Builder
-	public User(Long userIdx, String userEmail, String userName, String userBirth, String userDiv, String userEdu,
+	public User(String userEmail, String userName, String userBirth, String userDiv, String userEdu,
 			int userGrade, Role userRole) {
 		super();
-		this.userIdx = userIdx;
 		this.userEmail = userEmail;
 		this.userName = userName;
 		this.userBirth = userBirth;
@@ -52,8 +57,7 @@ public class User {
 
 	
 	
-	public User update(String userEmail, String userName, String userBirth, String userDiv, String userEdu,int userGrade) {
-		this.userEmail = userEmail;
+	public User update(String userName, String userBirth, String userDiv, String userEdu,int userGrade) {
 		this.userName = userName;
 		this.userBirth = userBirth;
 		this.userDiv = userDiv;

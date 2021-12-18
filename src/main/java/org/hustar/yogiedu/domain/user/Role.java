@@ -1,4 +1,4 @@
-package org.hustar.yogiedu.domain.domain.user;
+package org.hustar.yogiedu.domain.user;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
