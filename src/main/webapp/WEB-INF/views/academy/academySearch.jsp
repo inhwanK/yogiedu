@@ -27,15 +27,16 @@
  <body>
  
  <script type="text/javascript">
-
+	
 	$(function(){
+
 		
-		$("#btn").on("click",function(){
+		$("#btn1").on("click",function(){
 			
 			var contextPath = "${contextPath}";
 			
 			$.ajax({
-				url : contextPath + "/api/academyList?adminDistName="+json[i].adminDistName=,
+				url : contextPath + "/api/academyList/",
 			    method : "get",
 			    dataType : "json",
 			    success: function(json) {
@@ -48,6 +49,7 @@
 			    $("#academy-area").append(json[0].faRdnma);
 			   
 			    for(i=0; i <= dataLength-10; i++ ) {
+			    	if(json[i].adminDistName == "남구") {
 			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
 			    		list += '<div class="product_item" id="opener">';
 			    		list += '<div class="pi-img-wrapper"  >';
@@ -60,65 +62,307 @@
 			    		list += '</div>';
 			    		list += '</div>';
 			    		}
+			    	}
 			    	console.log(list);
+			    	
 			    	$("#product-list-wrap").empty();
 			    	$("#product-list-wrap").append(list);
 			    },
 			    error: function(){
 		    	}
 			});
+			
+			
 		});
-});
+	});
 	
-	
-	
-// 	$(function(){
+	$(function(){
 
 		
-// 		$("#btn2").on("click",function(){
+		$("#btn2").on("click",function(){
 			
-// 			var contextPath = "${contextPath}";
+			var contextPath = "${contextPath}";
 			
-// 			$.ajax({
-// 				url : contextPath + "/api/academyList/",
-// 			    method : "get",
-// 			    dataType : "json",
-// 			    success: function(json) {
-// 			    console.log(json);
+			$.ajax({
+				url : contextPath + "/api/academyList/",
+			    method : "get",
+			    dataType : "json",
+			    success: function(json) {
+			    console.log(json);
 			    
-// 			    var dataLength = json.length;
-// 			    var list = "";
+			    var dataLength = json.length;
+			    var list = "";
 			  
-// 			    $("#academy-name").append(json[0].acaNm);
-// 			    $("#academy-area").append(json[0].faRdnma);
+			    $("#academy-name").append(json[0].acaNm);
+			    $("#academy-area").append(json[0].faRdnma);
 			   
-// 			    for(i=0; i <= dataLength-10; i++ ) {
-// 			    	if(json[i].adminDistName == "달서구") {
-// 			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
-// 			    		list += '<div class="product_item" id="opener">';
-// 			    		list += '<div class="pi-img-wrapper"  >';
-// 			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
-// // 			    		list += '<div id="academy-name">';
-// 			    		list += '</div>';
-// 			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
-// 			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
-// 			    		list += '</div>';
-// 			    		list += '</div>';
-// 			    		list += '</div>';
-// 			    		}
-// 			    	}
-// 			    	console.log(list);
+			    for(i=0; i <= dataLength-10; i++ ) {
+			    	if(json[i].adminDistName == "달서구") {
+			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
+			    		list += '<div class="product_item" id="opener">';
+			    		list += '<div class="pi-img-wrapper"  >';
+			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
+// 			    		list += '<div id="academy-name">';
+			    		list += '</div>';
+			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
+			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
+			    		list += '</div>';
+			    		list += '</div>';
+			    		list += '</div>';
+			    		}
+			    	}
+			    	console.log(list);
 			    	
-// 			    	$("#product-list-wrap").empty();
-// 			    	$("#product-list-wrap").append(list);
-// 			    },
-// 			    error: function(){
-// 		    	}
-// 			});
+			    	$("#product-list-wrap").empty();
+			    	$("#product-list-wrap").append(list);
+			    },
+			    error: function(){
+		    	}
+			});
 			
 			
-// 		});
-// 	});
+		});
+	});
+	
+	$(function(){
+
+		
+		$("#btn3").on("click",function(){
+			
+			var contextPath = "${contextPath}";
+			
+			$.ajax({
+				url : contextPath + "/api/academyList/",
+			    method : "get",
+			    dataType : "json",
+			    success: function(json) {
+			    console.log(json);
+			    
+			    var dataLength = json.length;
+			    var list = "";
+			  
+			    $("#academy-name").append(json[0].acaNm);
+			    $("#academy-area").append(json[0].faRdnma);
+			   
+			    for(i=0; i <= dataLength-10; i++ ) {
+			    	if(json[i].adminDistName == "동구") {
+			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
+			    		list += '<div class="product_item" id="opener">';
+			    		list += '<div class="pi-img-wrapper"  >';
+			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
+// 			    		list += '<div id="academy-name">';
+			    		list += '</div>';
+			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
+			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
+			    		list += '</div>';
+			    		list += '</div>';
+			    		list += '</div>';
+			    		}
+			    	}
+			    	console.log(list);
+			    	
+			    	$("#product-list-wrap").empty();
+			    	$("#product-list-wrap").append(list);
+			    },
+			    error: function(){
+		    	}
+			});
+			
+			
+		});
+	});
+	
+	$(function(){
+
+		
+		$("#btn4").on("click",function(){
+			
+			var contextPath = "${contextPath}";
+			
+			$.ajax({
+				url : contextPath + "/api/academyList/",
+			    method : "get",
+			    dataType : "json",
+			    success: function(json) {
+			    console.log(json);
+			    
+			    var dataLength = json.length;
+			    var list = "";
+			  
+			    $("#academy-name").append(json[0].acaNm);
+			    $("#academy-area").append(json[0].faRdnma);
+			   
+			    for(i=0; i <= dataLength-10; i++ ) {
+			    	if(json[i].adminDistName == "북구") {
+			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
+			    		list += '<div class="product_item" id="opener">';
+			    		list += '<div class="pi-img-wrapper"  >';
+			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
+// 			    		list += '<div id="academy-name">';
+			    		list += '</div>';
+			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
+			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
+			    		list += '</div>';
+			    		list += '</div>';
+			    		list += '</div>';
+			    		}
+			    	}
+			    	console.log(list);
+			    	
+			    	$("#product-list-wrap").empty();
+			    	$("#product-list-wrap").append(list);
+			    },
+			    error: function(){
+		    	}
+			});
+			
+			
+		});
+	});
+	
+	$(function(){
+
+		
+		$("#btn5").on("click",function(){
+			
+			var contextPath = "${contextPath}";
+			
+			$.ajax({
+				url : contextPath + "/api/academyList/",
+			    method : "get",
+			    dataType : "json",
+			    success: function(json) {
+			    console.log(json);
+			    
+			    var dataLength = json.length;
+			    var list = "";
+			  
+			    $("#academy-name").append(json[0].acaNm);
+			    $("#academy-area").append(json[0].faRdnma);
+			   
+			    for(i=0; i <= dataLength-10; i++ ) {
+			    	if(json[i].adminDistName == "서구") {
+			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
+			    		list += '<div class="product_item" id="opener">';
+			    		list += '<div class="pi-img-wrapper"  >';
+			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
+// 			    		list += '<div id="academy-name">';
+			    		list += '</div>';
+			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
+			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
+			    		list += '</div>';
+			    		list += '</div>';
+			    		list += '</div>';
+			    		}
+			    	}
+			    	console.log(list);
+			    	
+			    	$("#product-list-wrap").empty();
+			    	$("#product-list-wrap").append(list);
+			    },
+			    error: function(){
+		    	}
+			});
+			
+			
+		});
+	});
+	
+	$(function(){
+
+		
+		$("#btn6").on("click",function(){
+			
+			var contextPath = "${contextPath}";
+			
+			$.ajax({
+				url : contextPath + "/api/academyList/",
+			    method : "get",
+			    dataType : "json",
+			    success: function(json) {
+			    console.log(json);
+			    
+			    var dataLength = json.length;
+			    var list = "";
+			  
+			    $("#academy-name").append(json[0].acaNm);
+			    $("#academy-area").append(json[0].faRdnma);
+			   
+			    for(i=0; i <= dataLength-10; i++ ) {
+			    	if(json[i].adminDistName == "수성구") {
+			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
+			    		list += '<div class="product_item" id="opener">';
+			    		list += '<div class="pi-img-wrapper"  >';
+			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
+// 			    		list += '<div id="academy-name">';
+			    		list += '</div>';
+			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
+			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
+			    		list += '</div>';
+			    		list += '</div>';
+			    		list += '</div>';
+			    		}
+			    	}
+			    	console.log(list);
+			    	
+			    	$("#product-list-wrap").empty();
+			    	$("#product-list-wrap").append(list);
+			    },
+			    error: function(){
+		    	}
+			});
+			
+			
+		});
+	});
+	
+	$(function(){
+
+		
+		$("#btn7").on("click",function(){
+			
+			var contextPath = "${contextPath}";
+			
+			$.ajax({
+				url : contextPath + "/api/academyList/",
+			    method : "get",
+			    dataType : "json",
+			    success: function(json) {
+			    console.log(json);
+			    
+			    var dataLength = json.length;
+			    var list = "";
+			  
+			    $("#academy-name").append(json[0].acaNm);
+			    $("#academy-area").append(json[0].faRdnma);
+			   
+			    for(i=0; i <= dataLength-10; i++ ) {
+			    	if(json[i].adminDistName == "중구") {
+			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
+			    		list += '<div class="product_item" id="opener">';
+			    		list += '<div class="pi-img-wrapper"  >';
+			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
+// 			    		list += '<div id="academy-name">';
+			    		list += '</div>';
+			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
+			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
+			    		list += '</div>';
+			    		list += '</div>';
+			    		list += '</div>';
+			    		}
+			    	}
+			    	console.log(list);
+			    	
+			    	$("#product-list-wrap").empty();
+			    	$("#product-list-wrap").append(list);
+			    },
+			    error: function(){
+		    	}
+			});
+			
+			
+		});
+	});
 
 </script>
     <body>
@@ -135,13 +379,13 @@
                                      class="lnr lnr-arrow-right" ></span>대구</a>
 
                                 <ul class="collapse daegu" id="fruitsVegetable" data-toggle="collapse" aria-expanded="false" aria-controls="fruitsVegetable">
-									<li class="main-nav-list child"><input class="main-nav-list child" id="btn" type="button">남구</li>
-                                    <li class="main-nav-list child"><input class="main-nav-list child" id="btn" type="button">달서구</li>
-                                    <li class="main-nav-list child"><input class="main-nav-list child" id="btn" type="button">동구</li>
-                                    <li class="main-nav-list child"><input class="main-nav-list child" id="btn" type="button">북구</li>
-                                    <li class="main-nav-list child"><input class="main-nav-list child" id="btn" type="button">서구</li>
-                                    <li class="main-nav-list child"><input class="main-nav-list child" id="btn" type="button">수성구</li>
-                                    <li class="main-nav-list child"><input class="main-nav-list child" id="btn" type="button">중구</li>
+									<li class="main-nav-list child"><input class="main-nav-list child" id="btn1" type="button">남구</li>
+                                    <li class="main-nav-list child"><input class="main-nav-list child" id="btn2" type="button">달서구</li>
+                                    <li class="main-nav-list child"><input class="main-nav-list child" id="btn3" type="button">동구</li>
+                                    <li class="main-nav-list child"><input class="main-nav-list child" id="btn4" type="button">북구</li>
+                                    <li class="main-nav-list child"><input class="main-nav-list child" id="btn5" type="button">서구</li>
+                                    <li class="main-nav-list child"><input class="main-nav-list child" id="btn6" type="button">수성구</li>
+                                    <li class="main-nav-list child"><input class="main-nav-list child" id="btn7" type="button">중구</li>
                                 </ul>
 
                             </li>
