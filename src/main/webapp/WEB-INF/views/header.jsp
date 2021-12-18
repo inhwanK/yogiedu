@@ -102,7 +102,7 @@
                 <a href="${contextPath}/" class="scrollto"><img src="/static/img/Tlogo2_B.png" alt="" class="img-fluid"></a>
             </div>
 
-            <nav class="main-nav float-right d-lg-block">
+            <nav id="navbar" class="navbar float-right d-lg-block">
                 <ul>
                     <li class="active"><a href="${contextPath}/">Home</a></li>
                     <li><a href="${contextPath}/noticeList">공지사항</a></li>
@@ -110,7 +110,7 @@
                     <li><a href="${contextPath}/academySearch">학원찾기</a></li>
                     <li><a href="${contextPath}/academy">마이페이지</a></li>
                   	<li><a href="${contextPath}/qna">Q&A</a></li>
-                    <li class="drop-down"><a href="">Quick Menu</a>
+                    <li class="dropdown"><a href="">Quick Menu</a>
                         <ul>
                             <li><a href="#about">About us</a></li>
                             <li><a href="#services">Services</a></li>
@@ -122,6 +122,7 @@
                     <li><a href="#">회원가입</a></li>
                     <li><a href="#">로그인</a></li>
                 </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
 
         </div>
