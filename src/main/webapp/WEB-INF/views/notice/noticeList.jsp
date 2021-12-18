@@ -52,7 +52,7 @@
                         <col style="width:20%;">
                         <col style="width:20%;">
                         <col style="width:20%;">
-                        <col stlye="width:40%;">
+                        <col style="width:40%;">
                     </colgroup>
                     <thead>
                         <tr style="border-top:2px solid #000; background-color:#f6f7fb">

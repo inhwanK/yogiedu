@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
 <%@include file="/WEB-INF/views/header.jsp"%>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/static/css/academy/style.css">
 <link rel="stylesheet" href="/static/css/academy/bootstrap.css">
 <link rel="stylesheet" href="/static/css/academy/main.css">
@@ -359,21 +359,30 @@
 
                             <div class="good">
                                 <table class="col-md-12">
-                                    <th class="col-md-3">과목</th>
-                                    <th class="col-md-3">과목명</th>
-                                    <th class="col-md-3">시간</th>
-                                    <th class="col-md-3">강사명</th>
-                                </table>
-                                <table class="col-md-12">
-                                    <tr>
-                                        <th class="subject_name col-md-3">국어</th>
-                                        <th class="subject_name_detail col-md-3">국어1</th>
-                                        <th class="subject_time col-md-3">3-4</th>
-                                        <th class="subject_teacher col-md-3 ">김인환
-                                            <button type="button" title="과목 담기" class="btn_add1">과목 담기</button>
-                                        </th>
-
-                                    </tr>
+									<colgroup>
+				                        <col style="width:20%;">
+				                        <col style="width:20%;">
+				                        <col style="width:20%;">
+				                        <col style="width:40%;">
+									</colgroup>
+	                 			    <thead>
+	                                	<tr>
+		                                    <th scope="col" class="col-md-3">과목</th>
+		                                    <th scope="col" class="col-md-3">과목명</th>
+		                                    <th scope="col" class="col-md-3">시간</th>
+		                                    <th scope="col" class="col-md-3">강사명</th>
+	                                    </tr>
+                                    </thead>
+                                    <tbody>
+	                                    <tr>
+	                                        <td class="subject_name col-md-3">국어</td>
+	                                        <td class="subject_name_detail col-md-3">국어1</td>
+	                                        <td class="subject_time col-md-3">3-4</td>
+	                                        <td class="subject_teacher col-md-3 ">김인환
+	                                            <button type="button" title="과목 담기" class="btn_add1">과목 담기</button>
+	                                        </td>
+	                                    </tr>
+                                    </tbody>
                                 </table>
                             </div>
 
@@ -391,15 +400,16 @@
                                     <th scope="col">시간</th>
                                     <th scope="col">&nbsp;</th>
                                 </tr>
-
                             </table>
 
                             <div id="show_total">
 
                             </div>
+                            
                             <div id="buy">
                                 <button type="button" title="구매하기" id="btn_buy">수강 시간표 넣기</button>
                             </div>
+                            
                         </div>
 
                     </div>
