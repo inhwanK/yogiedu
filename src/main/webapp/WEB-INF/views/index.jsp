@@ -2,83 +2,96 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
-    
+
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
+    $(function() {
+        var contextPath = "${contextPath}";
 
-	$(function() {
-    var contextPath = "${contextPath}";
+        $.ajax({
+            url: contextPath + "/api/academyList",
+            method: "get",
+            dataType: "json",
+            success: function(json) {
+                //<div class="col-lg-3 col-6 text-center mainAcaNm">
+                //<span data-toggle="counter-up"></span>
+                //<p>등록된 학원</p>
+                //</div>
+                var list = "";
+                var dataLength = json.length;
+                for (i = 0; i < 5; i++) {
+                    list += "<div class='swiper-slide'>";
+                    list += "<div class='testimonial-item'>";
+                    list += "<h3 id='title' style='border-bottom:2px solid #000000; border-left:10px solid #000000'>" + json[i].acaNm + "</h3>";
+                    list += "<h4 id='loacation'><i class='fa fa-map-marker'></i>" + json[i].faRdnma + "</h4>";
+                    list += "<p id='subject'>" + json[i].leCrseName + "</p>";
+                    list += "</div>";
+                    list += "</div>";
+                    console.log(json[i].acaNm);
+                }
+                $("div.swiper-wrapper").append(list);
+                $("div.mainAcaNm span").append(dataLength);
 
-	$.ajax({
-    	url : contextPath + "/api/academyList",
-    	method : "get",
-    	dataType : "json",
-    	success: function(json) {
-    		//<div class="col-lg-3 col-6 text-center mainAcaNm">
-            //<span data-toggle="counter-up"></span>
-            //<p>등록된 학원</p>
-        	//</div>
-    	  	var list="";
-    	  	var dataLength = json.length;
-    	  	for (i=0; i<5; i++){
-    	  		list += "<div class='swiper-slide'>";
-    	  		list += "<div class='testimonial-item'>";
-    	  		list += "<h3 id='title' style='border-bottom:2px solid #000000; border-left:10px solid #000000'>" + json[i].acaNm + "</h3>";
-    	  		list += "<h4 id='loacation'><i class='fa fa-map-marker'></i>"+json[i].faRdnma +"</h4>";
-    	  		list += "<p id='subject'>" + json[i].leCrseName +"</p>";
-    	  		list += "</div>";
-    	  		list += "</div>";    	  	
-    	  		console.log(json[i].acaNm);
-    	  	}
-    	  	$("div.swiper-wrapper").append(list);
-			$("div.mainAcaNm span").append(dataLength);
-			
-			var aNs = 0;
-			for (i=0; i<dataLength; i++){
-				if (json[i].fieldName === "예능(대)")
-				aNs++;
-			}
-			console.log(aNs);
-			$({val:0}).animate({val:aNs},{
-				duration:aNs,
-				step: function(){
-					var num = numberWithComas(Math.floor(this.val));
-					$(".mainAns span").text(num);
-				},
-				complete: function(){
-					var num = numberWithComas(Math.floor(this.val));
-					$(".mainAns span").text(num);
-				}
-			});
-			function numberWithComas(x){
-				return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-			}
-			$("div.mainAns span").append(aNs);
-    	  	//$("div.testimonial-item").append(list);
-    	  	//$("div.swiper-slide").append(list);
-	    }
-	
-	})
+                var aNs = 0;
+                for (i = 0; i < dataLength; i++) {
+                    if (json[i].fieldName === "예능(대)")
+                        aNs++;
+                }
+                console.log(aNs);
+                $({
+                    val: 0
+                }).animate({
+                    val: aNs
+                }, {
+                    duration: aNs,
+                    step: function() {
+                        var num = numberWithComas(Math.floor(this.val));
+                        $(".mainAns span").text(num);
+                    },
+                    complete: function() {
+                        var num = numberWithComas(Math.floor(this.val));
+                        $(".mainAns span").text(num);
+                    }
+                });
 
-});
-		
-</script>  
+                function numberWithComas(x) {
+                    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                }
+                $("div.mainAns span").append(aNs);
+                //$("div.testimonial-item").append(list);
+                //$("div.swiper-slide").append(list);
+
+                var bos = "";
+                for (i = 0; i < dataLength; i++) {
+                    if (json[i].leCrseName === "보습")
+                        bos++;
+                }
+                $("div.bos span").append(bos);
+
+                var sus = 0;
+                for (i = 0; i < dataLength; i++) {
+                    if (json[i].adminDistName == "수성구")
+                        sus++;
+                }
+                $("div.sus span").append(sus);
+            }
+
+        })
+
+    });
+</script>
 <%@include file="/WEB-INF/views/header.jsp"%>
 
 <section id="introQ" class="clearfix">
     <div class="container">
 
-        <div class="intro-img">
-            <img src="/static/img/intro-img.svg" alt="" class="img-fluid">
-        </div>
+    	<div class="intro-img">
+	        <img src="/static/img/intro-img.svg" alt="" class="img-fluid">
+		</div>
 
         <div class="intro-info">
-            <h2>우리아이 학원은<br><span>요기에듀</span>에서<br>찾아보고 보내세요!</h2>
-            <div>
-                <a href="#about" class="btn-get-started scrollto">시작하기</a>
-                <a href="#services" class="btn-services scrollto">YOGIEDU?</a>
-            </div>
+            <h2>우리아이 학원!<br><span>요기에듀</span>에서<br>찾아보고 보내세요!</h2>
         </div>
 
     </div>
@@ -206,7 +219,7 @@
     </section>
 
     <section id="why-us" class="wow fadeIn">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
             <header class="section-header">
                 <h3>Why YOGIEDU?</h3>
                 <p>왜 요기에듀를 선택하여야 할까요?</p>
@@ -262,14 +275,14 @@
                     <p>예체능학원 수</p>
                 </div>
 
-                <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up">1,364</span>
-                    <p>리뷰 갯수</p>
+                <div class="col-lg-3 col-6 text-center bos ">
+                    <span data-toggle="counter-up"></span>
+                    <p>보습학원 수</p>
                 </div>
 
-                <div class="col-lg-3 col-6 text-center">
-                    <span data-toggle="counter-up">18달</span>
-                    <p>최장 이용 고객님</p>
+                <div class="col-lg-3 col-6 text-center sus">
+                    <span data-toggle="counter-up"></span>
+                    <p>수성구 학원 수</p>
                 </div>
 
             </div>
@@ -430,24 +443,24 @@
         <div class="container">
 
             <header class="section-header">
-                <h3>생생리뷰</h3>
+                <h3>회원 학원 목록</h3>
             </header>
 
             <div class="row justify-content-center">
                 <div class="col-lg-8">
 
-					<div class="testimonials-slider swiper">
-    	          		<div class="swiper-wrapper">
-		                	<div class="swiper-slide">
-        		          		<div class="testimonial-item">
-                		    		<h3 id='title'></h3>
-                    				<h4 id='location'></h4>
-                    				<p id='subject'></p>
-		                  		</div>
-        		        	</div>
-	              		</div>
-              			<div class="swiper-pagination"></div>
-					</div>
+                    <div class="testimonials-slider swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <h3 id='title'></h3>
+                                    <h4 id='location'></h4>
+                                    <p id='subject'></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
                 </div>
             </div>
 
@@ -622,11 +635,11 @@
 
                 <div class="col-lg-6">
                     <div class="row">
-                        <div class="col-md-5 info">
+                        <div class="col-md-3 info">
                             <i class="fa fa-map-marker"></i>
                             <p>동내로 70, 대구 동구</p>
                         </div>
-                        <div class="col-md-4 info">
+                        <div class="col-md-3 info">
                             <i class="fa fa-envelope"></i>
                             <p>yogieduContact@gmail.com</p>
                         </div>

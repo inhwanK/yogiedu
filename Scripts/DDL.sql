@@ -13,17 +13,11 @@ DROP TABLE IF EXISTS `yogiedu`.`academy` RESTRICT;
 -- 수업
 DROP TABLE IF EXISTS `yogiedu`.`lecture` RESTRICT;
 
--- 수업시간
-DROP TABLE IF EXISTS `yogiedu`.`lecture_time` RESTRICT;
+-- 예약시간표
+DROP TABLE IF EXISTS `yogiedu`.`timetable` RESTRICT;
 
 -- 회원
-DROP TABLE IF EXISTS `yogiedu`.`member` RESTRICT;
-
--- 예약시간표
-DROP TABLE IF EXISTS `yogiedu`.`class_timetable` RESTRICT;
-
--- 수강생
-DROP TABLE IF EXISTS `yogiedu`.`student` RESTRICT;
+DROP TABLE IF EXISTS `yogiedu`.`user` RESTRICT;
 
 -- 공지사항
 CREATE TABLE `yogiedu`.`notice` (
@@ -93,50 +87,10 @@ ALTER TABLE `yogiedu`.`lecture`
 ALTER TABLE `yogiedu`.`lecture`
 	MODIFY COLUMN `LECTURE_IDX` INT(11) NOT NULL AUTO_INCREMENT COMMENT '수업번호';
 
--- 수업시간
-CREATE TABLE `yogiedu`.`lecture_time` (
-	`LECTURE_TIME_IDX`   INT(11) NOT NULL COMMENT '수업시간번호', -- 수업시간번호
-	`LECTURE_WEEK`       CHAR(3) NULL     COMMENT '수업요일', -- 수업요일
-	`LECTURE_START_TIME` INT(2)  NULL     COMMENT '수업시작시간', -- 수업시작시간
-	`LECTURE_END_TIME`   INT(2)  NULL     COMMENT '수업종료시간' -- 수업종료시간
-)
-COMMENT '수업시간';
-
--- 수업시간
-ALTER TABLE `yogiedu`.`lecture_time`
-	ADD CONSTRAINT `PK_lecture_time` -- 수업시간 기본키
-		PRIMARY KEY (
-			`LECTURE_TIME_IDX` -- 수업시간번호
-		);
-
-ALTER TABLE `yogiedu`.`lecture_time`
-	MODIFY COLUMN `LECTURE_TIME_IDX` INT(11) NOT NULL AUTO_INCREMENT COMMENT '수업시간번호';
-
--- 회원
-CREATE TABLE `yogiedu`.`member` (
-	`MEMBER_IDX`      INT(11)      NOT NULL COMMENT '회원번호', -- 회원번호
-	`MEMBER_ID`       VARCHAR(64)  NOT NULL COMMENT '아이디', -- 아이디
-	`MEMBER_PASSWORD` VARCHAR(255) NOT NULL COMMENT '비밀번호', -- 비밀번호
-	`MEMBER_NAME`     CHAR(6)      NOT NULL COMMENT '이름', -- 이름
-	`MEMBER_BIRTH`    CHAR(6)      NOT NULL COMMENT '생년월일', -- 생년월일
-	`MEMBER_EMAIL`    VARCHAR(64)  NOT NULL COMMENT '이메일' -- 이메일
-)
-COMMENT '회원';
-
--- 회원
-ALTER TABLE `yogiedu`.`member`
-	ADD CONSTRAINT `PK_member` -- 회원 기본키
-		PRIMARY KEY (
-			`MEMBER_IDX` -- 회원번호
-		);
-
-ALTER TABLE `yogiedu`.`member`
-	MODIFY COLUMN `MEMBER_IDX` INT(11) NOT NULL AUTO_INCREMENT COMMENT '회원번호';
-
 -- 예약시간표
-CREATE TABLE `yogiedu`.`class_timetable` (
+CREATE TABLE `yogiedu`.`timetable` (
 	`TIMETABLE_IDX` INT(11) NOT NULL COMMENT '예약시간표번호', -- 예약시간표번호
-	`STUDENT_IDX`   INT(11) NOT NULL COMMENT '수강생번호', -- 수강생번호
+	`USER_IDX`      INT(11) NULL     COMMENT '회원번호', -- 회원번호
 	`LECTURE_IDX`   INT(11) NOT NULL COMMENT '수업번호', -- 수업번호
 	`MEM_TIME_IDX`  INT     NULL     COMMENT '수강생시간표번호', -- 수강생시간표번호
 	`APPROVAL`      BOOLEAN NOT NULL DEFAULT false COMMENT '승인여부' -- 승인여부
@@ -144,35 +98,37 @@ CREATE TABLE `yogiedu`.`class_timetable` (
 COMMENT '예약시간표';
 
 -- 예약시간표
-ALTER TABLE `yogiedu`.`class_timetable`
-	ADD CONSTRAINT `PK_class_timetable` -- 예약시간표 기본키
+ALTER TABLE `yogiedu`.`timetable`
+	ADD CONSTRAINT `PK_timetable` -- 예약시간표 기본키
 		PRIMARY KEY (
 			`TIMETABLE_IDX` -- 예약시간표번호
 		);
 
-ALTER TABLE `yogiedu`.`class_timetable`
+ALTER TABLE `yogiedu`.`timetable`
 	MODIFY COLUMN `TIMETABLE_IDX` INT(11) NOT NULL AUTO_INCREMENT COMMENT '예약시간표번호';
 
--- 수강생
-CREATE TABLE `yogiedu`.`student` (
-	`STUDENT_IDX`    INT(11)     NOT NULL COMMENT '수강생번호', -- 수강생번호
-	`MEMBER_IDX`     INT(11)     NOT NULL COMMENT '회원번호', -- 회원번호
-	`STUDENT_NAME`   CHAR(6)     NOT NULL COMMENT '수강생명', -- 수강생명
-	`STUDENT_BIRTH`  CHAR(6)     NOT NULL COMMENT '생년월일', -- 생년월일
-	`STUDENT_SCHOOL` VARCHAR(11) NOT NULL COMMENT '학교', -- 학교
-	`STUDENT_GRADE`  INT(2)      NOT NULL COMMENT '학년' -- 학년
+-- 회원
+CREATE TABLE `yogiedu`.`user` (
+	`USER_IDX`   INT(11)     NOT NULL COMMENT '회원번호', -- 회원번호
+	`USER_EMAIL` VARCHAR(50) NULL     COMMENT '이메일', -- 이메일
+	`USER_NAME`  VARCHAR(10) NULL     COMMENT '회원이름', -- 회원이름
+	`USER_BIRTH` CHAR(6)     NULL     COMMENT '생년월일', -- 생년월일
+	`USER_DIV`   VARCHAR(20) NULL     COMMENT '회원구분', -- 회원구분
+	`USER_EDU`   VARCHAR(10) NULL     COMMENT '학교구분', -- 학교구분
+	`USER_GRADE` INT(2)      NULL     COMMENT '학년', -- 학년
+	`USER_ROLE`  VARCHAR(30) NULL     COMMENT '권한' -- 권한
 )
-COMMENT '수강생';
+COMMENT '회원';
 
--- 수강생
-ALTER TABLE `yogiedu`.`student`
-	ADD CONSTRAINT `PK_student` -- 수강생 기본키
+-- 회원
+ALTER TABLE `yogiedu`.`user`
+	ADD CONSTRAINT `PK_user` -- 회원 기본키
 		PRIMARY KEY (
-			`STUDENT_IDX` -- 수강생번호
+			`USER_IDX` -- 회원번호
 		);
 
-ALTER TABLE `yogiedu`.`student`
-	MODIFY COLUMN `STUDENT_IDX` INT(11) NOT NULL AUTO_INCREMENT COMMENT '수강생번호';
+ALTER TABLE `yogiedu`.`user`
+	MODIFY COLUMN `USER_IDX` INT(11) NOT NULL AUTO_INCREMENT COMMENT '회원번호';
 
 -- 수업
 ALTER TABLE `yogiedu`.`lecture`
@@ -185,21 +141,11 @@ ALTER TABLE `yogiedu`.`lecture`
 		);
 
 -- 예약시간표
-ALTER TABLE `yogiedu`.`class_timetable`
-	ADD CONSTRAINT `FK_student_TO_class_timetable` -- 수강생 -> 예약시간표
+ALTER TABLE `yogiedu`.`timetable`
+	ADD CONSTRAINT `FK_user_TO_timetable` -- 회원 -> 예약시간표
 		FOREIGN KEY (
-			`STUDENT_IDX` -- 수강생번호
+			`USER_IDX` -- 회원번호
 		)
-		REFERENCES `yogiedu`.`student` ( -- 수강생
-			`STUDENT_IDX` -- 수강생번호
-		);
-
--- 수강생
-ALTER TABLE `yogiedu`.`student`
-	ADD CONSTRAINT `FK_member_TO_student` -- 회원 -> 수강생
-		FOREIGN KEY (
-			`MEMBER_IDX` -- 회원번호
-		)
-		REFERENCES `yogiedu`.`member` ( -- 회원
-			`MEMBER_IDX` -- 회원번호
+		REFERENCES `yogiedu`.`user` ( -- 회원
+			`USER_IDX` -- 회원번호
 		);

@@ -23,13 +23,13 @@ public class RestLectureController {
 	private final LectureService lectureService;
 //	private final AcademyService academyService;
 	
-
+///
 	@GetMapping("/lecture")
 	public LectureResponseDto getLectureByIdx(@RequestParam("lectureIdx") Long lectureIdx) {
 		return lectureService.findById(lectureIdx);
 	}
 	
-
+//특정학원에 있는 전체강의
 	@GetMapping("/lecture/academy")
 	public List<LectureResponseDto> getLectureByAcaIdx(@RequestParam("acaIdx") Long acaIdx) {
 		return lectureService.findByAcaIdx(acaIdx);
@@ -42,6 +42,7 @@ public class RestLectureController {
 	
 //	강의를 등록하기 전에 학원을 선택했기에 학원 인덱스 값을 가지고 있는 상태에서 강의를 등록하게 됨.
 //	파라미터가 아닌 경로로 해주는게 좋음.
+//	?acaIdx=1
 	@PostMapping("/lecture") // 일단 되긴함.
 	public Long regLecture(@RequestBody LectureSaveRequestDto requestDto) {
 
