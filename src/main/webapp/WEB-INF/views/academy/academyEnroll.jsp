@@ -228,8 +228,8 @@ $(function(){
                 </div>
                 <div class="form-group">	<!-- 여기가 젤 문제인 부분 city/town/area_sepc을 합쳐서 주소로 보여줘야 하고, 등록은 따로 되야됨 -->
                     <label for="enroll-area" class="enroll-area-tit col-sm-3 control-label">지역</label>
-                    <div class="enroll-area col-sm-9" style="display:flex;">
-	                    <div >
+                    <div class="enroll-area col-sm-9" style="display:flex; ">
+	                    <div>
 	                        <input list="city" placeholder="시/도를 골라주세요">
 	                        	<datalist id=city>
 	                        		<option value="서울">
@@ -240,14 +240,14 @@ $(function(){
 	                        		<option value="인천">
 	                        	</datalist>
 	                    </div>
-	                    <div >
+	                    <div>
 	                        <input list="town" placeholder="군/구를 골라주세요">
 	                        	<datalist id="town">
 	                        		<option value="중구">
 	                        		<option value="동구">
 	                        	</datalist>
 	                    </div>
-						<div >
+						<div>
 	                        <input type="text" id="area_sepc" placeholder="상세주소를 입력해주세요" class="form-contrl" autofocus>
 						</div>
 					</div>
@@ -255,7 +255,8 @@ $(function(){
                 <div class="form-group">
                     <label for="enroll-intro" class="enroll-intro-tit col-sm-3 control-label">학원소개</label>
                     <div class="enroll-intro col-sm-9">
-                        <input type="text" id="inputContent" placeholder="당신의 학원을 소개해주세요" class="form-control" rows="5">
+                        <textarea type="text" id="inputContent" placeholder="당신의 학원을 소개해주세요" class="form-control" rows="5">
+                        </textarea>
                     </div>
                 </div>
                 

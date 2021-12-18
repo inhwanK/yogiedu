@@ -145,9 +145,9 @@ h6 {
 #intro {
     width: 100%;
     position: relative;
-    background: url("../img/intro-bg-Q.png") center bottom no-repeat;
+    background: url("/static/img/intro-bg-Q.png") center bottom no-repeat;
     background-size: cover;
-    padding: 200px 0 120px;
+    padding: 200px 0 120px 0;
 }
 #intro .intro-img {
     width: 50%;
@@ -198,24 +198,143 @@ h6 {
     border-color: #007bff;
     color: #fff;
 }
+
+/*--------------------------------
+/* IntroQ Section
+--------------------------------*/
+#introQ {
+    width: 100%;
+    position: relative;
+    background-color: #e4eefb;
+    background: url("/static/img/intro-bg.png") center bottom no-repeat;
+    background-size: cover;
+    padding: 200px 0 0;
+}
+#introQ .intro-img {
+    width: 50%;
+    float: right;
+}
+#introQ .intro-info {
+    width: 50%;
+    float: left;
+}
+#introQ .intro-info h2 {
+    color: #fff;
+    margin-bottom: 40px;
+    font-size: 48px;
+    font-weight: 700;
+}
+#introQ .intro-info h2 span {
+    color: #74b5fc;
+    text-decoration: underline;
+}
+#introQ .intro-info .btn-get-started,
+#introQ .intro-info .btn-services {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 32px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 0 20px 20px 0;
+    color: #fff;
+}
+#introQ .intro-info .btn-get-started {
+    background: #007bff;
+    border: 2px solid #007bff;
+    color: #fff;
+}
+#introQ .intro-info .btn-get-started:hover {
+    background: none;
+    border-color: #fff;
+    color: #fff;
+}
+#introQ .intro-info .btn-services {
+    border: 2px solid #fff;
+}
+#introQ .intro-info .btn-services:hover {
+    background: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
+/*--------------------------------
+/* IntroN Section
+--------------------------------*/
+#introN {
+    width: 100%;
+    position: relative;
+    background-color: #e4eefb;
+    background: url("/static/img/qna.png") center bottom no-repeat;
+    background-size: cover;
+    padding: 80px 0 0;
+}
+#introN .intro-img {
+    width: 50%;
+    float: right;
+}
+#introN .intro-info {
+    width: 50%;
+    float: left;
+}
+#introN .intro-info h2 {
+    color: #fff;
+    margin-bottom: 40px;
+    font-size: 48px;
+    font-weight: 700;
+}
+#introN .intro-info h2 span {
+    color: #74b5fc;
+    text-decoration: underline;
+}
+#introN .intro-info .btn-get-started,
+#introN .intro-info .btn-services {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 32px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 0 20px 20px 0;
+    color: #fff;
+}
+#introN .intro-info .btn-get-started {
+    background: #007bff;
+    border: 2px solid #007bff;
+    color: #fff;
+}
+#introN .intro-info .btn-get-started:hover {
+    background: none;
+    border-color: #fff;
+    color: #fff;
+}
+#introN .intro-info .btn-services {
+    border: 2px solid #fff;
+}
+#introN .intro-info .btn-services:hover {
+    background: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Desktop Navigation */
-
 .navbar {
-  padding: 0;
+    padding: 0;
 }
 .navbar ul {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  list-style: none;
-  align-items: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
 }
 .navbar li {
-  position: relative;
-  
+    position: relative;
 }
 .navbar li:hover > a {
     -webkit-transform: scale(1.2);
@@ -224,163 +343,172 @@ h6 {
 .navbar li > a {
     transition: all 0.4s ease-in-out;
 }
-.navbar a, .navbar a:focus {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0 10px 30px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 15px;
-  color: #004289;
-  font-weight: 500;
-  white-space: nowrap;
-  transition: 0.3s;
+.navbar a,
+.navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 30px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    color: #004289;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: 0.3s;
 }
-.navbar a i, .navbar a:focus i {
-  font-size: 12px;
-  line-height: 0;
-  margin-left: 5px;
+.navbar a i,
+.navbar a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
 }
-.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-  color: #007bff;
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover > a {
+    color: #007bff;
 }
 .navbar .dropdown ul {
-  display: block;
-  position: absolute;
-  left: 14px;
-  top: calc(100% + 30px);
-  margin: 0;
-  padding: 10px 0;
-  z-index: 99;
-  opacity: 0;
-  visibility: hidden;
-  background: #fff;
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-  transition: 0.3s;
+    display: block;
+    position: absolute;
+    left: 14px;
+    top: calc(100% + 30px);
+    margin: 0;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    background: #fff;
+    box-shadow: 0 0 30px rgba(127, 137, 161, 0.25);
+    transition: 0.3s;
 }
 .navbar .dropdown ul li {
-  min-width: 200px;
+    min-width: 200px;
 }
 .navbar .dropdown ul a {
-  padding: 10px 20px;
-  font-size: 14px;
-  text-transform: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: none;
 }
 .navbar .dropdown ul a i {
-  font-size: 12px;
+    font-size: 12px;
 }
-.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
-  color: #007bff;
+.navbar .dropdown ul a:hover,
+.navbar .dropdown ul .active:hover,
+.navbar .dropdown ul li:hover > a {
+    color: #007bff;
 }
 .navbar .dropdown:hover > ul {
-  opacity: 1;
-  top: 100%;
-  visibility: visible;
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
 }
 .navbar .dropdown .dropdown ul {
-  top: 0;
-  left: calc(100% + 30px);
-  visibility: hidden;
+    top: 0;
+    left: calc(100% + 30px);
+    visibility: hidden;
 }
 .navbar .dropdown .dropdown:hover > ul {
-  opacity: 1;
-  top: 0;
-  left: 100%;
-  visibility: visible;
+    opacity: 1;
+    top: 0;
+    left: 100%;
+    visibility: visible;
 }
-@media (max-width: 1366px) {
-  .navbar .dropdown .dropdown ul {
-    left: -90%;
-  }
-  .navbar .dropdown .dropdown:hover > ul {
-    left: -100%;
-  }
+@media(max-width: 1366px) {
+    .navbar .dropdown .dropdown ul {
+        left: -90%;
+    }
+    .navbar .dropdown .dropdown:hover > ul {
+        left: -100%;
+    }
 }
 /* Mobile Navigation */
 .mobile-nav-toggle {
-  color: #283d50;
-  font-size: 28px;
-  cursor: pointer;
-  display: none;
-  line-height: 0;
-  transition: 0.5s;
+    color: #283d50;
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: 0.5s;
 }
 .mobile-nav-toggle.bi-x {
-  color: #fff;
+    color: #fff;
 }
-
-@media (max-width: 991px) {
-  .mobile-nav-toggle {
-    display: block;
-  }
-
-  .navbar ul {
-    display: none;
-  }
+@media(max-width: 991px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+    .navbar ul {
+        display: none;
+    }
 }
 .navbar-mobile {
-  position: fixed;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(23, 35, 46, 0.9);
-  transition: 0.3s;
-  z-index: 999;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(23, 35, 46, 0.9);
+    transition: 0.3s;
+    z-index: 999;
 }
 .navbar-mobile .mobile-nav-toggle {
-  position: absolute;
-  top: 15px;
-  right: 15px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
 .navbar-mobile ul {
-  display: block;
-  position: absolute;
-  top: 55px;
-  right: 15px;
-  bottom: 15px;
-  left: 15px;
-  padding: 10px 0;
-  background-color: #fff;
-  overflow-y: auto;
-  transition: 0.3s;
+    display: block;
+    position: absolute;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    padding: 10px 0;
+    background-color: #fff;
+    overflow-y: auto;
+    transition: 0.3s;
 }
-.navbar-mobile a, .navbar-mobile a:focus {
-  padding: 10px 20px;
-  font-size: 15px;
-  color: #004289;
+.navbar-mobile a,
+.navbar-mobile a:focus {
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #004289;
 }
-.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
-  color: #007bff;
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover > a {
+    color: #007bff;
 }
 .navbar-mobile .dropdown ul {
-  position: static;
-  display: none;
-  margin: 10px 20px;
-  padding: 10px 0;
-  z-index: 99;
-  opacity: 1;
-  visibility: visible;
-  background: #fff;
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    position: static;
+    display: none;
+    margin: 10px 20px;
+    padding: 10px 0;
+    z-index: 99;
+    opacity: 1;
+    visibility: visible;
+    background: #fff;
+    box-shadow: 0 0 30px rgba(127, 137, 161, 0.25);
 }
 .navbar-mobile .dropdown ul li {
-  min-width: 200px;
+    min-width: 200px;
 }
 .navbar-mobile .dropdown ul a {
-  padding: 10px 20px;
+    padding: 10px 20px;
 }
 .navbar-mobile .dropdown ul a i {
-  font-size: 12px;
+    font-size: 12px;
 }
-.navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
-  color: #007bff;
+.navbar-mobile .dropdown ul a:hover,
+.navbar-mobile .dropdown ul .active:hover,
+.navbar-mobile .dropdown ul li:hover > a {
+    color: #007bff;
 }
 .navbar-mobile .dropdown > .dropdown-active {
-  display: block;
+    display: block;
 }
-
 /*--------------------------------------------------------------
 # Sections
 --------------------------------------------------------------*/
@@ -1042,7 +1170,7 @@ h6 {
 --------------------------------------------------------------*/
 #footer {
     background: #00428a;
-    padding: 0 0 30px 0;
+    padding: 0 0 30px;
     color: #eee;
     font-size: 14px;
 }
@@ -1190,6 +1318,20 @@ h6 {
         margin: auto;
         text-align: center;
     }
+	#introQ {
+        padding: 140px 0 60px;
+    }
+    #introQ .intro-img {
+        width: 80%;
+        float: none;
+        margin: 0 auto 25px;
+    }
+    #introQ .intro-info {
+        width: 80%;
+        float: none;
+        margin: auto;
+        text-align: center;
+    }
     #why-us .card {
         margin: 0;
     }
@@ -1207,6 +1349,14 @@ h6 {
         font-size: 34px;
         margin-bottom: 30px;
     }
+    #introQ .intro-info {
+        width: 100%;
+    }
+    #introQ .intro-info h2 {
+        font-size: 34px;
+        margin-bottom: 30px;
+    }
+    
     .section-header p {
         width: 100%;
     }
@@ -1225,7 +1375,10 @@ h6 {
 }
 @media(max-width: 574px) {
     #intro {
-        padding: 100px 0 20px;
+        padding: 100px 0 20px 0;
+    }
+    #introQ {
+    	padding: 100px 0 20px 0;
     }
 }
 #default {
@@ -1241,7 +1394,6 @@ h6 {
     margin-right: auto;
     margin-left: auto;
 }
-
 /*--------------------------------
 /* Acaintro Section(삭제할까-jbk)
 --------------------------------*/
@@ -1867,126 +2019,6 @@ main .m-wrap {
     border: 1px solid #000;
 }
 /*--------------------------------
-/* IntroQ Section
---------------------------------*/
-#introQ {
-    width: 100%;
-    position: relative;
-    background-color: #e4eefb;
-    background: url("/static/img/intro-bg.png") center bottom no-repeat;
-    background-size: cover;
-    padding: 200px 0 0;
-}
-#introQ .intro-img {
-    width: 50%;
-    float: right;
-}
-#introQ .intro-info {
-    width: 50%;
-    float: left;
-}
-#introQ .intro-info h2 {
-    color: #fff;
-    margin-bottom: 40px;
-    font-size: 48px;
-    font-weight: 700;
-}
-#introQ .intro-info h2 span {
-    color: #74b5fc;
-    text-decoration: underline;
-}
-#introQ .intro-info .btn-get-started,
-#introQ .intro-info .btn-services {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    display: inline-block;
-    padding: 10px 32px;
-    border-radius: 50px;
-    transition: 0.5s;
-    margin: 0 20px 20px 0;
-    color: #fff;
-}
-#introQ .intro-info .btn-get-started {
-    background: #007bff;
-    border: 2px solid #007bff;
-    color: #fff;
-}
-#introQ .intro-info .btn-get-started:hover {
-    background: none;
-    border-color: #fff;
-    color: #fff;
-}
-#introQ .intro-info .btn-services {
-    border: 2px solid #fff;
-}
-#introQ .intro-info .btn-services:hover {
-    background: #007bff;
-    border-color: #007bff;
-    color: #fff;
-}
-/*--------------------------------
-/* IntroN Section
---------------------------------*/
-#introN {
-    width: 100%;
-    position: relative;
-    background-color: #e4eefb;
-    background: url("/static/img/qna.png") center bottom no-repeat;
-    background-size: cover;
-    padding: 80px 0 0;
-}
-#introN .intro-img {
-    width: 50%;
-    float: right;
-}
-#introN .intro-info {
-    width: 50%;
-    float: left;
-}
-#introN .intro-info h2 {
-    color: #fff;
-    margin-bottom: 40px;
-    font-size: 48px;
-    font-weight: 700;
-}
-#introN .intro-info h2 span {
-    color: #74b5fc;
-    text-decoration: underline;
-}
-#introN .intro-info .btn-get-started,
-#introN .intro-info .btn-services {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    display: inline-block;
-    padding: 10px 32px;
-    border-radius: 50px;
-    transition: 0.5s;
-    margin: 0 20px 20px 0;
-    color: #fff;
-}
-#introN .intro-info .btn-get-started {
-    background: #007bff;
-    border: 2px solid #007bff;
-    color: #fff;
-}
-#introN .intro-info .btn-get-started:hover {
-    background: none;
-    border-color: #fff;
-    color: #fff;
-}
-#introN .intro-info .btn-services {
-    border: 2px solid #fff;
-}
-#introN .intro-info .btn-services:hover {
-    background: #007bff;
-    border-color: #007bff;
-    color: #fff;
-}
-/*--------------------------------
 /* Notice Section(구버전)
 --------------------------------*/
 .notice-content {
@@ -2061,7 +2093,7 @@ td {
 /*--------------------------------
 /* FAQ Section(신버전)
 --------------------------------*/
- .faqHeader {
+.faqHeader {
     font-size: 27px;
     margin: 20px;
 }
@@ -2310,7 +2342,7 @@ td {
     margin-bottom: 0
 }
 .panel-group {
-    margin-bottom: 0px
+    margin-bottom: 0
 }
 .panel-group .panel {
     margin-bottom: 0;
@@ -2469,7 +2501,6 @@ td {
 .panel-body tr {
     border: 1px solid #ffffff;
 }
-
 *[role="form"] {
     max-width: 960px;
     padding: 15px;
@@ -2477,9 +2508,8 @@ td {
     border-radius: 0.3em;
     background-color: #f2f2f2;
 }
-
-*[role="form"] h2 { 
-    font-family: 'Open Sans' , sans-serif;
+*[role="form"] h2 {
+    font-family: 'Open Sans', sans-serif;
     font-size: 40px;
     font-weight: 600;
     color: #000000;
@@ -2488,6 +2518,12 @@ td {
     text-transform: uppercase;
     letter-spacing: 4px;
 }
-.form-group{
-	display:flex !important;
+.form-group {
+    display: flex !important;
+}
+@media(max-width: 991px) {
+    div .enroll-area {
+        display: flex;
+        flex-direction: column;
+    }
 }
