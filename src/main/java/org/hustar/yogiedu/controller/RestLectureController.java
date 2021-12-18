@@ -23,7 +23,7 @@ public class RestLectureController {
 	private final LectureService lectureService;
 //	private final AcademyService academyService;
 	
-///
+///모든 학원의 전체 강의리스트
 	@GetMapping("/lecture")
 	public LectureResponseDto getLectureByIdx(@RequestParam("lectureIdx") Long lectureIdx) {
 		return lectureService.findById(lectureIdx);
