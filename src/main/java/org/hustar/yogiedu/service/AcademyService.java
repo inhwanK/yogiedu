@@ -44,6 +44,20 @@ public class AcademyService {
 
 		return academyList;
 	}
+	
+	// 학원 지역별로 검색.
+	@Transactional
+	public List<AcademyResponseDto> findByAdminDistName(String adminDistName){
+		
+		List<Academy> entityList = academyRepository.findByAdminDistName(adminDistName);
+		List<AcademyResponseDto> academyList = new ArrayList<AcademyResponseDto>();
+		
+		for (int i = 0; i < entityList.size(); i++) {
+			academyList.add(new AcademyResponseDto(entityList.get(i)));
+		}
+		
+		return academyList;
+	}
 
 //	학원번호를 통해 학원정보, 학원의 강의, 강의의 시간표 까지 한번에 가져오기.
 	@Transactional

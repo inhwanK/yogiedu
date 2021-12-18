@@ -49,8 +49,13 @@ public class OAuthAttributes {
 				.nameAttributeKey(userNameAttributeName).build();
 	}
 
+
 	public User toEntity() {
-		return User.builder().userEmail(userEmail).userName(userName).userRole(Role.GUEST).build();
+		return User.builder()
+				.userEmail(userEmail)
+				.userName(userName)
+				.userRole(Role.GUEST)
+				.build();
 	}
 
 }
