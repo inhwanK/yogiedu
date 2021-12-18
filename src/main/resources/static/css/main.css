@@ -2075,7 +2075,8 @@ main .m-wrap {
 #introLA {
     width: 100%;
     position: relative;
-    padding: 100px 0 20px;
+    padding: 100px 0 20px 0;
+    z-index:10;
 }
 #introLA table {
     width: 100%;

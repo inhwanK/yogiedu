@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="/static/css/academy/style.css">
 <link rel="stylesheet" href="/static/css/academy/bootstrap.css">
 <link rel="stylesheet" href="/static/css/academy/main.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 
 
 <!-- js -->
@@ -71,7 +71,8 @@
     </script>
 
     <body>
-        <div class="search-list-wrap" style="padding-top:150px;">
+    	<section id="introLA">
+        <div class="search-list-wrap" >
             <div class="row col-md-12 ">
 
                 <div class="search-left col-md-3 ">
@@ -463,6 +464,6 @@
 
 
         <!-- Fonts END -->
-
+	</section>
     </body>
     <%@include file="/WEB-INF/views/footer.jsp"%>

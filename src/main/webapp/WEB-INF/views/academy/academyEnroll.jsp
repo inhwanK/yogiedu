@@ -6,7 +6,7 @@
 
 
 <meta charset="UTF-8">
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
 <script type="text/javascript">
 
 
@@ -293,3 +293,4 @@ $(function(){
 </div> 
 </section>
 </body>
+    <%@include file="/WEB-INF/views/footer.jsp"%>

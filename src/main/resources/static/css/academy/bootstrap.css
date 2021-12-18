@@ -4169,7 +4169,7 @@ input[type=submit].btn-block {
 .tab-content>.active {
     display: block
 }
-
+/* 
 .navbar {
     position: relative;
     display: -ms-flexbox;
@@ -4586,7 +4586,7 @@ input[type=submit].btn-block {
 .navbar-dark .navbar-text a:hover {
     color: #fff
 }
-
+ */
 .card {
     position: relative;
     display: -ms-flexbox;

@@ -49,10 +49,10 @@
             <div class="table-responsive-sm">
                 <table class="table board-list">
                     <colgroup>
-                        <col style="width:15%;">
-                        <col style="width:15%;">
-                        <col style="width:15%;">
-                        <col stlye="width:55%;">
+                        <col style="width:20%;">
+                        <col style="width:20%;">
+                        <col style="width:20%;">
+                        <col stlye="width:40%;">
                     </colgroup>
                     <thead>
                         <tr style="border-top:2px solid #000; background-color:#f6f7fb">
