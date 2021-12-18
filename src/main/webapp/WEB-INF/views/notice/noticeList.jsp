@@ -41,7 +41,7 @@
 </script>
 
 <body>
-    <section id="introN" class="clearfix">
+    <section id="introN" class="clearfix" style="background:none;">
         <div class="container" style="margin-top:20px;">
             <div>
                 <h1 class="mb-4" style="font-weight:400;">YOGIEDU에서 알려드립니다</h1>

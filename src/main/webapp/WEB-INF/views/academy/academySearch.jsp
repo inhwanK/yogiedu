@@ -161,101 +161,104 @@
                         </div>
                         <!-- 강의시간표-->
                         <table class="search-table col-md-12">
-                            <th></th>
-                            <th>월</th>
-                            <th>화</th>
-                            <th>수</th>
-                            <th>목</th>
-                            <th>금</th>
-                            <th>토</th>
-                            <th>일</th>
-                            <tr>
-                                <td class="time">
-                                    3-4
-                                </td>
-                                <td id="col1-1"></td>
-                                <td id="col1-2"></td>
-                                <td id="col1-3"></td>
-                                <td id="col1-4"></td>
-                                <td id="col1-5"></td>
-                                <td id="col1-6"></td>
-                                <td id="col1-7"></td>
-                            </tr>
-                            <tr>
-                                <td class="time">
-                                    4-5
-                                </td>
-                                <td id="col2-1"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td id="col2-7"></td>
-                            </tr>
-                            <tr>
-                                <td class="time">
-                                    5-6
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td class="time">
-                                    6-7
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td class="time">
-                                    7-8
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td class="time">
-                                    8-9
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td class="time">
-                                    9-10
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-
-
-
+                        	<thead>
+                        		<tr>
+		                            <th></th>
+		                            <th>월</th>
+		                            <th>화</th>
+		                            <th>수</th>
+		                            <th>목</th>
+		                            <th>금</th>
+		                            <th>토</th>
+		                            <th>일</th>
+	                            </tr>
+                            </thead>
+                            <tbody>
+	                            <tr>
+	                                <td class="time">
+	                                    3-4
+	                                </td>
+	                                <td id="col1-1"></td>
+	                                <td id="col1-2"></td>
+	                                <td id="col1-3"></td>
+	                                <td id="col1-4"></td>
+	                                <td id="col1-5"></td>
+	                                <td id="col1-6"></td>
+	                                <td id="col1-7"></td>
+	                            </tr>
+	                            <tr>
+	                                <td class="time">
+	                                    4-5
+	                                </td>
+	                                <td id="col2-1"></td>
+	                                <td id="col2-2"></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td id="col2-7"></td>
+	                            </tr>
+	                            <tr>
+	                                <td class="time">
+	                                    5-6
+	                                </td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                            </tr>
+	                            <tr>
+	                                <td class="time">
+	                                    6-7
+	                                </td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                            </tr>
+	                            <tr>
+	                                <td class="time">
+	                                    7-8
+	                                </td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                            </tr>
+	                            <tr>
+	                                <td class="time">
+	                                    8-9
+	                                </td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                            </tr>
+	                            <tr>
+	                                <td class="time">
+	                                    9-10
+	                                </td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                                <td></td>
+	                            </tr>
+							</tbody>
 
                         </table>
                         <!-- 강의시간표 담기 및 분류방법-->

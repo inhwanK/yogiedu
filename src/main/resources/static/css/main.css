@@ -266,7 +266,7 @@ h6 {
     width: 100%;
     position: relative;
     background-color: #e4eefb;
-    background: url("/static/img/qna.png") center bottom no-repeat;
+    background: url("/static/img/qna.jpg") center bottom no-repeat;
     background-size: cover;
     padding: 80px 0 0;
 }
@@ -347,7 +347,7 @@ h6 {
 .navbar a:focus {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 10px 0 10px 30px;
     font-family: "Montserrat", sans-serif;
     font-size: 15px;
@@ -461,14 +461,15 @@ h6 {
 .navbar-mobile ul {
     display: block;
     position: absolute;
-    top: 55px;
-    right: 15px;
-    bottom: 15px;
-    left: 15px;
+    top: 10%;
+    right: 30%;
+    bottom: 10%;
+    left: 30%;
     padding: 10px 0;
     background-color: #fff;
     overflow-y: auto;
     transition: 0.3s;
+    width:40%;
 }
 .navbar-mobile a,
 .navbar-mobile a:focus {
@@ -2090,6 +2091,41 @@ td {
 }
 .table > tbody > tr > td {
     vertical-align: middle !important;
+}
+#introLA #acapage tbody th{
+	width:25%
+}
+#introLA #acapage tbody td{
+	width:75%
+}
+#introLA label{
+	min-width:60px;
+	padding-top:2px;
+}
+@media (max-width:769px){
+	#introLA {
+	padding-top:40px;
+	}
+}
+@media (max-width:426px){
+	#introLA .enroll-area input{
+		max-width:160px;		
+	}
+}
+@media (max-width:321px){
+	
+	#introLA .enroll-name input{
+		min-width:140px;		
+	}
+	#introLA .enroll-phone input{
+		min-width:140px;		
+	}
+	#introLA .enroll-area input{
+		max-width:140px;		
+	}
+	#introLA .enroll-intro textarea{
+		min-width:140px;
+	}
 }
 /*--------------------------------
 /* FAQ Section(신버전)

@@ -84,14 +84,14 @@ border:1px solid #000 !important;}
 <body>
 	<section id="introLA">
 		<div id="container">
-			<form class="form-enroll" id="form" style="max-width:40%;">
+			<form class="form-enroll" id="form" style="max-width:80%; padding-top:50px;">
 				
 				<table class="table col-sm-9" id="acapage">
 					<thead>
 						<tr>
-							<div class="acaImg">
+							<td colspan="2">
 								<img></img>	<!-- 학원 대표이미지 오면 좋을듯? -->
-							</div>
+							</td>
 						</tr>
 						<tr>
 							<td colspan="2" ">XXX학원님 안녕하세요!</td>
@@ -116,7 +116,7 @@ border:1px solid #000 !important;}
 					</tbody>
 				</table>
 			</form>
-            
+            <!-- 버튼 기능 수정 필요 -->
 			<button id="delete" class="btn btn-danger" >수정</button>
 			<button id="cancel" class="btn btn-primary">홈으로돌아가기</button>
 			<button id="lecture" class="btn btn-info">강의목록 보기</button>

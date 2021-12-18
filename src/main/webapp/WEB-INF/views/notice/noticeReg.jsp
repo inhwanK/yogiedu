@@ -64,33 +64,35 @@
         });
 
     });
-</script>dd
+</script>
 
 <body>
-    <div id="page-wrapper">
-        <!-- 본문 -->
-        <div class="main">
-            <h1 class="text-center">공지사항</h1>
-            <div class="col-md-6 col-sm-12" id="contents">
-                <div class="form">
-
-                    <div class="form-group">
-                        <label>제목</label>
-                        <input type="text" id="title" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>내용</label>
-                        <textarea rows="10" cols="500" id="content" class="form-control">
-                           </textarea>
-                    </div>
-
-                    <div id="btn">
-                        <button id="regist" class="btn btn-primary">등록</button>
-                        <button id="cancel" class="btn btn-primary">취소</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<section id="introLA">
+	    <div id="page-wrapper">
+	        <!-- 본문 -->
+	        <div class="main">
+	            <h1 class="text-center">공지사항</h1>
+	            <div class="col-md-6 col-sm-12" id="contents">
+	                <div class="form">
+	
+	                    <div class="form-group">
+	                        <label>제목</label>
+	                        <input type="text" id="title" class="form-control" placeholder="제목을 입력해주세요">
+	                    </div>
+	                    <div class="form-group">
+	                        <label>내용</label>
+	                        <textarea rows="10" cols="500" id="content" class="form-control" placeholder="공지할 내용을 입력해주세요">
+	                           </textarea>
+	                    </div>
+	
+	                    <div id="btn">
+	                        <button id="regist" class="btn btn-primary">등록</button>
+	                        <button id="cancel" class="btn btn-danger">취소</button>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+    </section>
 </body>
 <%@include file="/WEB-INF/views/footer.jsp"%>
