@@ -12,14 +12,14 @@ public class LectureController {
 	
 	
 	
-	@GetMapping("/lectureEnroll") // 경로 이름
-	public String lectureEnroll() {
-		return "lecture/lectureEnroll"; // 페이지 파일 이름
-	}
-	
-	@GetMapping("/lectureView/{acaIdx}") // 경로 이름
+	@GetMapping("/academyLectureEnroll/{acaIdx}") // 경로 이름
+			public ModelAndView getLectureEnroll(@PathVariable Long acaIdx) {
+			ModelAndView mav = new ModelAndView("academy/academyLectureEnroll", "acaIdx", acaIdx);
+			return mav;
+		}
+	@GetMapping("/academyLectureView/{acaIdx}") // 경로 이름
 	public ModelAndView getLectureView(@PathVariable Long acaIdx) {
-		ModelAndView mav = new ModelAndView("lecture/lectureView", "acaIdx", acaIdx);
+		ModelAndView mav = new ModelAndView("academy/academyLectureView", "acaIdx", acaIdx);
 		return mav;
 	}
 }

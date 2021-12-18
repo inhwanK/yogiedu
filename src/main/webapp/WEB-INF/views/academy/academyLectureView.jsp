@@ -36,7 +36,8 @@
 	    console.log("success");
 	    console.log(json[0].lectureTimeArr[1]);
 	    		var list = '';
-	    	for(i = 0; i <json.length ; i++){
+	    	
+	    		for(i = 0; i <json.length ; i++){
 	    		
 	    		list += '<tr>';
                 list += '<td>' + json[i].lectureName + '</td>';
@@ -48,25 +49,28 @@
 				 		for(i=0 ; i<json.length ; i++){
 	    		
 	    		for(j = 0; j <json[i].lectureTimeArr.length; j++){
-	 				var time = '';
-	             console.log(json[i].lectureTimeArr[j]);
+	 				
 	             
-	       		time = "<td>"
-	             
+	 				console.log(json[i].lectureTimeArr[j]);
+           
 	             }
 	    	} 
-	    	 
-            
-	    		
-	    	
-	    	$("#subjectList").append(list);
- 	
+
+	    	$("#subjectList").append(list);	
 	   	 },
 	    		error: function(){
 					console.log("fail");
 		}
+	   	 
+	   	 
 			
 		});
+		//강의 만들기 클릭시	
+	$("#lecture").on("click",function(){
+			
+		window.location.href= contextPath + "/academyLectureEnroll/" + acaIdx;
+				
+			})
 		
   });
   </script>  

@@ -16,24 +16,23 @@
 	    	 $('#send').on("click",function () {
 	    		    
 					var contextPath = "${contextPath}";
-					var acaIdx = "{acaIdx}";
+					var acaIdx = "${acaIdx}";
 					var lectureIdx = "${lectureIdx}";
 					
-					
+					console.log($("acaIdx"));
 					
 					var conf = confirm("강의를 등록하시겠습니까?");
 					if(conf){
 		
 	     		var data={
-		 
+		 					"acaIdx": acaIdx,
 	     				  "lectureName": "B반",
 	     				  "teacherName": "김인표",
-	     				  "acaIdx":1,
-	     				  "lectureTimeStr" : "2, 3, 9, 10",
+	     				 "lectureTimeStr" : "2, 3, 9, 10"
 				
 	     		};
 	 
-	      			console.log($("#school").val());
+	      		
 	 		
 		        $.ajax({
 		            type: "post",
@@ -154,8 +153,17 @@
   </script>
   <script>
     function tableDelete(){     //해당줄 삭제
-      $('#abc').remove();
-      console.log("#abc");
+     
+    	var conf =confirm("삭제할거야?");
+    	if(conf){
+    		
+    		$('#abc').remove();
+    	      console.log("#abc");
+    	}
+    	else {
+    		history.back();
+    	}
+    
     }
   </script>
  

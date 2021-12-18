@@ -23,13 +23,13 @@ public class RestLectureController {
 	private final LectureService lectureService;
 //	private final AcademyService academyService;
 	
-
+///
 	@GetMapping("/lecture")
 	public LectureResponseDto getLectureByIdx(@RequestParam("lectureIdx") Long lectureIdx) {
 		return lectureService.findById(lectureIdx);
 	}
 	
-
+//특정학원에 있는 전체강의
 	@GetMapping("/lecture/academy")
 	public List<LectureResponseDto> getLectureByAcaIdx(@RequestParam("acaIdx") Long acaIdx) {
 		return lectureService.findByAcaIdx(acaIdx);

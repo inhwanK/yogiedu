@@ -13,7 +13,7 @@ $(function() {
 	
     var contextPath = "${contextPath}";
 	var acaIdx = "${acaIdx}";
-	
+	console.log(acaIdx)
 	
 	$.ajax({
     url : contextPath+ "/api/academy?acaIdx=" +acaIdx ,
@@ -21,8 +21,8 @@ $(function() {
     dataType : "json",
     success: function(json) {
     console.log(json);
-     
-    
+	
+    console.log(json.acaIdx);
     $("#title").append(json.acaAsnum);
    	$("#tel").append(json.acaNm);
    	$("#adress").append(json.faRdnma);
@@ -34,7 +34,7 @@ $(function() {
 		
 
 	})
-		
+
 		
 $("#cancel").on('click', function(){
 	window.location.href = contextPath + "/academy";	
@@ -93,7 +93,7 @@ $("#lecture").on('click',function(){
 				    	alert("hi");
 				    	console.log(json);
 				 
-				    	window.location.href = contextPath + "/lectureView/"+acaIdx;
+				  window.location.href= contextPath+"academyLectureView/" + acaIdx;
 				    	
 				    
 				    	
@@ -156,7 +156,7 @@ $("#lecture").on('click',function(){
                        	</div>
                    </div>
              </form>
-            
+            				=
 							<button id="delete" class="btn btn-primary" >삭제</button>
 							<button id="cancel" class="btn btn-primary">돌아가기</button>
 							<button id="lecture" class="btn">강의 만들기</button>
