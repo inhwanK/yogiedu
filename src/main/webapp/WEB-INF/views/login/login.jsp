@@ -14,9 +14,12 @@
 $(function(){
 	var contextPath = "${contextPath}";
 	var userName = "${userName}";
+	var user = "${user.userEmail}";
+	
 	
 	console.log("contextPath > "+contextPath);
 	console.log("userName > "+userName);
+	console.log("user > " + user);
 });
 
 </script>
