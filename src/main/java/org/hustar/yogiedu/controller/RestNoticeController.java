@@ -28,7 +28,9 @@ public class RestNoticeController {
 //	공지사항 목록 뽑기. 파라미터 필요없음.
 	@GetMapping("/noticeList")
 	public List<NoticeResponseDto> getNoticeList() {
-		return noticeService.findAll();
+		List<NoticeResponseDto> list = noticeService.findAll();
+		System.out.println("이거 맞냐? > "+list.get(0).getRegDate());
+		return list;
 	}
 	
 //	공지사항 세부글 정보 뽑기. 

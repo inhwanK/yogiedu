@@ -16,6 +16,7 @@ build/
 .sts4-cache
 bin/
 **/src/main/resources/application.properties
+**/src/main/resources/application-oauth.properties
 **/.dbeaver/*.bak
 **/.dbeaver/*.json
 
