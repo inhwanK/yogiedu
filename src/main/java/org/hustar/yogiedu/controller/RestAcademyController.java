@@ -30,6 +30,11 @@ public class RestAcademyController {
 		return academyService.findAll();
 	}
 
+	@GetMapping("/academyList/{adminDistName}")
+	public List<AcademyResponseDto> getAcademyListByAdminDistName(@PathVariable String adminDistName){
+		return academyService.findByAdminDistName(adminDistName);
+	}
+	
 	@GetMapping("/academy")
 	public AcademyResponseDto getAcademy(Long acaIdx) {
 		return academyService.findById(acaIdx);
