@@ -1,7 +1,5 @@
 package org.hustar.yogiedu.dto.academy;
 
-import javax.persistence.Column;
-
 import org.hustar.yogiedu.domain.academy.Academy;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
