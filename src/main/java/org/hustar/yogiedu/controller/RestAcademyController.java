@@ -30,9 +30,18 @@ public class RestAcademyController {
 		return academyService.findAll();
 	}
 
+//	학원 지역구별로 검색.
 	@GetMapping("/academyList/{adminDistName}")
 	public List<AcademyResponseDto> getAcademyListByAdminDistName(@PathVariable String adminDistName){
 		return academyService.findByAdminDistName(adminDistName);
+	}
+	
+//	학원 수업 분야와 지역구에 따른 검색.
+	@GetMapping("/academyList/{adminDistName}/{leCrseName}")
+	public List<AcademyResponseDto> getAcademyListByLeCrseName(@PathVariable(value = "adminDistName") String adminDistName,
+			@PathVariable(value = "leCrseName") String leCrseName){
+		
+		return academyService.findByAdminDistNameAndLeCrseNameContaining(adminDistName, leCrseName);
 	}
 	
 	@GetMapping("/academy")
