@@ -1,13 +1,7 @@
 package org.hustar.yogiedu.dto.academy;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.hustar.yogiedu.domain.academy.Academy;
-import org.hustar.yogiedu.domain.lecture.Lecture;
-import org.hustar.yogiedu.dto.lecture.LectureResponseDto;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -46,7 +40,9 @@ public class AcademyResponseDto {
 
 	// 도로명상세주소
 	private String faRdnda;
-
+	
+	private String acaGrade;
+	
 	public AcademyResponseDto(Academy entity) {
 		this.acaIdx = entity.getAcaIdx();
 		this.acaAsnum = entity.getAcaAsnum();
@@ -61,6 +57,7 @@ public class AcademyResponseDto {
 		this.faRdnzc = entity.getFaRdnzc();
 		this.faRdnma = entity.getFaRdnma();
 		this.faRdnda = entity.getFaRdnda();
+		this.acaGrade = entity.getAcaGrade();
 	}
 	
 }

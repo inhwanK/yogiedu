@@ -13,11 +13,11 @@ DROP TABLE IF EXISTS `yogiedu`.`academy` RESTRICT;
 -- 수업
 DROP TABLE IF EXISTS `yogiedu`.`lecture` RESTRICT;
 
--- 예약시간표
-DROP TABLE IF EXISTS `yogiedu`.`timetable` RESTRICT;
-
 -- 회원
 DROP TABLE IF EXISTS `yogiedu`.`user` RESTRICT;
+
+-- 수강시간표
+DROP TABLE IF EXISTS `yogiedu`.`TIMETABLE` RESTRICT;
 
 -- 공지사항
 CREATE TABLE `yogiedu`.`notice` (
@@ -53,7 +53,9 @@ CREATE TABLE `yogiedu`.`academy` (
 	`LE_CRSE_NM`         VARCHAR(80)  NULL     COMMENT '교습과정명', -- 교습과정명
 	`FA_RDNZC`           VARCHAR(20)  NULL     COMMENT '도로명우편번호', -- 도로명우편번호
 	`FA_RDNMA`           VARCHAR(60)  NULL     COMMENT '도로명주소', -- 도로명주소
-	`FA_RDNDA`           VARCHAR(60)  NULL     COMMENT '도로명상세주소' -- 도로명상세주소
+	`FA_RDNDA`           VARCHAR(60)  NULL     COMMENT '도로명상세주소', -- 도로명상세주소
+	`ACA_INTRO`          VARCHAR(300) NULL     COMMENT '학원소개', -- 학원소개
+	`ACA_GRADE`          VARCHAR(20)  NULL     COMMENT '대상구분' -- 대상구분
 )
 COMMENT '학원';
 
@@ -72,8 +74,10 @@ CREATE TABLE `yogiedu`.`lecture` (
 	`LECTURE_IDX`      INT(11)      NOT NULL COMMENT '수업번호', -- 수업번호
 	`ACA_IDX`          INT(20)      NULL     COMMENT '학원번호', -- 학원번호
 	`LECTURE_NAME`     VARCHAR(30)  NULL     COMMENT '수업명', -- 수업명
+	`SUBJECT_NAME`     VARCHAR(50)  NULL     COMMENT '과목명', -- 과목명
 	`TEACHER_NAME`     CHAR(6)      NULL     COMMENT '강사명', -- 강사명
-	`LECTURE_TIME_STR` VARCHAR(110) NULL     COMMENT '수업시간' -- 수업시간
+	`LECTURE_TIME_STR` VARCHAR(110) NULL     COMMENT '수업시간', -- 수업시간
+	`LECTURE_GRADE`    VARCHAR(20)  NULL     COMMENT '대상구분' -- 대상구분
 )
 COMMENT '수업';
 
@@ -86,26 +90,6 @@ ALTER TABLE `yogiedu`.`lecture`
 
 ALTER TABLE `yogiedu`.`lecture`
 	MODIFY COLUMN `LECTURE_IDX` INT(11) NOT NULL AUTO_INCREMENT COMMENT '수업번호';
-
--- 예약시간표
-CREATE TABLE `yogiedu`.`timetable` (
-	`TIMETABLE_IDX` INT(11) NOT NULL COMMENT '예약시간표번호', -- 예약시간표번호
-	`USER_IDX`      INT(11) NULL     COMMENT '회원번호', -- 회원번호
-	`LECTURE_IDX`   INT(11) NOT NULL COMMENT '수업번호', -- 수업번호
-	`MEM_TIME_IDX`  INT     NULL     COMMENT '수강생시간표번호', -- 수강생시간표번호
-	`APPROVAL`      BOOLEAN NOT NULL DEFAULT false COMMENT '승인여부' -- 승인여부
-)
-COMMENT '예약시간표';
-
--- 예약시간표
-ALTER TABLE `yogiedu`.`timetable`
-	ADD CONSTRAINT `PK_timetable` -- 예약시간표 기본키
-		PRIMARY KEY (
-			`TIMETABLE_IDX` -- 예약시간표번호
-		);
-
-ALTER TABLE `yogiedu`.`timetable`
-	MODIFY COLUMN `TIMETABLE_IDX` INT(11) NOT NULL AUTO_INCREMENT COMMENT '예약시간표번호';
 
 -- 회원
 CREATE TABLE `yogiedu`.`user` (
@@ -127,8 +111,32 @@ ALTER TABLE `yogiedu`.`user`
 			`USER_IDX` -- 회원번호
 		);
 
+-- 회원 유니크 인덱스
+CREATE UNIQUE INDEX `UIX_user`
+	ON `yogiedu`.`user` ( -- 회원
+		`USER_EMAIL` ASC -- 이메일
+	);
+
 ALTER TABLE `yogiedu`.`user`
 	MODIFY COLUMN `USER_IDX` INT(11) NOT NULL AUTO_INCREMENT COMMENT '회원번호';
+
+-- 수강시간표
+CREATE TABLE `yogiedu`.`TIMETABLE` (
+	`TIMETABLE_IDX` INT(11) NOT NULL COMMENT '시간표번호', -- 시간표번호
+	`USER_IDX`      INT(11) NOT NULL COMMENT '회원번호', -- 회원번호
+	`LECTURE_IDX`   INT(11) NOT NULL COMMENT '수업번호' -- 수업번호
+)
+COMMENT '수강시간표';
+
+-- 수강시간표
+ALTER TABLE `yogiedu`.`TIMETABLE`
+	ADD CONSTRAINT `PK_TIMETABLE` -- 수강시간표 기본키
+		PRIMARY KEY (
+			`TIMETABLE_IDX` -- 시간표번호
+		);
+
+ALTER TABLE `yogiedu`.`TIMETABLE`
+	MODIFY COLUMN `TIMETABLE_IDX` INT(11) NOT NULL AUTO_INCREMENT COMMENT '시간표번호';
 
 -- 수업
 ALTER TABLE `yogiedu`.`lecture`
@@ -140,9 +148,19 @@ ALTER TABLE `yogiedu`.`lecture`
 			`ACA_IDX` -- 학원번호
 		);
 
--- 예약시간표
-ALTER TABLE `yogiedu`.`timetable`
-	ADD CONSTRAINT `FK_user_TO_timetable` -- 회원 -> 예약시간표
+-- 수강시간표
+ALTER TABLE `yogiedu`.`TIMETABLE`
+	ADD CONSTRAINT `FK_lecture_TO_TIMETABLE` -- 수업 -> 수강시간표
+		FOREIGN KEY (
+			`LECTURE_IDX` -- 수업번호
+		)
+		REFERENCES `yogiedu`.`lecture` ( -- 수업
+			`LECTURE_IDX` -- 수업번호
+		);
+
+-- 수강시간표
+ALTER TABLE `yogiedu`.`TIMETABLE`
+	ADD CONSTRAINT `FK_user_TO_TIMETABLE` -- 회원 -> 수강시간표
 		FOREIGN KEY (
 			`USER_IDX` -- 회원번호
 		)

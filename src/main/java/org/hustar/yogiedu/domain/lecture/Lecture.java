@@ -34,14 +34,16 @@ public class Lecture {
 	private String lectureName;
 	private String teacherName;
 	private String lectureTimeStr;
+	private String lectureGrade;
 	
 	@Builder
-	public Lecture(Long lectureIdx, Academy academy, String lectureName, String teacherName, String lectureTimeStr) {
+	public Lecture(Long lectureIdx, Academy academy, String lectureName, String teacherName, String lectureTimeStr, String lectureGrade) {
 		this.lectureIdx = lectureIdx;
 		this.academy = academy;
 		this.lectureName = lectureName;
 		this.teacherName = teacherName;
 		this.lectureTimeStr = lectureTimeStr;
+		this.lectureGrade = lectureGrade;
 	}
 	
 

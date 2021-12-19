@@ -1,5 +1,7 @@
 package org.hustar.yogiedu.dto.academy;
 
+import javax.persistence.Column;
+
 import org.hustar.yogiedu.domain.academy.Academy;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -54,10 +56,13 @@ public class AcademySaveRequestDto {
 	@JsonProperty("FA_RDNDA") //도로명상세주소
 	private String faRdnda;
 	
+	@JsonProperty("ACA_GRADE")
+	private String acaGrade;
+	
 	@Builder
 	public AcademySaveRequestDto(String acaAsnum, String acaNm, String atptOfcdcScCode, String atptOfcdcScNm,
 			String adminDistName, String estblDate, String regDate, String fieldName, String leCrseName,
-			String faRdnzc, String faRdnma, String faRdnda) {
+			String faRdnzc, String faRdnma, String faRdnda, String acaGrade) {
 		super();
 		this.acaAsnum = acaAsnum;
 		this.acaNm = acaNm;
@@ -71,6 +76,7 @@ public class AcademySaveRequestDto {
 		this.faRdnzc = faRdnzc;
 		this.faRdnma = faRdnma;
 		this.faRdnda = faRdnda;
+		this.acaGrade = acaGrade;
 	}
 
 	
@@ -88,6 +94,7 @@ public class AcademySaveRequestDto {
 				.faRdnzc(faRdnzc)
 				.faRdnma(faRdnma)
 				.faRdnda(faRdnda)
+				.acaGrade(acaGrade)
 				.build();
 	}
 }
