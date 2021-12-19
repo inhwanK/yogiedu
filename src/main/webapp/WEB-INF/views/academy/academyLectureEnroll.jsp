@@ -101,7 +101,7 @@
 		    		    console.log("lectureName======>"+$("#lectureName").val()); //강의 이름
 		    		    console.log("teacherName======>" + $("#teacherName").val()); // 강사명
 		    		    console.log("lectureTimeStr====>"+lectureTimeStr); 
-		           
+		           				history.go(0);
 		          					 },error: function () {
 		          			              
 		 								alert("실패")
@@ -113,7 +113,7 @@
 		      	
 				
 		}) 
-		    
+	
 		})	
 /* 
 	    	 $('#send').on("click",function () {
@@ -173,6 +173,7 @@
 	  	if(conf){
 	  		
 	  		$('#abc').remove();
+	  		
 	  	      console.log("#abc");
 	  	}
 	  	else {
