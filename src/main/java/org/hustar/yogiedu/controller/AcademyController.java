@@ -20,9 +20,8 @@ public class AcademyController {
 	}
 
 	@GetMapping("/academy")
-	public ModelAndView academy(Long acaIdx, @LoginUser SessionUser user) {
+	public ModelAndView academy(Long acaIdx) {
 		ModelAndView mav = new ModelAndView("academy/academyView", "acaIdx", acaIdx);
-		mav.addObject(user);
 		return mav;
 	}
 

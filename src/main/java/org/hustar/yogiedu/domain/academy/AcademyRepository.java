@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 public interface AcademyRepository extends JpaRepository<Academy, Long> {
 
 	List<Academy> findByAdminDistName(String adminDistName);
-	
+	List<Academy> findByAdminDistNameAndLeCrseNameLike(String adminDistName, String leCrseName);
 }

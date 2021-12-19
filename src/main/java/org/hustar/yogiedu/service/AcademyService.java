@@ -31,7 +31,7 @@ public class AcademyService {
 		return academyRepository.save(requestDto.toEntity()).getAcaIdx();
 	}
 
-	// 학원 목록 가져오기
+	// 학원 전체 목록 가져오기
 	@Transactional
 	public List<AcademyResponseDto> findAll() {
 
@@ -44,18 +44,18 @@ public class AcademyService {
 
 		return academyList;
 	}
-	
+
 	// 학원 지역별로 검색.
 	@Transactional
-	public List<AcademyResponseDto> findByAdminDistName(String adminDistName){
-		
+	public List<AcademyResponseDto> findByAdminDistName(String adminDistName) {
+
 		List<Academy> entityList = academyRepository.findByAdminDistName(adminDistName);
 		List<AcademyResponseDto> academyList = new ArrayList<AcademyResponseDto>();
-		
+
 		for (int i = 0; i < entityList.size(); i++) {
 			academyList.add(new AcademyResponseDto(entityList.get(i)));
 		}
-		
+
 		return academyList;
 	}
 
@@ -68,6 +68,19 @@ public class AcademyService {
 
 //		그냥 요청 두번해야돼...
 		return new AcademyResponseDto(entity);
+	}
+
+	@Transactional
+	public List<AcademyResponseDto> findByAdminDistNameAndLeCrseNameLike(String adminDistName, String leCrseName) {
+
+		List<Academy> entityList = academyRepository.findByAdminDistNameAndLeCrseNameLike(adminDistName, leCrseName);
+		List<AcademyResponseDto> academyList = new ArrayList<AcademyResponseDto>();
+
+		for (int i = 0; i < entityList.size(); i++) {
+			academyList.add(new AcademyResponseDto(entityList.get(i)));
+		}
+		
+		return academyList;
 	}
 
 	// 기본키에 따라 삭제하기.
