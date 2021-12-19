@@ -66,7 +66,6 @@
     });
 </script>
 
-<body>
 	<section id="introLA">
 	    <div id="page-wrapper">
 	        <!-- 본문 -->
