@@ -62,19 +62,7 @@
 		   
 		    		
 		    		///send시에 실제로 강의 리스트의 정보를 담아서 데이터 보냄
-				 function tableDelete(){     //저장된 강의 삭제기능
-					   
-					  	var conf =confirm("삭제할거야?");
-					  	if(conf){
-					  		
-					  		$('#abc').remove();
-					  	      console.log("#abc");
-					  	}
-					  	else {
-					  		history.back();
-					  	}
-					  
-					  }
+				
 		    		
 			
 			 $('#send').on("click",function () {
@@ -179,7 +167,19 @@
 		})  */
 	    
 	});
-
+  function tableDelete(){     //저장된 강의 삭제기능
+	   
+	  	var conf =confirm("삭제할거야?");
+	  	if(conf){
+	  		
+	  		$('#abc').remove();
+	  	      console.log("#abc");
+	  	}
+	  	else {
+	  		history.back();
+	  	}
+	  
+	  }
 
 
   
