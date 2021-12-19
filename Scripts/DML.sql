@@ -28,6 +28,9 @@ order by aca_idx desc;
 
 
 select * from user;
+select * from timetable;
 
+delete from timetable;
 
+delete from lecture where LECTURE_IDX =2;
 show tables;

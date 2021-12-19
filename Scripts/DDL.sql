@@ -17,7 +17,7 @@ DROP TABLE IF EXISTS `yogiedu`.`lecture` RESTRICT;
 DROP TABLE IF EXISTS `yogiedu`.`user` RESTRICT;
 
 -- 수강시간표
-DROP TABLE IF EXISTS `yogiedu`.`TIMETABLE` RESTRICT;
+DROP TABLE IF EXISTS `yogiedu`.`timetable` RESTRICT;
 
 -- 공지사항
 CREATE TABLE `yogiedu`.`notice` (
@@ -121,7 +121,7 @@ ALTER TABLE `yogiedu`.`user`
 	MODIFY COLUMN `USER_IDX` INT(11) NOT NULL AUTO_INCREMENT COMMENT '회원번호';
 
 -- 수강시간표
-CREATE TABLE `yogiedu`.`TIMETABLE` (
+CREATE TABLE `yogiedu`.`timetable` (
 	`TIMETABLE_IDX` INT(11) NOT NULL COMMENT '시간표번호', -- 시간표번호
 	`USER_IDX`      INT(11) NOT NULL COMMENT '회원번호', -- 회원번호
 	`LECTURE_IDX`   INT(11) NOT NULL COMMENT '수업번호' -- 수업번호
@@ -129,13 +129,13 @@ CREATE TABLE `yogiedu`.`TIMETABLE` (
 COMMENT '수강시간표';
 
 -- 수강시간표
-ALTER TABLE `yogiedu`.`TIMETABLE`
-	ADD CONSTRAINT `PK_TIMETABLE` -- 수강시간표 기본키
+ALTER TABLE `yogiedu`.`timetable`
+	ADD CONSTRAINT `PK_timetable` -- 수강시간표 기본키
 		PRIMARY KEY (
 			`TIMETABLE_IDX` -- 시간표번호
 		);
 
-ALTER TABLE `yogiedu`.`TIMETABLE`
+ALTER TABLE `yogiedu`.`timetable`
 	MODIFY COLUMN `TIMETABLE_IDX` INT(11) NOT NULL AUTO_INCREMENT COMMENT '시간표번호';
 
 -- 수업
@@ -149,8 +149,8 @@ ALTER TABLE `yogiedu`.`lecture`
 		);
 
 -- 수강시간표
-ALTER TABLE `yogiedu`.`TIMETABLE`
-	ADD CONSTRAINT `FK_lecture_TO_TIMETABLE` -- 수업 -> 수강시간표
+ALTER TABLE `yogiedu`.`timetable`
+	ADD CONSTRAINT `FK_lecture_TO_timetable` -- 수업 -> 수강시간표
 		FOREIGN KEY (
 			`LECTURE_IDX` -- 수업번호
 		)
@@ -159,8 +159,8 @@ ALTER TABLE `yogiedu`.`TIMETABLE`
 		);
 
 -- 수강시간표
-ALTER TABLE `yogiedu`.`TIMETABLE`
-	ADD CONSTRAINT `FK_user_TO_TIMETABLE` -- 회원 -> 수강시간표
+ALTER TABLE `yogiedu`.`timetable`
+	ADD CONSTRAINT `FK_user_TO_timetable` -- 회원 -> 수강시간표
 		FOREIGN KEY (
 			`USER_IDX` -- 회원번호
 		)

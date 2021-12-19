@@ -16,16 +16,6 @@
 		
 		console.log("contextPath > "+contextPath);
 		console.log("userName > "+userName);
-		
-		
-		Swal.fire({				// Alert창 디자인 sweetalert2
-            icon : 'success',
-            title: '로그인이 필요한 서비스입니다.'
-        }).then((result) => {
-			if (result.isConfirmed) { 
-				window.location.href = contextPath + "/login";
-			}
-        });
 	});
 	
 	</script>

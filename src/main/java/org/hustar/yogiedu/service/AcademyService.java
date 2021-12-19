@@ -70,6 +70,7 @@ public class AcademyService {
 		return new AcademyResponseDto(entity);
 	}
 
+//	학원 지역, 분야 카테고리 선택으로 검색하기.
 	@Transactional
 	public List<AcademyResponseDto> findByAdminDistNameAndLeCrseNameContaining(String adminDistName, String leCrseName) {
 
