@@ -2,11 +2,11 @@ package org.hustar.yogiedu.controller;
 
 import javax.servlet.http.HttpSession;
 
+import org.hustar.yogiedu.config.auth.LoginUser;
 import org.hustar.yogiedu.config.auth.dto.SessionUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import lombok.RequiredArgsConstructor;
 
@@ -22,16 +22,16 @@ public class LoginController {
 
 //	로그인 테스트 경로임 실제 경로는 바꿔야함.
 	@GetMapping("/lo")
-	public String index(Model model) {
+	public String index(Model model, @LoginUser SessionUser user) {
 //		model.addAllAttributes(null);
 
-		SessionUser user = (SessionUser) httpSession.getAttribute("user");
+//		SessionUser user = (SessionUser) httpSession.getAttribute("user");
 
 		if (user != null) {
+			model.addAttribute("user", user);
 			model.addAttribute("userName", user.getUserName());
 			System.out.println(user.getUserName());
 		}
-		System.out.println("되긴 되냐?");
 
 		return "login/login";
 	}
