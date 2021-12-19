@@ -29,31 +29,31 @@ public class RestNoticeController {
 	@GetMapping("/noticeList")
 	public List<NoticeResponseDto> getNoticeList() {
 		List<NoticeResponseDto> list = noticeService.findAll();
-		System.out.println("이거 맞냐? > "+list.get(0).getRegDate());
+		System.out.println("이거 맞냐? > " + list.get(0).getRegDate());
 		return list;
 	}
-	
+
 //	공지사항 세부글 정보 뽑기. 
 //	/api/notice?notIdx=1 경로로 요청.
 	@GetMapping("/notice")
 	public NoticeResponseDto getNotice(Long notIdx) {
 		return noticeService.findById(notIdx);
 	}
-	
+
 //	공지사항 등록.
 //	json 형태로 body를 작성한 뒤, /api/notice 경로로 요청. 
 	@PostMapping("/notice")
 	public Long regNotice(@RequestBody NoticeSaveRequestDto noticeDto) {
 		return noticeService.save(noticeDto);
 	}
-	
+
 //	공지사항 수정.
 //	json 형태로 body를 작성한 뒤, /api/notice?notIdx=1 경로로 요청. 
 	@PutMapping("/notice")
 	public Long updateNotice(Long notIdx, @RequestBody NoticeUpdateRequestDto requestDto) {
 		return noticeService.update(notIdx, requestDto);
 	}
-	
+
 //	공지사항 삭제.
 //	/api/notice?notIdx=1 경로로 요청.
 	@DeleteMapping("/notice")

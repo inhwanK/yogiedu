@@ -19,13 +19,12 @@ public class LectureResponseDto {
 	private Long acaIdx;
 	private String lectureName;
 	private String teacherName;
-	
+
 //	시간 문자열.
 	private String lectureTimeStr;
-	
+
 //	시간 배열.
 	private List<Integer> lectureTimeArr = new ArrayList<Integer>();
-	
 
 //	아카데미 하나의 강의정보 볼 때 사용.
 	@Builder
@@ -40,7 +39,7 @@ public class LectureResponseDto {
 		this.lectureTimeArr = lectureTimeArr;
 	}
 
-	//리스트 뽑을 때 사용.
+	// 리스트 뽑을 때 사용.
 	public LectureResponseDto(Lecture entity) {
 		super();
 		this.lectureIdx = entity.getLectureIdx();
@@ -48,14 +47,14 @@ public class LectureResponseDto {
 		this.lectureName = entity.getLectureName();
 		this.teacherName = entity.getTeacherName();
 		this.lectureTimeStr = entity.getLectureTimeStr();
-		
-		String[] timeTable = entity.getLectureTimeStr().split(",");
-		
-		for(int i = 0; i < timeTable.length;i++) {
-			this.lectureTimeArr.add(Integer.parseInt(timeTable[i].trim()));
+
+		if (entity.getLectureTimeStr() != null) {
+			String[] timeTable = entity.getLectureTimeStr().split(",");
+
+			for (int i = 0; i < timeTable.length; i++) {
+				this.lectureTimeArr.add(Integer.parseInt(timeTable[i].trim()));
+			}
 		}
-		
 	}
-	
-	
+
 }

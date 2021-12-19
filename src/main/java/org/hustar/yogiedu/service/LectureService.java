@@ -49,9 +49,8 @@ public class LectureService {
 
 //		List<Integer> lectureTimeArr = transLectureTimeArr(entity);
 
-		
 		LectureResponseDto responseDto = new LectureResponseDto(entity);
-		
+
 //				LectureResponseDto.builder().lectureIdx(entity.getLectureIdx())
 //				.acaIdx(entity.getAcademy().getAcaIdx()).lectureName(entity.getLectureName())
 //				.teacherName(entity.getTeacherName()).lectureTimeStr(entity.getLectureTimeStr())

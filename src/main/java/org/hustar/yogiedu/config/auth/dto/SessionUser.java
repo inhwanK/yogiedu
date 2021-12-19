@@ -7,17 +7,16 @@ import org.hustar.yogiedu.domain.user.User;
 import lombok.Getter;
 
 @Getter
-public class SessionUser implements Serializable{
-	
+public class SessionUser implements Serializable {
+
 	private String userEmail;
 	private String userName;
-	
+
 	private String userBirth;
 	private String userDiv;
 	private String userEdu;
 	private int userGrade;
 
-	
 	public SessionUser(User user) {
 		this.userEmail = user.getUserEmail();
 		this.userName = user.getUserName();
@@ -26,6 +25,5 @@ public class SessionUser implements Serializable{
 		this.userEdu = user.getUserEdu();
 		this.userGrade = user.getUserGrade();
 	}
-	
-	
+
 }
