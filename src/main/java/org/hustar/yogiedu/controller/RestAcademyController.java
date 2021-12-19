@@ -40,7 +40,8 @@ public class RestAcademyController {
 	@GetMapping("/academyList/{adminDistName}/{leCrseName}")
 	public List<AcademyResponseDto> getAcademyListByLeCrseName(@PathVariable(value = "adminDistName") String adminDistName,
 			@PathVariable(value = "leCrseName") String leCrseName){
-		return academyService.findByAdminDistNameAndLeCrseNameLike(adminDistName, leCrseName);
+		
+		return academyService.findByAdminDistNameAndLeCrseNameContaining(adminDistName, leCrseName);
 	}
 	
 	@GetMapping("/academy")

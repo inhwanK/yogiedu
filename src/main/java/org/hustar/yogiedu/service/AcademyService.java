@@ -71,9 +71,9 @@ public class AcademyService {
 	}
 
 	@Transactional
-	public List<AcademyResponseDto> findByAdminDistNameAndLeCrseNameLike(String adminDistName, String leCrseName) {
+	public List<AcademyResponseDto> findByAdminDistNameAndLeCrseNameContaining(String adminDistName, String leCrseName) {
 
-		List<Academy> entityList = academyRepository.findByAdminDistNameAndLeCrseNameLike(adminDistName, leCrseName);
+		List<Academy> entityList = academyRepository.findByAdminDistNameAndLeCrseNameContaining(adminDistName, leCrseName);
 		List<AcademyResponseDto> academyList = new ArrayList<AcademyResponseDto>();
 
 		for (int i = 0; i < entityList.size(); i++) {
