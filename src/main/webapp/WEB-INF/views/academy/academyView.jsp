@@ -11,106 +11,115 @@
 $(function() {
 
 	
-    var contextPath = "${contextPath}";
+	var contextPath = "${contextPath}";
 	var acaIdx = "${acaIdx}";
-	console.log(acaIdx)
-	
-	$.ajax({
-    url : contextPath+ "/api/academy?acaIdx=" +acaIdx ,
-    method : "get",
-    dataType : "json",
-    success: function(json) {
-    console.log(json);
-	
-    console.log(json.acaIdx);
-    $("#title").append(json.acaAsnum);
-   	$("#tel").append(json.acaNm);
-   	$("#adress").append(json.faRdnma);
-	$("#introduce").append(json.estblDate);
-	$("#area").append(json.adminDistName);
-    
-	
+	console.log(acaIdx);
+	        if(acaIdx == ""){
+	        	alert("학원을 먼저 등록해주세요")
+	             window.location.href= contextPath + "/academyEnroll"   
+	}else{
+	    $.ajax({
+	        url : contextPath+ "/api/academy?acaIdx=" +acaIdx ,
+	        method : "get",
+	        dataType : "json",
+	        success: function(json) {
+	        console.log(json);
+	        
+	        console.log(json.acaIdx);
+	        $("#title").append(json.acaAsnum);
+	           $("#tel").append(json.acaNm);
+	           $("#adress").append(json.faRdnma);
+	        $("#introduce").append(json.estblDate);
+	        $("#area").append(json.adminDistName);
+	        
+	        
+	        }
+	            
+
+	        })
+
+	            
+	    $("#cancel").on('click', function(){
+	        window.location.href = contextPath + "/academy";	
+	    });
+	        
+
+	            
+	        
+	    $("#delete").on('click', function(){
+	        
+	        var conf = confirm("ㄹㅇ로 삭 제하시 겠습니까?");
+	        if(conf){
+	            
+	            var acaIdx = "${acaIdx}";
+	            
+	            console.log(acaIdx);
+
+	            $.ajax({
+	            url : contextPath + "/api/academy?acaIdx=" + acaIdx,
+	            method : "delete",
+	            dataType : "json",
+	            success: function(json) {
+	            
+	                alert("삭 제 ㅇㅋ");
+	                window.location.href = contextPath + "/academy";
+	        },
+	            error: function(){
+	            alert("조졋다");
+	        }
+	        
+	    })	
+	        }
+
+	    });
+
+
+
+	    $("#lecture").on('click',function(){
+	                
+	                
+	                var conf = confirm("강의 수정할래??");
+	                
+	                if(conf){
+	                    
+	                    var contextPath= "${contextPath}";
+	                    var acaIdx = "${acaIdx}";
+	                    var lectureIdx = "${lectureIdx}"; 
+	                    
+	                    
+	                    $.ajax({
+	                        url : contextPath + "/api/academy?acaIdx="+acaIdx,
+	                        method : "get",
+	                        dataType : "json",
+	                        success: function(json) {
+	                                
+	                            alert("hi");
+	                            console.log(json);
+	                     
+	                      window.location.href= contextPath+"academyLectureView/" + acaIdx;
+	                            
+	                        
+	                            
+	                    },
+	                        error: function(){
+	                        alert("조졋다");
+	                    }
+	                    
+	                })
+	                    
+	                }
+
+	                
+	        
+	        
+	    })
+
+
 	}
-		
-
-	})
-
-		
-$("#cancel").on('click', function(){
-	window.location.href = contextPath + "/academy";	
-});
-	
-
-		
-	
-$("#delete").on('click', function(){
-	
-	var conf = confirm("ㄹㅇ로 삭 제하시 겠습니까?");
-	if(conf){
-		
-		var acaIdx = "${acaIdx}";
-		
-		console.log(acaIdx);
-
-		$.ajax({
-	    url : contextPath + "/api/academy?acaIdx=" + acaIdx,
-	    method : "delete",
-	    dataType : "json",
-	    success: function(json) {
 	    
-	    	alert("삭 제 ㅇㅋ");
-	    	window.location.href = contextPath + "/academy";
-	},
-		error: function(){
-		alert("조졋다");
-	}
-	
-})	
-	}
+	   
 
-});
-
-
-
-$("#lecture").on('click',function(){
-			
-			
-			var conf = confirm("강의 수정할래??");
-			
-			if(conf){
-				
-				var contextPath= "${contextPath}";
-				var acaIdx = "${acaIdx}";
-				var lectureIdx = "${lectureIdx}"; 
-				
-				
-				$.ajax({
-				    url : contextPath + "/api/academy?acaIdx="+acaIdx,
-				    method : "get",
-				    dataType : "json",
-				    success: function(json) {
-							
-				    	alert("hi");
-				    	console.log(json);
-				 
-				  window.location.href= contextPath+"academyLectureView/" + acaIdx;
-				    	
-				    
-				    	
-				},
-					error: function(){
-					alert("조졋다");
-				}
-				
-			})
-				
-			}
-
-    		
-	
-	
-})
-});
+	});
 
 </script>
 <style>

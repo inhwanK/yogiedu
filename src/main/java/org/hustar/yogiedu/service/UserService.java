@@ -18,8 +18,10 @@ public class UserService {
 	@Transactional
 	public Long update(Long userIdx, UserUpdateRequestDto requestDto) {
 		User user = userRepository.findById(userIdx)
-				.orElseThrow(() -> new IllegalArgumentException(""));
+				.orElseThrow(() -> new IllegalArgumentException("회원 정보를 불러올 수 없습니다."));
 		
-		return null;
+		user.update(requestDto.getUserName(), requestDto.getUserBirth(), requestDto.getUserDiv(),
+				requestDto.getUserEdu(), requestDto.getUserGrade());
+		return userIdx;
 	}
 }

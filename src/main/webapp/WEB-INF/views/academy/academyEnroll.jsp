@@ -6,7 +6,7 @@
 
 
 <meta charset="UTF-8">
-<<script src="https://code.jquery.com/jquery-3.5.1.js"></script> 
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script> 
 <script type="text/javascript">
 
 
@@ -81,7 +81,6 @@ $(function(){
               type: "post",
               url: contextPath + "/api/academy",
               data: JSON.stringify(data),
-              
               dataType: 'json',
 			  contentType:"application/json; charset=utf-8",
               success: function (json) {

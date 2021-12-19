@@ -3,31 +3,46 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
 <c:set var="userName" value="<%=request.getAttribute(\"userName\")%>" />
-
-<!DOCTYPE html>
-<html>
-<head>
 <meta charset="UTF-8">
-
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script type="text/javascript">
-$(function(){
-	var contextPath = "${contextPath}";
-	var userName = "${userName}";
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	
-	console.log("contextPath > "+contextPath);
-	console.log("userName > "+userName);
-});
+	
+	<script type="text/javascript">
+	$(function(){
+		var contextPath = "${contextPath}";
+		var userName = "${userName}";
+		
+		console.log("contextPath > "+contextPath);
+		console.log("userName > "+userName);
+	});
+	
+	</script>
+	<script type="text/javascript">
+	
+	
+	</script>
+	<%@include file="/WEB-INF/views/header.jsp"%>
+	
+	<section id="introLA">
+		<div class="container" >
+		
+			<div id="no-log">
+				
+				안됬을때
+			</div>
+			<div id="yes-log">
+				<span id="user">${userName} 님이 로그인 하셨습니다</span> 
+			</div>
+			
+			<div>
+				<a href="/logout" class="btn btn-info active" role="button">Logout</a>
+			</div>
+			
+			<div>
+				<a href="/oauth2/authorization/google" class="btn btn-success active" role="button">GoogleLogin</a>
+			</div>
+		</div>
+	</section>
 
-</script>
-<title>Insert title here</title>
-
-</head>
-<body>
-
-Logged in as: <span id="user">${userName}</span>
-<a href="/logout" class="btn btn-info active" role="button">Logout</a>
-
-<a href="/oauth2/authorization/google" class="btn btn-success active" role="button">GoogleLogin</a>
 </body>
-</html>
+<%@include file="/WEB-INF/views/footer.jsp"%>
