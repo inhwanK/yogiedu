@@ -337,7 +337,7 @@
         </div>
         <button type="button" class="btn btn-save" id="save">과목담기</button>
         <button type="button" class="btn btn-success" id="send" >완료</button>
-        <button type="button" class="btn btn-warning" id="cancel" onclick="javascript:history.back()">취소</button>
+        <button type="button" class="btn btn-warning" id="cancel" onclick="javascript:history.back()">돌아가기</button>
       </div>
  </div>
   

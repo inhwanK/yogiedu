@@ -9,70 +9,67 @@
 
 
  
-  <script type="text/javascript">
+<script type="text/javascript">
 
   
   
-  $(function() {
+	$(function() {
 
 		
 	    var contextPath = "${contextPath}";
 		var acaIdx = "${acaIdx}";
 		var lectureIdx = "${lectureIdx}";
 
-			console.log(${"acaIdx"})
-		
-	
-		
+		console.log(${"acaIdx"})
+				
 		$.ajax({
-	    url : contextPath+ "/api/lecture/academy?acaIdx=" + acaIdx,
-	    method : "get",
-	    dataType : "json",
-	    success: function(json) {
-	    console.log(json);
-	   	console.log(json.length);
-	   
-	   	console.log(json[0].lectureTimeStr);
-	    console.log("success");
-	    console.log(json[0].lectureTimeArr[1]);
-	    		var list = '';
+		    url : contextPath+ "/api/lecture/academy?acaIdx=" + acaIdx,
+		    method : "get",
+		    dataType : "json",
+		    success: function(json) {
+	    
+		    	console.log(json);
+			    console.log("얘 뭐냐")
+			   	console.log(json.length);
+			   
+			   	console.log(json.lectureTimeStr);
+			    console.log("success");
+		 
+		    	var list = '';
 	    	
 	    		for(i = 0; i <json.length ; i++){
 	    		
-	    		list += '<tr>';
-                list += '<td>' + json[i].lectureName + '</td>';
-                list += '<td>' + json[i].teacherName + '</td>';
-                list += '</tr>';
-                
-	    	}
-	    	
-				 		for(i=0 ; i<json.length ; i++){
+		    		list += '<tr>';
+	                list += '<td>' + json[i].lectureName + '</td>';
+	                list += '<td>' + json[i].teacherName + '</td>';
+	                list += '<td>' + json[i].lectureTimeStr + '</td>';
+	                list += '</tr>';
+    
+	            	console.log("강의 리스트 수 =====>"+json[i].lectureTimeStr);            	
+	    		}
 	    		
-	    		for(j = 0; j <json[i].lectureTimeArr.length; j++){
-	 				
-	             
-	 				console.log(json[i].lectureTimeArr[j]);
-           
-	             }
-	    	} 
-
-	    	$("#subjectList").append(list);	
-	   	 },
-	    		error: function(){
-					console.log("fail");
-		}
-	   	 
-	   	 
-			
+	    		$("#subjectList").append(list);                
+	    	},
+	    	error: function(){
+	    		console.log("fail");
+			}
 		});
-		//강의 만들기 클릭시	
-	$("#lecture").on("click",function(){
+	 
+				    
+	   	 
 			
-		window.location.href= contextPath + "/academyLectureEnroll/" + acaIdx;
-				
-			})
+
+		//강의 만들기 클릭시	
+		$("#lecture").on("click",function(){
+			window.location.href= contextPath + "/academyLectureEnroll/" + acaIdx;
+		});
 		
-  });
+			/* $("#cancel").on('click', function(){
+			     window.location.href = contextPath + "/academy?acaIdx=" + acaIdx;
+			  }); */
+});
+  
+  
   </script>  
 	    
   <body style='padding-top: 100px;'>
