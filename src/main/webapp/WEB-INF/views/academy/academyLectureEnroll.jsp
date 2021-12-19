@@ -42,7 +42,7 @@
 				      list_save += '<td>' + $("#lectureName").val() +'</td>';
 				      list_save += '<td>' + $("#teacherName").val() + '</td>';
 				      list_save += '<td>' + lectureTimeStr + '</td>';
-				      list_save += '<td><button onclick="tableDelete()">'+'삭제하기'+'</button></td>';
+				      list_save += '<td><button class="btn btn-danger" onclick="tableDelete()">'+'삭제하기'+'</button></td>';
 				      list_save += '</tr>'; 
 				   	
 				     /*  if($("#abc td") === $("#subject option:selected").val()|| $("#lectureName").val() ||  lectureTimeStr){
@@ -348,6 +348,9 @@
 </section>
 
 <style>
+#lectureIns thead th{
+border-left:none;
+border-right:none;}
 .button-group button{
 	margin:0 10px;
 }

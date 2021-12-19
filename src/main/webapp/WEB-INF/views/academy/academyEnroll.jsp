@@ -207,8 +207,6 @@ $(function(){
              	  3. area부분은 따로 뿌리는거랑 합쳐서 뿌리는게 따로 필요함
              	  4. area부분에서 시/도가 변함에 따라 그에맞게 군/구의 값이 변하는게 좋지않을까 생각함
              	   -->
-             	   
-         <body>
 
  			<section id="introLA">
     			<div id="container">

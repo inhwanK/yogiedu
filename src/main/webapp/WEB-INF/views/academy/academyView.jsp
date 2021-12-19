@@ -130,7 +130,7 @@ justify-content:center;
 #acapage tr,#acapage td,#acapage th{
 border:1px solid #000 !important;}
 </style>
-<body>
+
 
 	<section id="introLA">
 		<div id="container">

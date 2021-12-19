@@ -23,7 +23,7 @@
                 console.log(json);
 
 
-                $("p#title").append(json.notTitle);
+                $("span#title").append(json.notTitle);
                 $("#regdate").append(json.regDate);
                 $("div#content").append(json.notContent);
                 $("div#writer").append(json.writer);
@@ -73,13 +73,13 @@
     });
 </script>
 
-<body style="padding-top:100px;">
-    <section id=introLA>
+
+    <section id="introLA">
 
         <div id="title-wrap">
             <div class="title">
                 <a href="noticeList" style="font-size:3rem;font-weight: 900; color: #222;">
-                    <p class="tit" id="title"></p>
+                    <span class="tit" id="title"></span>
                 </a>
             </div>
 
