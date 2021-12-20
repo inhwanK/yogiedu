@@ -12,10 +12,10 @@
 
  
  <!-- js -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ 	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+-->
     <script src="/static/js/academy/academySearch.js"></script> 
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -25,398 +25,100 @@
    
      <meta charset="UTF-8">
  
- <script type="text/javascript">
-	
-	$(function(){
+<script type="text/javascript">
 
+// 	$(function(){
 		
-		$("#area1").on("click",function(){
+// 		$("#daeguAll").on("click",function(){	//버튼 클릭시 버튼의 id 값으로 넘어옴
+		
+// 			var contextPath = "${contextPath}";
 			
-			var contextPath = "${contextPath}";
-			
-			$.ajax({
-				url : contextPath + "/api/academyList/",
-			    method : "get",
-			    dataType : "json",
-			    success: function(json) {
-			    console.log(json);
+// 			$.ajax({
+// 				url : contextPath + "/api/academyList/",	//api의 academyList 값을 들고 옴
+// 			    method : "get",
+// 			    dataType : "json",
+// 			    success: function(json) {
+// 			    console.log(json);
 			    
-			    var dataLength = json.length;
-			    var list = "";
+// 			    var dataLength = json.length;
+// 			    var list = "";
 			  
-			    $("#academy-name").append(json[0].acaNm);
-			    $("#academy-area").append(json[0].faRdnma);
+// 			    $("#academy-name").append(json[0].acaNm);	//api의 academyList 안에 acaNm 값만 들고 옴
+// 			    $("#academy-area").append(json[0].faRdnma);	//api의 academyList 안에 faRdnma 값만 들고 옴
 			   
-			    for(i=0; i <= dataLength-10; i++ ) {
-			    	if(json[i].adminDistName == "남구") {
-			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
-			    		list += '<div class="product_item" id="opener">';
-			    		list += '<div class="pi-img-wrapper"  >';
-			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
-// 			    		list += '<div id="academy-name">';
-			    		list += '</div>';
-			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
-			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
-			    		list += '</div>';
-			    		list += '</div>';
-			    		list += '</div>';
-			    		}
-			    	}
-			    	console.log(list);
-			    	
-			    	$("#product-list-wrap").empty();
-			    	$("#product-list-wrap").append(list);
-			    },
-			    error: function(){
-		    	}
-			});
-			
-			
-		});
-	});
+// 			    for(i=0; i <= dataLength-10; i++ ) {
+// 			    	list += '<div class="product_item1 col-md-4" data-type="daugu">';
+// 			    	list += '<div class="product_item" id="opener">';
+// 			    	list += '<div class="pi-img-wrapper"  >';
+// 			    	list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
+// 		    		list += '</div>';
+// 		    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
+// 		    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
+// 		    		list += '</div>';
+// 		    		list += '</div>';
+// 		    		list += '</div>';
+// 			    	}
+// 		    	console.log(list);
+		    	
+// 		    	$("#product-list-wrap").empty();	//#product-list-wrap 안의 값을 비워 줌
+// 		    	$("#product-list-wrap").append(list);	//
+// 			    },
+// 			    error: function(){
+// 		    	}
+// 			});
+// 		});
+// 	});
 	
-	$(function(){
+// 	$(function(){
+			
+// 			$("#areaAll").on("click",function(){	//버튼 클릭시 버튼의 id 값으로 넘어옴
+			
+// 				var contextPath = "${contextPath}";
+				
+// 				$.ajax({
+// 					url : contextPath + "/api/academyList/",	//api의 academyList 값을 들고 옴
+// 				    method : "get",
+// 				    dataType : "json",
+// 				    success: function(json) {
+// 				    console.log(json);
+				    
+// 				    var dataLength = json.length;
+// 				    var list = "";
+				  
+// 				    $("#academy-name").append(json[0].acaNm);	//api의 academyList 안에 acaNm 값만 들고 옴
+// 				    $("#academy-area").append(json[0].faRdnma);	//api의 academyList 안에 faRdnma 값만 들고 옴
+				   
+// 				    for(i=0; i <= dataLength-10; i++ ) {
+// 				    	list += '<div class="product_item1 col-md-4" data-type="daugu">';
+// 				    	list += '<div class="product_item" id="opener">';
+// 				    	list += '<div class="pi-img-wrapper"  >';
+// 				    	list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
+// 			    		list += '</div>';
+// 			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
+// 			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
+// 			    		list += '</div>';
+// 			    		list += '</div>';
+// 			    		list += '</div>';
+// 				    	}
+// 			    	console.log(list);
+			    	
+// 			    	$("#product-list-wrap").empty();	//#product-list-wrap 안의 값을 비워 줌
+// 			    	$("#product-list-wrap").append(list);	//
+// 				    },
+// 				    error: function(){
+// 			    	}
+// 				});
+// 			});
+// 		});
 
-		
-		$("#area2").on("click",function(){
-			
-			var contextPath = "${contextPath}";
-			
-			$.ajax({
-				url : contextPath + "/api/academyList/",
-			    method : "get",
-			    dataType : "json",
-			    success: function(json) {
-			    console.log(json);
-			    
-			    var dataLength = json.length;
-			    var list = "";
-			  
-			    $("#academy-name").append(json[0].acaNm);
-			    $("#academy-area").append(json[0].faRdnma);
-			   
-			    for(i=0; i <= dataLength-10; i++ ) {
-			    	if(json[i].adminDistName == "달서구") {
-			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
-			    		list += '<div class="product_item" id="opener">';
-			    		list += '<div class="pi-img-wrapper"  >';
-			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
-// 			    		list += '<div id="academy-name">';
-			    		list += '</div>';
-			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
-			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
-			    		list += '</div>';
-			    		list += '</div>';
-			    		list += '</div>';
-			    		}
-			    	}
-			    	console.log(list);
-			    	
-			    	$("#product-list-wrap").empty();
-			    	$("#product-list-wrap").append(list);
-			    },
-			    error: function(){
-		    	}
-			});
-			
-			
-		});
-	});
-	
-	$(function(){
-
-		
-		$("#area3").on("click",function(){
-			
-			var contextPath = "${contextPath}";
-			
-			$.ajax({
-				url : contextPath + "/api/academyList/",
-			    method : "get",
-			    dataType : "json",
-			    success: function(json) {
-			    console.log(json);
-			    
-			    var dataLength = json.length;
-			    var list = "";
-			  
-			    $("#academy-name").append(json[0].acaNm);
-			    $("#academy-area").append(json[0].faRdnma);
-			   
-			    for(i=0; i <= dataLength-10; i++ ) {
-			    	if(json[i].adminDistName == "동구") {
-			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
-			    		list += '<div class="product_item" id="opener">';
-			    		list += '<div class="pi-img-wrapper"  >';
-			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
-// 			    		list += '<div id="academy-name">';
-			    		list += '</div>';
-			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
-			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
-			    		list += '</div>';
-			    		list += '</div>';
-			    		list += '</div>';
-			    		}
-			    	}
-			    	console.log(list);
-			    	
-			    	$("#product-list-wrap").empty();
-			    	$("#product-list-wrap").append(list);
-			    },
-			    error: function(){
-		    	}
-			});
-			
-			
-		});
-	});
-	
-	$(function(){
-
-		
-		$("#area4").on("click",function(){
-			
-			var contextPath = "${contextPath}";
-			
-			$.ajax({
-				url : contextPath + "/api/academyList/",
-			    method : "get",
-			    dataType : "json",
-			    success: function(json) {
-			    console.log(json);
-			    
-			    var dataLength = json.length;
-			    var list = "";
-			  
-			    $("#academy-name").append(json[0].acaNm);
-			    $("#academy-area").append(json[0].faRdnma);
-			   
-			    for(i=0; i <= dataLength-10; i++ ) {
-			    	if(json[i].adminDistName == "북구") {
-			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
-			    		list += '<div class="product_item" id="opener">';
-			    		list += '<div class="pi-img-wrapper"  >';
-			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
-// 			    		list += '<div id="academy-name">';
-			    		list += '</div>';
-			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
-			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
-			    		list += '</div>';
-			    		list += '</div>';
-			    		list += '</div>';
-			    		}
-			    	}
-			    	console.log(list);
-			    	
-			    	$("#product-list-wrap").empty();
-			    	$("#product-list-wrap").append(list);
-			    },
-			    error: function(){
-		    	}
-			});
-			
-			
-		});
-	});
-	
-	$(function(){
-
-		
-		$("#area5").on("click",function(){
-			
-			var contextPath = "${contextPath}";
-			
-			$.ajax({
-				url : contextPath + "/api/academyList/",
-			    method : "get",
-			    dataType : "json",
-			    success: function(json) {
-			    console.log(json);
-			    
-			    var dataLength = json.length;
-			    var list = "";
-			  
-			    $("#academy-name").append(json[0].acaNm);
-			    $("#academy-area").append(json[0].faRdnma);
-			   
-			    for(i=0; i <= dataLength-10; i++ ) {
-			    	if(json[i].adminDistName == "서구") {
-			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
-			    		list += '<div class="product_item" id="opener">';
-			    		list += '<div class="pi-img-wrapper"  >';
-			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
-// 			    		list += '<div id="academy-name">';
-			    		list += '</div>';
-			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
-			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
-			    		list += '</div>';
-			    		list += '</div>';
-			    		list += '</div>';
-			    		}
-			    	}
-			    	console.log(list);
-			    	
-			    	$("#product-list-wrap").empty();
-			    	$("#product-list-wrap").append(list);
-			    },
-			    error: function(){
-		    	}
-			});
-			
-			
-		});
-	});
-	
-	$(function(){
-
-		
-		$("#area6").on("click",function(){
-			
-			var contextPath = "${contextPath}";
-			
-			$.ajax({
-				url : contextPath + "/api/academyList/",
-			    method : "get",
-			    dataType : "json",
-			    success: function(json) {
-			    console.log(json);
-			    
-			    var dataLength = json.length;
-			    var list = "";
-			  
-			    $("#academy-name").append(json[0].acaNm);
-			    $("#academy-area").append(json[0].faRdnma);
-			   
-			    for(i=0; i <= dataLength-10; i++ ) {
-			    	if(json[i].adminDistName == "수성구") {
-			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
-			    		list += '<div class="product_item" id="opener">';
-			    		list += '<div class="pi-img-wrapper"  >';
-			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
-// 			    		list += '<div id="academy-name">';
-			    		list += '</div>';
-			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
-			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
-			    		list += '</div>';
-			    		list += '</div>';
-			    		list += '</div>';
-			    		}
-			    	}
-			    	console.log(list);
-			    	
-			    	$("#product-list-wrap").empty();
-			    	$("#product-list-wrap").append(list);
-			    },
-			    error: function(){
-		    	}
-			});
-			
-			
-		});
-	});
-	
-	$(function(){
-
-		
-		$("#area7").on("click",function(){
-			
-			var contextPath = "${contextPath}";
-			
-			$.ajax({
-				url : contextPath + "/api/academyList/",
-			    method : "get",
-			    dataType : "json",
-			    success: function(json) {
-			    console.log(json);
-			    
-			    var dataLength = json.length;
-			    var list = "";
-			  
-			    $("#academy-name").append(json[0].acaNm);
-			    $("#academy-area").append(json[0].faRdnma);
-			   
-			    for(i=0; i <= dataLength-10; i++ ) {
-			    	if(json[i].adminDistName == "중구") {
-			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
-			    		list += '<div class="product_item" id="opener">';
-			    		list += '<div class="pi-img-wrapper"  >';
-			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
-// 			    		list += '<div id="academy-name">';
-			    		list += '</div>';
-			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
-			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
-			    		list += '</div>';
-			    		list += '</div>';
-			    		list += '</div>';
-			    		}
-			    	}
-			    	console.log(list);
-			    	
-			    	$("#product-list-wrap").empty();
-			    	$("#product-list-wrap").append(list);
-			    },
-			    error: function(){
-		    	}
-			});
-			
-			
-		});
-	});
-	
-	$(function(){
-
-		
-		$("#subject5").on("click",function(){
-			
-			var contextPath = "${contextPath}";
-			
-			$.ajax({
-				url : contextPath + "/api/academyList/",
-			    method : "get",
-			    dataType : "json",
-			    success: function(json) {
-			    console.log(json);
-			    
-			    var dataLength = json.length;
-			    var list = "";
-			  
-			    $("#academy-name").append(json[0].acaNm);
-			    $("#academy-area").append(json[0].faRdnma);
-			   
-			    for(i=0; i <= dataLength-10; i++ ) {
-			    	if(json[i].leCrseName == "미술") {
-			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
-			    		list += '<div class="product_item" id="opener">';
-			    		list += '<div class="pi-img-wrapper"  >';
-			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
-// 			    		list += '<div id="academy-name">';
-			    		list += '</div>';
-			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
-			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
-			    		list += '</div>';
-			    		list += '</div>';
-			    		list += '</div>';
-			    		}
-			    	}
-			    	console.log(list);
-			    	
-			    	$("#product-list-wrap").empty();
-			    	$("#product-list-wrap").append(list);
-			    },
-			    error: function(){
-		    	}
-			});
-			
-			
-		});
-	});
-	
-	$(function(){
-	
-			
-			$("#subject6").on("click",function(){
+		$(function(){
+			$(".main-nav-list").chang(function(){
 				
 				var contextPath = "${contextPath}";
+				let distName[] = $("input[id='areaSearch']:checked").val();
+				let crseName[] = $("input[id='subjectSearch']:checked").val();
+				alert(distName);
+				alert(crseName);
 				
 				$.ajax({
 					url : contextPath + "/api/academyList/",
@@ -425,85 +127,56 @@
 				    success: function(json) {
 				    console.log(json);
 				    
+				    
 				    var dataLength = json.length;
 				    var list = "";
 				  
 				    $("#academy-name").append(json[0].acaNm);
 				    $("#academy-area").append(json[0].faRdnma);
 				   
-				    for(i=0; i <= dataLength-10; i++ ) {
-				    	if(json[i].leCrseName == "보습") {
-				    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
-				    		list += '<div class="product_item" id="opener">';
-				    		list += '<div class="pi-img-wrapper"  >';
-				    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
-	// 			    		list += '<div id="academy-name">';
-				    		list += '</div>';
-				    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
-				    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
-				    		list += '</div>';
-				    		list += '</div>';
-				    		list += '</div>';
-				    		}
+				    for(i=0; i<distName[].length; i++) {
+				    	for(j=0; j<crseName[].length; j++) {
+				    		for(k=0; k<=dataLength-100; k++) {
+				    			if(json[i].adminDistName == distName[i] && json[j].leCrseName == crseName[j]) {
+				    				list += '<div class="product_item1 col-md-4" data-type="daugu">';
+							    	list += '<div class="product_item" id="opener">';
+							    	list += '<div class="pi-img-wrapper"  >';
+							    	list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
+							    	list += '</div>';
+							    	list += '<h3><a href="shop-item.html"><h1>'+ json[k].acaNm + '</h1></a></h3>';
+							    	list += '<div class="pi-price">' + json[k].faRdnma +'</div>';
+							    	list += '</div>';
+							    	list += '</div>';
+							    	list += '</div>';
+						    	}
+						    }
 				    	}
-				    	console.log(list);
-				    	
-				    	$("#product-list-wrap").empty();
-				    	$("#product-list-wrap").append(list);
+				    }
+				    
+				    console.log(list);
+				    
+// 				    $("#product-list-wrap").empty();
+				    $("#product-list-wrap").append(list);
 				    },
 				    error: function(){
 			    	}
 				});
-				
-				
 			});
 		});
-	$(function(){
-		
-		
-		$("#subject11").on("click",function(){
-			
-			var contextPath = "${contextPath}";
-			
-			$.ajax({
-				url : contextPath + "/api/academyList/",
-			    method : "get",
-			    dataType : "json",
-			    success: function(json) {
-			    console.log(json);
-			    
-			    var dataLength = json.length;
-			    var list = "";
-			  
-			    $("#academy-name").append(json[0].acaNm);
-			    $("#academy-area").append(json[0].faRdnma);
-			   
-			    for(i=0; i <= dataLength-10; i++ ) {
-			    	if(json[i].leCrseName == "음악") {
-			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
-			    		list += '<div class="product_item" id="opener">';
-			    		list += '<div class="pi-img-wrapper"  >';
-			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
-// 			    		list += '<div id="academy-name">';
-			    		list += '</div>';
-			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
-			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
-			    		list += '</div>';
-			    		list += '</div>';
-			    		list += '</div>';
-			    		}
-			    	}
-			    	console.log(list);
-			    	
-			    	$("#product-list-wrap").empty();
-			    	$("#product-list-wrap").append(list);
-			    },
-			    error: function(){
-		    	}
-			});
-		});
-	});
 
+// 		$(function(){
+// 			$("input[id='areaSearch']").change(function() {
+// 				alert($(this).val());
+				
+// 				var len = $("input[id='areaSearch']:checked").length;
+// 				if(len > 1){
+// 					$("input[name='areaSearch']:checked").each(function(e){
+// 						console.log($(this).val())
+// 					});
+// 			    };
+// 			});
+// 		});
+ 
 </script>
     <body>
     	<section id="introLA">
@@ -513,34 +186,35 @@
 
                 <div class="search-left col-md-3 ">
                     <div class="sidebar-categories ">
-                        <div class="head"><input type="checkbox" id="areaAll" name="areaAll">대구</div>
+                    	<div class=""><input type="button" id="search" name="search">대구</div>
+                        <div class="head"><input type="button" id="areaSearch" name="areaSearch">지역</div>
                         <ul class="main-categories">
-                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="area1" name="area" type="checkbox"></span>남구</li>
-                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="area2" name="area" type="checkbox"></span>달서구</li>
-                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="area3" name="area" type="checkbox"></span>동구</li>
-                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="area4" name="area" type="checkbox"></span>북구</li>
-                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="area5" name="area" type="checkbox"></span>서구</li>
-                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="area6" name="area" type="checkbox"></span>수성구</li>
-                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="area7" name="area"type="checkbox"></span>중구</li>
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="areaSearch" name="areaSearch" value="남구" type="checkBox"></span>남구</li>
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="areaSearch" name="areaSearch" value="달서구" type="checkBox"></span>달서구</li>
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="areaSearch" name="areaSearch" value="동구" type="checkBox"></span>동구</li>
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="areaSearch" name="areaSearch" value="북구" type="checkBox"></span>북구</li>
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="areaSearch" name="areaSearch" value="서구" type="checkBox"></span>서구</li>
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="areaSearch" name="areaSearch" value="수성구" type="checkBox"></span>수성구</li>
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="areaSearch" name="areaSearch" value="중구" type="checkBox"></span>중구</li>
                         </ul>
                     </div>
                     
                     <div class="sidebar-categories ">
-                        <div class="head">과목</div>
+                        <div class="head"><input type="button" id="search" name="search">과목</div>
                         <ul class="main-categories" >
-<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject1" name="subject" type="checkbox"></span>기계</li> -->
-<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject2" name="subject" type="checkbox"></span>독서실</li> -->
-<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject3" name="subject" type="checkbox"></span>로봇</li> -->
-<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject4" name="subject" type="checkbox"></span>무용</li> -->
-                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject5" name="subject" type="checkbox"></span>미술</li>
-                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject6" name="subject" type="checkbox"></span>보습</li>
-<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject7" name="subject" type="checkbox"></span>서예</li> -->
-<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject8" name="subject" type="checkbox"></span>실용외국어</li> -->
-<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject9" name="subject" type="checkbox"></span>어학</li> -->
-<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject10" name="subject" type="checkbox"></span>연극</li> -->
-                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject11" name="subject" type="checkbox"></span>음악</li>
-<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject12" name="subject" type="checkbox"></span>컴퓨터</li> -->
-<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject13" name="subject" type="checkbox"></span>화술</li> -->
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subjectSearch" name="subjectSearch" value="기계" type="checkbox"></span>기계</li> -->
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subjectSearch" name="subjectSearch" value="독서실" type="checkbox"></span>독서실</li> -->
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subjectSearch" name="subjectSearch" value="로봇" type="checkbox"></span>로봇</li> -->
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subjectSearch" name="subjectSearch" value="무용" type="checkbox"></span>무용</li> -->
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subjectSearch" name="subjectSearch" value="미술" type="checkbox"></span>미술</li>
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subjectSearch" name="subjectSearch" value="보습" type="checkbox"></span>보습</li>
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subjectSearch" name="subjectSearch" value="서예" type="checkbox"></span>서예</li> -->
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subjectSearch" name="subjectSearch" value="실용외국어" type="checkbox"></span>실용외국어</li> -->
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subjectSearch" name="subjectSearch" value="어학" type="checkbox"></span>어학</li> -->
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subjectSearch" name="subjectSearch" value="연극" type="checkbox"></span>연극</li> -->
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subjectSearch" name="subjectSearch" value="음악" type="checkbox"></span>음악</li>
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subjectSearch" name="subjectSearch" value="컴퓨터" type="checkbox"></span>컴퓨터</li> -->
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subjectSearch" name="subjectSearch" value="화술" type="checkbox"></span>화술</li> -->
                         </ul>
                     </div>
                     
@@ -740,37 +414,6 @@
 
 
             </div>
-            <script>
-
-		$( function() {
-		    $( "#dialog" ).dialog({
-		    autoOpen: false,
-		    show: {
-		        effect: "fade",
-		        duration: 1000,
-		        
-		        
-		    },
-		    hide: {
-		        effect: "fade",
-		        duration: 1000
-		        
-		    },
-		   width: 2000,
-		   height: 1200
-		});
-		if ($(".search-table-wrap").width() <800){
-		        
-		        $("#dialog").dialog({
-		          width: 100
-		        })
-		    }
-
-		    $( "#opener" ).on( "click", function() {
-		    $( "#dialog" ).dialog( "open");
-		    });
-		} ); 
-		</script>
 
             <div class="product-page-content">
                 <ul id="myTab" class="nav nav-tabs">
@@ -813,7 +456,6 @@
 	                                    </tr>
                                     </tbody>
                                 </table>
-											   
                             </div>
 
                         </div>
@@ -892,7 +534,7 @@
                 </div>
             </div>
         </div>
-		
+
 
 
 
