@@ -226,15 +226,15 @@
 		$("#area1").on("click",function(){
 			
 			var contextPath = "${contextPath}";
-			
+			var acaIdx = "${acaIdx}";
 			$.ajax({
 				url : contextPath + "/api/academyList/",
 			    method : "get",
 			    dataType : "json",
 			    success: function(json) {
-			    console.log(json);
-			    
-			    var dataLength = json.length;
+			    console.log(json[0].acaIdx);
+			
+			   	var dataLength = json.length;
 			    var list = "";
 			  
 			    $("#academy-name").append(json[0].acaNm);
@@ -248,7 +248,7 @@
 			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
 // 			    		list += '<div id="academy-name">';
 			    		list += '</div>';
-			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
+			    		list +=   "<td><a href='${contextPath}/lectureAcademyDetailView/" + json[i].acaIdx + "'>"  + json[i].acaNm + "</a></td>";
 			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
 			    		list += '</div>';
 			    		list += '</div>';
@@ -388,7 +388,7 @@
 			    	if(json[i].adminDistName == "북구") {
 			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
 			    		list += '<div class="product_item" id="opener">';
-			    		list += '<div class="pi-img-wrapper"  >';
+			    		list += '<div class="pi-img-wrapper"   >';
 			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
 // 			    		list += '<div id="academy-name">';
 			    		list += '</div>';

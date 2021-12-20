@@ -15,8 +15,8 @@
 
 <script type="text/javascript">
 
-
-	$(function(){
+var length;
+$(function(){
 		
 		
 		
@@ -25,40 +25,114 @@
 			
     
 				$.ajax({
-					    url : contextPath+ "/api/lecture/academy?acaIdx" +acaIdx ,
+					    url : contextPath+ "/api/lecture/academy?acaIdx=" +acaIdx ,
 					    method : "get",
 					    dataType : "json",
 					    success: function(json) {
 					    	console.log("됐다.");
 					    	console.log(json);
     						
+					    		var list= "";
+					    		length = json.length;
+ 								for(i=0; i <json.length; i++){
+ 									
+ 									console.log(json[i])
+ 									console.log(json[i].lectureName);
+ 									
+ 									
+ 									list += '<tr>';
+ 	                                list += '<th class="subject_name col-md-3">' + json[i].lectureGrade +'</th>';
+ 	                                list += '<th class="subject_name_detail col-md-3">' + json[i].lectureName +'</th>';
+ 	                                list += '<th class="subject_time col-md-3">' + json[i].lectureTimeStr +'</th>';
+ 	                                list += '<th class="subject_teacher col-md-3 "> ' + json[i].teacherName +' <th>' ;
+ 	                                list += '<th><button type="button" id="add" title="과목 담기" class="btn_add">'+ '과목담기' + '</button></th>'     ;        
+ 	                               	list += '</tr>';
  								
-					    
-				       
+ 	
+ 								}
+
+ 									$("#lectureList").append(list);
+ 	 								 
+ 								 			
     					}
         
 
-    			})
-				})
+    				})
+    		//수정 필
+   				$(document).ready(function(){
+   					var li = ""		
+	  					$(this).on('click', '[id=add]', function(){
+   						
+   						var td = $(this).parent();
+   						console.log("1==>"+ td.parent().text(),"2=="+ td.children().text(),"3=="+ td.siblings().text(), "4=="+  td.prevAll().text());
+   						
+   						li = $(this).parent().siblings().first().text(); //대상
+   						li1 = $(this).parent().siblings().first().next().text(); //강의이름
+   						li2 =  $(this).parent().siblings().first().next().next().text(); // 강의시간
+   						li3 =  $(this).parent().siblings().first().next().next().next().text(); // 강의시간
+   						
+   						$("#cart .basic").append('<tr align="center" class="good1"></tr>')
+   						.append('<td>'+ li+ '</td>')
+   						.append('<td>'+ li1+'</td>')
+   						.append('<td>'+ li2+ '</td>')
+   						.append('<td>'+ li3 +'</td>')
+   				        .append('<td><button type="button" title="삭제" class="btn_del">삭제</button></td>');
+   					
+   					});
+   				});		
+    				
+	})
+	
+
+/*
+ function add(){
+    console.log("hi")
+    var $tagGood;
+    var total;
+    
+    
+    
+     if($("btn_add")){
+
+        $tagGood= $('<tr align="center" class="good1"></tr>')
+          .append('<td>'  '</td>')
+          .append('<td><button type="button" title="삭제" class="btn_del">삭제</button></td>');
+     
+          total= total + 1;
+        }
+     $('#cart .basic').append( $tagGood );
+    $('#show_total').empty().append( "총 수강 개수:" + total + "개"  );
+      }*/
+    
+	
+	
+	
+				
+				   
 
 
-$(document).ready(function(e) {
+
+/* $(document).ready(function(e) {
   var total = 0;
  
  //상품 담기 리스트
-  $('.subject_teacher > button').click(function(e) {
+ 
+ $('.subject_teacher > button').click(function(e) {
   var btnName =  $(this).get(0).className;
-  console.log(btnName);
+  
+  onsole.log(btnName);
+  
   var $tagGood;
    
   switch (btnName) {
-    case "btn_add1":
+    case "btn_add1" :
       $tagGood = $('<tr align="center" class="good1"></tr>')
-      .append('<td>고등국어</td>')
+      .append('<td>'+ json[i].lectureName + '</td>')
+      console.log(json[i].lectureName)
       .append('<td>김인환</td>')
       .append('<td>고3</td>')
       .append('<td>1</td>')
-      .append('<td><button type="button" title="삭제" class="btn_del">삭제</button></td>');
+      .append('<td><button type="button" title="삭제" class="btn_del"">삭제</button></td>');
       
       total = total +1;
       
@@ -98,7 +172,7 @@ $(document).ready(function(e) {
     
   });
 
-});
+}); */
   	
 
 </script>
@@ -112,6 +186,7 @@ $(document).ready(function(e) {
               <div class="row">
           
                 <div class="intro-academy col-md-12 col-sm-10">
+                  
                   <div>#고3 전문 </div>
                   <h1>a학원</h1>
 
@@ -147,8 +222,9 @@ $(document).ready(function(e) {
                               <th  class="col-md-3">과목명</th>
                               <th class="col-md-3">시간</th>
                               <th class="col-md-3">강사명</th>
+                              <th scope="col">&nbsp;</th>
                             </table> 
-                            <table class="col-md-12">
+                            <table class="col-md-12" id="lectureList">
                            
                               </table>
                             </div>
@@ -162,12 +238,15 @@ $(document).ready(function(e) {
                             <table class="basic col-md-12" border="0" cellspacing="0" cellpadding="0">
                             <tr bgcolor="#C8E3FF">
                               <th scope="col">과목</th>
-                              <th scope="col">강사</th>
-                              <th scope="col">대상</th>
+                              <th scope="col">강의명</th>
                               <th scope="col">시간</th>
+                              <th scope="col">강사</th>
                               <th scope="col">&nbsp;</th>
                              </tr>
                             
+                            </table>
+                            <table id ="lectureWish">
+                             	
                             </table>
                       
                           <div id="show_total">
