@@ -30,7 +30,7 @@
 	$(function(){
 
 		
-		$("#btn1").on("click",function(){
+		$("#area1").on("click",function(){
 			
 			var contextPath = "${contextPath}";
 			
@@ -78,7 +78,7 @@
 	$(function(){
 
 		
-		$("#btn2").on("click",function(){
+		$("#area2").on("click",function(){
 			
 			var contextPath = "${contextPath}";
 			
@@ -126,7 +126,7 @@
 	$(function(){
 
 		
-		$("#btn3").on("click",function(){
+		$("#area3").on("click",function(){
 			
 			var contextPath = "${contextPath}";
 			
@@ -174,7 +174,7 @@
 	$(function(){
 
 		
-		$("#btn4").on("click",function(){
+		$("#area4").on("click",function(){
 			
 			var contextPath = "${contextPath}";
 			
@@ -222,7 +222,7 @@
 	$(function(){
 
 		
-		$("#btn5").on("click",function(){
+		$("#area5").on("click",function(){
 			
 			var contextPath = "${contextPath}";
 			
@@ -270,7 +270,7 @@
 	$(function(){
 
 		
-		$("#btn6").on("click",function(){
+		$("#area6").on("click",function(){
 			
 			var contextPath = "${contextPath}";
 			
@@ -318,7 +318,7 @@
 	$(function(){
 
 		
-		$("#btn7").on("click",function(){
+		$("#area7").on("click",function(){
 			
 			var contextPath = "${contextPath}";
 			
@@ -362,6 +362,147 @@
 			
 		});
 	});
+	
+	$(function(){
+
+		
+		$("#subject5").on("click",function(){
+			
+			var contextPath = "${contextPath}";
+			
+			$.ajax({
+				url : contextPath + "/api/academyList/",
+			    method : "get",
+			    dataType : "json",
+			    success: function(json) {
+			    console.log(json);
+			    
+			    var dataLength = json.length;
+			    var list = "";
+			  
+			    $("#academy-name").append(json[0].acaNm);
+			    $("#academy-area").append(json[0].faRdnma);
+			   
+			    for(i=0; i <= dataLength-10; i++ ) {
+			    	if(json[i].leCrseName == "미술") {
+			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
+			    		list += '<div class="product_item" id="opener">';
+			    		list += '<div class="pi-img-wrapper"  >';
+			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
+// 			    		list += '<div id="academy-name">';
+			    		list += '</div>';
+			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
+			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
+			    		list += '</div>';
+			    		list += '</div>';
+			    		list += '</div>';
+			    		}
+			    	}
+			    	console.log(list);
+			    	
+			    	$("#product-list-wrap").empty();
+			    	$("#product-list-wrap").append(list);
+			    },
+			    error: function(){
+		    	}
+			});
+			
+			
+		});
+	});
+	
+	$(function(){
+	
+			
+			$("#subject6").on("click",function(){
+				
+				var contextPath = "${contextPath}";
+				
+				$.ajax({
+					url : contextPath + "/api/academyList/",
+				    method : "get",
+				    dataType : "json",
+				    success: function(json) {
+				    console.log(json);
+				    
+				    var dataLength = json.length;
+				    var list = "";
+				  
+				    $("#academy-name").append(json[0].acaNm);
+				    $("#academy-area").append(json[0].faRdnma);
+				   
+				    for(i=0; i <= dataLength-10; i++ ) {
+				    	if(json[i].leCrseName == "보습") {
+				    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
+				    		list += '<div class="product_item" id="opener">';
+				    		list += '<div class="pi-img-wrapper"  >';
+				    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
+	// 			    		list += '<div id="academy-name">';
+				    		list += '</div>';
+				    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
+				    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
+				    		list += '</div>';
+				    		list += '</div>';
+				    		list += '</div>';
+				    		}
+				    	}
+				    	console.log(list);
+				    	
+				    	$("#product-list-wrap").empty();
+				    	$("#product-list-wrap").append(list);
+				    },
+				    error: function(){
+			    	}
+				});
+				
+				
+			});
+		});
+	$(function(){
+		
+		
+		$("#subject11").on("click",function(){
+			
+			var contextPath = "${contextPath}";
+			
+			$.ajax({
+				url : contextPath + "/api/academyList/",
+			    method : "get",
+			    dataType : "json",
+			    success: function(json) {
+			    console.log(json);
+			    
+			    var dataLength = json.length;
+			    var list = "";
+			  
+			    $("#academy-name").append(json[0].acaNm);
+			    $("#academy-area").append(json[0].faRdnma);
+			   
+			    for(i=0; i <= dataLength-10; i++ ) {
+			    	if(json[i].leCrseName == "음악") {
+			    		list += '<div class="product_item1 col-md-4" data-type="daugu">';
+			    		list += '<div class="product_item" id="opener">';
+			    		list += '<div class="pi-img-wrapper"  >';
+			    		list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
+// 			    		list += '<div id="academy-name">';
+			    		list += '</div>';
+			    		list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
+			    		list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
+			    		list += '</div>';
+			    		list += '</div>';
+			    		list += '</div>';
+			    		}
+			    	}
+			    	console.log(list);
+			    	
+			    	$("#product-list-wrap").empty();
+			    	$("#product-list-wrap").append(list);
+			    },
+			    error: function(){
+		    	}
+			});
+		});
+	});
 
 </script>
     <body>
@@ -372,72 +513,37 @@
 
                 <div class="search-left col-md-3 ">
                     <div class="sidebar-categories ">
-                        <div class="head">area</div>
-
-                        <ul class="main-categories" >
-                            <li class="main-nav-list" data-filter="daugu" id="a" ><a id="donggu" data-toggle="collapse" href="#fruitsVegetable" aria-expanded="false" aria-controls="fruitsVegetable"><span
-                                     class="lnr lnr-arrow-right" ></span>대구</a>
-
-                                <ul class="collapse daegu" id="fruitsVegetable" data-toggle="collapse" aria-expanded="false" aria-controls="fruitsVegetable">
-									<li class="main-nav-list child"><input class="main-nav-list child" id="btn1" type="button">남구</li>
-                                    <li class="main-nav-list child"><input class="main-nav-list child" id="btn2" type="button">달서구</li>
-                                    <li class="main-nav-list child"><input class="main-nav-list child" id="btn3" type="button">동구</li>
-                                    <li class="main-nav-list child"><input class="main-nav-list child" id="btn4" type="button">북구</li>
-                                    <li class="main-nav-list child"><input class="main-nav-list child" id="btn5" type="button">서구</li>
-                                    <li class="main-nav-list child"><input class="main-nav-list child" id="btn6" type="button">수성구</li>
-                                    <li class="main-nav-list child"><input class="main-nav-list child" id="btn7" type="button">중구</li>
-                                </ul>
-
-                            </li>
-    
-                            <li class="main-nav-list" id="a"  ><a id="seogu" data-toggle="collapse" href="#meatFish" aria-expanded="false" aria-controls="meatFish"><span
-                                     class="lnr lnr-arrow-right" ></span>울산<span class="number">(1)</span></a>
-                               
-                            </li>
-                            
-                            <li class="main-nav-list" id="a" ><a data-toggle="collapse" href="#cooking" aria-expanded="false" aria-controls="cooking"><span
-                                     class="lnr lnr-arrow-right gwangju"></span>광주<span class="number"></span></a>
-                               
-                            </li>
-                            
-                            
-                            <li class="main-nav-list" id="a" ><a class="border-bottom-0" data-toggle="collapse" href="#babyCare" aria-expanded="false"
-                                 aria-controls="babyCare"><span class="lnr lnr-arrow-right"></span>기타<span class="number">(48)</span></a>
-                               
-
-                            </li>
+                        <div class="head"><input type="checkbox" id="areaAll" name="areaAll">대구</div>
+                        <ul class="main-categories">
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="area1" name="area" type="checkbox"></span>남구</li>
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="area2" name="area" type="checkbox"></span>달서구</li>
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="area3" name="area" type="checkbox"></span>동구</li>
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="area4" name="area" type="checkbox"></span>북구</li>
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="area5" name="area" type="checkbox"></span>서구</li>
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="area6" name="area" type="checkbox"></span>수성구</li>
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="area7" name="area"type="checkbox"></span>중구</li>
                         </ul>
                     </div>
-                    <div class="sidebar-filter mt-50 ">
-                        <div class="top-filter-head">info</div>
-                        <div class="common-filter">
-                            <div class="head">grade</div>
-                            <form action="#">
-                                <ul>
-                                    <li class="filter-list"><input class="pixel-radio" type="radio" id="apple" name="brand"><label for="apple">초등학생<span>(29)</span></label></li>
-                                    <li class="filter-list"><input class="pixel-radio" type="radio" id="asus" name="brand"><label for="asus">중학생<span>(29)</span></label></li>
-                                    <li class="filter-list"><input class="pixel-radio" type="radio" id="gionee" name="brand"><label for="gionee">고등학생<span>(19)</span></label></li>
-                                    <li class="filter-list"><input class="pixel-radio" type="radio" id="micromax" name="brand"><label for="micromax">일반인<span>(19)</span></label></li>
-                                    <li class="filter-list"><input class="pixel-radio" type="radio" id="samsung" name="brand"><label for="samsung">기타<span>(19)</span></label></li>
-                                </ul>
-                            </form>
-                        </div>
-                        <div class="common-filter">
-                            <div class="head">subject</div>
-                            <form action="#">
-                                <ul>
-                                    <li class="filter-list"><input class="pixel-radio" type="radio" id="black" name="color"><label for="black">국어<span>(29)</span></label></li>
-                                    <li class="filter-list"><input class="pixel-radio" type="radio" id="balckleather" name="color"><label for="balckleather">영어
-                                    <li class="filter-list"><input class="pixel-radio" type="radio" id="blackred" name="color"><label for="blackred">수학
-                                            with red<span>(19)</span></label></li>
-                                    <li class="filter-list"><input class="pixel-radio" type="radio" id="gold" name="color"><label for="gold">예체능<span>(19)</span></label></li>
-                                    <li class="filter-list"><input class="pixel-radio" type="radio" id="spacegrey" name="color"><label for="spacegrey">기타<span>(19)</span></label></li>
-                                </ul>
-                            </form>
-                        </div>
-
+                    
+                    <div class="sidebar-categories ">
+                        <div class="head">과목</div>
+                        <ul class="main-categories" >
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject1" name="subject" type="checkbox"></span>기계</li> -->
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject2" name="subject" type="checkbox"></span>독서실</li> -->
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject3" name="subject" type="checkbox"></span>로봇</li> -->
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject4" name="subject" type="checkbox"></span>무용</li> -->
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject5" name="subject" type="checkbox"></span>미술</li>
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject6" name="subject" type="checkbox"></span>보습</li>
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject7" name="subject" type="checkbox"></span>서예</li> -->
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject8" name="subject" type="checkbox"></span>실용외국어</li> -->
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject9" name="subject" type="checkbox"></span>어학</li> -->
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject10" name="subject" type="checkbox"></span>연극</li> -->
+                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject11" name="subject" type="checkbox"></span>음악</li>
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject12" name="subject" type="checkbox"></span>컴퓨터</li> -->
+<!--                             <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="subject13" name="subject" type="checkbox"></span>화술</li> -->
+                        </ul>
                     </div>
-
+                    
                 </div>
 
                 <div class="search-right col-md-9">
