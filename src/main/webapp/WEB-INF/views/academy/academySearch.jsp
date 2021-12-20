@@ -742,120 +742,13 @@
                 <div class="search-right col-md-9">
 
                     <div class=" search-table-wrap row col-md-12">
-                        <!--강의시간표 이름-->
-                        <div class="search-table-title">
-                            <h1>시간표 보기</h1>
-                        </div>
-                        <!-- 강의시간표-->
-                        <table class="search-table col-md-12">
-                        	<thead>
-                        		<tr>
-		                            <th></th>
-		                            <th>월</th>
-		                            <th>화</th>
-		                            <th>수</th>
-		                            <th>목</th>
-		                            <th>금</th>
-		                            <th>토</th>
-		                            <th>일</th>
-	                            </tr>
-                            </thead>
-                            <tbody>
-	                            <tr>
-	                                <td class="time">
-	                                    3-4
-	                                </td>
-	                                <td id="col1"></td>
-	                                <td id="col8"></td>
-	                                <td id="col15"></td>
-	                                <td id="col22"></td>
-	                                <td id="col29"></td>
-	                                <td id="col36"></td>
-	                                <td id="col43"></td>
-	                            </tr>
-	                            <tr>
-	                                <td class="time">
-	                                    4-5
-	                                </td>
-	                                <td id="col2"></td>
-	                                <td id="col9"></td>
-	                                <td id="col16"></td>
-	                                <td id="col23"></td>
-	                                <td id="col30"></td>
-	                                <td id="col37"></td>
-	                                <td id="col44"></td>
-	                            </tr>
-	                            <tr>
-	                                <td class="time">
-	                                    5-6
-	                                </td>
-	                                <td id="col3"></td>
-	                                <td id="col10"></td>
-	                                <td id="col17"></td>
-	                                <td id="col24"></td>
-	                                <td id="col31"></td>
-	                                <td id="col38"></td>
-	                                <td id="col45"></td>
-	                            </tr>
-	                            <tr>
-	                                <td class="time">
-	                                    6-7
-	                                </td>
-	                                <td id="col4"></td>
-	                                <td id="col11"></td>
-	                                <td id="col18"></td>
-	                                <td id="col25"></td>
-	                                <td id="col32"></td>
-	                                <td id="col39"></td>
-	                                <td id="col46"></td>
-	                            </tr>
-	                            <tr>
-	                                <td class="time">
-	                                    7-8
-	                                </td>
-	                                <td id="col5"></td>
-	                                <td id="col12"></td>
-	                                <td id="col19"></td>
-	                                <td id="col26"></td>
-	                                <td id="col33"></td>
-	                                <td id="col40"></td>
-	                                <td id="col47"></td>
-	                            </tr>
-	                            <tr>
-	                                <td class="time">
-	                                    8-9
-	                                </td>
-	                                <td id="col6"></td>
-	                                <td id="col13"></td>
-	                                <td id="col20"></td>
-	                                <td id="col27"></td>
-	                                <td id="col34"></td>
-	                                <td id="col41"></td>
-	                                <td id="col48"></td>
-	                            </tr>
-	                            <tr>
-	                                <td class="time">
-	                                    9-10
-	                                </td>
-	                                <td id="col7"></td>
-	                                <td id="col14"></td>
-	                                <td id="col21"></td>
-	                                <td id="col28"></td>
-	                                <td id="col35"></td>
-	                                <td id="col42"></td>
-	                                <td id="col49"></td>
-	                            </tr>
-							</tbody>
-
-                        </table>
                         <!-- 강의시간표 담기 및 분류방법-->
                         <div class="go-to-category col-md-12">
-
                             <div class="go-wishlist">
                                 <a href="./wishlist.html">시간표 담기</a>
                             </div>
-
                         </div>
+                        
                         <div class="pull-right col-md-2 ">
                             <label class="control-label">Show:</label>
                             <select class="form-control input-sm">
