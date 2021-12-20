@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.hustar.yogiedu.config.auth.dto.OAuthAttributes;
 import org.hustar.yogiedu.config.auth.dto.SessionUser;
+import org.hustar.yogiedu.domain.user.Role;
 import org.hustar.yogiedu.domain.user.User;
 import org.hustar.yogiedu.domain.user.UserRepository;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -55,14 +56,8 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
 	private User saveOrUpdate(OAuthAttributes attributes) {
 		
-//		User user = userRepository.findByEmail(attributes.getEmail()).map(entity -> entity.update(attributes.getName(), attributes.getPicture()))
-//				.orElse(attributes.toEntity());
-		
 		User user = userRepository.findByUserEmail(attributes.getUserEmail()).map(entity -> entity.update(attributes.getUserName(), attributes.getUserBirth(),
-				attributes.getUserDiv(), attributes.getUserEdu(), attributes.getUserGrade())).orElse(attributes.toEntity());
-//		List<Member> member = memberRepository.findByMemberEmail(attributes.getMemberEmail());
-
-		
+				attributes.getUserDiv(), attributes.getUserEdu(), attributes.getUserGrade(), Role.USER)).orElse(attributes.toEntity());
 		
 		return userRepository.save(user);
 	}

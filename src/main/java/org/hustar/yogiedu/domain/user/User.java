@@ -1,6 +1,5 @@
 package org.hustar.yogiedu.domain.user;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -22,7 +21,6 @@ import lombok.NoArgsConstructor;
 public class User {
 
 	@Id
-	@Column(name = "")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long userIdx;
 	
@@ -57,12 +55,13 @@ public class User {
 
 	
 	
-	public User update(String userName, String userBirth, String userDiv, String userEdu,int userGrade) {
+	public User update(String userName, String userBirth, String userDiv, String userEdu,int userGrade, Role userRole) {
 		this.userName = userName;
 		this.userBirth = userBirth;
 		this.userDiv = userDiv;
 		this.userEdu = userEdu;
 		this.userGrade = userGrade;
+		this.userRole = userRole;
 		
 		return this;
 	}

@@ -119,7 +119,7 @@
                         </ul>
                     </li>
                     <li><a href="#">회원가입</a></li>
-                    <li><a href="#">로그인</a></li>
+                    <li><a href="/oauth2/authorization/google">로그인</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>

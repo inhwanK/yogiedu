@@ -1,5 +1,7 @@
 package org.hustar.yogiedu.dto.user;
 
+import org.hustar.yogiedu.domain.user.Role;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,18 +18,18 @@ public class UserUpdateRequestDto {
 	private int userGrade;
 	
 //	롤은 다시한번 생각해볼까?
-	private String role;
+	private Role userRole;
 
 	@Builder
 	public UserUpdateRequestDto(String userName, String userBirth, String userDiv, String userEdu, int userGrade,
-			String role) {
+			Role userRole) {
 		super();
 		this.userName = userName;
 		this.userBirth = userBirth;
 		this.userDiv = userDiv;
 		this.userEdu = userEdu;
 		this.userGrade = userGrade;
-		this.role = role;
+		this.userRole = userRole;
 	}
 	
 	
