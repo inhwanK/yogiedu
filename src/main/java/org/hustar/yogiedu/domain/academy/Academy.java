@@ -71,12 +71,14 @@ public class Academy {
 	@Column(name = "FA_RDNDA") //도로명상세주소
 	private String faRdnda;
 	
+	@Column(name = "ACA_GRADE")
+	private String acaGrade;
 	
 	
 	@Builder
 	public Academy(Long acaIdx, String acaAsnum, String acaNm, String atptOfcdcScCode, String atptOfcdcScNm,
 			String adminDistName, String estblDate, String regDate, String fieldName, String leCrseName, String faRdnzc,
-			String faRdnma, String faRdnda) {
+			String faRdnma, String faRdnda, String acaGrade) {
 		super();
 		this.acaIdx = acaIdx;
 		this.acaAsnum = acaAsnum;
@@ -91,5 +93,6 @@ public class Academy {
 		this.faRdnzc = faRdnzc;
 		this.faRdnma = faRdnma;
 		this.faRdnda = faRdnda;
+		this.acaGrade = acaGrade;
 	}
 }
