@@ -42,7 +42,7 @@
 				      list_save += '<td>' + $("#lectureName").val() +'</td>';
 				      list_save += '<td>' + $("#teacherName").val() + '</td>';
 				      list_save += '<td>' + lectureTimeStr + '</td>';
-				      list_save += '<td><button onclick="tableDelete()">'+'삭제하기'+'</button></td>';
+				      list_save += '<td><button class="btn btn-danger" onclick="tableDelete()">'+'삭제하기'+'</button></td>';
 				      list_save += '</tr>'; 
 				   	
 				     /*  if($("#abc td") === $("#subject option:selected").val()|| $("#lectureName").val() ||  lectureTimeStr){
@@ -189,7 +189,7 @@
     <div class="container">
       <h1>강의 등록하기</h1>
     </div>
-  </section>
+
   <!-- #intro -->
   <main id="main">
    <div class="container"style="float: none; margin:0 auto;">
@@ -313,13 +313,14 @@
             </div>
             <div class="right col-md-6">
                 <div class="list-wrap col-md-12" style="padding-top:30px;">
-                    <Table id="lectureIns">
+                    <Table id="lectureIns" class="table">
                       <thead>
                         <tr>
                           <th>과목</th>
                           <th>강의이름</th>
                           <th>강사명</th>
                           <th>시간</th>
+                          <th>-</th>
                         </tr>
                       </thead>
                       <tbody id="newLec">
@@ -335,13 +336,42 @@
         <div class="form-group">
          
         </div>
-        <button type="button" class="btn btn-save" id="save">과목담기</button>
-        <button type="button" class="btn btn-success" id="send" >완료</button>
-        <button type="button" class="btn btn-warning" id="cancel" onclick="javascript:history.back()">취소</button>
+        <div class="button-group" style="display:flex;">
+	        <button type="button" class="btn btn-info" id="save">과목담기</button>
+	        <button type="button" class="btn btn-success" id="send" >완료</button>
+	        <button type="button" class="btn btn-warning" id="cancel" onclick="javascript:history.back()">취소</button>
+        </div>
       </div>
  </div>
-  
+
 </main>
- 
+</section>
+
+<style>
+#lectureIns thead th{
+border-left:none;
+border-right:none;}
+.button-group button{
+	margin:0 10px;
+}
+thead{
+ border: 1px solid #dee2e6;
+ border-left:none;
+ border-right:none;
+ border-top:2px solid #000;
+}
+  tbody td,
+    th,
+    tr {
+        padding: 10px;
+        border: 1px solid #dee2e6;
+        border-left: none;
+        border-right: none;
+    }
+
+    tbody tr:last-child {
+        border-bottom: 2px solid #000;
+    }
+</style>
 </body>
 <%@include file="/WEB-INF/views/footer.jsp"%>

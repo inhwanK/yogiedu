@@ -54,7 +54,7 @@
     });
 
 </script>   
-<body>
+
 <section>
     
     <div id="title-wrap">
@@ -112,3 +112,4 @@
 
 </section>
 </body>
+    <%@include file="/WEB-INF/views/footer.jsp"%>

@@ -75,12 +75,12 @@
   });
   </script>  
 	    
-  <body style='padding-top: 100px;'>
+	<section id="introLA">
 	 <div id="container">
-     <form class="form-enroll" id="form">
+     	<form class="form-enroll col-sm-4" id="form">
           <div class="my-table-subject-wrap"> 
           <div class="my-table-subject">
-            <table class="my-table-subject-list">
+            <table class="my-table-subject-list table">
               <thead class="my-table-subject-list-head">
                 <tr>
                   <th>수강학원</th>
@@ -97,12 +97,38 @@
         </div>
           </form>
          		
-							<button id="delete" class="btn btn-primary" >삭제</button>
-							<button id="cancel" class="btn btn-primary">돌아가기</button>
-							<button id="lecture" class="btn">강의 만들기</button>
-							
+         		<div class="button-group">
+							<button id="delete" class="btn btn-danger" >삭제</button>
+							<button id="cancel" class="btn btn-warning">돌아가기</button>
+							<button id="lecture" class="btn btn-primary">강의 만들기</button>
+				</div>
 							
     </div>
-                		
+	</section>      		
 </body>
-  
+
+<style>
+.button-group button{
+	margin:0 10px;
+}
+thead{
+ border: 1px solid #dee2e6;
+ border-left:none;
+ border-right:none;
+ border-top:2px solid #000;
+}	
+
+#introLA .my-table-subject-list td,
+#introLA .my-table-subject-list th,
+#introLA .my-table-subject-list tr {
+        padding: 10px;
+        border: 1px solid #dee2e6;
+        border-left: none;
+        border-right: none;
+    }
+
+#introLA .my-table-subject-list tbody tr:last-child {
+        border-bottom: 2px solid #000;
+    }
+</style>
+    <%@include file="/WEB-INF/views/footer.jsp"%>
