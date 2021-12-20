@@ -2,7 +2,6 @@ package org.hustar.yogiedu.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -80,7 +79,7 @@ public class LectureService {
 		return lectureIdx;
 	}
 
-	// 강의시간 문자열 -> 숫자 배열로 변환.
+	// 강의시간 문자열 -> 숫자 배열로 변환. 필요없는 코드임?
 	private List<Integer> transLectureTimeArr(Lecture entity) {
 		String[] timeTable = entity.getLectureTimeStr().split(",");
 		List<Integer> lectureTimeArr = new ArrayList<Integer>();
@@ -91,4 +90,5 @@ public class LectureService {
 		return lectureTimeArr;
 	}
 
+	
 }
