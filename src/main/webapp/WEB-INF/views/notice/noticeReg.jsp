@@ -76,7 +76,7 @@
 	
 	                    <div class="form-group">
 	                        <label>제목</label>
-	                        <input type="text" id="title" class="form-control" placeholder="제목을 입력해주세요">
+							<textarea rows="1" type="text" id="title" class="form-control" placeholder="공지사항 제목을 입력해주세요"></textarea>
 	                    </div>
 	                    <div class="form-group">
 	                        <label>내용</label>
