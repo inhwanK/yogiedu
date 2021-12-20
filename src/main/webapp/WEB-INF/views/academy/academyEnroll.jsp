@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@include file="/WEB-INF/views/header.jsp"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
 
 
@@ -208,7 +207,7 @@ $(function(){
              	  4. area부분에서 시/도가 변함에 따라 그에맞게 군/구의 값이 변하는게 좋지않을까 생각함
              	   -->
              	   
-         <body>
+<%@include file="/WEB-INF/views/header.jsp"%>
 
  			<section id="introLA">
     			<div id="container">

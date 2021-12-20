@@ -147,5 +147,5 @@
 		$("li#logout").css("display","none");
 		$("span#login-member").css("display","none");
 	}
-</script>
- -->
+</script>-->
+ 
