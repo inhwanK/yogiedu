@@ -10,6 +10,8 @@ import org.hustar.yogiedu.domain.notice.NoticeRepository;
 import org.hustar.yogiedu.dto.notice.NoticeResponseDto;
 import org.hustar.yogiedu.dto.notice.NoticeSaveRequestDto;
 import org.hustar.yogiedu.dto.notice.NoticeUpdateRequestDto;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
@@ -55,6 +57,17 @@ public class NoticeService {
 		return new NoticeResponseDto(entity);
 	}
 
+	@Transactional
+	public Page<NoticeResponseDto> findAllByOrderByNotIdxDesc(Pageable pageable){
+		Page<NoticeResponseDto> noticeList = 
+				noticeRepository.findAllByOrderByNotIdxDesc(pageable).map(entity -> new NoticeResponseDto(entity));
+//		System.out.println("제대로 나오고 있는지 ? > " + noticeList.getContent().get(0));
+//		System.out.println("이건 제대로 나오고 있는지 ? >"+noticeList.getContent());
+//		Page<NoticeResponseDto> noticeList = entityList.map(null);
+		
+		return noticeList;
+	}
+	
 	@Transactional
 	public Long deleteById(Long notIdx) {
 		noticeRepository.deleteById(notIdx);

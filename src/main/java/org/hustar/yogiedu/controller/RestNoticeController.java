@@ -6,10 +6,10 @@ import org.hustar.yogiedu.dto.notice.NoticeResponseDto;
 import org.hustar.yogiedu.dto.notice.NoticeSaveRequestDto;
 import org.hustar.yogiedu.dto.notice.NoticeUpdateRequestDto;
 import org.hustar.yogiedu.service.NoticeService;
-import org.springframework.http.ResponseEntity;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -40,6 +40,12 @@ public class RestNoticeController {
 		return noticeService.findById(notIdx);
 	}
 
+//	공지사항 페이징
+	@GetMapping("/noticelist")
+	public List<NoticeResponseDto> getNoticeList(@PageableDefault(size = 10) Pageable pageable){
+		return noticeService.findAllByOrderByNotIdxDesc(pageable).getContent();
+	}
+	
 //	공지사항 등록.
 //	json 형태로 body를 작성한 뒤, /api/notice 경로로 요청. 
 	@PostMapping("/notice")
