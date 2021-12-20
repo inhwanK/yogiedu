@@ -24,12 +24,16 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
    
      <meta charset="UTF-8">
+
  
 <script type="text/javascript">
 
+
 // 	$(function(){
 		
+
 // 		$("#daeguAll").on("click",function(){	//버튼 클릭시 버튼의 id 값으로 넘어옴
+
 		
 // 			var contextPath = "${contextPath}";
 			
@@ -46,6 +50,7 @@
 // 			    $("#academy-name").append(json[0].acaNm);	//api의 academyList 안에 acaNm 값만 들고 옴
 // 			    $("#academy-area").append(json[0].faRdnma);	//api의 academyList 안에 faRdnma 값만 들고 옴
 			   
+
 // 			    for(i=0; i <= dataLength-10; i++ ) {
 // 			    	list += '<div class="product_item1 col-md-4" data-type="daugu">';
 // 			    	list += '<div class="product_item" id="opener">';
@@ -68,6 +73,7 @@
 // 			});
 // 		});
 // 	});
+
 	
 // 	$(function(){
 			
@@ -223,120 +229,13 @@
                 <div class="search-right col-md-9">
 
                     <div class=" search-table-wrap row col-md-12">
-                        <!--강의시간표 이름-->
-                        <div class="search-table-title">
-                            <h1>시간표 보기</h1>
-                        </div>
-                        <!-- 강의시간표-->
-                        <table class="search-table col-md-12">
-                        	<thead>
-                        		<tr>
-		                            <th></th>
-		                            <th>월</th>
-		                            <th>화</th>
-		                            <th>수</th>
-		                            <th>목</th>
-		                            <th>금</th>
-		                            <th>토</th>
-		                            <th>일</th>
-	                            </tr>
-                            </thead>
-                            <tbody>
-	                            <tr>
-	                                <td class="time">
-	                                    3-4
-	                                </td>
-	                                <td id="col1-1"></td>
-	                                <td id="col1-2"></td>
-	                                <td id="col1-3"></td>
-	                                <td id="col1-4"></td>
-	                                <td id="col1-5"></td>
-	                                <td id="col1-6"></td>
-	                                <td id="col1-7"></td>
-	                            </tr>
-	                            <tr>
-	                                <td class="time">
-	                                    4-5
-	                                </td>
-	                                <td id="col2-1"></td>
-	                                <td id="col2-2"></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td id="col2-7"></td>
-	                            </tr>
-	                            <tr>
-	                                <td class="time">
-	                                    5-6
-	                                </td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                            </tr>
-	                            <tr>
-	                                <td class="time">
-	                                    6-7
-	                                </td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                            </tr>
-	                            <tr>
-	                                <td class="time">
-	                                    7-8
-	                                </td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                            </tr>
-	                            <tr>
-	                                <td class="time">
-	                                    8-9
-	                                </td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                            </tr>
-	                            <tr>
-	                                <td class="time">
-	                                    9-10
-	                                </td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                                <td></td>
-	                            </tr>
-							</tbody>
-
-                        </table>
                         <!-- 강의시간표 담기 및 분류방법-->
                         <div class="go-to-category col-md-12">
-
                             <div class="go-wishlist">
                                 <a href="./wishlist.html">시간표 담기</a>
                             </div>
-
                         </div>
+                        
                         <div class="pull-right col-md-2 ">
                             <label class="control-label">Show:</label>
                             <select class="form-control input-sm">

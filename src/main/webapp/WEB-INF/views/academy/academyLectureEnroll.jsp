@@ -2,189 +2,210 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
-    
+
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	
+	var lectureTimeStr ="";
+	var newLecLength;  // newLec 자식 수
+	
+	
+	$("#save").on("click",function(){
+		newLecLength = $("#newLec").children().length;
+		if(newLecLength >= 10){
+			alert("강의는 한번에 10개까지만 등록할 수 있습니다.");
+		}else{
+			
+			console.log("newLecLength > " + newLecLength);
+			var confsub = confirm("과목을 담으시겠습니까?");
+			
+			//강의를 등록할때 저장여부를 확인
+			if(confsub){
+				
+				//강의가 같은 내용을 담을때 중복에 대한 기능이 없음. 
+				var list = "";
+				
+				console.log("subject=====>"+$("#subject option:selected").val()); //과목
+				console.log("lectureName======>"+$("#lectureName").val()); //강의 이름
+				console.log("teacherName======>" + $("#teacherName").val()); // 강사명
+		
+				list += "" + $("#lectureTimeStrMon option:selected").val();
+				list += "," + $("#lectureTimeStrTue option:selected").val();
+				list += "," + $("#lectureTimeStrWed option:selected").val();
+				list += "," + $("#lectureTimeStrThu option:selected").val();
+				list += "," + $("#lectureTimeStrFri option:selected").val();
+				list += "," + $("#lectureTimeStrSat option:selected").val();
+				list += "," + $("#lectureTimeStrSun option:selected").val();
+				
+				//강의시간에 대한 문자열처리 (98프로 구현)
+				lectureTimeStr = list.replace(/,0|/gi,"");
+				console.log("lectureTimeStr====>"+lectureTimeStr); 
+		
+				//받은걸 table형식으로 넣어주는거 + list 초기화
+				var list_save = "";
+				
+				list_save += '<tr id="abc">';             
+				list_save += '<td>' + $("#subject option:selected").val() +'</td>';
+				list_save += '<td>' + $("#lectureName").val() +'</td>';
+				list_save += '<td>' + $("#teacherName").val() + '</td>';
+				list_save += '<td>' + lectureTimeStr + '</td>';
+				list_save += '<td><button onclick="tableDelete()">'+'삭제하기'+'</button></td>';
+				list_save += '</tr>'; 
+		
+				/*
+				if($("#abc td") === $("#subject option:selected").val()|| $("#lectureName").val() ||  lectureTimeStr){
+				 
+				} 
+				*/
+		
+				$("#newLec").append(list_save); 
+				console.log("테이블에 있는 정보들 ===> " + $("#abc td"));
+				console.log("저장된 강의에 대한 정보 ====> " + list_save);
+		 
+				// 과목에 대해서 string값으로 변환할때 0이되는 값들을 모두 소거
+				//이 방식대로 하면 월요일이 0일때 처리하지 못하고, ,0과 0,을 둘다 소거하면 20,30 이라는 숫자에 0,값이 소거되어 230으로 나옴
+				//아마 나중에 첫번째 선택자에 0일때만 처리할 거 같긴한데..    
+			}
+			
+	  		console.log("newLec 자식 수 > " + $("#newLec").children().length);
+	  		console.log("newLec 첫번째 자식 > " + $("#newLec").children().children('td:eq(0)').text());
+	  		console.log("newLec 첫번째 자식 > " + $("#newLec>tr:eq(0)").children('td:eq(1)').text());
+	  		console.log("newLec 첫번째 자식 > " + $("#newLec>tr:eq(0)").children('td:eq(2)').text());
+	  		console.log("newLec 첫번째 자식 > " + $("#newLec>tr:eq(0)").children('td:eq(3)').text());
+	  		
+	  		console.log("newLec 자식 > " + $("#newLec").children("tr:eq("+0+")").children('td:eq(1)').text());
+	  		
+	  		var newLecChild = $("#newLec").children();
+	  		console.log(newLecChild.length);
+	  		
+			//이까지 강의 리스트를 담는 코드
+	  		//send시에 실제로 강의 리스트의 정보를 담아서 데이터 보냄
+		}
+		
+		
+  		
+	});
+	
+	$('#send').on("click",function () {
+		    
+		
+		var contextPath = "${contextPath}";
+		var acaIdx = "${acaIdx}";
+		var lectureIdx = "${lectureIdx}";
+
+		 // newLec 의 자식개수
+		console.log("" + newLecLength);
+		
+		console.log("acaIdx값===>"+ $("acaIdx"));
+		
+		var data = {};
+		//실제 테이블에 있는 key값과 일치시켜서 보냄 api경로로 더미 강의 리스트 참고
+
+		for(var i = 0; i < newLecLength  ; i++){
+			
+			data = {
+					"acaIdx": acaIdx,
+					"subject": $("#newLec").children("tr:eq("+i+")").children('td:eq(0)').text(), // 과목
+					"lectureName": $("#newLec").children("tr:eq("+i+")").children('td:eq(1)').text(), // 강의 이름
+					"teacherName": $("#newLec").children("tr:eq("+i+")").children('td:eq(2)').text(), // 강사명
+					"lectureTimeStr": $("#newLec").children("tr:eq("+i+")").children('td:eq(3)').text() // 시간					
+			}
+			
+			console.log("data > "+data);
+			
+			//강의 리스트에 담긴과목정보들 보냄
+			$.ajax({
+				type: "post",
+				url: contextPath + "/api/lecture",
+				data: JSON.stringify(data),
+				dataType: 'json',
+				contentType:"application/json; charset=utf-8",
+				success: function (data) {
+			 
+					console.log(i + "번째 데이터 전송 성공.");
+					console.log(i + "번째 데이터 > " + data);
+					history.go(0);
+				
+				},error: function () {		       
+					alert("실패")
+				}
+			}); // end of ajax
+		} // end of for
+		
+	});
+
+});
+
+//저장된 강의 삭제기능
+function tableDelete(){
+	var conf = confirm("삭제할거야?");
+	if(conf){
+		$('#abc').remove();
+		console.log("#abc");
+	}else {
+		history.back();
+	}
+}
+
+  /* 
+	 $('#send').on("click",function () {
+		    
+		
+			var contextPath = "${contextPath}";
+			var acaIdx = "${acaIdx}";
+			var lectureIdx = "${lectureIdx}";
+			
+			
+			
+			
+			console.log("acaIdx값===>"+ $("acaIdx"));
+			
+			var conf = confirm("강의를 등록하시겠습니까?");
+			if(conf){
+
+			var data={
+	 					"acaIdx": acaIdx,
+  				  "lectureName": $("#lectureName").val(),
+  				  "teacherName": $("#teacherName").val(),
+  				
+  					 "subject": $("#subject option:selected").val()
+						};
+			console.log(data);
+		
+		
+     $.ajax({
+         type: "post",
+         url: contextPath + "/api/lecture",
+         data: JSON.stringify(data),
+         dataType: 'json',
+         contentType:"application/json; charset=utf-8",
+         success: function (data) {
+           
+         	alert("success");
+         	
+             console.log("데이터 post 성공===>" +data);
+        
+            console.log($("#lecInptut").val());
+         
+        
+       					 },
+         			error: function () {
+           
+						alert("실패")
+         			}
+         	          
+   		  })
+		}
+})  */
+
+</script>
+  
+  
 <%@include file="/WEB-INF/views/header.jsp"%>
 
-  <script type="text/javascript">
-  
-  $(function(){
-					
-	  $("#save").on("click",function(){
-				var confsub = confirm("과목을 담으시겠습니까?")
-				//강의를 등록할때 저장여부를 확인
-				if(confsub){
-					//강의가 같은 내용을 담을때 중복에 대한 기능이 없음. 
-					var list = "";
-				    console.log("subject=====>"+$("#subject option:selected").val()); //과목
-				    console.log("lectureName======>"+$("#lectureName").val()); //강의 이름
-				    console.log("teacherName======>" + $("#teacherName").val()); // 강사명
-				    
-							
-				 
-				    list += "" + $("#lectureTimeStrMon option:selected").val();
-				    list += "," + $("#lectureTimeStrTue option:selected").val();
-				    list += "," + $("#lectureTimeStrWed option:selected").val();
-				    list += "," + $("#lectureTimeStrThu option:selected").val();
-				    list += "," + $("#lectureTimeStrFri option:selected").val();
-				    list += "," + $("#lectureTimeStrSat option:selected").val();
-				    list += "," + $("#lectureTimeStrSun option:selected").val();
-				    //강의시간에 대한 문자열처리 (98프로 구현)
-				    var lectureTimeStr = list.replace(/,0|/gi,"");
-				    console.log("lectureTimeStr====>"+lectureTimeStr); 
-					 
-				    //받은걸 table형식으로 넣어주는거 + list 초기화
-				    var list_save = "";
-				 
-				      list_save += '<tr id="abc">';             
-				      list_save += '<td>' +  $("#subject option:selected").val() +'</td>';
-				      list_save += '<td>' + $("#lectureName").val() +'</td>';
-				      list_save += '<td>' + $("#teacherName").val() + '</td>';
-				      list_save += '<td>' + lectureTimeStr + '</td>';
-				      list_save += '<td><button onclick="tableDelete()">'+'삭제하기'+'</button></td>';
-				      list_save += '</tr>'; 
-				   	
-				     /*  if($("#abc td") === $("#subject option:selected").val()|| $("#lectureName").val() ||  lectureTimeStr){
-				    	 
-				      } */
-				    
-				      $("#newLec").append(list_save); 
-				      console.log("테이블에 있는 정보들===> "+ $("#abc td"))
-				      console.log("저장된 강의에 대한 정보====>"+list_save);
-				  
-				    // 과목에 대해서 string값으로 변환할때 0이되는 값들을 모두 소거
-				    //이 방식대로 하면 월요일이 0일때 처리하지 못하고, ,0과 0,을 둘다 소거하면 20,30 이라는 숫자에 0,값이 소거되어 230으로 나옴
-				    //아마 나중에 첫번째 선택자에 0일때만 처리할 거 같긴한데..    
-					
-				} 
-		    		//이까지 강의 리스트를 담는 코드
-		   
-		    		
-		    		///send시에 실제로 강의 리스트의 정보를 담아서 데이터 보냄
-				
-		    		
-			
-			 $('#send').on("click",function () {
-	    		    
-					
-	    			var contextPath = "${contextPath}";
-					var acaIdx = "${acaIdx}";
-					var lectureIdx = "${lectureIdx}";
-
-					console.log("acaIdx값===>"+ $("acaIdx"));
-					
-				//실제 테이블에 있는 key값과 일치시켜서 보냄 api경로로 더미 강의 리스트 참고
-	     			var data={
-			 					"acaIdx": acaIdx,
-		     				  "lectureName": $("#lectureName").val(),
-		     				  "teacherName": $("#teacherName").val(),
-		     					"lectureTimeStr": lectureTimeStr,
-		     					 "subject": $("#subject option:selected").val()
-	   							};
-	 				console.log(data);
-	      		
-	 			//강의 리스트에 담긴과목정보들 보냄
-		        $.ajax({
-		            type: "post",
-		            url: contextPath + "/api/lecture",
-		            data: JSON.stringify(data),
-		            dataType: 'json',
-		            contentType:"application/json; charset=utf-8",
-		            success: function (data) {
-		              
-		            	alert("success");
-		            	
-		                console.log("데이터 post 성공===>" +data);
-		           
-		                console.log("subject=====>"+$("#subject option:selected").val()); //과목
-		    		    console.log("lectureName======>"+$("#lectureName").val()); //강의 이름
-		    		    console.log("teacherName======>" + $("#teacherName").val()); // 강사명
-		    		    console.log("lectureTimeStr====>"+lectureTimeStr); 
-		           				history.go(0);
-		          					 },error: function () {
-		          			              
-		 								alert("실패")
-		 		            			}
-		            			
-		            	          
-		      		  })
-		      		  
-		      	
-				
-		}) 
-	
-		})	
-/* 
-	    	 $('#send').on("click",function () {
-	    		    
-				
-	    			var contextPath = "${contextPath}";
-					var acaIdx = "${acaIdx}";
-					var lectureIdx = "${lectureIdx}";
-					
-					
-					
-					
-					console.log("acaIdx값===>"+ $("acaIdx"));
-					
-					var conf = confirm("강의를 등록하시겠습니까?");
-					if(conf){
-		
-	     			var data={
-			 					"acaIdx": acaIdx,
-		     				  "lectureName": $("#lectureName").val(),
-		     				  "teacherName": $("#teacherName").val(),
-		     				
-		     					 "subject": $("#subject option:selected").val()
-	   							};
-	 				console.log(data);
-	      		
-	 			
-		        $.ajax({
-		            type: "post",
-		            url: contextPath + "/api/lecture",
-		            data: JSON.stringify(data),
-		            dataType: 'json',
-		            contentType:"application/json; charset=utf-8",
-		            success: function (data) {
-		              
-		            	alert("success");
-		            	
-		                console.log("데이터 post 성공===>" +data);
-		           
-		               console.log($("#lecInptut").val());
-		            
-		           
-		          					 },
-		            			error: function () {
-		              
-								alert("실패")
-		            			}
-		            	          
-		      		  })
-				}
-		})  */
-	    
-	});
-  function tableDelete(){     //저장된 강의 삭제기능
-	   
-	  	var conf =confirm("삭제할거야?");
-	  	if(conf){
-	  		
-	  		$('#abc').remove();
-	  		
-	  	      console.log("#abc");
-	  	}
-	  	else {
-	  		history.back();
-	  	}
-	  
-	  }
-
-
-  
-  </script>
   <section id="introLA" class="clearfix">
     <div class="container">
       <h1>강의 등록하기</h1>

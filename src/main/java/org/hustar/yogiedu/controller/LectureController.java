@@ -20,10 +20,10 @@ public class LectureController {
 		return mav;
 	}
 	
-	
-	@GetMapping("/lectureView/{lectureIdx}") // 경로 이름
-	public ModelAndView getlectureView(@PathVariable Long lectureIdx) {
-		ModelAndView mav = new ModelAndView("academy/lectureView", "lectureIdx", lectureIdx);
+	//유저측에서 학원 상세보기임 
+	@GetMapping("/lectureAcademyDetailView/{acaIdx}") // 경로 이름
+	public ModelAndView getlectureView(@PathVariable Long acaIdx) {
+		ModelAndView mav = new ModelAndView("lecture/lectureAcademyDetailView", "acaIdx", acaIdx);
 		return mav;
 	}
 }
