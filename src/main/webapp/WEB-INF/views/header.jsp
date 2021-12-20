@@ -126,22 +126,26 @@
                     </li>
                     <li id="logout" style="display:none;">
                     	<a href="/logout">로그아웃</a>
+                    	<!-- logout페이지 갓다가 메인으로 다시 돌아와야함 -->
                     </li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
-
+<span id="login-member" style="display:none; margin:0;font-size:14px;position:absolute; top:0;right:10%;">${user.username}님 안녕하세요!</span>
         </div>
     </header>
-<!--     <script>
-    
+<!-- 
+<script>
 	var user = "${user}";
 	console.log(${user.userName});
 	if(user != null){
 		$("li#login").css("display","none");
 		$("li#logout").css("display","block");
+		$("span#login-member").css("display","block");
 	}else{
 		$("li#login").css("display","block");
 		$("li#logout").css("display","none");
+		$("span#login-member").css("display","none");
 	}
-	</script> -->
+</script>
+ -->
