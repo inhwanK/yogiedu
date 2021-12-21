@@ -95,7 +95,6 @@
                     </li>
                     <li id="logout" style="display:none;">
                     	<a href="/logout">로그아웃</a>
-                    	<!-- logout페이지 갓다가 메인으로 다시 돌아와야함 -->
                     </li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
