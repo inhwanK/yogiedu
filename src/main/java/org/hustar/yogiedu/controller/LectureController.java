@@ -26,13 +26,4 @@ public class LectureController {
 		ModelAndView mav = new ModelAndView("lecture/lectureAcademyDetailView", "acaIdx", acaIdx);
 		return mav;
 	}
-	
-	
-	@GetMapping("/academyLectureTable/{acaIdx}") // 경로 이름
-	public ModelAndView lectureTableView(@PathVariable Long acaIdx) {
-		ModelAndView mav = new ModelAndView("academy/academyLectureTable", "acaIdx", acaIdx);
-		return mav;
-	}
-	
-	
 }

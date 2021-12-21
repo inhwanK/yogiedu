@@ -17,9 +17,15 @@ public class AcademyController {
 		return "academy/academyEnroll";
 	}
 
-	@GetMapping("/academy")
-	public ModelAndView academy(Long acaIdx) {
-		ModelAndView mav = new ModelAndView("academy/academyView", "acaIdx", acaIdx);
+	@GetMapping("/academyManager")
+	public ModelAndView academyManager(Long acaIdx) {
+		ModelAndView mav = new ModelAndView("academy/academyManager", "acaIdx", acaIdx);
+		return mav;
+	}
+	
+	@GetMapping("/academyUser")
+	public ModelAndView academyUser(Long userIdx) {
+		ModelAndView mav = new ModelAndView("academy/academyManager", "userIdx", userIdx);
 		return mav;
 	}
 
