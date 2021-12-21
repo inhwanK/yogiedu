@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="/WEB-INF/views/header.jsp"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
@@ -17,135 +17,186 @@
 
 var length;
 $(function(){
-		
-		
-		var lectureIdx = "${lectureIdx}";
-		var contextPath = "${contextPath}";
-		var acaIdx = "${acaIdx}";
-			
+      
+      
+      var lectureIdx = "${lectureIdx}";
+      var contextPath = "${contextPath}";
+      var acaIdx = "${acaIdx}";
+         
     
-				$.ajax({
-					    url : contextPath+ "/api/lecture/academy?acaIdx=" +acaIdx ,
-					    method : "get",
-					    dataType : "json",
-					    success: function(json) {
-					    	console.log("됐다.");
-					    	console.log(json);
-    						
-					    		var list= "";
-					    		length = json.length;
- 								for(i=0; i <json.length; i++){
- 									
- 									console.log(json[i])
- 									console.log(json[i].lectureName);
- 									
- 									
- 									list += '<tr>';
- 	                                list += '<th class="subject_name col-md-3">' + json[i].lectureGrade +'</th>';
- 	                                list += '<th class="subject_name_detail col-md-3">' + json[i].lectureName +'</th>';
- 	                                list += '<th class="subject_time col-md-3">' + json[i].lectureTimeStr +'</th>';
- 	                                list += '<th class="subject_teacher col-md-3 "> ' + json[i].teacherName +' <th>' ;
- 	                                list += '<th><button type="button" id="add" title="과목 담기" class="btn_add">'+ '과목담기' + '</button></th>'     ;        
- 	                               	list += '</tr>';
- 								
- 	
- 								}
+            $.ajax({
+                   url : contextPath+ "/api/lecture/academy?acaIdx=" +acaIdx ,
+                   method : "get",
+                   dataType : "json",
+                   success: function(json) {
+                      console.log("됐다.");
+                      console.log(json);
+                      
+                         var list= "";
+                         length = json.length;
+                         
+                         for(i=0; i <json.length; i++){
+                            
+                            console.log("Idx 체크 >" + json[i].lectureIdx);
+                            console.log(json[i].lectureName);
+                            
+                            
+                            list += '<tr>';
+                            list += '<th class="subject_grade col-md-3" value='+json[i].lectureIdx +'>'+ json[i].lectureGrade +'</th>';
+                            list += '<th class="subject_name_detail col-md-3">' + json[i].lectureName +'</th>';
+                            list += '<th class="subject_time col-md-3">' + json[i].lectureTimeStr +'</th>';
+                            list += '<th class="subject_teacher col-md-3 "> ' + json[i].teacherName +' <th>' ;
+                            list += '<th><button type="button" id="add" title="과목 담기" class="btn_add">'+ '과목담기' + '</button></th>'     ;        
+                            list += '</tr>';
+                         }
 
- 									$("#lectureList").append(list);
- 	 								 
- 								 			
-    					}
+                            $("#lectureList").append(list);
+                              
+                                   
+                   }
         
 
-    				})
-    		//수정 필
-   				$(document).ready(function(){
-   					var li = ""		
-   						var tagSub;
-	  					$(this).on('click', '[id=add]', function(){
-	  					
-   						var tagSub = "";
-	  					var td = $(this).parent();
-   						
-	  					console.log("1==>"+ td.parent().text(),"2=="+ td.children().text(),"3=="+ td.siblings().text(), "4=="+  td.prevAll().text());
-   						
-   						li = $(this).parent().siblings().first().text(); //대상
-   						li1 = $(this).parent().siblings().first().next().text(); //강의이름
-   						li2 =  $(this).parent().siblings().first().next().next().text(); // 강의시간
-   						li3 =  $(this).parent().siblings().first().next().next().next().text(); // 강의시간
-   					
-   						///이쪽부분
-   						tagSub += '<tr align="center" class="good1">';
-   						tagSub += '<td>' + li + '</td>';
-   						tagSub += '<td>' + li1 +'</td>';
-   						tagSub += '<td>' + li2 + '</td>';
-   						tagSub += '<td>' + li3 +'</td>';
-   				        tagSub += '<td><button type="button" title="삭제" id="del">' + "삭제" + '</button></td>';
-   						tagSub += '</tr>';
-   				        
-   						$("#lectureWish > tbody").append(tagSub);
-   						
-   						
-   					});
-	  					
-					
-   				});		
-				
-				
-			 	$(this).on('click','[id=send]',function(){
-					
-			 	
+                })
+          //수정 필
+               $(document).ready(function(){
+                  
+                  var idx ="";
+                  var li = "" ;   
+                  var tagSub;
+                  
+                  $(this).on('click', '[id=add]', function(){
+                    
+                  var tagSub = "";
+                  var td = $(this).parent();
+                     
+                    console.log("1==>"+ td.parent().text(),"2=="+ td.children().text(),"3=="+ td.siblings().text(), "4=="+  td.prevAll().text());
+                     
+                    //idx = $(this).parent().siblings().first().value;
+                    
+                    //console.log(" idx 들어오는지 확인 > "+idx);
+                    //idx = $(this).parent().siblings().first().value();
+                    //console.log(" idx 들어오는지 확인 > "+idx);
+                   	 var idx = $(this).parent().siblings().first().attr('value');
+                   	 console.log("각각의 idx값==>"+idx)
+                    	a = $(this).parent().siblings().first().text();
+                    	console.log(" value값 확인 ==> "+idx);
+                    	 
+                    	 	data= {
+                    	 		
+                    	 		lectureIdx : idx
+                    	 	}
+                    	$.ajax({
+                             url : contextPath+ "/api/lecture/academy",
+                             method : "get",
+                             dataType : "json",
+                             success: function(json) {
+                                console.log("됐다.");
+                           
+                                   window.location.href= contextPath+ "/academyLectureTable";
+                                                  },
+                  
 
-					data = {
-							
-							"lectureIdx" : lectureIdx
-					}	
+                             })
+                    	window.location.href= contextPath + '/academyLectureTable/2'
 					
-					$.ajax({
-					    url : contextPath+ "/api/lecture/academy?acaIdx=" + acaIdx,
-					    method : "get",
-					    dataType : "json",
-					    success: function(json) {
-					    	console.log("됐다.");
-					  
-					    	   window.location.href= contextPath+ "/academyLectureTable?acaIdx=" + acaIdx;
-    												},
+                /*     	  idx = $(this).parent().siblings().first().attr('value');
+                    	  console.log("idx===>"+idx)
+                     li = $(this).parent().siblings().first().text(); //대상
+                     li1 = $(this).parent().siblings().first().next().text(); //강의이름
+                     li2 =  $(this).parent().siblings().first().next().next().text(); // 강의시간
+                     li3 =  $(this).parent().siblings().first().next().next().next().text(); // 강의시간
+                  	
+                     ///이쪽부분
+                     tagSub += '<tr align="center" class="good1" value="'+ idx +'" name= "a">';
+                     tagSub += '<td>' + li + '</td>';
+                     tagSub += '<td>' + li1 + '</td>';
+                     tagSub += '<td>' + li2 + '</td>';
+                     tagSub += '<td>' + li3 + '</td>';
+                     tagSub += '<td><button type="button" title="삭제" class="' + idx +' " id="del">' + "삭제" + '</button></td>';
+                     tagSub += '</tr>';
+                  
+                     
+                 console.log("제발=>"+idx)
+                     $("#lectureWish > tbody").append(tagSub); */
+                     
+                 
+     
+                  });
+ 
+               });      
+            
+            
+             $(this).on('click','[id=send]',function(){
+            
+            	 var arr1 = document.getElementsByClassName('good1');
+          		console.log("제발===>"+arr1)
+          		
+			      for(i = 0; i < arr1.length ; i++ ){
+				
+			       	 var arr = document.getElementsByClassName('idx');
+			     	console.log(arr1[i])
+	        	
+		          	console.log(arr1[i].className)
+		    
+		       
+			        		console.log(arr[i].attr('value'))
+				        
+             }  
+            	    
+      
+           
+
+               data = {
+                     
+                     "lectureIdx" : lectureIdx
+               }   
+         
+               /*
+               $.ajax({
+                   url : contextPath+ "/api/lecture/academy?acaIdx=" + acaIdx,
+                   method : "get",
+                   dataType : "json",
+                   success: function(json) {
+                      console.log("됐다.");
+                 
+                         window.location.href= contextPath+ "/academyLectureTable";
+                                        },
         
 
-    					})
-						
-				}); 
-					
-				
-					
-					
-					
-				
-				
-				
-				
-				
-					$(this).on('click', '[id=del]',function() {
-	   				  var tagSub;
-						var tr = $(this).parent().siblings().text();
-						console.log(/* "1==>"+ tr.text(),"2=="+ tr.children().text(),"3=="+ tr.siblings().text(), "4=="+  tr.prevAll().text(), */ "5==="+ tr);
-					
-							
-					$(".good1").remove();
-	   				
-			      });
-					
-					
-				
-						
-				
-			
-				
-				
-		
-    				
-	})
-	
+                   })*/
+                  
+            }); 
+               
+            
+               
+               
+               
+            
+            
+            
+            
+            
+               $(this).on('click', '[id=del]',function() {
+                    var tagSub;
+                  var tr = $(this).parent().siblings().text();
+                  console.log(/* "1==>"+ tr.text(),"2=="+ tr.children().text(),"3=="+ tr.siblings().text(), "4=="+  tr.prevAll().text(), */ "5==="+ tr);
+               
+                     
+               $(".good1").remove();
+                  
+               });
+               
+               
+            
+                  
+            
+         
+            
+            
+      
+                
+   })
+   
 
 /*
  function add(){
@@ -167,11 +218,11 @@ $(function(){
     $('#show_total').empty().append( "총 수강 개수:" + total + "개"  );
       }*/
     
-	
-	
-	
-				
-				   
+   
+   
+   
+            
+               
 
 
 
@@ -200,7 +251,7 @@ $(function(){
       total = total +1;
       
     break;
-  }	
+  }   
   $('#cart .basic').append( $tagGood );
   $('#show_total').empty().append( "총 수강 개수:" + total + "개"  );
   
@@ -236,13 +287,13 @@ $(function(){
   });
 
 }); */
-  	
+     
 
 </script>
  
 <body>
 
- 	<div id="dialog" style="padding-top:100px;" >
+    <div id="dialog" style="padding-top:100px;" >
      
         <div class="col-md-12 col-sm-7">
             <div class="product-page">
@@ -288,7 +339,7 @@ $(function(){
                               <th scope="col">&nbsp;</th>
                             </table> 
                             <table class="col-md-12" id="lectureList">
-                           		
+                                 
                               </table>
                             </div>
                             
@@ -308,7 +359,7 @@ $(function(){
                               <th scope="col">&nbsp;</th>
                              </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="list">
                             
                             </tbody>
                             </table>
@@ -373,7 +424,7 @@ $(function(){
                   </div>
         </div>
 
-                		
+                      
 </body>
 
 
