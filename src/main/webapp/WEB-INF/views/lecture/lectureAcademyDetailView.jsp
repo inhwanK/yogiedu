@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@include file="/WEB-INF/views/header.jsp"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -19,7 +18,7 @@
 
 var length;
 $(function(){
-      
+  
       
       var lectureIdx = "${lectureIdx}";
       var contextPath = "${contextPath}";
@@ -114,47 +113,102 @@ $(function(){
                                         },
         
 
-                   })
-                  
-            }); 
-               
-            
-               
-               
-               
-            
-            
-            
-            
-            
-               $(this).on('click', '[id=del]',function() {
-                    var tagSub;
-                  var tr = $(this).parent().siblings().text();
-                  console.log(/* "1==>"+ tr.text(),"2=="+ tr.children().text(),"3=="+ tr.siblings().text(), "4=="+  tr.prevAll().text(), */ "5==="+ tr);
-               
-                     
-               $(".good1").remove();
-                  
-               });
-               
-               
-            
-                  
-            
-         
-            
-            
-      
-                
-   })
-   
+
+    				})
+    		//수정 필
+   				$(document).ready(function(){
+   					var li = ""		
+   						var tagSub;
+	  					$(this).on('click', '[id=add]', function(){
+	  					
+   						var tagSub = "";
+	  					var td = $(this).parent();
+   						
+	  					console.log("1==>"+ td.parent().text(),"2=="+ td.children().text(),"3=="+ td.siblings().text(), "4=="+  td.prevAll().text());
+   						
+   						li = $(this).parent().siblings().first().text(); //대상
+   						li1 = $(this).parent().siblings().first().next().text(); //강의이름
+   						li2 =  $(this).parent().siblings().first().next().next().text(); // 강의시간
+   						li3 =  $(this).parent().siblings().first().next().next().next().text(); // 강의시간
+   					
+   						///이쪽부분
+   						tagSub += '<tr align="center" class="good1">';
+   						tagSub += '<td>' + li + '</td>';
+   						tagSub += '<td>' + li1 +'</td>';
+   						tagSub += '<td>' + li2 + '</td>';
+   						tagSub += '<td>' + li3 +'</td>';
+   				        tagSub += '<td><button type="button" title="삭제" id="del">' + "삭제" + '</button></td>';
+   						tagSub += '</tr>';
+   				        
+   						$("#lectureWish > tbody").append(tagSub);
+   						
+   						
+   					});
+	  					
+					
+   				});		
+				
+				
+			 	$(this).on('click','[id=send]',function(){
+					
+			 	
+
+					data = {
+							
+							"lectureIdx" : lectureIdx
+					}	
+					
+					$.ajax({
+					    url : contextPath+ "/api/lecture/academy?acaIdx=" + acaIdx,
+					    method : "get",
+					    dataType : "json",
+					    success: function(json) {
+					    	console.log("됐다.");
+					  
+					    	   window.location.href= contextPath+ "/academyLectureTable?acaIdx=" + acaIdx;
+    												},
+        
+
+    					})
+						
+				}); 
+					
+				
+					
+					
+					
+				
+				
+				
+				
+				
+					$(this).on('click', '[id=del]',function() {
+	   				  var tagSub;
+						var tr = $(this).parent().siblings().text();
+						console.log(/* "1==>"+ tr.text(),"2=="+ tr.children().text(),"3=="+ tr.siblings().text(), "4=="+  tr.prevAll().text(), */ "5==="+ tr);
+					
+							
+					$(".good1").remove();
+	   				
+			      });
+					
+					
+				
+						
+				
+			
+				
+				
+		
+    				
+	})
+	
 
 /*
  function add(){
     console.log("hi")
     var $tagGood;
     var total;
-    
     
     
      if($("btn_add")){
@@ -241,8 +295,7 @@ $(function(){
      
 
 </script>
- 
-<body>
+<%@include file="/WEB-INF/views/header.jsp"%>
 
     <div id="dialog" style="padding-top:100px;" >
      
@@ -290,7 +343,7 @@ $(function(){
                               <th scope="col">&nbsp;</th>
                             </table> 
                             <table class="col-md-12" id="lectureList">
-                                 
+
                               </table>
                             </div>
                             
