@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@include file="/WEB-INF/views/header.jsp"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -239,8 +238,7 @@ $(function(){
   	
 
 </script>
- 
-<body>
+<%@include file="/WEB-INF/views/header.jsp"%>
 
  	<div id="dialog" style="padding-top:100px;" >
      
