@@ -18,7 +18,7 @@ var length;
 $(function(){
 		
 		
-		
+		var lectureIdx = "${lectureIdx}";
 		var contextPath = "${contextPath}";
 		var acaIdx = "${acaIdx}";
 			
@@ -60,25 +60,88 @@ $(function(){
     		//수정 필
    				$(document).ready(function(){
    					var li = ""		
+   						var tagSub;
 	  					$(this).on('click', '[id=add]', function(){
+	  					
+   						var tagSub = "";
+	  					var td = $(this).parent();
    						
-   						var td = $(this).parent();
-   						console.log("1==>"+ td.parent().text(),"2=="+ td.children().text(),"3=="+ td.siblings().text(), "4=="+  td.prevAll().text());
+	  					console.log("1==>"+ td.parent().text(),"2=="+ td.children().text(),"3=="+ td.siblings().text(), "4=="+  td.prevAll().text());
    						
    						li = $(this).parent().siblings().first().text(); //대상
    						li1 = $(this).parent().siblings().first().next().text(); //강의이름
    						li2 =  $(this).parent().siblings().first().next().next().text(); // 강의시간
    						li3 =  $(this).parent().siblings().first().next().next().next().text(); // 강의시간
-   						
-   						$("#cart .basic").append('<tr align="center" class="good1"></tr>')
-   						.append('<td>'+ li+ '</td>')
-   						.append('<td>'+ li1+'</td>')
-   						.append('<td>'+ li2+ '</td>')
-   						.append('<td>'+ li3 +'</td>')
-   				        .append('<td><button type="button" title="삭제" class="btn_del">삭제</button></td>');
    					
+   						///이쪽부분
+   						tagSub += '<tr align="center" class="good1">';
+   						tagSub += '<td>' + li + '</td>';
+   						tagSub += '<td>' + li1 +'</td>';
+   						tagSub += '<td>' + li2 + '</td>';
+   						tagSub += '<td>' + li3 +'</td>';
+   				        tagSub += '<td><button type="button" title="삭제" id="del">' + "삭제" + '</button></td>';
+   						tagSub += '</tr>';
+   				        
+   						$("#lectureWish > tbody").append(tagSub);
+   						
+   						
    					});
+	  					
+					
    				});		
+				
+				
+			 	$(this).on('click','[id=send]',function(){
+					
+			 	
+
+					data = {
+							
+							"lectureIdx" : lectureIdx
+					}	
+					
+					$.ajax({
+					    url : contextPath+ "/api/lecture/academy?acaIdx=" + acaIdx,
+					    method : "get",
+					    dataType : "json",
+					    success: function(json) {
+					    	console.log("됐다.");
+					  
+					    	   window.location.href= contextPath+ "/academyLectureTable?acaIdx=" + acaIdx;
+    												},
+        
+
+    					})
+						
+				}); 
+					
+				
+					
+					
+					
+				
+				
+				
+				
+				
+					$(this).on('click', '[id=del]',function() {
+	   				  var tagSub;
+						var tr = $(this).parent().siblings().text();
+						console.log(/* "1==>"+ tr.text(),"2=="+ tr.children().text(),"3=="+ tr.siblings().text(), "4=="+  tr.prevAll().text(), */ "5==="+ tr);
+					
+							
+					$(".good1").remove();
+	   				
+			      });
+					
+					
+				
+						
+				
+			
+				
+				
+		
     				
 	})
 	
@@ -214,7 +277,7 @@ $(function(){
                         <div class="academy-lecture-wrap row col-md-12" id="Description">
                           <div id="goods" class="col-md-8">
                             
-                            <div class="#=">
+                            <div class="#">
                               <table class="col-md-12" bgcolor="#C8E3FF" >
                               <th class="col-md-3" >과목</th>
                               <th  class="col-md-3">과목명</th>
@@ -223,7 +286,7 @@ $(function(){
                               <th scope="col">&nbsp;</th>
                             </table> 
                             <table class="col-md-12" id="lectureList">
-                           
+                           		
                               </table>
                             </div>
                             
@@ -233,7 +296,8 @@ $(function(){
                           <!-- 장바구니 -->
                           
                           <div id="cart" class="col-md-4">
-                            <table class="basic col-md-12" border="0" cellspacing="0" cellpadding="0">
+                            <table id="lectureWish" class="basic col-md-12" border="0" cellspacing="0" cellpadding="0">
+                            <thead>
                             <tr bgcolor="#C8E3FF">
                               <th scope="col">과목</th>
                               <th scope="col">강의명</th>
@@ -241,17 +305,18 @@ $(function(){
                               <th scope="col">강사</th>
                               <th scope="col">&nbsp;</th>
                              </tr>
+                            </thead>
+                            <tbody>
                             
+                            </tbody>
                             </table>
-                            <table id ="lectureWish">
-                             	
-                            </table>
+                          
                       
                           <div id="show_total">
                           
                           </div>
                           <div id="buy">
-                            <button type="button" title="구매하기" id="btn_buy">수강 시간표 넣기</button>
+                            <button type="button" title="구매하기" id="send">수강 시간표 넣기</button>
                           </div>
                           </div>
                           
