@@ -43,6 +43,7 @@
                     if (json[i].lectureIdx = lectureListIdx.shift()) {
                         list += json[i].lectureTimeArr + ","
                     };
+                    
                     var listArray = list.split(',');
                     console.log(list);
                     console.log(listArray);
