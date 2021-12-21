@@ -2,8 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
-
-
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
@@ -18,17 +16,16 @@
             if ($("#title").val() == "") {
                 alert("제목을 입력하세요.");
                 return;
-            } else if ($("#content").val() == "") {
+            } else if ($("CKEDITOR#content").val() == "") {
                 alert("내용을 입력하세요.");
                 return;
             }
-
             var conf = confirm("등록하시겠습니까?");
             if (conf) {
 
                 var data = {
                     notTitle: $("#title").val(),
-                    notContent: $("#content").val(),
+                    notContent: CKEDITOR.instances['content'].getData(),
                     regDate: new Date(),
                     writer: "dafsfddf"
 
@@ -47,7 +44,7 @@
                     success: function(json) {
                         alert("등록이 완료되었습니다.");
                         window.location.href = contextPath + '/noticeList';
-                        console.log();
+                        
                     },
                     error: function() {
                         alert("error");
@@ -80,8 +77,10 @@
 	                    </div>
 	                    <div class="form-group">
 	                        <label>내용</label>
-	                        <textarea rows="10" cols="500" id="content" class="form-control" placeholder="공지할 내용을 입력해주세요">
-	                           </textarea>
+	                        <textarea rows="10" cols="500" id="content" class="form-control" placeholder="공지할 내용을 입력해주세요"></textarea>
+	                           <script type="text/javascript">
+								 CKEDITOR.replace("content");
+								</script>
 	                    </div>
 	
 	                    <div id="btn">
@@ -90,6 +89,7 @@
 	                    </div>
 	                </div>
 	            </div>
+	            
 	        </div>
 	    </div>
     </section>

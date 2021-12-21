@@ -15,7 +15,7 @@
         
          var data = {
 					notTitle: $("#title").val(),
-					notContent:$("#content").val(),
+                    notContent: CKEDITOR.instances['content'].getData(),
 					regDate: new Date(),
 					writer: "dafsfddf"
 		        };

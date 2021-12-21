@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<script type="text/javascript" src="/static/ckeditor/ckeditor.js"></script>
 
     <!-- Main Stylesheet File -->
     <link href="/static/css/main.css" rel="stylesheet">
