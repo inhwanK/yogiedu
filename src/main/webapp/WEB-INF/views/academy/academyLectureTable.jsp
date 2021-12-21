@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
-<%@include file="/WEB-INF/views/header.jsp"%>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/static/css/academy/style.css">
@@ -212,6 +211,8 @@
         });
     });
 </script>
+<%@include file="/WEB-INF/views/header.jsp"%>
+
 <section id="introLA">
     <div class="search-right col-md-9">
 

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@include file="/WEB-INF/views/header.jsp"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
 
 <meta charset="UTF-8">
@@ -130,6 +129,7 @@ justify-content:center;
 #acapage tr,#acapage td,#acapage th{
 border:1px solid #000 !important;}
 </style>
+<%@include file="/WEB-INF/views/header.jsp"%>
 
 
 	<section id="introLA">
