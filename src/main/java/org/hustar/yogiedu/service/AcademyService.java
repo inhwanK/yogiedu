@@ -15,7 +15,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Service
-public class AcademyService {
+public class AcademyService{
 
 	private final AcademyRepository academyRepository;
 

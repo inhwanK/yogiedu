@@ -1,6 +1,9 @@
 package org.hustar.yogiedu.controller;
 
+import org.hustar.yogiedu.config.auth.LoginUser;
+import org.hustar.yogiedu.config.auth.dto.SessionUser;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
@@ -9,30 +12,32 @@ import org.springframework.web.servlet.ModelAndView;
 public class LectureController {
 
 	@GetMapping("/academyLectureEnroll/{acaIdx}") // 경로 이름
-	public ModelAndView getLectureEnroll(@PathVariable Long acaIdx) {
-		ModelAndView mav = new ModelAndView("academy/academyLectureEnroll", "acaIdx", acaIdx);
-		return mav;
+	public String getLectureEnroll(@PathVariable Long acaIdx, Model model, @LoginUser SessionUser user) {
+		model.addAttribute("user", user);
+		model.addAttribute("acaIdx", acaIdx);
+		return "academy/academyLectureEnroll";
 	}
 
 	@GetMapping("/academyLectureView/{acaIdx}") // 경로 이름
-	public ModelAndView getacademyLectureView(@PathVariable Long acaIdx) {
-		ModelAndView mav = new ModelAndView("academy/academyLectureView", "acaIdx", acaIdx);
-		return mav;
+	public String getacademyLectureView(@PathVariable Long acaIdx, Model model, @LoginUser SessionUser user) {
+		model.addAttribute("user", user);
+		model.addAttribute("acaIdx", acaIdx);
+		return "lecture/lectureLectureView";
 	}
-	
-	//유저측에서 학원 상세보기임 
+
+	// 유저측에서 학원 상세보기임
 	@GetMapping("/lectureAcademyDetailView/{acaIdx}") // 경로 이름
-	public ModelAndView getlectureView(@PathVariable Long acaIdx) {
-		ModelAndView mav = new ModelAndView("lecture/lectureAcademyDetailView", "acaIdx", acaIdx);
-		return mav;
+	public String getlectureView(@PathVariable Long acaIdx, Model model, @LoginUser SessionUser user) {
+		model.addAttribute("user", user);
+		model.addAttribute("acaIdx", acaIdx);
+		return "lecture/lectureAcademyDetailView";
 	}
-	
-	
+
 	@GetMapping("/academyLectureTable/{acaIdx}") // 경로 이름
-	public ModelAndView lectureTableView(@PathVariable Long acaIdx) {
-		ModelAndView mav = new ModelAndView("academy/academyLectureTable", "acaIdx", acaIdx);
-		return mav;
+	public String lectureTableView(@PathVariable Long acaIdx, Model model, @LoginUser SessionUser user) {
+		model.addAttribute("user", user);
+		model.addAttribute("acaIdx", acaIdx);
+		return "academy/academyLectureTable";
 	}
-	
-	
+
 }
