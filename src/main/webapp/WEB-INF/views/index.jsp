@@ -8,6 +8,12 @@
     $(function() {
         var contextPath = "${contextPath}";
 
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 1000
+        });
+        
+        
         $.ajax({
             url: contextPath + "/api/academyList",
             method: "get",
@@ -76,7 +82,7 @@
                 $("div.sus span").append(sus);
             }
 
-        })
+        });
 
     });
 </script>
