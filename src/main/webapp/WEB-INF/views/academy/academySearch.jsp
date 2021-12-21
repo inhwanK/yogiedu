@@ -332,6 +332,7 @@
             <!--dialog 페이지-->
         </div>
         <div id="dialog">
+
             <div class="col-md-12 col-sm-7">
                 <div class="product-page">
                     <div class="row">
@@ -480,6 +481,221 @@
 
 
         <!-- Fonts END -->
+       
+       
+       
+<!--        ///////////////////////////////////////////////////////////////// -->
+
+        <div class="search-list-wrap" >
+            <div class="row col-md-12 ">
+
+                <div class="search-left col-md-3 ">
+                    <div class="sidebar-categories ">
+                        <div class="head" id="daeguAll" type="button">대구</div>
+                        <ul class="main-categories">
+                            <li class="main-nav-list" id="namgu" type="button">남구</li>
+                            <li class="main-nav-list" id="dalseogu" type="button">달서구</li>
+                            <li class="main-nav-list" id="donggu" type="button">동구</li>
+                            <li class="main-nav-list" id="bukgu" type="button">북구</li>
+                            <li class="main-nav-list" id="seogu" type="button">서구</li>
+                            <li class="main-nav-list" id="suseonggu" type="button">수성구</li>
+                            <li class="main-nav-list" id="junggu" type="button">중구</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-categories">
+                        <div class="head">과목</div>
+                        <ul class="main-categories" >
+                            <li class="main-nav-list" id="subjectArt" type="button">미술</li>
+                            <li class="main-nav-list" id="subjectStudy" type="button">보습</li>
+                            <li class="main-nav-list" id="subjectMusic" type="button">음악</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+
+<!--                 <div class="search-right col-md-9"> -->
+
+<!--                     <div class=" search-table-wrap row col-md-12"> -->
+<!--                         강의시간표 이름 -->
+<!--                         <div class="search-table-title"> -->
+<!--                             <h1>시간표 보기</h1> -->
+<!--                         </div> -->
+<!--                         강의시간표 -->
+<!--                         <table class="search-table col-md-12"> -->
+<!--                            <thead> -->
+<!--                               <tr> -->
+<!--                                   <th></th> -->
+<!--                                   <th>월</th> -->
+<!--                                   <th>화</th> -->
+<!--                                   <th>수</th> -->
+<!--                                   <th>목</th> -->
+<!--                                   <th>금</th> -->
+<!--                                   <th>토</th> -->
+<!--                                   <th>일</th> -->
+<!--                                </tr> -->
+<!--                             </thead> -->
+<!--                             <tbody> -->
+<!--                                <tr> -->
+<!--                                    <td class="time"> -->
+<!--                                        3-4 -->
+<!--                                    </td> -->
+<!--                                    <td id="col1-1"></td> -->
+<!--                                    <td id="col1-2"></td> -->
+<!--                                    <td id="col1-3"></td> -->
+<!--                                    <td id="col1-4"></td> -->
+<!--                                    <td id="col1-5"></td> -->
+<!--                                    <td id="col1-6"></td> -->
+<!--                                    <td id="col1-7"></td> -->
+<!--                                </tr> -->
+<!--                                <tr> -->
+<!--                                    <td class="time"> -->
+<!--                                        4-5 -->
+<!--                                    </td> -->
+<!--                                    <td id="col2-1"></td> -->
+<!--                                    <td id="col2-2"></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td id="col2-7"></td> -->
+<!--                                </tr> -->
+<!--                                <tr> -->
+<!--                                    <td class="time"> -->
+<!--                                        5-6 -->
+<!--                                    </td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                </tr> -->
+<!--                                <tr> -->
+<!--                                    <td class="time"> -->
+<!--                                        6-7 -->
+<!--                                    </td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                </tr> -->
+<!--                                <tr> -->
+<!--                                    <td class="time"> -->
+<!--                                        7-8 -->
+<!--                                    </td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                </tr> -->
+<!--                                <tr> -->
+<!--                                    <td class="time"> -->
+<!--                                        8-9 -->
+<!--                                    </td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                </tr> -->
+<!--                                <tr> -->
+<!--                                    <td class="time"> -->
+<!--                                        9-10 -->
+<!--                                    </td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                    <td></td> -->
+<!--                                </tr> -->
+<!--                      </tbody> -->
+
+<!--                         </table> -->
+<!--                         강의시간표 담기 및 분류방법 -->
+<!--                         <div class="go-to-category col-md-12"> -->
+
+<!--                             <div class="go-wishlist"> -->
+<!--                                 <a href="./wishlist.html">시간표 담기</a> -->
+<!--                             </div> -->
+
+<!--                         </div> -->
+                        <div class="pull-right col-md-2 ">
+                            <label class="control-label">Show:</label>
+                            <select class="form-control input-sm">
+                                <option value="#?limit=24" selected="selected">24</option>
+                                <option value="#?limit=25">25</option>
+
+                            </select>
+                        </div>
+                        <div class="pull-right col-md-2">
+                            <label class="control-label">분류&nbsp;:</label>
+                            <select class="form-control input-sm">
+                                <option value="#?sort=p.sort_order&amp;order=ASC" selected="selected">Default</option>
+                                <option value="#?sort=pd.name&amp;order=ASC">최신순</option>
+                                <option value="#?sort=pd.name&amp;order=DESC">리뷰순</option>
+
+                            </select>
+                        </div>
+                        <!--상품리스트 시작-->
+                        <div class="product_list row col-md-12" id="product-list-wrap">
+                            <!-- PRODUCT ITEM START -->
+
+
+                        </div>
+
+
+                        <!-- PRODUCT ITEM END -->
+
+
+                        <!-- product item script-->
+
+                        <!-- END PRODUCT LIST -->
+
+
+
+
+                        <!-- 아이템 페이지 컨트롤  -->
+                        <div class="col-md-7">
+
+
+                            <ul class="pagination pull-right ">
+                                <li><a href="javascript:;">&laquo;</a></li>
+                                <li><a href="javascript:;">1</a></li>
+                                <li><a href="javascript:;">2</a></li>
+                                <li><a href="javascript:;">3</a></li>
+                                <li><a href="javascript:;">4</a></li>
+                                <li><a href="javascript:;">5</a></li>
+                                <li><a href="javascript:;">&raquo;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END PAGINATOR -->
+                </div>
+
+
+            </div>
+            <!-- END CONTENT -->
+
+            <!--dialog 페이지-->
+        </div>
+        
+        
+<!--         ///////////////////////////////////////////////////////////// -->
+        
+        
+
    </section>
     </body>
     <%@include file="/WEB-INF/views/footer.jsp"%>
