@@ -76,6 +76,7 @@ $(function(){
                     //console.log(" idx 들어오는지 확인 > "+idx);
                     //idx = $(this).parent().siblings().first().value();
                     //console.log(" idx 들어오는지 확인 > "+idx);
+
                    	 var idx = $(this).parent().siblings().first().attr('value');
                    	 console.log("각각의 idx값==>"+idx)
                     	a = $(this).parent().siblings().first().text();
@@ -101,17 +102,21 @@ $(function(){
 					
                 /*     	  idx = $(this).parent().siblings().first().attr('value');
                     	  console.log("idx===>"+idx)
+
                      li = $(this).parent().siblings().first().text(); //대상
                      li1 = $(this).parent().siblings().first().next().text(); //강의이름
                      li2 =  $(this).parent().siblings().first().next().next().text(); // 강의시간
                      li3 =  $(this).parent().siblings().first().next().next().next().text(); // 강의시간
+
                   	
                      ///이쪽부분
                      tagSub += '<tr align="center" class="good1" value="'+ idx +'" name= "a">';
+
                      tagSub += '<td>' + li + '</td>';
                      tagSub += '<td>' + li1 + '</td>';
                      tagSub += '<td>' + li2 + '</td>';
                      tagSub += '<td>' + li3 + '</td>';
+
                      tagSub += '<td><button type="button" title="삭제" class="' + idx +' " id="del">' + "삭제" + '</button></td>';
                      tagSub += '</tr>';
                   
@@ -123,10 +128,12 @@ $(function(){
      
                   });
  
+
                });      
             
             
              $(this).on('click','[id=send]',function(){
+
             
             	 var arr1 = document.getElementsByClassName('good1');
           		console.log("제발===>"+arr1)
@@ -146,11 +153,14 @@ $(function(){
       
            
 
+
                data = {
                      
                      "lectureIdx" : lectureIdx
                }   
+
          
+
                /*
                $.ajax({
                    url : contextPath+ "/api/lecture/academy?acaIdx=" + acaIdx,

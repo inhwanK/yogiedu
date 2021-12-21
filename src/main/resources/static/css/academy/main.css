@@ -3300,6 +3300,10 @@ label {
   padding: 0 20px;
   background: #fff;
   box-shadow: 0 10px 10px rgba(153, 153, 153, 0.1); }
+.main-nav-list{
+	height:50px;
+	line-height: 60px;
+}
 .sidebar-categories .main-nav-list a {
   font-size: 14px;
   display: block;

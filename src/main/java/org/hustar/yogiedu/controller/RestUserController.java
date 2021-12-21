@@ -17,7 +17,6 @@ public class RestUserController {
 
 	private final UserService userService;
 	
-	
 //	회원 정보 수정 구현.
 	@PutMapping("/user")
 	public Long updateUser(Long userIdx, @RequestBody UserUpdateRequestDto requestDto) {
