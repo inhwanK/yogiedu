@@ -42,7 +42,7 @@ $(function(){
                             
                             
                             list += '<tr>';
-                            list += '<th class="subject_name col-md-3" value='+json[i].lectureIdx+'>'+ json[i].lectureIdx + json[i].lectureGrade +'</th>';
+                            list += '<th class="subject_grade col-md-3" value='+json[i].lectureIdx +'>'+ json[i].lectureGrade +'</th>';
                             list += '<th class="subject_name_detail col-md-3">' + json[i].lectureName +'</th>';
                             list += '<th class="subject_time col-md-3">' + json[i].lectureTimeStr +'</th>';
                             list += '<th class="subject_teacher col-md-3 "> ' + json[i].teacherName +' <th>' ;
@@ -59,9 +59,9 @@ $(function(){
                 })
           //수정 필
                $(document).ready(function(){
-            	   
-            	   var idx ="";
-                  var li = ""      
+                  
+                  var idx ="";
+                  var li = "" ;   
                   var tagSub;
                   
                   $(this).on('click', '[id=add]', function(){
@@ -76,44 +76,91 @@ $(function(){
                     //console.log(" idx 들어오는지 확인 > "+idx);
                     //idx = $(this).parent().siblings().first().value();
                     //console.log(" idx 들어오는지 확인 > "+idx);
-                    idx = $(this).parent().siblings().first().text();
-                    console.log(" idx 들어오는지 확인 > "+idx);
-                    idx = $(this).parent().siblings().first().attr('value');
-                    console.log(" idx 들어오는지 확인 > "+idx);
-                    
+
+                   	 var idx = $(this).parent().siblings().first().attr('value');
+                   	 console.log("각각의 idx값==>"+idx)
+                    	a = $(this).parent().siblings().first().text();
+                    	console.log(" value값 확인 ==> "+idx);
+                    	 
+                    	 	data= {
+                    	 		
+                    	 		lectureIdx : idx
+                    	 	}
+                    	$.ajax({
+                             url : contextPath+ "/api/lecture/academy",
+                             method : "get",
+                             dataType : "json",
+                             success: function(json) {
+                                console.log("됐다.");
+                           
+                                   window.location.href= contextPath+ "/academyLectureTable";
+                                                  },
+                  
+
+                             })
+                    	window.location.href= contextPath + '/academyLectureTable/2'
+					
+                /*     	  idx = $(this).parent().siblings().first().attr('value');
+                    	  console.log("idx===>"+idx)
+
                      li = $(this).parent().siblings().first().text(); //대상
                      li1 = $(this).parent().siblings().first().next().text(); //강의이름
                      li2 =  $(this).parent().siblings().first().next().next().text(); // 강의시간
                      li3 =  $(this).parent().siblings().first().next().next().next().text(); // 강의시간
-                  
+
+                  	
                      ///이쪽부분
-                     tagSub += '<tr align="center" class="good1" value='+idx+'>';
+                     tagSub += '<tr align="center" class="good1" value="'+ idx +'" name= "a">';
+
                      tagSub += '<td>' + li + '</td>';
                      tagSub += '<td>' + li1 + '</td>';
                      tagSub += '<td>' + li2 + '</td>';
                      tagSub += '<td>' + li3 + '</td>';
-                     tagSub += '<td><button type="button" title="삭제" id="del">' + "삭제" + '</button></td>';
+
+                     tagSub += '<td><button type="button" title="삭제" class="' + idx +' " id="del">' + "삭제" + '</button></td>';
                      tagSub += '</tr>';
                   
-                     console.log(" idx 들어오는지 선택자로 확인 > "+ $('.good1').attr('value'));
-                     $("#lectureWish > tbody").append(tagSub);
                      
+                 console.log("제발=>"+idx)
+                     $("#lectureWish > tbody").append(tagSub); */
                      
+                 
+     
                   });
-                    
-               
+ 
+
                });      
             
             
              $(this).on('click','[id=send]',function(){
-               
-             var lectureIdx = "";
+
+            
+            	 var arr1 = document.getElementsByClassName('good1');
+          		console.log("제발===>"+arr1)
+          		
+			      for(i = 0; i < arr1.length ; i++ ){
+				
+			       	 var arr = document.getElementsByClassName('idx');
+			     	console.log(arr1[i])
+	        	
+		          	console.log(arr1[i].className)
+		    
+		       
+			        		console.log(arr[i].attr('value'))
+				        
+             }  
+            	    
+      
+           
+
 
                data = {
                      
                      "lectureIdx" : lectureIdx
                }   
-               console.log("정확한 확인 데스네 >"+lectureIdx);
+
+         
+
                /*
                $.ajax({
                    url : contextPath+ "/api/lecture/academy?acaIdx=" + acaIdx,
@@ -322,7 +369,7 @@ $(function(){
                               <th scope="col">&nbsp;</th>
                              </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="list">
                             
                             </tbody>
                             </table>
