@@ -71,18 +71,18 @@
 
             <nav id="navbar" class="navbar float-right d-lg-block">
                 <ul>
-                	<li class="dropdown"><a href="">Quick Menu</a>
-                        <ul>
-                            <li><a href="#about">About us</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#portfolio">Portfolio</a></li>
-                            <li><a href="#team">Team</a></li>
-                            <li><a href="#contact">Contact Us</a></li>
-                        </ul>
-                    </li>
+<!--                 	<li class="dropdown"><a href="">Quick Menu</a> -->
+<!--                         <ul> -->
+<!--                             <li><a href="#about">About us</a></li> -->
+<!--                             <li><a href="#services">Services</a></li> -->
+<!--                             <li><a href="#portfolio">Portfolio</a></li> -->
+<!--                             <li><a href="#team">Team</a></li> -->
+<!--                             <li><a href="#contact">Contact Us</a></li> -->
+<!--                         </ul> -->
+<!--                     </li> -->
                     <li class="active"><a href="${contextPath}/">Home</a></li>
-                    <li><a href="${contextPath}/noticeList">공지사항</a></li>
-                    <li><a href="${contextPath}/qna">Q&A</a></li>
+                    <li><a href="${contextPath}/qna">공지사항</a></li>
+                    <li><a href="${contextPath}/noticeList">Q & A</a></li>
                     <li><a href="${contextPath}/academySearch">학원찾기</a></li>
                     <li class="dropdown"><a href="">등록하기</a>
                     	<ul>
@@ -103,7 +103,7 @@
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
-<span id="login-member" style="display:none; margin:0;font-size:14px;position:absolute; top:0;right:10%;">${user.userName}님 안녕하세요!</span>
+<span id="login-member" style="display:none; margin:0; font-size:14px;position:absolute; top:0;right:10%;">${user.userName}님 안녕하세요!</span>
         </div>
     </header>
 
