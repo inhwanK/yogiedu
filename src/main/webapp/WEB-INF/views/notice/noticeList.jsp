@@ -28,9 +28,6 @@
 	                    list += "<td><a href='${contextPath}/notice?notIdx=" +
 	                        json.content[i].notIdx + "'>" + json.content[i].notTitle +
 	                        "</a></td>";
-	                   list += "<td><a href='${contextPath}/notice?notIdx="
-	                    		+ json.content[i].notIdx + "'>" + json.content[i].notTitle
-	                    		+ "</a></td>"; 
 	                    list += "<td>" + json.content[i].writer + "</td>";
 	                    list += "<td>" + json.content[i].regDate + "</td>";
 	                    list += "<tr>"
