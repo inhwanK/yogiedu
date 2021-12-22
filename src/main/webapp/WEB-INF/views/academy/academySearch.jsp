@@ -30,19 +30,20 @@
   $(function() {
                  
          var contextPath = "${contextPath}";
-        
+        var adminDistName = "남구";
+        var size;
           $.ajax({
-               url : contextPath + "/api/academyList",
+               url : contextPath + "/api/academyList/"+ adminDistName+"?page="+0+"&size="+9,
                 method : "get",
                 dataType : "json",
                 success: function(json) {
                 console.log(json);
                 
-                var dataLength = json.length;
-                console.log(json[0].acaNm)
+                //var dataLength = json.length;
+                //console.log(json[0].acaNm)
                 var list = "";
-                 console.log(json[0].acaIdx)
-                   for(i= 0 ; i < dataLength; i++){
+                 //console.log(json[0].acaIdx)
+                   for(i= 0 ; i < json.numberOfElements; i++){
                    
                                  list = "";
                          
@@ -54,13 +55,13 @@
                                  list+=			'</div>';
                                  list+=			'<div class="product_item col-md-8 card-body" id="opener" style="height:200px; ">';
                                  list+=			'<div class="card-title" style="height:33%; display:flex; align-items: center; justify-content: center;">';
-                                 list+=				'<a href="${contextPath}/lectureAcademyDetailView/' +json[i].acaIdx+ '">' + json[i].acaNm + '</a>';
+                                 list+=				'<a href="${contextPath}/lectureAcademyDetailView/' +json.content[i].acaIdx+ '">' + json.content[i].acaNm + '</a>';
                                  list+=				'</div>';
                                  list+=				'<div class="card-text" style="height:33%; display:flex; align-items: center; justify-content: center;">';
-                                 list+=					json[i].faRdnma;
+                                 list+=					json.content[i].faRdnma;
                                  list+=				'</div>';
                                  list+=				'<div class="card-text" style="height:33%; display:flex; align-items: center; justify-content: center;">';
-                                 list+=					json[i].fieldName;
+                                 list+=					json.content[i].fieldName;
                                  list+=				'</div>';
                                  list+=			'</div>';
                                  list+=		'</div>';
@@ -197,20 +198,7 @@
 
                     <div class=" search-table-wrap row col-md-12">
                         <!--강의시간표 이름-->
-                        <div class="search-table-title">
-                            <h1>시간표 보기</h1>
-                        </div>
-                     
-
                         
-                        <!-- 강의시간표 담기 및 분류방법-->
-                        <div class="go-to-category col-md-12">
-
-                            <div class="go-wishlist">
-                                <a href="./wishlist.html">시간표 담기</a>
-                            </div>
-
-                        </div>
                         <div class="pull-right col-md-2 ">
                             <label class="control-label">Show:</label>
                             <select class="form-control input-sm">

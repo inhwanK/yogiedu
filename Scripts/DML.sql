@@ -20,7 +20,7 @@ delete from lecture_time;
 
 
 alter table lecture_time auto_increment=1;
-alter table lecture auto_increment=1;
+
 
 select * 
   from academy 
@@ -35,4 +35,8 @@ delete from user;
 delete from lecture where LECTURE_IDX =2;
 show tables;
 
-select * from lecture;
+select * from notice;
+
+delete from notice;
+alter table notice auto_increment=1;
+

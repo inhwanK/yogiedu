@@ -6,6 +6,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
     $(function() {
+    	
         var contextPath = "${contextPath}";
 
         AOS.init({
@@ -33,7 +34,6 @@
                     list += "<p id='subject'>" + json[i].leCrseName + "</p>";
                     list += "</div>";
                     list += "</div>";
-                    console.log(json[i].acaNm);
                 }
                 $("div.swiper-wrapper").append(list);
                 $("div.mainAcaNm span").append(dataLength);
