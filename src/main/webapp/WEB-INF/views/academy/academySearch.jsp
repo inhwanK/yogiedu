@@ -25,107 +25,128 @@
      <meta charset="UTF-8">
  
  <script type="text/javascript">
+    
+  $(function() {
+                 
+         var contextPath = "${contextPath}";
+        
+          $.ajax({
+               url : contextPath + "/api/academyList",
+                method : "get",
+                dataType : "json",
+                success: function(json) {
+                console.log(json);
+                
+                var dataLength = json.length;
+                console.log(json[0].acaNm)
+                var list = "";
+                 console.log(json[0].acaIdx)
+                   for(i= 0 ; i < dataLength; i++){
+                   
+                                 list = "";
+                         
+                                 list+='<div class="product_itme1 col-md-4 card bg-light" data-type="daugu" style="display:flex; flex-direction:row; margin-top:10px;border-radius:5px;">';
+                                 list+=		'<div class="row col-md-12">';
+                                 list+=			'<div class="col-md-4" >';
+                                 list+=				'<div class= "aca-img card-img" style="display:flex; align-items:center; width:100%; height:calc( 100% - 20px );background-color:#e2e2e2; margin:10px 0;">';
+                                 list+=				'</div>';
+                                 list+=			'</div>';
+                                 list+=			'<div class="product_item col-md-8 card-body" id="opener" style="height:200px; ">';
+                                 list+=			'<div class="card-title" style="height:33%; display:flex; align-items: center; justify-content: center;">';
+                                 list+=				'<a href="${contextPath}/lectureAcademyDetailView/' +json[i].acaIdx+ '">' + json[i].acaNm + '</a>';
+                                 list+=				'</div>';
+                                 list+=				'<div class="card-text" style="height:33%; display:flex; align-items: center; justify-content: center;">';
+                                 list+=					json[i].faRdnma;
+                                 list+=				'</div>';
+                                 list+=				'<div class="card-text" style="height:33%; display:flex; align-items: center; justify-content: center;">';
+                                 list+=					json[i].fieldName;
+                                 list+=				'</div>';
+                                 list+=			'</div>';
+                                 list+=		'</div>';
+                                 list+='</div>';
+                      
    
-  	$(document).ready(function (){ 
-  	
-  		
- 		$(this).on('click','[id=btnArea]',function area(){
- 					
- 			
- 			var a = $(this).parent().parent().text();
-			console.log("지역선언===>"+ a);
- 		
- 			
- 				if(a === "동구"){
- 					
- 				console.log("hi");
- 					
- 				}
- 				console.log(a);
-  			
- 		}) 
- 		
- 		
- 		$(this).on('click','[id=btnSubject]', function (){
-	   			
-	   			var b = $(this).parent().parent().text();
-	   			console.log("지역선언==>" + b);
-	   			
-	   			var contextPath = "${contextPath}";
-	   			
-	   			if(b === "미술"){
- 					
-	 				console.log("hi");
-	 					
-	 				}
+                            $("#product-list-wrap").append(list);
+                   }
+             
+                    
+                   
+                 
+                }
+ 
 
-		   	/* 	if($("#btnSubject").prop("checked",true) =="미술"){
-		   			
-		   			console.log("hey") 
-		   			
-		   		}*/
-		   		console.log(b)
-		   		
-	   		})
-		
-	 	var a = $("#btnArea").parent().parent().text();
- 		var b = $("#btnSubject").parent().parent().text();
- 		console.log("전역에서 선언===>"+ a,b);
- 		
- 		console.log($("#btnArea").is(":checked"))
- 		if(  $("#btnArea").is(":checked") ||  $("#btnSubject").is(":checked")){
- 			console.log("전역 선언====>hi")
- 		}
- 		
- 		
-	   		
-  })
-    	
+         })   
+        
+    
+
+               
+   })
+
+             
+                    
+
+                
+                  
+            /*       $(this).on('click','[id=btnSubject]', function (){
+                          
+                          var b = $(this).parent().parent().text();
+                          console.log("지역선언==>" + b);
+                          
+                          var contextPath = "${contextPath}";
+                          
+                          if(b === "미술"){
+                           
+                           console.log("hi");
+                              
+                        }
+                   
+          
+            
+                   } */
+            
+  
+      
    
- 			 
- 				/* 	var b =	$(this).className().parent().parent(); */
- 			
- 			
- 			
- 			
-	       /*   $.ajax({
-	            url : contextPath + "/api/academyList",
-	             method : "get",
-	             dataType : "json",
-	             success: function(json) {
-	             console.log(json);
-	             
-	             var dataLength = json.length;
-	             var list = "";
-	           	
-	             	for(i= 0 ; i <= dataLength-800; i++){
-	            	 
-		            	 
-		            	 	
-		            		  list += '<div class="product_item1 col-md-4" data-type="daugu">';
-		                      list += '<div class="product_item" id="opener">';
-		                      list += '<div class="pi-img-wrapper"  >';
-		                      list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
-		                      list += '</div>';
-		                      list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
-		                      list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
-		                      list += '</div>';
-		                      list += '</div>';
-		                      list += '</div>';
-	            		 
-	            	 		
-		            	 	 	$("#product-list-wrap").empty();
-		     				$("#product-list-wrap").append(list);
-		     				
-		     		
-	             	}
+       
+   
+        /*     $.ajax({
+               url : contextPath + "/api/academyList",
+                method : "get",
+                dataType : "json",
+                success: function(json) {
+                console.log(json);
+                
+                var dataLength = json.length;
+                var list = "";
+                 
+                   for(i= 0 ; i <= dataLength-800; i++){
+                   
+                      
+                         
+                          list += '<div class="product_item1 col-md-4" data-type="daugu">';
+                            list += '<div class="product_item" id="opener">';
+                            list += '<div class="pi-img-wrapper"  >';
+                            list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
+                            list += '</div>';
+                            list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
+                            list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
+                            list += '</div>';
+                            list += '</div>';
+                            list += '</div>';
+                      
+                         
+                             $("#product-list-wrap").empty();
+                       $("#product-list-wrap").append(list);
+                       
+                 
+                   }
 
-            	 	
-      			
-             	}
-	         
+                   
+               
+                }
+            
      
-        	 	})    */  
+               })     */
 
 
    
@@ -135,7 +156,7 @@
 
     <%@include file="/WEB-INF/views/header.jsp"%>
     
-    	<section id="introLA">
+       <section id="introLA">
         <div class="search-list-wrap" >
             <div class="row col-md-12 ">
 
@@ -143,13 +164,18 @@
                     <div class="sidebar-categories ">
                         <div class="head">대구</div>
                         <ul class="main-categories" >
-                            <li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right area" ><input class="main-nav-list child" id="btnArea" type="radio" name="area" ></span>남구</li>
-                            <li class="main-nav-list" data-filter="daugu"  ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>달서구</li>
-                            <li class="main-nav-list" data-filter="daugu"	><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>동구</li>
-                            <li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>북구</li>
-                            <li class="main-nav-list" data-filter="daugu"  ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>서구</li>
-                            <li class="main-nav-list" data-filter="daugu"  ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area" ></span>수성구</li>
-                            <li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio"name="area"></span>중구</li>
+                            <li class="main-nav-list" data-filter="daugu" >
+                            	<span class="lnr lnr-arrow-right area">
+                            		<input class="main-nav-list child" id="btnArea" type="radio" name="area" >
+                            	</span>
+                            	남구
+                            	</li>
+                            <li class="main-nav-list" data-filter="daugu"  ><span class="lnr lnr-arrow-right area" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>달서구</li>
+                            <li class="main-nav-list" data-filter="daugu"   ><span class="lnr lnr-arrow-right area" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>동구</li>
+                            <li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right area" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>북구</li>
+                            <li class="main-nav-list" data-filter="daugu"  ><span class="lnr lnr-arrow-right area" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>서구</li>
+                            <li class="main-nav-list" data-filter="daugu"  ><span class="lnr lnr-arrow-right area" ><input class="main-nav-list child" id="btnArea" type="radio" name="area" ></span>수성구</li>
+                            <li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right area" ><input class="main-nav-list child" id="btnArea" type="radio"name="area"></span>중구</li>
                         </ul>
                     </div>
                     
@@ -159,7 +185,7 @@
 
                              <li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right sub" ><input class="main-nav-list child" id="btnSubject" name="subject" type="radio"></span>미술</li>
                              <li class="main-nav-list" data-filter="daugu"><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnSubject" name="subject" type="radio"></span>보습</li>
-                          	<li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnSubject" name="subject" type="radio"></span>음악</li>
+                             <li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnSubject" name="subject" type="radio"></span>음악</li>
                            
                         </ul>
                     </div>
@@ -173,108 +199,9 @@
                         <div class="search-table-title">
                             <h1>시간표 보기</h1>
                         </div>
-                        <!-- 강의시간표-->
-                        <table class="search-table col-md-12">
-                           <thead>
-                              <tr>
-                                  <th></th>
-                                  <th>월</th>
-                                  <th>화</th>
-                                  <th>수</th>
-                                  <th>목</th>
-                                  <th>금</th>
-                                  <th>토</th>
-                                  <th>일</th>
-                               </tr>
-                            </thead>
-                            <tbody>
-                               <tr>
-                                   <td class="time">
-                                       3-4
-                                   </td>
-                                   <td id="col1-1"></td>
-                                   <td id="col1-2"></td>
-                                   <td id="col1-3"></td>
-                                   <td id="col1-4"></td>
-                                   <td id="col1-5"></td>
-                                   <td id="col1-6"></td>
-                                   <td id="col1-7"></td>
-                               </tr>
-                               <tr>
-                                   <td class="time">
-                                       4-5
-                                   </td>
-                                   <td id="col2-1"></td>
-                                   <td id="col2-2"></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td id="col2-7"></td>
-                               </tr>
-                               <tr>
-                                   <td class="time">
-                                       5-6
-                                   </td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                               </tr>
-                               <tr>
-                                   <td class="time">
-                                       6-7
-                                   </td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                               </tr>
-                               <tr>
-                                   <td class="time">
-                                       7-8
-                                   </td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                               </tr>
-                               <tr>
-                                   <td class="time">
-                                       8-9
-                                   </td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                               </tr>
-                               <tr>
-                                   <td class="time">
-                                       9-10
-                                   </td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                               </tr>
-                     </tbody>
+                     
 
-                        </table>
+                        
                         <!-- 강의시간표 담기 및 분류방법-->
                         <div class="go-to-category col-md-12">
 
@@ -341,148 +268,6 @@
             </div>
             <!-- END CONTENT -->
 
-            <!--dialog 페이지-->
-        </div>
-        <div id="dialog">
-
-            <div class="col-md-12 col-sm-7">
-                <div class="product-page">
-                    <div class="row">
-
-                        <div class="intro-academy col-md-12 col-sm-10">
-                            <div>#고3 전문 </div>
-                            <h1>a학원</h1>
-
-                        </div>
-
-                    </div>
-                </div>
-
-
-
-            </div>
-
-            <div class="product-page-content">
-                <ul id="myTab" class="nav nav-tabs">
-                    <li><a href="#Description" data-toggle="tab">강의검색</a></li>
-                    <li><a href="#Information" data-toggle="tab">강사소개</a></li>
-                    <li><a href="#Reviews" data-toggle="tab">리뷰 (2)</a></li>
-                </ul>
-
-                <div class="tab-pane fade" id="Description">
-
-
-                    <!-- 상품 진열대 -->
-                    <div class="academy-lecture-wrap row col-md-12">
-                        <div id="goods" class="col-md-8">
-
-                            <div class="good">
-                                <table class="col-md-12">
-                           <colgroup>
-                                    <col style="width:20%;">
-                                    <col style="width:20%;">
-                                    <col style="width:20%;">
-                                    <col style="width:40%;">
-                           </colgroup>
-                                 <thead>
-                                      <tr>
-                                          <th scope="col" class="col-md-3">과목</th>
-                                          <th scope="col" class="col-md-3">과목명</th>
-                                          <th scope="col" class="col-md-3">시간</th>
-                                          <th scope="col" class="col-md-3">강사명</th>
-                                       </tr>
-                                    </thead>
-                                    <tbody>
-                                       <tr>
-                                           <td class="subject_name col-md-3">국어</td>
-                                           <td class="subject_name_detail col-md-3">국어1</td>
-                                           <td class="subject_time col-md-3">3-4</td>
-                                           <td class="subject_teacher col-md-3 ">김인환
-                                               <button type="button" title="과목 담기" class="btn_add1">과목 담기</button>
-                                           </td>
-                                       </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                        </div>
-
-
-                        <!-- 장바구니 -->
-
-                        <div id="cart" class="col-md-4">
-                            <table class="basic col-md-12" border="0" cellspacing="0" cellpadding="0">
-                                <tr bgcolor="#C8E3FF">
-                                    <th scope="col">과목</th>
-                                    <th scope="col">강사</th>
-                                    <th scope="col">대상</th>
-                                    <th scope="col">시간</th>
-                                    <th scope="col">&nbsp;</th>
-                                </tr>
-                            </table>
-
-                            <div id="show_total">
-
-                            </div>
-                            
-                            <div id="buy">
-                                <button type="button" title="구매하기" id="btn_buy">수강 시간표 넣기</button>
-                            </div>
-                            
-                        </div>
-
-                    </div>
-
-
-                    <!-- 총금액 -->
-
-
-
-                </div>
-
-                <div class="tab-pane fade" id="Information">
-                </div>
-                <div class="tab-pane fade" id="Reviews">
-                    <!--<p>There are no reviews for this product.</p>-->
-                    <div class="review-item clearfix">
-                        <div class="review-item-submitted">
-                            <strong>Bob</strong>
-                            <em>30/12/2013 - 07:37</em>
-                            <div class="rateit" data-rateit-value="5" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
-                        </div>
-                        <div class="review-item-content">
-                            <p>Sed velit quam, auctor id semper a, hendrerit eget justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis vel arcu pulvinar dolor tempus feugiat id in orci. Phasellus sed erat leo. Donec luctus, justo eget ultricies tristique, enim mauris bibendum orci, a sodales lectus purus ut lorem.</p>
-                        </div>
-                    </div>
-
-                    <!-- BEGIN FORM-->
-                    <form action="#" class="reviews-form" role="form">
-                        <h2>Write a review</h2>
-                        <div class="form-group">
-                            <label for="name">Name <span class="require">*</span></label>
-                            <input type="text" class="form-control" id="name">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="review">Review <span class="require">*</span></label>
-                            <textarea class="form-control" rows="8" id="review"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Rating</label>
-                            <input type="range" value="4" step="0.25" id="backing5">
-                            <div class="rateit" data-rateit-backingfld="#backing5" data-rateit-resetable="false" data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5">
-                            </div>
-                        </div>
-                        <div class="padding-top-20">
-                            <button type="submit" class="btn btn-primary">Send</button>
-                        </div>
-                    </form>
-                    <!-- END FORM-->
-                </div>
-            </div>
-        </div>
-
-
 
 
 
@@ -495,217 +280,7 @@
         <!-- Fonts END -->
        
        
-       
-<!--        ///////////////////////////////////////////////////////////////// -->
-
-        <div class="search-list-wrap" >
-            <div class="row col-md-12 ">
-
-                <div class="search-left col-md-3 ">
-                    <div class="sidebar-categories ">
-                        <div class="head" id="daeguAll" type="button">대구</div>
-                        <ul class="main-categories">
-                            <li class="main-nav-list" id="namgu" type="button">남구</li>
-                            <li class="main-nav-list" id="dalseogu" type="button">달서구</li>
-                            <li class="main-nav-list" id="donggu" type="button">동구</li>
-                            <li class="main-nav-list" id="bukgu" type="button">북구</li>
-                            <li class="main-nav-list" id="seogu" type="button">서구</li>
-                            <li class="main-nav-list" id="suseonggu" type="button">수성구</li>
-                            <li class="main-nav-list" id="junggu" type="button">중구</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="sidebar-categories">
-                        <div class="head">과목</div>
-                        <ul class="main-categories" >
-                            <li class="main-nav-list" id="subjectArt" type="button">미술</li>
-                            <li class="main-nav-list" id="subjectStudy" type="button">보습</li>
-                            <li class="main-nav-list" id="subjectMusic" type="button">음악</li>
-                        </ul>
-                    </div>
-                    
-                </div>
-
-<!--                 <div class="search-right col-md-9"> -->
-
-<!--                     <div class=" search-table-wrap row col-md-12"> -->
-<!--                         강의시간표 이름 -->
-<!--                         <div class="search-table-title"> -->
-<!--                             <h1>시간표 보기</h1> -->
-<!--                         </div> -->
-<!--                         강의시간표 -->
-<!--                         <table class="search-table col-md-12"> -->
-<!--                            <thead> -->
-<!--                               <tr> -->
-<!--                                   <th></th> -->
-<!--                                   <th>월</th> -->
-<!--                                   <th>화</th> -->
-<!--                                   <th>수</th> -->
-<!--                                   <th>목</th> -->
-<!--                                   <th>금</th> -->
-<!--                                   <th>토</th> -->
-<!--                                   <th>일</th> -->
-<!--                                </tr> -->
-<!--                             </thead> -->
-<!--                             <tbody> -->
-<!--                                <tr> -->
-<!--                                    <td class="time"> -->
-<!--                                        3-4 -->
-<!--                                    </td> -->
-<!--                                    <td id="col1-1"></td> -->
-<!--                                    <td id="col1-2"></td> -->
-<!--                                    <td id="col1-3"></td> -->
-<!--                                    <td id="col1-4"></td> -->
-<!--                                    <td id="col1-5"></td> -->
-<!--                                    <td id="col1-6"></td> -->
-<!--                                    <td id="col1-7"></td> -->
-<!--                                </tr> -->
-<!--                                <tr> -->
-<!--                                    <td class="time"> -->
-<!--                                        4-5 -->
-<!--                                    </td> -->
-<!--                                    <td id="col2-1"></td> -->
-<!--                                    <td id="col2-2"></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td id="col2-7"></td> -->
-<!--                                </tr> -->
-<!--                                <tr> -->
-<!--                                    <td class="time"> -->
-<!--                                        5-6 -->
-<!--                                    </td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                </tr> -->
-<!--                                <tr> -->
-<!--                                    <td class="time"> -->
-<!--                                        6-7 -->
-<!--                                    </td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                </tr> -->
-<!--                                <tr> -->
-<!--                                    <td class="time"> -->
-<!--                                        7-8 -->
-<!--                                    </td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                </tr> -->
-<!--                                <tr> -->
-<!--                                    <td class="time"> -->
-<!--                                        8-9 -->
-<!--                                    </td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                </tr> -->
-<!--                                <tr> -->
-<!--                                    <td class="time"> -->
-<!--                                        9-10 -->
-<!--                                    </td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                    <td></td> -->
-<!--                                </tr> -->
-<!--                      </tbody> -->
-
-<!--                         </table> -->
-<!--                         강의시간표 담기 및 분류방법 -->
-<!--                         <div class="go-to-category col-md-12"> -->
-
-<!--                             <div class="go-wishlist"> -->
-<!--                                 <a href="./wishlist.html">시간표 담기</a> -->
-<!--                             </div> -->
-
-<!--                         </div> -->
-                        <div class="pull-right col-md-2 ">
-                            <label class="control-label">Show:</label>
-                            <select class="form-control input-sm">
-                                <option value="#?limit=24" selected="selected">24</option>
-                                <option value="#?limit=25">25</option>
-
-                            </select>
-                        </div>
-                        <div class="pull-right col-md-2">
-                            <label class="control-label">분류&nbsp;:</label>
-                            <select class="form-control input-sm">
-                                <option value="#?sort=p.sort_order&amp;order=ASC" selected="selected">Default</option>
-                                <option value="#?sort=pd.name&amp;order=ASC">최신순</option>
-                                <option value="#?sort=pd.name&amp;order=DESC">리뷰순</option>
-
-                            </select>
-                        </div>
-                        <!--상품리스트 시작-->
-                        <div class="product_list row col-md-12" id="product-list-wrap">
-                            <!-- PRODUCT ITEM START -->
-
-
-                        </div>
-
-
-                        <!-- PRODUCT ITEM END -->
-
-
-                        <!-- product item script-->
-
-                        <!-- END PRODUCT LIST -->
-
-
-
-
-                        <!-- 아이템 페이지 컨트롤  -->
-                        <div class="col-md-7">
-
-
-                            <ul class="pagination pull-right ">
-                                <li><a href="javascript:;">&laquo;</a></li>
-                                <li><a href="javascript:;">1</a></li>
-                                <li><a href="javascript:;">2</a></li>
-                                <li><a href="javascript:;">3</a></li>
-                                <li><a href="javascript:;">4</a></li>
-                                <li><a href="javascript:;">5</a></li>
-                                <li><a href="javascript:;">&raquo;</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- END PAGINATOR -->
-                </div>
-
-
-            </div>
-            <!-- END CONTENT -->
-
-            <!--dialog 페이지-->
-        </div>
-        
-        
-<!--         ///////////////////////////////////////////////////////////// -->
-        
+    
         
 
    </section>
