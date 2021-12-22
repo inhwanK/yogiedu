@@ -16,6 +16,7 @@
 <script type="text/javascript">
 
 var length;
+
 $(function(){
       
       
@@ -83,16 +84,9 @@ $(function(){
                     	a = $(this).parent().siblings().first().text();
                     	console.log(" value값 확인 ==> "+idx);
                     	 
-                    	 	data= {
-                    	 		
-                    	 		lectureIdx : idx
-
-                    	 	}
-                  
-                           
                                 
                                 
-                                   window.location.href= contextPath+ "/academyLectureTable/2";
+                                   window.location.href= contextPath+ "/academyLectureTable/3";
                 
                    console.log(idx)
 					

@@ -38,13 +38,16 @@
     		var lectureIdx = "${lectureIdx}"
     		console.log("${lectureIdx}");
     		console.log(lectureIdx);
+    		var lal;
     		
-    	
-        var lectureIdx = "";
+
+        var lectureIdx ;
 
         var lectureTimeArr = "";
-        var lectureIdx;
+
         var fullLectureList = "";
+        
+        var lectureLength;
         var list = "";
         $.ajax({
             url: "${contextPath}/api/lectureList/",
@@ -52,27 +55,53 @@
             dataType: "json",
             success: function(json) {
                 console.log(json);
-                var lectureLength = lectureListIdx.length;
-                console.log(lectureLength);
-                for (i = 0; i <= lectureLength; i++) {
-                    if (json[i].lectureIdx = lectureListIdx.shift()) {
-                        list += json[i].lectureTimeArr + ","
-                    };
-                    
-                    var listArray = list.split(',');
-                    console.log(list);
-                    console.log(listArray);
-                    listArray.splice(-1, 1);
-                    console.log(listArray.length);
+              lectureLength = json.length;
+                console.log(json[0])
+              
+                for (i = 0; i < lectureLength; i++) {
+                var data = json[i].lectureIdx;
+                console.log("json idx data===>"+ data)
+              
+                
+	                	if (json[i].lectureIdx == lectureIdx){
+	                
+	                	var arr = JSON.parse("[" + data+ "]")
+					console.log("success arr===>"+ arr)
+	   	 
+	     
+					console.log("lectureIdx===>"+lectureIdx)
+	     
+					list = json[i].lectureTimeArr + ",";
+					console.log("list====>"+ list)
+	       
+	        
+					var listArray = list.split(',');
+					console.log("listArray===>" +listArray)
+					listArray.splice(-1, 1);
+					console.log("listArray splice===>" + listArray)
+	     
+	     
+					
+					lal = listArray.length;
+					console.log("lal===> " +lal);
+	                	}
+	                	else{
+	                	console.log("fail")
+                	
+                	
+                		}
+                
+               
+                
                 }
-                console.log(listArray);
-                console.log(listArray.length);
-                lal = listArray.length
-                for (i = 0; i <= lal - 1; i++) {
+           		
+              
+                for (i = 0; i <lectureLength; i++) {
+                	
                     var lecTime = listArray.splice(0, 1);
-                    console.log(lecTime);
+             		console.log(lecTime)
                     lt = Number(lecTime);
-                    console.log(lt);
+                 
                     switch (lt) {
 
                         case 1:
