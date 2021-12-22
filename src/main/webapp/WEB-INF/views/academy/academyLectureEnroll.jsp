@@ -108,7 +108,7 @@ $(function(){
 			
 			data = {
 					"acaIdx": acaIdx,
-					"subject": $("#newLec").children("tr:eq("+i+")").children('td:eq(0)').text(), // 과목
+					"lectureGrade": $("#newLec").children("tr:eq("+i+")").children('td:eq(0)').text(), // 과목
 					"lectureName": $("#newLec").children("tr:eq("+i+")").children('td:eq(1)').text(), // 강의 이름
 					"teacherName": $("#newLec").children("tr:eq("+i+")").children('td:eq(2)').text(), // 강사명
 					"lectureTimeStr": $("#newLec").children("tr:eq("+i+")").children('td:eq(3)').text() // 시간					
