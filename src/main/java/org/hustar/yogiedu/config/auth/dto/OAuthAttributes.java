@@ -28,7 +28,8 @@ public class OAuthAttributes {
 	private String userEdu;
 	private int userGrade;
 
-//	private Role userRole;
+	private Role userRole;
+	private Long acaIdx;
 
 	@Builder
 	public OAuthAttributes(Map<String, Object> attributes, String nameAttributeKey, String userEmail, String userName) {

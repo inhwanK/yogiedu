@@ -21,7 +21,7 @@ public class UserService {
 				.orElseThrow(() -> new IllegalArgumentException("회원 정보를 불러올 수 없습니다."));
 		
 		user.update(requestDto.getUserName(), requestDto.getUserBirth(), requestDto.getUserDiv(),
-				requestDto.getUserEdu(), requestDto.getUserGrade(), requestDto.getUserRole());
+				requestDto.getUserEdu(), requestDto.getUserGrade(), requestDto.getUserRole(),requestDto.getAcaIdx());
 		return userIdx;
 	}
 }
