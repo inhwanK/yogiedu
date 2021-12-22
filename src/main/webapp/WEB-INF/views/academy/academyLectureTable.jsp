@@ -46,6 +46,7 @@
         var lectureTimeArr = "";
 
         var fullLectureList = "";
+        
         var lectureLength;
         var list = "";
         $.ajax({
