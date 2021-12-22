@@ -1,5 +1,6 @@
 package org.hustar.yogiedu.controller;
 
+import org.hibernate.annotations.Parameter;
 import org.hustar.yogiedu.config.auth.LoginUser;
 import org.hustar.yogiedu.config.auth.dto.SessionUser;
 import org.springframework.stereotype.Controller;

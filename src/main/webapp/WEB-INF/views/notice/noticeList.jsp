@@ -35,18 +35,57 @@
 	                    list += "<td>" + json.content[i].regDate + "</td>";
 	                    list += "<tr>"
 	                    console.log(typeof(json.content[i].regDate));
-	                    
-	         			for(i=0; i<json.totalpages; i++){
-	         				
-	         				var page += "<li>";
-	         				var page += "<a href="">" + json.totalElements % 10 +1 +"<a>"
-	         				
-	         				
-	         			}
-				}	 
-
-                $("tbody").append(list);
-                $("#pagenation").append
+	                    //size = 한페이지에 보여지는 컨텐츠 수
+            		 	}//or json.pageable.pageSize?
+            		 	  $("tbody").append(list);
+            		 	
+            		 	 	var totalPages =  Math.ceil(json.totalElements / json.numberOfElements);
+            		 		var pageGroup =	  Math.ceil( json.number / json.pageable.pageSize)  ;
+            		 			
+            		 		
+            		 		console.log("totalpages==>" +totalPages,"currentPage===>"+ pageGroup);
+            		 		
+            		 		var last = pageGroup * json.pageable.pageSize;
+            		 		console.log("last===>"+last);
+            		 		if( last > totalPages)
+            		 			last = totalPages;
+            		 		var  first = last -(json.pageable.pageSize -1);
+            		 		console.log("first===>"+first)
+            		 		var next = last +1;
+            		 		console.log("next===>"+next)
+            		 		var prev = first -1;
+            		 		console.log("prev===>"+prev)
+	                  
+            		 	 
+            		 		if(totalPages < 1)
+            		 			{
+            		 			first = last;
+            		 			}
+            		 		var pages = $("#pages");
+            		 		pages.empty();
+            		 		
+            		 		if(first > 5) {
+            		 			pages.append("<li class='pagination-item'><a onclick='GetTarget(prev)' >" + prev +   "</a></li>");
+            		 		}
+            		 		
+            		 		for(var j = first; j<=last; j++){
+            		 			if(json.number === j){
+            		 				
+            		 				pages.append("<li class='pagination-item'><a class='active' onclick='GetTarget(prev)'  >" + j +   "</a></li>")
+            		 			}else if( j > 0){
+            		 				
+            		 				pages.append("<li class='pagination-item'><a class='active' onclick='GetTarget(prev)'  >" + j +   "</a></li>")
+            		 			}
+            		 			
+            		 		}
+            		 		if (next>5 && next < totalPages){
+            		 			pages.append("<li class='pagination-item'><a class='active' onclick='GetTarget(prev)'  >" + next +   "</a></li>")
+            		 		}
+            		 
+					
+	       			 
+              
+               
             }
         });
     });
@@ -77,14 +116,19 @@
                         </tr>
                     </thead>
                     <tbody>
-
+									
                     </tbody>
                 </table>
             </div>
             
            <button id="btn_write" type="button" class="btn_write btn btn-primary btn-floating" onclick="location.href= '${contextPath}/noticeReg'" style="margin:20px 0;">글작성</button>
         </div>
-        <div id="pagination" style="text-align:center"></div>
+       		
+       	<div class="pagination-wrapper clearfix">
+  <ul class="pagination float--right" id="pages">
+    
+  </ul>
+</div>	
     </section>
 </body>
 <style>
