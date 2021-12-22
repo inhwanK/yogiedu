@@ -233,14 +233,14 @@
 <section id="introLA">
     <div class="search-right col-md-9">
 
-        <div class=" search-table-wrap row col-md-12">
+        <div class=" search-table-wrap row col-md-12 table-responsive">
             <!--강의시간표 이름-->
             <div class="search-table-title">
                 <h1>시간표 보기</h1>
             </div>
             <!-- 강의시간표-->
-            <table class="search-table col-md-12">
-                <thead>
+            <table class="table table-bordered search-table col-md-12">
+                <thead class="thead-light">
                     <tr>
                         <th></th>
                         <th>월</th>
@@ -345,4 +345,25 @@
 </section>
 
 </body>
+<style>
+thead{
+ border: 1px solid #dee2e6;
+ border-left:none;
+ border-right:none;
+ border-top:2px solid #000;
+}	
+
+ td,
+ th,
+ tr {
+        padding: 10px;
+        border: 1px solid #dee2e6;
+        border-left: none;
+        border-right: none;
+    }
+
+tbody tr:last-child {
+        border-bottom: 2px solid #000;
+    }
+</style>
 <%@include file="/WEB-INF/views/footer.jsp"%>
