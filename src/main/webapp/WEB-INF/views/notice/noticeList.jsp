@@ -37,7 +37,7 @@
             	list = "";
 
             	console.log("이게 size 다 > " + json.size);
-        		for(i=0; i < json.size ; i++){
+        		for(i=0; i < json.numberOfElements ; i++){
 	
 					list += "<tr>"; // 첫번째 반복문이 돌아갈 떄의 예
 					list += "<td>" + json.content[i].notIdx + "</td>"; //json의 데이터에 배열값 중 0번쨰 데이터의 notIdx property라는 값을 불러온다

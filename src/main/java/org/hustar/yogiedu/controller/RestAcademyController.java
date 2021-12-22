@@ -6,6 +6,9 @@ import java.util.List;
 import org.hustar.yogiedu.dto.academy.AcademyResponseDto;
 import org.hustar.yogiedu.dto.academy.AcademySaveRequestDto;
 import org.hustar.yogiedu.service.AcademyService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,19 +32,26 @@ public class RestAcademyController {
 	}
 
 //	학원 지역구별로 검색.
+//	@GetMapping("/academyList/{adminDistName}")
+//	public List<AcademyResponseDto> getAcademyListByAdminDistName(@PathVariable String adminDistName){
+//		return academyService.findByAdminDistName(adminDistName);
+//	}
+
 	@GetMapping("/academyList/{adminDistName}")
-	public List<AcademyResponseDto> getAcademyListByAdminDistName(@PathVariable String adminDistName){
-		return academyService.findByAdminDistName(adminDistName);
+	public Page<AcademyResponseDto> getAcademyListByAdminDistNameOrderByAcaNmDesc(@PathVariable String adminDistName,
+			@PageableDefault(size = 15) Pageable pageable) {
+		return academyService.findByAdminDistNameOrderByAcaNmDesc(adminDistName, pageable);
 	}
-	
+
 //	학원 수업 분야와 지역구에 따른 검색.
 	@GetMapping("/academyList/{adminDistName}/{leCrseName}")
-	public List<AcademyResponseDto> getAcademyListByLeCrseName(@PathVariable(value = "adminDistName") String adminDistName,
-			@PathVariable(value = "leCrseName") String leCrseName){
-		
+	public List<AcademyResponseDto> getAcademyListByLeCrseName(
+			@PathVariable(value = "adminDistName") String adminDistName,
+			@PathVariable(value = "leCrseName") String leCrseName) {
+
 		return academyService.findByAdminDistNameAndLeCrseNameContaining(adminDistName, leCrseName);
 	}
-	
+
 	@GetMapping("/academy")
 	public AcademyResponseDto getAcademy(Long acaIdx) {
 		return academyService.findById(acaIdx);
