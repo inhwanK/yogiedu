@@ -86,6 +86,7 @@ $(function(){
                     	 	data= {
                     	 		
                     	 		lectureIdx : idx
+
                     	 	}
                   
                            

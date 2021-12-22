@@ -48,7 +48,7 @@ public class RestNoticeController {
 //	}
 	
 	@GetMapping("/noticelist")
-	public Page<NoticeResponseDto> getNoticeList(@PageableDefault(size = 8) Pageable pageable){
+	public Page<NoticeResponseDto> getNoticeList(@PageableDefault(size = 10) Pageable pageable){
 		return noticeService.findAllByOrderByNotIdxDesc(pageable);
 	}
 
