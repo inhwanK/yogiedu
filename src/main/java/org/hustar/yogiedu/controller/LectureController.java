@@ -34,7 +34,8 @@ public class LectureController {
 	}
 
 	@GetMapping("/academyLectureTable/{lectureIdx}") // 경로 이름
-	public String lectureTableView(@PathVariable Long lectureIdx,Model model, @LoginUser SessionUser user) {
+	public String lectureTableView(@PathVariable Long lectureIdx, Model model, @LoginUser SessionUser user) {
+
 		model.addAttribute("user", user);
 		model.addAttribute("lectureIdx", lectureIdx);
 		return "academy/academyLectureTable";

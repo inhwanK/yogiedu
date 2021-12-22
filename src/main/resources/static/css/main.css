@@ -1015,6 +1015,9 @@ h6 {
     font-size: 18px;
     margin: 0 2px;
 }
+#team .member .img-fluid{
+	height:100%;
+}
 /*--------------------------------
 /* Clients Section
 --------------------------------*/

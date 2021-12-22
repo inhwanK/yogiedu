@@ -39,10 +39,11 @@ public class User {
 	
 	@Enumerated(EnumType.STRING)
 	private Role userRole;
-
+	private Long acaIdx;
+	
 	@Builder
 	public User(String userEmail, String userName, String userBirth, String userDiv, String userEdu,
-			int userGrade, Role userRole) {
+			int userGrade, Role userRole, Long acaIdx) {
 		super();
 		this.userEmail = userEmail;
 		this.userName = userName;
@@ -51,17 +52,19 @@ public class User {
 		this.userEdu = userEdu;
 		this.userGrade = userGrade;
 		this.userRole = userRole;
+		this.acaIdx = acaIdx;
 	}
 
 	
 	
-	public User update(String userName, String userBirth, String userDiv, String userEdu,int userGrade, Role userRole) {
+	public User update(String userName, String userBirth, String userDiv, String userEdu,int userGrade, Role userRole,Long acaIdx) {
 		this.userName = userName;
 		this.userBirth = userBirth;
 		this.userDiv = userDiv;
 		this.userEdu = userEdu;
 		this.userGrade = userGrade;
 		this.userRole = userRole;
+		this.acaIdx = acaIdx;
 		
 		return this;
 	}

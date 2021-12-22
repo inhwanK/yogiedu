@@ -4,93 +4,96 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
 <meta charset="UTF-8">
+
+<style>
+.pagination-wrapper{
+	display:flex;
+}
+
+.pageBtn{
+	display: flex;
+    align-content: stretch;
+    padding: 10px;
+    justify-content: center;
+}
+</style>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
     $(function() {
+    	
         var contextPath = "${contextPath}";
+        
+        // page default 값
+        var page = 0;
+        var list;
+        
         $.ajax({
-            url: contextPath + "/api/noticelist", //noticelist에 있는 모든 데이터 정보를 사용하겠다
+            url: contextPath + "/api/noticelist?page=" + page, //noticelist에 있는 모든 데이터 정보를 사용하겠다
             type: "get", //데이터의 연동방식 (get or post)
             contextType: "apllication/json; charset=utf-8",
             dataType: "json", //로드된 데이터의 형태, 문자열은 string
             success: function(json) { //succeess 데이터 로드가 완료되면 호출하는 함수
-            		console.log(json);
-            
-            		console.log(json.content)
-            		console.log(json.content[0])
-            		console.log(json.totalPages)
-            		
-					var list="";
-            		 	for(i=0; i < json.content.length ; i++){
-					
-				      list += "<tr>"; // 첫번째 반복문이 돌아갈 떄의 예
-	                    list += "<td>" + json.content[i].notIdx + "</td>"; //json의 데이터에 배열값 중 0번쨰 데이터의 notIdx property라는 값을 불러온다
-	                    list += "<td><a href='${contextPath}/notice?notIdx=" +
-	                        json.content[i].notIdx + "'>" + json.content[i].notTitle +
-	                        "</a></td>";
-	                   list += "<td><a href='${contextPath}/notice?notIdx="
-	                    		+ json.content[i].notIdx + "'>" + json.content[i].notTitle
-	                    		+ "</a></td>"; 
-	                    list += "<td>" + json.content[i].writer + "</td>";
-	                    list += "<td>" + json.content[i].regDate + "</td>";
-	                    list += "<tr>"
-	                    console.log(typeof(json.content[i].regDate));
-	                    //size = 한페이지에 보여지는 컨텐츠 수
-            		 	}//or json.pageable.pageSize?
-            		 	  $("tbody").append(list);
-            		 	
-            		 	 	var totalPages =  Math.ceil(json.totalElements / json.numberOfElements);
-            		 		var pageGroup =	  Math.ceil( json.number / json.pageable.pageSize)  ;
-            		 			
-            		 		
-            		 		console.log("totalpages==>" +totalPages,"currentPage===>"+ pageGroup);
-            		 		
-            		 		var last = pageGroup * json.pageable.pageSize;
-            		 		console.log("last===>"+last);
-            		 		if( last > totalPages)
-            		 			last = totalPages;
-            		 		var  first = last -(json.pageable.pageSize -1);
-            		 		console.log("first===>"+first)
-            		 		var next = last +1;
-            		 		console.log("next===>"+next)
-            		 		var prev = first -1;
-            		 		console.log("prev===>"+prev)
-	                  
-            		 	 
-            		 		if(totalPages < 1)
-            		 			{
-            		 			first = last;
-            		 			}
-            		 		var pages = $("#pages");
-            		 		pages.empty();
-            		 		
-            		 		if(first > 5) {
-            		 			pages.append("<li class='pagination-item'><a onclick='GetTarget(prev)' >" + prev +   "</a></li>");
-            		 		}
-            		 		
-            		 		for(var j = first; j<=last; j++){
-            		 			if(json.number === j){
-            		 				
-            		 				pages.append("<li class='pagination-item'><a class='active' onclick='GetTarget(prev)'  >" + j +   "</a></li>")
-            		 			}else if( j > 0){
-            		 				
-            		 				pages.append("<li class='pagination-item'><a class='active' onclick='GetTarget(prev)'  >" + j +   "</a></li>")
-            		 			}
-            		 			
-            		 		}
-            		 		if (next>5 && next < totalPages){
-            		 			pages.append("<li class='pagination-item'><a class='active' onclick='GetTarget(prev)'  >" + next +   "</a></li>")
-            		 		}
-            		 
-					
-	       			 
-              
+            	
+            	list = "";
+
+            	console.log("이게 size 다 > " + json.size);
+        		for(i=0; i < json.size ; i++){
+	
+					list += "<tr>"; // 첫번째 반복문이 돌아갈 떄의 예
+					list += "<td>" + json.content[i].notIdx + "</td>"; //json의 데이터에 배열값 중 0번쨰 데이터의 notIdx property라는 값을 불러온다
+					list += "<td><a href='${contextPath}/notice?notIdx=" + json.content[i].notIdx + "'>" + json.content[i].notTitle + "</a></td>";
+					list += "<td>" + json.content[i].writer + "</td>";
+					list += "<td>" + json.content[i].regDate + "</td>";
+					list += "<tr>"
+        		}
+        		 
+        		$("tbody").append(list);
+        		
+        		var pageBtn = "";
+        		
+        		for(var pageNo = 0; pageNo < json.totalPages; pageNo++){
+        			pageBtn += "<li>";
+        			pageBtn += "<button id=\"btn_write\" class=\"btn_write btn btn-primary btn-floating\" onclick=\"page("+ (pageNo+1) +")\">"+(pageNo+1)+"</button>";
+        			pageBtn += "</li>";
+        			//pageBtn +="<li class=\"pageBtn\">" + pageNo + "</li>";
+        		}
+        		
+        		$("ul#pages").append(pageBtn);
+
                
             }
         });
+        
     });
     
-   
+    function page(pageNo){
+    	console.log("페이지 번호 > "+pageNo);
+    	
+    	
+    	$.ajax({
+            url:"/api/noticelist?page=" + (pageNo-1), //noticelist에 있는 모든 데이터 정보를 사용하겠다
+            type: "get", //데이터의 연동방식 (get or post)
+            contextType: "apllication/json; charset=utf-8",
+            dataType: "json", //로드된 데이터의 형태, 문자열은 string
+            success: function(json) { //succeess 데이터 로드가 완료되면 호출하는 함수
+            	
+            	list = "";
+
+            	console.log("이게 size 다 > " + json.size);
+        		for(i=0; i < json.numberOfElements ; i++){
+	
+					list += "<tr>"; // 첫번째 반복문이 돌아갈 떄의 예
+					list += "<td>" + json.content[i].notIdx + "</td>"; //json의 데이터에 배열값 중 0번쨰 데이터의 notIdx property라는 값을 불러온다
+					list += "<td><a href='${contextPath}/notice?notIdx=" + json.content[i].notIdx + "'>" + json.content[i].notTitle + "</a></td>";
+					list += "<td>" + json.content[i].writer + "</td>";
+					list += "<td>" + json.content[i].regDate + "</td>";
+					list += "<tr>"
+        		}
+        		$("tbody").empty(); 
+        		$("tbody").append(list);
+            }
+        });
+    }
 </script>
 <%@include file="/WEB-INF/views/header.jsp"%>
 <body>
@@ -125,10 +128,10 @@
         </div>
        		
        	<div class="pagination-wrapper clearfix">
-  <ul class="pagination float--right" id="pages">
-    
-  </ul>
-</div>	
+			<ul class="pagination float--right" id="pages">
+				
+			</ul>
+		</div>	
     </section>
 </body>
 <style>

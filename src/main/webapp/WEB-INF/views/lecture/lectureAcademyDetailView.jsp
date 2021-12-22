@@ -84,9 +84,6 @@ $(function(){
                     	a = $(this).parent().siblings().first().text();
                     	console.log(" value값 확인 ==> "+idx);
                     	 
-                   
-                  
-                           
                                 
                                 
                                    window.location.href= contextPath+ "/academyLectureTable/3";

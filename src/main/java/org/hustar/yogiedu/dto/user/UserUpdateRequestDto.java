@@ -19,10 +19,11 @@ public class UserUpdateRequestDto {
 	
 //	롤은 다시한번 생각해볼까?
 	private Role userRole;
-
+	private Long acaIdx;
+	
 	@Builder
 	public UserUpdateRequestDto(String userName, String userBirth, String userDiv, String userEdu, int userGrade,
-			Role userRole) {
+			Role userRole, Long acaIdx) {
 		super();
 		this.userName = userName;
 		this.userBirth = userBirth;
@@ -30,6 +31,7 @@ public class UserUpdateRequestDto {
 		this.userEdu = userEdu;
 		this.userGrade = userGrade;
 		this.userRole = userRole;
+		this.acaIdx = acaIdx;
 	}
 	
 	

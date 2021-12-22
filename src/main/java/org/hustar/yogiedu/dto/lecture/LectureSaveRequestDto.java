@@ -13,25 +13,29 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class LectureSaveRequestDto {
-	
+
 	// Academy 객체의 acaIdx 값을 요청값으로 받음.
 	@NonNull
 	private Long acaIdx;
+
 	private String lectureName;
 	private String teacherName;
-	
-//	인표야 이 데이터 요청할 때는 나한테 얘기해!
+	private String subjectName;
 	private String lectureTimeStr;
-	
+	private String lectureGrade;
+
 	@Builder
-	public LectureSaveRequestDto(@NonNull Long acaIdx, String lectureName, String teacherName, String lectureTimeStr) {
+	public LectureSaveRequestDto(@NonNull Long acaIdx, String lectureName, String teacherName, String subjectName,
+			String lectureTimeStr, String lectureGrade) {
 		super();
 		this.acaIdx = acaIdx;
 		this.lectureName = lectureName;
 		this.teacherName = teacherName;
+		this.subjectName = subjectName;
 		this.lectureTimeStr = lectureTimeStr;
+		this.lectureGrade = lectureGrade;
 	}
-	
+
 	public Lecture toEntity() {
 		return Lecture.builder()
 				.academy(Academy.builder()
@@ -39,7 +43,9 @@ public class LectureSaveRequestDto {
 						.build())
 				.lectureName(lectureName)
 				.teacherName(teacherName)
+				.subjectName(subjectName)
 				.lectureTimeStr(lectureTimeStr)
+				.lectureGrade(lectureGrade)
 				.build();
 	}
 }

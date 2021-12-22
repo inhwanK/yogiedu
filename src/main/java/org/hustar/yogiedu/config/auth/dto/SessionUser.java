@@ -18,7 +18,8 @@ public class SessionUser implements Serializable {
 	private String userEdu;
 	private int userGrade;
 	private Role userRole;
-
+	private Long acaIdx;
+	
 	public SessionUser(User user) {
 		this.userEmail = user.getUserEmail();
 		this.userName = user.getUserName();
@@ -27,6 +28,7 @@ public class SessionUser implements Serializable {
 		this.userEdu = user.getUserEdu();
 		this.userGrade = user.getUserGrade();
 		this.userRole = user.getUserRole();
+		this.acaIdx = user.getAcaIdx();
 	}
 
 }

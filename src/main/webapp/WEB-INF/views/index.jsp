@@ -25,7 +25,7 @@
                 //</div>
                 var list = "";
                 var dataLength = json.length;
-                for (i = 0; i < 5; i++) {
+                for (i = 0; i < json.length; i++) {
                     list += "<div class='swiper-slide'>";
                     list += "<div class='testimonial-item'>";
                     list += "<h3 id='title' style='border-bottom:2px solid #000000; border-left:10px solid #000000'>" + json[i].acaNm + "</h3>";
@@ -294,6 +294,7 @@
 
         </div>
     </section>
+    <!-- 
     <section id="portfolio" class="clearfix">
         <div class="container" data-aos="fade-up">
 
@@ -444,6 +445,7 @@
 
         </div>
     </section>
+     -->
     <section id="testimonials" class="section-bg">
         <div class="container">
 
@@ -464,7 +466,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-pagination"></div>
+                        <!-- <div class="swiper-pagination"></div> -->
                     </div>
                 </div>
             </div>
@@ -499,18 +501,18 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" >
                     <div class="member">
-                        <img src="/static/img/team-2.jpg" class="img-fluid" alt="">
+                        <img src="/static/img/김인표.jpg" class="img-fluid" alt="">
                         <div class="member-info">
                             <div class="member-info-content">
                                 <h4>김인표</h4>
                                 <span>프런트엔드</span>
                                 <div class="social">
-                                    <a href=""><i class="fa fa-phone"></i></a>
-                                    <a href=""><i class="fa fa-github"></i></a>
-                                    <a href=""><i class="fa fa-instagram"></i></a>
-                                    <a href=""><i class="fa fa-envelope"></i></a>
+                                    <a href="#" title="010-4572-9384"><i class="fa fa-phone"></i></a>
+                                    <a href="https://github.com/kiminpyo"><i class="fa fa-github"></i></a>
+                                    <a href="https://www.instagram.com/innnnnnpyooooo"><i class="fa fa-instagram"></i></a>
+                                    <a href="#" title="rladlsvy2448@naver.com"><i class="fa fa-envelope"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -519,16 +521,16 @@
 
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="member">
-                        <img src="/static/img/team-3.jpg" class="img-fluid" alt="">
+                        <img src="/static/img/김인환.png" class="img-fluid" alt="">
                         <div class="member-info">
                             <div class="member-info-content">
                                 <h4>김인환</h4>
                                 <span>백엔드, DB</span>
                                 <div class="social">
-                                    <a href=""><i class="fa fa-phone"></i></a>
-                                    <a href=""><i class="fa fa-github"></i></a>
-                                    <a href=""><i class="fa fa-instagram"></i></a>
-                                    <a href=""><i class="fa fa-envelope"></i></a>
+                                    <a href="#" title="010-91986529"><i class="fa fa-phone"></i></a>
+                                    <a href="https://github.com/inhwanK"><i class="fa fa-github"></i></a>
+                                    <a href="https://www.instagram.com/nani_inaning"><i class="fa fa-instagram"></i></a>
+                                    <a href="#" title="inhan1009@naver.con"><i class="fa fa-envelope"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -537,16 +539,16 @@
 
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="member">
-                        <img src="/static/img/team-4.jpg" class="img-fluid" alt="">
+                        <img src="/static/img/이민기.jpg" class="img-fluid" alt="">
                         <div class="member-info">
                             <div class="member-info-content">
                                 <h4>이민기</h4>
                                 <span>백엔드</span>
                                 <div class="social">
-                                    <a href=""><i class="fa fa-phone"></i></a>
-                                    <a href=""><i class="fa fa-github"></i></a>
-                                    <a href=""><i class="fa fa-instagram"></i></a>
-                                    <a href=""><i class="fa fa-envelope"></i></a>
+                                    <a href="#" title="010-5430-7649"><i class="fa fa-phone"></i></a>
+                                    <a href="https://github.com/lamalli"><i class="fa fa-github"></i></a>
+                                    <a href="https://www.instagram.com/__mingi2/"><i class="fa fa-instagram"></i></a>
+                                    <a href="#" title="mnmg4444@gmail.com"><i class="fa fa-envelope"></i></a>
                                 </div>
                             </div>
                         </div>

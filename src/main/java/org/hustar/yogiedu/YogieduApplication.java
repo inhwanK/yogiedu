@@ -11,5 +11,4 @@ public class YogieduApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(YogieduApplication.class, args);
 	}
-
 }
