@@ -42,7 +42,7 @@
     		console.log(lectureIdx);
     		var lal;
     		
-        var lectureIdx = "";
+        var lectureIdx ;
         var lectureTimeArr = "";
 
         var fullLectureList = "";
@@ -62,24 +62,34 @@
                 var data = json[i].lectureIdx;
                 console.log("json idx data===>"+ data)
               
-                var arr = JSON.parse("[" + data+ "]")
-                console.log("arr===>"+ arr)
-              	
-               
+                
+                	if (json[i].lectureIdx == lectureIdx){
+                
+                	var arr = JSON.parse("[" + data+ "]")
+				console.log("success arr===>"+ arr)
+   	 
+     
+				console.log("lectureIdx===>"+lectureIdx)
+     
+				list = json[i].lectureTimeArr + ",";
+				console.log("list====>"+ list)
+       
+        
+				var listArray = list.split(',');
+				console.log("listArray===>" +listArray)
+				listArray.splice(-1, 1);
+				console.log("listArray splice===>" + listArray)
+     
+     
+lal = listArray.length;
+console.log("lal===> " +lal);
+                	}else{
+                		console.log("fail")
                 	
-                      if (json[i].lectureIdx = data) {
-                        list = json[i].lectureTimeArr + ",";
-                        console.log("list====>"+ list)
-                    }; 
-                    
-					var listArray = list.split(',');
-                 		console.log("listArray===>" +listArray)
-                    listArray.splice(-1, 1);
-                 console.log("listArray splice===>" + listArray)
-                 
-                 
-                 lal = listArray.length;
-                		console.log("lal===> " +lal);
+                	
+                	}
+                
+               
                 
                 }
            		
