@@ -55,54 +55,57 @@ $(function(){
 	    answer: "강의가 학원에만 종속되어있을 뿐 아니라 강사님들에게도 들어가게 하여 평점 및 리뷰를 남길 수 있게 할 예정입니다."
 	}]
 	
-	function createHtmlFAQ(q, a, id) {
-        return (
-            "<div class=\"panel panel-default\">" +
-            "    <div class=\"panel-heading\">" +
-            "        <h4 class=\"panel-title\">" +
-            "            <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse" + id + "\">" + q + "</a>" +
-            "        </h4>" +
-            "    </div>" +
-            "    <div id=\"collapse" + id + "\" class=\"panel-collapse collapse\">" +
-            "        <div class=\"panel-body\">" +
-            "            " + marked(a) +
-            "        </div>" +
-            "    </div>" +
-            "</div>\n");
-    }
 	
-	$(document).ready(function() {
-        var cArray = [];
-        for (i in FAQ) {
-            var cItem = {};
-            var indexCategory = -1;
-            for (j in cArray) {
-                if (cArray[j].text == FAQ[i].category) {
-                    indexCategory = j;
-                    break;
-                }
-            }
-
-            if (indexCategory == -1) {
-                cItem.text = FAQ[i].category;
-                cItem.html = createHtmlFAQ(FAQ[i].question, FAQ[i].answer, i);
-                cArray.push(cItem);
-            } else {
-                cArray[indexCategory].html += createHtmlFAQ(FAQ[i].question, FAQ[i].answer, i);
-            }
-        }
-
-        var html = "";
-
-        for (i in cArray) {
-            html += "<div class=\"faqHeader\">" + cArray[i].text + "</div>\n" + cArray[i].html + "<br />"
-        }
-
-        $("#accordion").html($(html));
-        $(".accordion-toggle:first").click();
-    });
+	
+	
 });
 
+$(document).ready(function() {
+    var cArray = [];
+    for (i in FAQ) {
+        var cItem = {};
+        var indexCategory = -1;
+        for (j in cArray) {
+            if (cArray[j].text == FAQ[i].category) {
+                indexCategory = j;
+                break;
+            }
+        }
+
+        if (indexCategory == -1) {
+            cItem.text = FAQ[i].category;
+            cItem.html = createHtmlFAQ(FAQ[i].question, FAQ[i].answer, i);
+            cArray.push(cItem);
+        } else {
+            cArray[indexCategory].html += createHtmlFAQ(FAQ[i].question, FAQ[i].answer, i);
+        }
+    }
+
+    var html = "";
+
+    for (i in cArray) {
+        html += "<div class=\"faqHeader\">" + cArray[i].text + "</div>\n" + cArray[i].html + "<br />"
+    }
+
+    $("#accordion").html($(html));
+    $(".accordion-toggle:first").click();
+});
+
+function createHtmlFAQ(q, a, id) {
+    return (
+        "<div class=\"panel panel-default\">" +
+        "    <div class=\"panel-heading\">" +
+        "        <h4 class=\"panel-title\">" +
+        "            <a class=\"accordion-toggle\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse" + id + "\">" + q + "</a>" +
+        "        </h4>" +
+        "    </div>" +
+        "    <div id=\"collapse" + id + "\" class=\"panel-collapse collapse\">" +
+        "        <div class=\"panel-body\">" +
+        "            " + marked(a) +
+        "        </div>" +
+        "    </div>" +
+        "</div>\n");
+}
 </script>
 <%@include file="/WEB-INF/views/header.jsp"%>
 	<section id="intro" class="clearfix">

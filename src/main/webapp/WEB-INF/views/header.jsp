@@ -4,7 +4,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <c:set var="contextPath" value="<%=request.getContextPath() %>" />
-<c:set var="user" value="<%=request.getAttribute(\"user\")%>" />
+<c:set var="user" value="<%=session.getAttribute(\"user\")%>" />
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -39,15 +39,12 @@
     $(function(){
 
     	var user = "${user}";
+    	var userName = "${user.userName}";
     	
-    	for(key in user) {
-    		console.log("object[" + key +"] = " + user[key]);
-    	}
-    	
-    	console.log(""+"${user.userName}");
+    	console.log("유저 > "+"${user.userName}");
     	console.log(""+user);
     	
-    	if(user != null){
+    	if(userName != ""){
     		$("li#login").css("display","none");
     		$("li#logout").css("display","block");
     		$("span#login-member").css("display","block");
@@ -91,14 +88,13 @@
                         </ul>
                     </li>
                     <li id="login" style="margin-left:10px;">
-                    	<a style="padding-left:10px; padding-right:10px; color:white; font-weight:600;"href="/oauth2/authorization/google" class="btn btn-Info btn-lg btn-google btn-block text-uppercase btn-outline" href="#">
+                    	<a style="padding-left:10px; padding-right:10px; color:white; font-weight:600;"href="/oauth2/authorization/google" class="btn btn-Info btn-lg btn-google btn-block text-uppercase btn-outline">
                     	<img src="https://img.icons8.com/color/16/000000/google-logo.png">
                     	<span>구글로그인</span>
                     	</a>
                     </li>
                     <li id="logout" style="display:none;">
                     	<a href="/logout">로그아웃</a>
-                    	<!-- logout페이지 갓다가 메인으로 다시 돌아와야함 -->
                     </li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
