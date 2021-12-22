@@ -9,35 +9,88 @@
     $(function() {
         var contextPath = "${contextPath}";
         $.ajax({
-            url: contextPath + "/api/noticeList", //noticelist에 있는 모든 데이터 정보를 사용하겠다
+            url: contextPath + "/api/noticelist", //noticelist에 있는 모든 데이터 정보를 사용하겠다
             type: "get", //데이터의 연동방식 (get or post)
             contextType: "apllication/json; charset=utf-8",
             dataType: "json", //로드된 데이터의 형태, 문자열은 string
             success: function(json) { //succeess 데이터 로드가 완료되면 호출하는 함수
-
-                var list = "";
-                var dataLength = json.length; // noticelist에 있는 json 데이터의 모든 데이터의 총 갯수(length 함수)를 변수 형태로 지정(var anything)
-
-                for (i = 0; i < dataLength; i++) {
-                    list += "<tr>"; // 첫번째 반복문이 돌아갈 떄의 예
-                    list += "<td>" + json[i].notIdx + "</td>"; //json의 데이터에 배열값 중 0번쨰 데이터의 notIdx property라는 값을 불러온다
-                    list += "<td><a href='${contextPath}/notice?notIdx=" +
-                        json[i].notIdx + "'>" + json[i].notTitle +
-                        "</a></td>";
-                    /* list += "<td><a href='${contextPath}/notice?notIdx="
-                    		+ json[i].notIdx + "'>" + json[i].notTitle
-                    		+ "</a></td>"; */
-                    list += "<td>" + json[i].writer + "</td>";
-                    list += "<td>" + json[i].regDate + "</td>";
-                    list += "<tr>"
-                    console.log(typeof(json[i].regDate));
-                } // 실제 여기서 사용되는 notIdxm regDate, notTitle같은 데이터는 실제로 쿼리문에 있는 데이터의 정보임
-
-                // append 는 jquery문법으로 선택한 확장집합의 요소 자식중에 가장 끝에 있는 매개변수를 추가한다는 뜻. 쉽게 생각하면 위에 list라는 변수 만들었고 tbody(html단)의 클래스안에 list의 정보들을 뿌려주는 것.
-                $("tbody").append(list);
+            		console.log(json);
+            
+            		console.log(json.content)
+            		console.log(json.content[0])
+            		console.log(json.totalPages)
+            		
+					var list="";
+            		 	for(i=0; i < json.content.length ; i++){
+					
+				      list += "<tr>"; // 첫번째 반복문이 돌아갈 떄의 예
+	                    list += "<td>" + json.content[i].notIdx + "</td>"; //json의 데이터에 배열값 중 0번쨰 데이터의 notIdx property라는 값을 불러온다
+	                    list += "<td><a href='${contextPath}/notice?notIdx=" +
+	                        json.content[i].notIdx + "'>" + json.content[i].notTitle +
+	                        "</a></td>";
+	                   list += "<td><a href='${contextPath}/notice?notIdx="
+	                    		+ json.content[i].notIdx + "'>" + json.content[i].notTitle
+	                    		+ "</a></td>"; 
+	                    list += "<td>" + json.content[i].writer + "</td>";
+	                    list += "<td>" + json.content[i].regDate + "</td>";
+	                    list += "<tr>"
+	                    console.log(typeof(json.content[i].regDate));
+	                    //size = 한페이지에 보여지는 컨텐츠 수
+            		 	}//or json.pageable.pageSize?
+            		 	  $("tbody").append(list);
+            		 	
+            		 	 	var totalPages =  Math.ceil(json.totalElements / json.numberOfElements);
+            		 		var pageGroup =	  Math.ceil( json.number / json.pageable.pageSize)  ;
+            		 			
+            		 		
+            		 		console.log("totalpages==>" +totalPages,"currentPage===>"+ pageGroup);
+            		 		
+            		 		var last = pageGroup * json.pageable.pageSize;
+            		 		console.log("last===>"+last);
+            		 		if( last > totalPages)
+            		 			last = totalPages;
+            		 		var  first = last -(json.pageable.pageSize -1);
+            		 		console.log("first===>"+first)
+            		 		var next = last +1;
+            		 		console.log("next===>"+next)
+            		 		var prev = first -1;
+            		 		console.log("prev===>"+prev)
+	                  
+            		 	 
+            		 		if(totalPages < 1)
+            		 			{
+            		 			first = last;
+            		 			}
+            		 		var pages = $("#pages");
+            		 		pages.empty();
+            		 		
+            		 		if(first > 5) {
+            		 			pages.append("<li class='pagination-item'><a onclick='GetTarget(prev)' >" + prev +   "</a></li>");
+            		 		}
+            		 		
+            		 		for(var j = first; j<=last; j++){
+            		 			if(json.number === j){
+            		 				
+            		 				pages.append("<li class='pagination-item'><a class='active' onclick='GetTarget(prev)'  >" + j +   "</a></li>")
+            		 			}else if( j > 0){
+            		 				
+            		 				pages.append("<li class='pagination-item'><a class='active' onclick='GetTarget(prev)'  >" + j +   "</a></li>")
+            		 			}
+            		 			
+            		 		}
+            		 		if (next>5 && next < totalPages){
+            		 			pages.append("<li class='pagination-item'><a class='active' onclick='GetTarget(prev)'  >" + next +   "</a></li>")
+            		 		}
+            		 
+					
+	       			 
+              
+               
             }
         });
     });
+    
+   
 </script>
 <%@include file="/WEB-INF/views/header.jsp"%>
 <body>
@@ -63,12 +116,19 @@
                         </tr>
                     </thead>
                     <tbody>
-
+									
                     </tbody>
                 </table>
             </div>
-            <button id="btn_write" type="button" class="btn_write btn btn-primary btn-floating" onclick="location.href= '${contextPath}/noticeReg'" style="margin:20px 0;">글작성</button>
+            
+           <button id="btn_write" type="button" class="btn_write btn btn-primary btn-floating" onclick="location.href= '${contextPath}/noticeReg'" style="margin:20px 0;">글작성</button>
         </div>
+       		
+       	<div class="pagination-wrapper clearfix">
+  <ul class="pagination float--right" id="pages">
+    
+  </ul>
+</div>	
     </section>
 </body>
 <style>
