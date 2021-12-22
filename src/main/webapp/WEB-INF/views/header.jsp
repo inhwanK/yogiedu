@@ -71,14 +71,7 @@
 
             <nav id="navbar" class="navbar float-right d-lg-block">
                 <ul>
-                    <li class="active"><a href="${contextPath}/">Home</a></li>
-                    <li><a href="${contextPath}/noticeList">공지사항</a></li>
-                    <li><a href="${contextPath}/academyEnroll">학원등록</a></li>
-                    <li><a href="${contextPath}/academyLectureEnroll">강의등록</a></li>
-                    <li><a href="${contextPath}/academySearch">학원찾기</a></li>
-                    <li><a href="${contextPath}/academy">마이페이지</a></li>
-                    <li><a href="${contextPath}/qna">Q&A</a></li>
-                    <li class="dropdown"><a href="">Quick Menu</a>
+                	<li class="dropdown"><a href="">Quick Menu</a>
                         <ul>
                             <li><a href="#about">About us</a></li>
                             <li><a href="#services">Services</a></li>
@@ -87,6 +80,17 @@
                             <li><a href="#contact">Contact Us</a></li>
                         </ul>
                     </li>
+                    <li class="active"><a href="${contextPath}/">Home</a></li>
+                    <li><a href="${contextPath}/noticeList">공지사항</a></li>
+                    <li><a href="${contextPath}/qna">Q&A</a></li>
+                    <li><a href="${contextPath}/academySearch">학원찾기</a></li>
+                    <li class="dropdown"><a href="">등록하기</a>
+                    	<ul>
+                            <li><a href="${contextPath}/academyEnroll">학원등록</a></li>
+                            <li><a href="${contextPath}/academyLectureEnroll">강의등록</a></li>
+                        </ul>
+                    </li>   
+                    <li><a href="${contextPath}/academy">마이페이지</a></li>
                     <li id="login" style="margin-left:10px;">
                     	<a style="padding-left:10px; padding-right:10px; color:white; font-weight:600;"href="/oauth2/authorization/google" class="btn btn-Info btn-lg btn-google btn-block text-uppercase btn-outline">
                     	<img src="https://img.icons8.com/color/16/000000/google-logo.png">

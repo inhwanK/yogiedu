@@ -210,6 +210,7 @@ $(function(){
 <%@include file="/WEB-INF/views/header.jsp"%>
 
  			<section id="introLA">
+ 
     			<div id="container">
 	    			<form class="form-enroll form-horizontal col-sm-12" id="form" role="form">
 	             		<h2>학원 등록하기</h2>
