@@ -33,10 +33,10 @@ public class LectureController {
 		return "lecture/lectureAcademyDetailView";
 	}
 
-	@GetMapping("/academyLectureTable/{acaIdx}") // 경로 이름
-	public String lectureTableView(@PathVariable Long acaIdx, Model model, @LoginUser SessionUser user) {
+	@GetMapping("/academyLectureTable/{lectureIdx}") // 경로 이름
+	public String lectureTableView(@PathVariable Long lectureIdx, Model model, @LoginUser SessionUser user) {
 		model.addAttribute("user", user);
-		model.addAttribute("acaIdx", acaIdx);
+		model.addAttribute("lectureIdx", lectureIdx);
 		return "academy/academyLectureTable";
 	}
 

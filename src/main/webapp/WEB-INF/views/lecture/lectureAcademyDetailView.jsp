@@ -85,7 +85,7 @@ $(function(){
                     	 	data= {
                     	 		
                     	 		lectureIdx : idx
-                    	 	}
+                    	 	}/*
                     	$.ajax({
                              url : contextPath+ "/api/lecture/academy",
                              method : "get",
@@ -97,8 +97,8 @@ $(function(){
                                                   },
                   
 
-                             })
-                    	window.location.href= contextPath + '/academyLectureTable/2'
+                             })*/
+                    	window.location.href= contextPath + '/academyLectureTable/3';
 					
                 /*     	  idx = $(this).parent().siblings().first().attr('value');
                     	  console.log("idx===>"+idx)

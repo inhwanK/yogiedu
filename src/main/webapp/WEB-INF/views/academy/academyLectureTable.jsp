@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
+<c:set var="lectureIdx" value="<%=request.getAttribute(\"lectureIdx\")%>" />
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/static/css/academy/style.css">
@@ -25,7 +26,12 @@
 <meta charset="UTF-8">
 <script>
     $(function() {
-        var lectureIdx = "";
+    	console.log("시발 > "+"${lectureIdx}");
+    	
+    	var lectureIdx = "${lectureIdx}";
+    	
+     	console.log("안시발 > "+ lectureIdx);
+     	
         var lectureTimeArr = "";
         var lectureListIdx = [3, 4, 5, 6, 7, 16]; //여기에 넘겨만주면됨
         var fullLectureList = "";
