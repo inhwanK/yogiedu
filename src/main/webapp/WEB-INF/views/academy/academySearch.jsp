@@ -26,13 +26,14 @@
  
  <script type="text/javascript">
    
-  	$(document).ready(function(){
+  	$(document).ready(function (){ 
   	
- 		$(this).on('click','[id=btnArea]',function(){
+  		
+ 		$(this).on('click','[id=btnArea]',function area(){
  					
  			
  			var a = $(this).parent().parent().text();
-			console.log(a);
+			console.log("지역선언===>"+ a);
  		
  			
  				if(a === "동구"){
@@ -40,14 +41,15 @@
  				console.log("hi");
  					
  				}
+ 				console.log(a);
   			
  		}) 
  		
  		
- 		$(this).on('click','[id=btnSubject]', function(){
+ 		$(this).on('click','[id=btnSubject]', function (){
 	   			
-	   			var b = $(this.parent().parent().text());
-	   			console.log(b);
+	   			var b = $(this).parent().parent().text();
+	   			console.log("지역선언==>" + b);
 	   			
 	   			var contextPath = "${contextPath}";
 	   			
@@ -59,17 +61,27 @@
 
 		   	/* 	if($("#btnSubject").prop("checked",true) =="미술"){
 		   			
-		   			console.log("hey") */
+		   			console.log("hey") 
 		   			
-		   		}
+		   		}*/
+		   		console.log(b)
+		   		
 	   		})
 		
-	   		
+	 	var a = $("#btnArea").parent().parent().text();
+ 		var b = $("#btnSubject").parent().parent().text();
+ 		console.log("전역에서 선언===>"+ a,b);
+ 		
+ 		console.log($("#btnArea").is(":checked"))
+ 		if(  $("#btnArea").is(":checked") ||  $("#btnSubject").is(":checked")){
+ 			console.log("전역 선언====>hi")
+ 		}
+ 		
  		
 	   		
-   })
+  })
+    	
    
- 			
  			 
  				/* 	var b =	$(this).className().parent().parent(); */
  			
@@ -131,13 +143,13 @@
                     <div class="sidebar-categories ">
                         <div class="head">대구</div>
                         <ul class="main-categories" >
-                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right area" ><input class="main-nav-list child" id="btnArea" type="radio" name="area" ></span>남구</li>
-                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>달서구</li>
-                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>동구</li>
-                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>북구</li>
-                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>서구</li>
-                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area" ></span>수성구</li>
-                            <li class="main-nav-list" data-filter="daugu" id="a" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio"name="area"></span>중구</li>
+                            <li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right area" ><input class="main-nav-list child" id="btnArea" type="radio" name="area" ></span>남구</li>
+                            <li class="main-nav-list" data-filter="daugu"  ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>달서구</li>
+                            <li class="main-nav-list" data-filter="daugu"	><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>동구</li>
+                            <li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>북구</li>
+                            <li class="main-nav-list" data-filter="daugu"  ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>서구</li>
+                            <li class="main-nav-list" data-filter="daugu"  ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area" ></span>수성구</li>
+                            <li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio"name="area"></span>중구</li>
                         </ul>
                     </div>
                     

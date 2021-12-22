@@ -3,6 +3,7 @@ package org.hustar.yogiedu.config.auth;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import lombok.RequiredArgsConstructor;
 
@@ -26,6 +27,18 @@ public class SecurtiyConfig extends WebSecurityConfigurerAdapter {
 			.oauth2Login()
 			.userInfoEndpoint()
 			.userService(customOAuth2UserService);
+		
+		http
+			.formLogin()
+			.loginPage("/oauth2/authorization/google")
+			.defaultSuccessUrl("/")
+			.permitAll();
+		
+		http
+			.logout()
+			.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+			.logoutSuccessUrl("/")
+			.invalidateHttpSession(true);
 	}
 
 }

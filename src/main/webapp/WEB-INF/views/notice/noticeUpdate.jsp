@@ -3,8 +3,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="<%=request.getContextPath()%>" />
 <meta charset="UTF-8">
+
+<script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
+
+	window.onload = function(){
+		CKEDITOR.replace('content');
+	};
+
 	$(function() {
 
 		var contextPath = "${contextPath}";
@@ -24,6 +31,14 @@
 
 				$("textarea#title").append(json.notTitle);
 				$("textarea#content").append(json.notContent);
+				
+				//CKEDITOR.instances.content.setData(json.notContent);
+				CKEDITOR.instances.content.setData();
+				
+				setTimeout(function() {
+					CKEDITOR.instances.content.document.getBody().setHtml(json.notContent);
+					// html 코드를 정상적으로 에디터에 추가하기 위한 방법
+				}, 200);
 			}
 		});
 
@@ -34,7 +49,7 @@
 
 				var data = {
 					notTitle : $("#title").val(),
-					notContent : $("#content").val()
+					notContent : CKEDITOR.instances.content.getData()
 
 				}
 
@@ -80,7 +95,7 @@
 						</div>
 						<div class="form-group">
 							<label>내용</label>
-							<textarea rows="10" cols="500" id="content" class="form-control">
+							<textarea rows="10" cols="500" name="content" id="content" class="form-control">
                      		</textarea>
 						</div>
 

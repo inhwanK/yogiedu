@@ -5,16 +5,24 @@
 
 
 <meta charset="UTF-8">
+<script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
-    $(function() {
-        $("textarea").empty(); // 왠지 모르겠지만 페이지 띄울 때 textarea가 띄어쓰기가 되어있음.
 
+	window.onload = function(){
+		CKEDITOR.replace('content');
+	};
+	
+    $(function() {
+
+    	$("textarea").empty(); // 왠지 모르겠지만 페이지 띄울 때 textarea가 띄어쓰기가 되어있음.
         var contextPath = "${contextPath}";
 
-
+        
+        
+        
         $("#regist").on('click', function() {
-
+/*
             if ($("#title").val() == "") {
                 alert("제목을 입력하세요.");
                 return;
@@ -22,18 +30,17 @@
                 alert("내용을 입력하세요.");
                 return;
             }
-
+*/
             var conf = confirm("등록하시겠습니까?");
             if (conf) {
 
                 var data = {
                     notTitle: $("#title").val(),
-                    notContent: $("#content").val(),
+                    notContent: CKEDITOR.instances.content.getData(),
                     regDate: new Date(),
                     writer: "dafsfddf"
 
                 };
-
 
                 console.log(JSON.stringify(data));
 
@@ -53,6 +60,7 @@
                         alert("error");
                     }
                 });
+                
             }
 
         });
@@ -80,8 +88,8 @@
 	                    </div>
 	                    <div class="form-group">
 	                        <label>내용</label>
-	                        <textarea rows="10" cols="500" id="content" class="form-control" placeholder="공지할 내용을 입력해주세요">
-	                           </textarea>
+	                        <textarea rows="10" cols="500" name="content"  id="content" class="form-control" placeholder="공지할 내용을 입력해주세요">
+	                        </textarea>
 	                    </div>
 	
 	                    <div id="btn">
