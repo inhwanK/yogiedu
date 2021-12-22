@@ -100,7 +100,8 @@ CREATE TABLE `yogiedu`.`user` (
 	`USER_DIV`   VARCHAR(20) NULL     COMMENT '회원구분', -- 회원구분
 	`USER_EDU`   VARCHAR(10) NULL     COMMENT '학교구분', -- 학교구분
 	`USER_GRADE` INT(2)      NULL     COMMENT '학년', -- 학년
-	`USER_ROLE`  VARCHAR(30) NULL     COMMENT '권한' -- 권한
+	`USER_ROLE`  VARCHAR(30) NULL     COMMENT '권한', -- 권한
+	`ACA_IDX`    INT(20)     NULL     COMMENT '학원번호' -- 학원번호
 )
 COMMENT '회원';
 

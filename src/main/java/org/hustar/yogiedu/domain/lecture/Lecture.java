@@ -30,21 +30,24 @@ public class Lecture {
 	@ManyToOne
 	@JoinColumn(name = "aca_idx")
 	private Academy academy;
-	
+
 	private String lectureName;
+	private String subjectName;
 	private String teacherName;
 	private String lectureTimeStr;
 	private String lectureGrade;
-	
+
 	@Builder
-	public Lecture(Long lectureIdx, Academy academy, String lectureName, String teacherName, String lectureTimeStr, String lectureGrade) {
+	public Lecture(Long lectureIdx, Academy academy, String subjectName, String lectureName, String teacherName,
+			String lectureTimeStr, String lectureGrade) {
+		
 		this.lectureIdx = lectureIdx;
 		this.academy = academy;
+		this.subjectName = subjectName;
 		this.lectureName = lectureName;
 		this.teacherName = teacherName;
 		this.lectureTimeStr = lectureTimeStr;
 		this.lectureGrade = lectureGrade;
 	}
-	
 
 }
