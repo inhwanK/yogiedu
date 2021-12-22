@@ -8,9 +8,13 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 
-	window.onload = function(){
-		CKEDITOR.replace('content');
-	};
+window.onload = function(){
+    CKEDITOR.replace('content',{
+         width: "1200px",
+            height: "500px"
+    });
+ };
+	
 
 	$(function() {
 
@@ -67,7 +71,7 @@
 
 					},
 					error : function() {
-						alert("뭔가 잘못된 것이 분명합니다.");
+						alert("에러.");
 					}
 				});
 			}

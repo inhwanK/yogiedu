@@ -44,7 +44,7 @@
 
         $("#delete").on('click', function() {
 
-            var conf = confirm("ㄹㅇ로 삭 제하시 겠습니까?");
+            var conf = confirm("삭제하시겠습니까?");
             if (conf) {
 
                 var notIdx = "${notIdx}";
@@ -57,12 +57,12 @@
                     dataType: "json",
                     success: function(json) {
 
-                        alert("삭 제 ㅇㅋ");
+                        alert("삭제되었습니다.");
                         window.location.href = contextPath + "/noticeList";
                     },
 
                     error: function() {
-                        alert("조졋다");
+                        alert("에러.");
                     }
 
                 })

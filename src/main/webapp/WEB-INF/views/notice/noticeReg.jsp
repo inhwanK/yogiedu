@@ -9,9 +9,12 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 
-	window.onload = function(){
-		CKEDITOR.replace('content');
-	};
+window.onload = function(){
+    CKEDITOR.replace('content',{
+         width: "1200px",
+            height: "500px"
+    });
+ };
 	
     $(function() {
 
@@ -88,7 +91,7 @@
 	                    </div>
 	                    <div class="form-group">
 	                        <label>내용</label>
-	                        <textarea rows="10" cols="500" name="content"  id="content" class="form-control" placeholder="공지할 내용을 입력해주세요">
+	                        <textarea rows="10" cols="1000" name="content"  id="content" class="form-control" placeholder="공지할 내용을 입력해주세요">
 	                        </textarea>
 	                    </div>
 	

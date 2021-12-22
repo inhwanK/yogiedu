@@ -81,8 +81,8 @@
 <!--                         </ul> -->
 <!--                     </li> -->
                     <li class="active"><a href="${contextPath}/">Home</a></li>
-                    <li><a href="${contextPath}/qna">공지사항</a></li>
-                    <li><a href="${contextPath}/noticeList">Q & A</a></li>
+                    <li><a href="${contextPath}/qna">FAQ</a></li>
+                    <li><a href="${contextPath}/noticeList">공지사항</a></li>
                     <li><a href="${contextPath}/academySearch">학원찾기</a></li>
                     <li class="dropdown"><a href="">등록하기</a>
                     	<ul>
