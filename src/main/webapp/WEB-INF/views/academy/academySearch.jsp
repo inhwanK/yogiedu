@@ -25,119 +25,129 @@
      <meta charset="UTF-8">
  
  <script type="text/javascript">
- 	
+
+    
   $(function() {
-  					
-  		 var contextPath = "${contextPath}";
-  		
-  	     $.ajax({
-	            url : contextPath + "/api/academyList",
-	             method : "get",
-	             dataType : "json",
-	             success: function(json) {
-	             console.log(json);
-	             
-	             var dataLength = json.length;
-	             console.log(json[0].acaNm)
-	             var list = "";
-	           	console.log(json[0].acaIdx)
-	             	for(i= 0 ; i < dataLength; i++){
-	            	 
-		            	   			list = "";
-		            	 	
-		            		      list += '<div class="product_item1 col-md-4" data-type="daugu">';
-		                      list += '<div class="product_item" id="opener">';
-		                      list += '<div class="pi-img-wrapper"  >';
-		                      list +=  '<td><a href="${contextPath}/lectureAcademyDetailView/' +json[i].acaIdx+ '">' + json[i].acaNm + '</a></td>'; 
-		                      list += '</div>';
-		                      list += '<h3><a href="shop-item.html"><h1>' + json[i].acaNm + '</h1></a></h3>'; 
-		                      list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
-		                      list += '</div>';
-		                      list += '</div>';
-		                      list += '</div>'; 
-	            		 
-	
-		                      $("#product-list-wrap").append(list);
-	             	}
-	          
-	             	 
-	             	
-	           	
-	             }
+                 
+         var contextPath = "${contextPath}";
+        
+          $.ajax({
+               url : contextPath + "/api/academyList",
+                method : "get",
+                dataType : "json",
+                success: function(json) {
+                console.log(json);
+                
+                var dataLength = json.length;
+                console.log(json[0].acaNm)
+                var list = "";
+                 console.log(json[0].acaIdx)
+                   for(i= 0 ; i < dataLength; i++){
+                   
+                                 list = "";
+                         
+                                 list+='<div class="product_itme1 col-md-4 card bg-light" data-type="daugu" style="display:flex; flex-direction:row; margin-top:10px;border-radius:5px;">';
+                                 list+=		'<div class="row col-md-12">';
+                                 list+=			'<div class="col-md-4" >';
+                                 list+=				'<div class= "aca-img card-img" style="display:flex; align-items:center; width:100%; height:calc( 100% - 20px );background-color:#e2e2e2; margin:10px 0;">';
+                                 list+=				'</div>';
+                                 list+=			'</div>';
+                                 list+=			'<div class="product_item col-md-8 card-body" id="opener" style="height:200px; ">';
+                                 list+=			'<div class="card-title" style="height:33%; display:flex; align-items: center; justify-content: center;">';
+                                 list+=				'<a href="${contextPath}/lectureAcademyDetailView/' +json[i].acaIdx+ '">' + json[i].acaNm + '</a>';
+                                 list+=				'</div>';
+                                 list+=				'<div class="card-text" style="height:33%; display:flex; align-items: center; justify-content: center;">';
+                                 list+=					json[i].faRdnma;
+                                 list+=				'</div>';
+                                 list+=				'<div class="card-text" style="height:33%; display:flex; align-items: center; justify-content: center;">';
+                                 list+=					json[i].fieldName;
+                                 list+=				'</div>';
+                                 list+=			'</div>';
+                                 list+=		'</div>';
+                                 list+='</div>';
+                      
+   
+                            $("#product-list-wrap").append(list);
+                   }
+             
+                    
+                   
+                 
+                }
  
 
-     	 })   
-  		
- 	
+         })   
+        
+    
 
-		   		
-	})
+               
+   })
 
-          	
-	              	
+             
+                    
 
-	             
-	         		
-	         /* 		$(this).on('click','[id=btnSubject]', function (){
-	        	   			
-	        	   			var b = $(this).parent().parent().text();
-	        	   			console.log("지역선언==>" + b);
-	        	   			
-	        	   			var contextPath = "${contextPath}";
-	        	   			
-	        	   			if(b === "미술"){
-	         					
-	        	 				console.log("hi");
-	        	 					
-	        	 			}
-	             	
-	       
-   			
-          			} */
-	         
+                
+                  
+            /*       $(this).on('click','[id=btnSubject]', function (){
+                          
+                          var b = $(this).parent().parent().text();
+                          console.log("지역선언==>" + b);
+                          
+                          var contextPath = "${contextPath}";
+                          
+                          if(b === "미술"){
+                           
+                           console.log("hi");
+                              
+                        }
+                   
+          
+            
+                   } */
+            
   
-		
-	
-    	
-	
-	     /*     $.ajax({
-	            url : contextPath + "/api/academyList",
-	             method : "get",
-	             dataType : "json",
-	             success: function(json) {
-	             console.log(json);
-	             
-	             var dataLength = json.length;
-	             var list = "";
-	           	
-	             	for(i= 0 ; i <= dataLength-800; i++){
-	            	 
-		            	 
-		            	 	
-		            		  list += '<div class="product_item1 col-md-4" data-type="daugu">';
-		                      list += '<div class="product_item" id="opener">';
-		                      list += '<div class="pi-img-wrapper"  >';
-		                      list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
-		                      list += '</div>';
-		                      list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
-		                      list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
-		                      list += '</div>';
-		                      list += '</div>';
-		                      list += '</div>';
-	            		 
-	            	 		
-		            	 	 	$("#product-list-wrap").empty();
-		     				$("#product-list-wrap").append(list);
-		     				
-		     		
-	             	}
+      
+   
+       
+   
+        /*     $.ajax({
+               url : contextPath + "/api/academyList",
+                method : "get",
+                dataType : "json",
+                success: function(json) {
+                console.log(json);
+                
+                var dataLength = json.length;
+                var list = "";
+                 
+                   for(i= 0 ; i <= dataLength-800; i++){
+                   
+                      
+                         
+                          list += '<div class="product_item1 col-md-4" data-type="daugu">';
+                            list += '<div class="product_item" id="opener">';
+                            list += '<div class="pi-img-wrapper"  >';
+                            list += '<img src="/static/img/building-6780404_1280.png" class="img-responsive" alt="Berry Lace Dress" style="width:50%;" >';
+                            list += '</div>';
+                            list += '<h3><a href="shop-item.html"><h1>'+ json[i].acaNm + '</h1></a></h3>';
+                            list += '<div class="pi-price">' + json[i].faRdnma +'</div>';
+                            list += '</div>';
+                            list += '</div>';
+                            list += '</div>';
+                      
+                         
+                             $("#product-list-wrap").empty();
+                       $("#product-list-wrap").append(list);
+                       
+                 
+                   }
 
-            	 	
-      			
-             	}
-	         
+                   
+               
+                }
+            
      
-        	 	})     */
+               })     */
 
 
    
@@ -147,7 +157,7 @@
 
     <%@include file="/WEB-INF/views/header.jsp"%>
     
-    	<section id="introLA">
+       <section id="introLA">
         <div class="search-list-wrap" >
             <div class="row col-md-12 ">
 
@@ -155,13 +165,18 @@
                     <div class="sidebar-categories ">
                         <div class="head">대구</div>
                         <ul class="main-categories" >
-                            <li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right area" ><input class="main-nav-list child" id="btnArea" type="radio" name="area" ></span>남구</li>
-                            <li class="main-nav-list" data-filter="daugu"  ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>달서구</li>
-                            <li class="main-nav-list" data-filter="daugu"	><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>동구</li>
-                            <li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>북구</li>
-                            <li class="main-nav-list" data-filter="daugu"  ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>서구</li>
-                            <li class="main-nav-list" data-filter="daugu"  ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio" name="area" ></span>수성구</li>
-                            <li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnArea" type="radio"name="area"></span>중구</li>
+                            <li class="main-nav-list" data-filter="daugu" >
+                            	<span class="lnr lnr-arrow-right area">
+                            		<input class="main-nav-list child" id="btnArea" type="radio" name="area" >
+                            	</span>
+                            	남구
+                            	</li>
+                            <li class="main-nav-list" data-filter="daugu"  ><span class="lnr lnr-arrow-right area" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>달서구</li>
+                            <li class="main-nav-list" data-filter="daugu"   ><span class="lnr lnr-arrow-right area" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>동구</li>
+                            <li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right area" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>북구</li>
+                            <li class="main-nav-list" data-filter="daugu"  ><span class="lnr lnr-arrow-right area" ><input class="main-nav-list child" id="btnArea" type="radio" name="area"></span>서구</li>
+                            <li class="main-nav-list" data-filter="daugu"  ><span class="lnr lnr-arrow-right area" ><input class="main-nav-list child" id="btnArea" type="radio" name="area" ></span>수성구</li>
+                            <li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right area" ><input class="main-nav-list child" id="btnArea" type="radio"name="area"></span>중구</li>
                         </ul>
                     </div>
                     
@@ -171,7 +186,7 @@
 
                              <li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right sub" ><input class="main-nav-list child" id="btnSubject" name="subject" type="radio"></span>미술</li>
                              <li class="main-nav-list" data-filter="daugu"><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnSubject" name="subject" type="radio"></span>보습</li>
-                          	<li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnSubject" name="subject" type="radio"></span>음악</li>
+                             <li class="main-nav-list" data-filter="daugu" ><span class="lnr lnr-arrow-right" ><input class="main-nav-list child" id="btnSubject" name="subject" type="radio"></span>음악</li>
                            
                         </ul>
                     </div>

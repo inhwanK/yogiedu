@@ -76,10 +76,10 @@
 
     <section id="introLA">
 
-        <div id="title-wrap">
+        <div id="title-wrap" style="margin:20px;">
             <div class="title">
-                <a href="noticeList" style="font-size:3rem;font-weight: 900; color: #222;">
-                    <span class="tit" id="title"></span>
+                <a href="noticeList" style="font-size:3rem;font-weight: 900; color: #222; ">
+                    <span>제목 : </span><span class="tit" id="title"></span>
                 </a>
             </div>
 
@@ -88,7 +88,7 @@
         <div id="notice-detail-wrap">
             <div id="contents">
                 <div class="table-wrap">
-                    <div class="container col-sm-9">
+                    <div class="container col-sm-6">
                         <table class="table">
                             <thead>
                                 <td class="info" style="border-top:none;"><span class="tit">등록일 : </span><span class="txt" id="regdate"></span></td>
