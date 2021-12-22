@@ -38,9 +38,10 @@ $(function(){
                          for(i=0; i <json.length; i++){
                             
                             console.log("Idx 체크 >" + json[i].lectureIdx);
+                            console.log(json[i].lectureGrade);
                             console.log(json[i].lectureName);
-                            
-                            
+                            console.log(json[i].lectureTimeStr);
+                            console.log(json[i].teacherName);
                             list += '<tr>';
                             list += '<th class="subject_grade col-md-3" value='+json[i].lectureIdx +'>'+ json[i].lectureGrade +'</th>';
                             list += '<th class="subject_name_detail col-md-3">' + json[i].lectureName +'</th>';
@@ -85,20 +86,15 @@ $(function(){
                     	 	data= {
                     	 		
                     	 		lectureIdx : idx
-                    	 	}/*
-                    	$.ajax({
-                             url : contextPath+ "/api/lecture/academy",
-                             method : "get",
-                             dataType : "json",
-                             success: function(json) {
-                                console.log("됐다.");
-                           
-                                   window.location.href= contextPath+ "/academyLectureTable";
-                                                  },
-                  
 
-                             })*/
-                    	window.location.href= contextPath + '/academyLectureTable/3';
+                    	 	}
+                  
+                           
+                                
+                                
+                                   window.location.href= contextPath+ "/academyLectureTable/2";
+                
+                   console.log(idx)
 					
                 /*     	  idx = $(this).parent().siblings().first().attr('value');
                     	  console.log("idx===>"+idx)
@@ -358,7 +354,7 @@ $(function(){
                           
                           <!-- 장바구니 -->
                           
-                          <div id="cart" class="col-md-4">
+                        <!--   <div id="cart" class="col-md-4">
                             <table id="lectureWish" class="basic col-md-12" border="0" cellspacing="0" cellpadding="0">
                             <thead>
                             <tr bgcolor="#C8E3FF">
@@ -383,7 +379,7 @@ $(function(){
                           </div>
                           </div>
                           
-                        </div>
+                        </div> -->
                         
                         
                         <!-- 총금액 -->

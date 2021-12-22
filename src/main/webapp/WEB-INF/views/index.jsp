@@ -25,7 +25,7 @@
                 //</div>
                 var list = "";
                 var dataLength = json.length;
-                for (i = 0; i < 5; i++) {
+                for (i = 0; i < json.length; i++) {
                     list += "<div class='swiper-slide'>";
                     list += "<div class='testimonial-item'>";
                     list += "<h3 id='title' style='border-bottom:2px solid #000000; border-left:10px solid #000000'>" + json[i].acaNm + "</h3>";
@@ -294,6 +294,7 @@
 
         </div>
     </section>
+    <!-- 
     <section id="portfolio" class="clearfix">
         <div class="container" data-aos="fade-up">
 
@@ -444,6 +445,7 @@
 
         </div>
     </section>
+     -->
     <section id="testimonials" class="section-bg">
         <div class="container">
 
@@ -464,7 +466,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-pagination"></div>
+                        <!-- <div class="swiper-pagination"></div> -->
                     </div>
                 </div>
             </div>

@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-    
+   pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="contextPath" value="<%=request.getContextPath()%>" />
+
+
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script> 
+
 <script type="text/javascript">
 $(function(){
 	//answer 항목에 Markdown 문법을 지원 합니다.
@@ -58,7 +63,6 @@ $(function(){
 	
 	
 	
-});
 
 $(document).ready(function() {
     var cArray = [];
@@ -106,6 +110,8 @@ function createHtmlFAQ(q, a, id) {
         "    </div>" +
         "</div>\n");
 }
+});
+
 </script>
 <%@include file="/WEB-INF/views/header.jsp"%>
 	<section id="intro" class="clearfix">
@@ -140,5 +146,7 @@ function createHtmlFAQ(q, a, id) {
 	</section>
 
 </body>
+    
+    
 <%@include file="/WEB-INF/views/footer.jsp"%>
 

@@ -61,10 +61,10 @@ $(function(){
  			console.log("confirm 확인")
          //   "ACA_NM" :$("#inputArea").val(),
          var data={
-
+        			"FA_RDNMA" : $("#")
                "ACA_ASNUM" : $("#inputName").val(),
                "ACA_NM" : $("#inputTel").val(),
-               "ESTBL_YMD": "ㅎ"//$("#inputContent").val()      
+               "ESTBL_YMD": $("#inputContent").val()      
          };
       
          console.log($("#inputName").val());
